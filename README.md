@@ -4,8 +4,7 @@
 
 Geo Conquest is a single-player strategy-quiz game for young explorers (built with a grade‑7 geography lover in mind). Tap countries on an interactive world map, answer geography questions to conquer them, and outsmart the mischievous **Baron von Blunder** — your AI rival who steals any country you fumble!
 
-![Screenshot](docs/screenshot.png)
-*👆 Screenshot placeholder — play the game and drop a screenshot at `docs/screenshot.png`!*
+![Geo Conquest gameplay — conquering North America](docs/screenshot.png)
 
 ## 🎮 How to play
 

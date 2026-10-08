@@ -1,0 +1,312 @@
+{
+ "continents": [
+  {
+   "id": "north-america",
+   "name": "North America",
+   "territories": [
+    {
+     "iso3": "CAN",
+     "name": "Canada"
+    },
+    {
+     "iso3": "USA",
+     "name": "United States of America"
+    },
+    {
+     "iso3": "MEX",
+     "name": "Mexico"
+    },
+    {
+     "iso3": "GTM",
+     "name": "Guatemala"
+    },
+    {
+     "iso3": "CUB",
+     "name": "Cuba"
+    },
+    {
+     "iso3": "PAN",
+     "name": "Panama"
+    },
+    {
+     "iso3": "CRI",
+     "name": "Costa Rica"
+    },
+    {
+     "iso3": "JAM",
+     "name": "Jamaica"
+    },
+    {
+     "iso3": "DOM",
+     "name": "Dominican Rep."
+    },
+    {
+     "iso3": "HTI",
+     "name": "Haiti"
+    },
+    {
+     "iso3": "HND",
+     "name": "Honduras"
+    },
+    {
+     "iso3": "SLV",
+     "name": "El Salvador"
+    }
+   ]
+  },
+  {
+   "id": "south-america",
+   "name": "South America",
+   "territories": [
+    {
+     "iso3": "BRA",
+     "name": "Brazil"
+    },
+    {
+     "iso3": "ARG",
+     "name": "Argentina"
+    },
+    {
+     "iso3": "CHL",
+     "name": "Chile"
+    },
+    {
+     "iso3": "PER",
+     "name": "Peru"
+    },
+    {
+     "iso3": "COL",
+     "name": "Colombia"
+    },
+    {
+     "iso3": "VEN",
+     "name": "Venezuela"
+    },
+    {
+     "iso3": "ECU",
+     "name": "Ecuador"
+    },
+    {
+     "iso3": "BOL",
+     "name": "Bolivia"
+    },
+    {
+     "iso3": "PRY",
+     "name": "Paraguay"
+    },
+    {
+     "iso3": "URY",
+     "name": "Uruguay"
+    },
+    {
+     "iso3": "GUY",
+     "name": "Guyana"
+    },
+    {
+     "iso3": "SUR",
+     "name": "Suriname"
+    }
+   ]
+  },
+  {
+   "id": "europe",
+   "name": "Europe",
+   "territories": [
+    {
+     "iso3": "GBR",
+     "name": "United Kingdom"
+    },
+    {
+     "iso3": "IRL",
+     "name": "Ireland"
+    },
+    {
+     "iso3": "FRA",
+     "name": "France"
+    },
+    {
+     "iso3": "ESP",
+     "name": "Spain"
+    },
+    {
+     "iso3": "PRT",
+     "name": "Portugal"
+    },
+    {
+     "iso3": "DEU",
+     "name": "Germany"
+    },
+    {
+     "iso3": "ITA",
+     "name": "Italy"
+    },
+    {
+     "iso3": "NLD",
+     "name": "Netherlands"
+    },
+    {
+     "iso3": "POL",
+     "name": "Poland"
+    },
+    {
+     "iso3": "SWE",
+     "name": "Sweden"
+    },
+    {
+     "iso3": "NOR",
+     "name": "Norway"
+    },
+    {
+     "iso3": "GRC",
+     "name": "Greece"
+    }
+   ]
+  },
+  {
+   "id": "africa",
+   "name": "Africa",
+   "territories": [
+    {
+     "iso3": "EGY",
+     "name": "Egypt"
+    },
+    {
+     "iso3": "MAR",
+     "name": "Morocco"
+    },
+    {
+     "iso3": "NGA",
+     "name": "Nigeria"
+    },
+    {
+     "iso3": "KEN",
+     "name": "Kenya"
+    },
+    {
+     "iso3": "ZAF",
+     "name": "South Africa"
+    },
+    {
+     "iso3": "ETH",
+     "name": "Ethiopia"
+    },
+    {
+     "iso3": "GHA",
+     "name": "Ghana"
+    },
+    {
+     "iso3": "DZA",
+     "name": "Algeria"
+    },
+    {
+     "iso3": "TUN",
+     "name": "Tunisia"
+    },
+    {
+     "iso3": "TZA",
+     "name": "Tanzania"
+    },
+    {
+     "iso3": "SEN",
+     "name": "Senegal"
+    },
+    {
+     "iso3": "MDG",
+     "name": "Madagascar"
+    }
+   ]
+  },
+  {
+   "id": "asia",
+   "name": "Asia",
+   "territories": [
+    {
+     "iso3": "CHN",
+     "name": "China"
+    },
+    {
+     "iso3": "IND",
+     "name": "India"
+    },
+    {
+     "iso3": "JPN",
+     "name": "Japan"
+    },
+    {
+     "iso3": "KOR",
+     "name": "South Korea"
+    },
+    {
+     "iso3": "IDN",
+     "name": "Indonesia"
+    },
+    {
+     "iso3": "THA",
+     "name": "Thailand"
+    },
+    {
+     "iso3": "VNM",
+     "name": "Vietnam"
+    },
+    {
+     "iso3": "PHL",
+     "name": "Philippines"
+    },
+    {
+     "iso3": "MYS",
+     "name": "Malaysia"
+    },
+    {
+     "iso3": "SAU",
+     "name": "Saudi Arabia"
+    },
+    {
+     "iso3": "TUR",
+     "name": "Turkey"
+    },
+    {
+     "iso3": "PAK",
+     "name": "Pakistan"
+    },
+    {
+     "iso3": "BGD",
+     "name": "Bangladesh"
+    },
+    {
+     "iso3": "MNG",
+     "name": "Mongolia"
+    }
+   ]
+  },
+  {
+   "id": "oceania",
+   "name": "Oceania",
+   "territories": [
+    {
+     "iso3": "AUS",
+     "name": "Australia"
+    },
+    {
+     "iso3": "NZL",
+     "name": "New Zealand"
+    },
+    {
+     "iso3": "PNG",
+     "name": "Papua New Guinea"
+    },
+    {
+     "iso3": "FJI",
+     "name": "Fiji"
+    },
+    {
+     "iso3": "VUT",
+     "name": "Vanuatu"
+    },
+    {
+     "iso3": "SLB",
+     "name": "Solomon Is."
+    }
+   ]
+  }
+ ]
+}

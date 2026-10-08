@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Geo Conquest — conquer the world one geography question at a time! A fun strategy-quiz game for young explorers." />
+  <title>Geo Conquest — Conquer the World!</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">🌍 <span>Geo Conquest</span></div>
+    <div class="hud">
+      <div class="chip" id="score-chip" title="Your conquest points">⭐ <span id="score-val">0</span></div>
+      <div class="chip" id="streak-chip" title="Correct answers in a row">🔥 <span id="streak-val">0</span></div>
+      <button class="btn btn-small" id="btn-how" type="button">❓ How to play</button>
+      <button class="btn btn-small btn-danger" id="btn-restart" type="button">↺ New campaign</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ START SCREEN ============ -->
+    <section id="screen-start" class="screen">
+      <div class="hero card">
+        <div class="hero-emoji">🗺️</div>
+        <h1>Geo Conquest</h1>
+        <p class="tagline">Outsmart <strong>Baron von Blunder</strong>, conquer continents,<br />and become the greatest geography explorer ever!</p>
+        <div class="mode-cards">
+          <button class="mode-card" id="btn-quest" type="button">
+            <div class="mode-emoji">🏝️</div>
+            <h2>Continent Quest</h2>
+            <p>Conquer one whole continent to win. Perfect first adventure!</p>
+          </button>
+          <button class="mode-card mode-hard" id="btn-world" type="button">
+            <div class="mode-emoji">🌐</div>
+            <h2>World Conquest <span class="hard-badge">HARD</span></h2>
+            <p>Conquer <strong>all six continents</strong>. For true legends only!</p>
+          </button>
+        </div>
+        <button class="btn btn-big btn-continue hidden" id="btn-continue" type="button">▶ Continue your journey</button>
+        <p class="save-note">Your progress saves automatically in this browser.</p>
+      </div>
+    </section>
+
+    <!-- ============ PICK CONTINENT ============ -->
+    <section id="screen-pick-continent" class="screen hidden">
+      <div class="card narrow">
+        <h2 id="pick-title">Choose your starting continent</h2>
+        <p class="muted" id="pick-subtitle">This is where your empire begins. Choose wisely, explorer!</p>
+        <div class="continent-grid" id="continent-cards"></div>
+        <button class="btn btn-small" id="btn-pick-back" type="button">← Back</button>
+      </div>
+    </section>
+
+    <!-- ============ GAME ============ -->
+    <section id="screen-game" class="screen hidden">
+      <div class="game-layout">
+        <div class="map-wrap card">
+          <div class="map-banner hidden" id="home-banner">🚩 Tap a country in <strong id="home-continent-name"></strong> to plant your flag!</div>
+          <div class="map-scroll">
+            <svg id="map-svg" viewBox="0 0 1000 500" role="img" aria-label="Interactive world map"></svg>
+          </div>
+          <div class="map-controls">
+            <button class="btn btn-small" id="zoom-in" type="button" aria-label="Zoom in">＋</button>
+            <button class="btn btn-small" id="zoom-out" type="button" aria-label="Zoom out">－</button>
+            <button class="btn btn-small" id="zoom-reset" type="button">⟲ Reset view</button>
+          </div>
+          <div class="legend">
+            <span class="legend-item"><i class="swatch sw-player"></i>Yours</span>
+            <span class="legend-item"><i class="swatch sw-rival"></i>Baron's</span>
+            <span class="legend-item"><i class="swatch sw-neutral"></i>Unclaimed</span>
+            <span class="legend-item"><i class="swatch sw-locked"></i>Locked</span>
+          </div>
+        </div>
+
+        <aside class="side-panel">
+          <div class="card objective-card">
+            <h3>🎯 Objective</h3>
+            <p id="objective-text">Choose a continent to begin!</p>
+          </div>
+
+          <div class="card territory-card hidden" id="territory-card">
+            <h3 id="terr-name">Country</h3>
+            <p class="muted" id="terr-owner"></p>
+            <p class="muted small" id="terr-hint">Pick a difficulty, then answer to conquer it!</p>
+            <div class="diff-row">
+              <button class="btn diff-btn diff-easy" data-tier="easy" type="button">😊 Easy<br /><small>+10 pts</small></button>
+              <button class="btn diff-btn diff-medium" data-tier="medium" type="button">🤔 Medium<br /><small>+20 pts</small></button>
+              <button class="btn diff-btn diff-hard" data-tier="hard" type="button">🧠 Hard<br /><small>+30 pts</small></button>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>🌎 Continents</h3>
+            <div id="continent-list"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ QUESTION MODAL ============ -->
+  <div class="modal-backdrop hidden" id="question-modal">
+    <div class="modal card">
+      <div class="q-meta"><span id="q-territory">Country</span><span class="tier-badge" id="q-tier-badge">Easy</span></div>
+      <h2 id="q-text">Question?</h2>
+      <div class="q-options" id="q-options"></div>
+      <div class="q-feedback hidden" id="q-feedback"></div>
+      <button class="btn btn-big hidden" id="btn-q-continue" type="button">Continue →</button>
+    </div>
+  </div>
+
+  <!-- ============ VICTORY MODAL ============ -->
+  <div class="modal-backdrop hidden" id="victory-modal">
+    <div class="modal card victory">
+      <div class="hero-emoji" id="victory-emoji">🏆</div>
+      <h2 id="victory-title">Continent Conquered!</h2>
+      <p id="victory-text"></p>
+      <div class="victory-buttons">
+        <button class="btn btn-big" id="btn-victory-continue" type="button">Continue →</button>
+        <button class="btn btn-small" id="btn-victory-restart" type="button">↺ New campaign</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ UNLOCK MODAL ============ -->
+  <div class="modal-backdrop hidden" id="unlock-modal">
+    <div class="modal card">
+      <h2>🗝️ Choose your next conquest</h2>
+      <p class="muted">The Baron is regrouping… where will you strike next?</p>
+      <div class="continent-grid" id="unlock-cards"></div>
+    </div>
+  </div>
+
+  <!-- ============ HOW TO PLAY MODAL ============ -->
+  <div class="modal-backdrop hidden" id="how-modal">
+    <div class="modal card">
+      <h2>❓ How to play</h2>
+      <ol class="how-list">
+        <li>🖱️ <strong>Tap a country</strong> in your current continent to challenge it.</li>
+        <li>🎚️ <strong>Pick a difficulty</strong> — harder questions earn more points!</li>
+        <li>✅ <strong>Answer correctly</strong> to conquer the country. Get it wrong and <strong>Baron von Blunder</strong> steals it! 😈</li>
+        <li>🌍 <strong>Conquer every country</strong> in a continent to unlock the next one.</li>
+        <li>🏆 <strong>Continent Quest:</strong> conquer one continent to win.<br />🌐 <strong>World Conquest:</strong> conquer all six!</li>
+        <li>💾 Your progress <strong>saves automatically</strong> — come back anytime!</li>
+      </ol>
+      <button class="btn btn-big" id="btn-how-close" type="button">Got it!</button>
+    </div>
+  </div>
+
+  <div class="toast hidden" id="toast"></div>
+
+  <footer>
+    <p>Geo Conquest · Map data: <a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener">Natural Earth</a> (public domain) · Made for young explorers 🧭</p>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

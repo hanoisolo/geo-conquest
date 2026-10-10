@@ -573,6 +573,11 @@ const GeoGame = {
     }
     // A wrong math answer gets the full worked solution (the hints are
     // the steps) plus an offer to try a similar question for practice.
+    // A miss earns nothing — don't keep showing the points that were on offer.
+    if (!correct) {
+      const pts = document.getElementById("q-points");
+      if (pts && !c.practice) pts.textContent = "0 pts";
+    }
     if (!correct && c.question.type === "math") {
       const title = document.createElement("p");
       title.className = "solution-title";
@@ -757,6 +762,7 @@ const GeoGame = {
   /** Re-open the modal with the map-question feedback and Continue button. */
   showMapResult(c, correct, tappedName, targetName) {
     if (correct) GeoSound.correct(); else GeoSound.wrong();
+    if (!correct && !c.practice) document.getElementById("q-points").textContent = "0 pts";
     const box = document.getElementById("q-options");
     box.innerHTML = "";
     if (tappedName && !correct) this.addMapResultButton(box, `🗺️ ${tappedName}`, "wrong");

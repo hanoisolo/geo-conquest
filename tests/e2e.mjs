@@ -134,6 +134,8 @@ async function run(vp, tag) {
         await answer(false); await wait(300); await shot("11-math-wrong-solution");
         ok(`${tag}: worked solution shown`, (await page.locator("#q-feedback li, #q-feedback .solution-step").count()) >= 2);
         ok(`${tag}: try-a-similar-one button`, await vis("#btn-similar"));
+        ok(`${tag}: points tag shows 0 after a miss`, (await page.locator("#q-points").textContent()) === "0 pts");
+        if (tag === "desktop") ok(`${tag}: pinned buttons side by side`, await page.evaluate(() => { const a = document.getElementById("btn-similar").getBoundingClientRect(), b = document.getElementById("btn-q-continue").getBoundingClientRect(); return Math.abs(a.top - b.top) < 4 && a.right <= b.left; }));
         ok(`${tag}: similar button in view without scrolling`, await page.evaluate(() => { const r = document.getElementById("btn-similar").getBoundingClientRect(); return r.top >= 0 && r.bottom <= innerHeight; }));
         await page.click("#btn-similar"); await wait(500);
         ok(`${tag}: math miss lets the Baron steal`, await page.evaluate((t) => GeoGame.state.ownership[t] === "rival", t2));

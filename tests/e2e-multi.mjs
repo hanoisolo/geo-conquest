@@ -87,7 +87,62 @@ async function run(vp, tag) {
   if (errs.length) console.log(errs);
   await page.close();
 }
+// Strike-backs + reload mid strike-back (2 players, state seeded after homes).
+async function runStrike(vp, tag) {
+  const page = await browser.newPage({ viewport: vp });
+  const errs = [];
+  page.on("pageerror", (e) => errs.push(e.message));
+  const wait = (ms = 400) => page.waitForTimeout(ms);
+  const shot = (n) => page.screenshot({ path: join(shots, `mp-${tag}-${n}.png`) });
+  const vis = (sel) => page.locator(sel).isVisible();
+  const ready = async () => { if (await vis("#mp-handoff")) { await page.click("#btn-mp-ready"); await wait(300); } };
+  async function answer(correct) {
+    const info = await page.evaluate(() => { const c = GeoGame.currentContest; return { type: c.question.type || "text", idx: c.answerIdx, target: c.question.target, n: c.options.length }; });
+    if (info.type === "map") {
+      await page.click("#q-options button"); await wait(300);
+      await page.evaluate(([t, ok]) => GeoGame.onFindTap(ok ? t : (t === "AUS" ? "NZL" : "AUS")), [info.target, correct]); await wait(correct ? 100 : 1600);
+    } else await page.locator("#q-options button").nth(correct ? info.idx : (info.idx + 1) % info.n).click();
+    await wait(250); await page.click("#btn-q-continue"); await wait(500);
+  }
+  async function attack(iso, tier, correct) {
+    await ready();
+    await page.evaluate((i) => GeoMap.onTerritoryClick(i), iso); await wait(250);
+    await page.click('[data-subject="geo"]'); await page.click(`.diff-btn[data-tier="${tier}"]`); await wait(450);
+    await answer(correct);
+  }
+  const own = (iso) => page.evaluate((i) => GeoMulti.state.ownership[i], iso);
+  await page.goto(`http://localhost:${PORT}/`); await wait(1200);
+  await page.evaluate(() => localStorage.clear()); await page.reload(); await wait(1200);
+  await page.click("#btn-multi"); await wait(300);
+  await page.locator("#mp-players input").nth(0).fill("Mia");
+  await page.locator("#mp-players input").nth(1).fill("Leo");
+  await page.click("#btn-mp-start"); await wait(800);
+  for (const iso of ["CAN", "BRA"]) { await page.evaluate((i) => GeoMap.onTerritoryClick(i), iso); await wait(300); }
+  // Seed: Leo holds Argentina; Mia holds Bolivia (borders Argentina) and Spain (far away).
+  await page.evaluate(() => { const o = GeoMulti.state.ownership; o.ARG = 1; o.BOL = 0; o.ESP = 0; GeoMulti.save(); GeoMulti.refresh(); });
+  await attack("ARG", "medium", false);
+  ok(`${tag}: miss on an enemy country starts a strike-back hand-off`, await vis("#mp-handoff") && /Strike-back/.test(await page.locator("#mp-handoff-text").textContent()));
+  await shot("07-strike-handoff");
+  await ready();
+  ok(`${tag}: defender gets a question`, await vis("#question-modal"));
+  await answer(true);
+  ok(`${tag}: strike-back takes the attacker's adjacent country`, (await own("BOL")) === 1 && (await own("ESP")) === 0 && (await own("CAN")) === 0);
+  ok(`${tag}: turn passes from the attacker to the defender`, await page.evaluate(() => GeoMulti.state.turn === 1));
+  // Leo attacks Mia's Spain and misses; reload during the strike-back hand-off.
+  await attack("ESP", "medium", false);
+  ok(`${tag}: strike-back pending is saved`, await page.evaluate(() => JSON.parse(localStorage.getItem("geoConquestMultiV1")).pending.kind === "strike"));
+  await page.reload(); await wait(1200);
+  await page.click("#btn-mp-continue"); await wait(900);
+  ok(`${tag}: reload resumes the strike-back hand-off`, await vis("#mp-handoff") && /Mia/.test(await page.locator("#btn-mp-ready").textContent()));
+  await ready(); await answer(false);
+  ok(`${tag}: failed strike-back changes nothing`, (await own("ESP")) === 0 && (await own("ARG")) === 1 && await page.evaluate(() => GeoMulti.state.turn === 0 && !GeoMulti.state.pending));
+  ok(`${tag}: no page errors (strike-back run)`, errs.length === 0);
+  if (errs.length) console.log(errs);
+  await page.close();
+}
 await run({ width: 1280, height: 800 }, "desktop");
+await runStrike({ width: 1280, height: 800 }, "desktop");
+await runStrike({ width: 390, height: 844 }, "phone");
 await run({ width: 390, height: 844 }, "phone");
 await browser.close(); server.kill();
 console.log(`\n${pass}/${pass + fail} multiplayer e2e checks passed`);

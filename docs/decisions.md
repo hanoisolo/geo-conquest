@@ -14,3 +14,4 @@
 - Multiplayer map is the whole world (68 countries, all unlocked). Choosing a single continent is an option to raise with Don.
 - Strike-back "adjacent" = shares a land border in Natural Earth outlines (56 borders). 17 island/isolated countries have none (e.g. AUS, JPN, KOR, EGY among playable ones) — they fall back to a random attacker country. France borders Brazil/Suriname through French Guiana (true, kept).
 - Start screen keeps the two solo cards and adds a third Multiplayer card rather than a two-step Solo/Multiplayer chooser (one tap fewer, no change for solo players).
+- Vibe retries after a mistral-large-4 stall/loop/error run on GLM 5.3 (`/workspace/tools/vt-glm.sh`, `--model glm-5-3`), per Don (Large 4 is in preview). The stall rule applies to the GLM retry too.

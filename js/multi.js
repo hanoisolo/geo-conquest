@@ -9,8 +9,8 @@
    and the scoreboard.
 
    Segment M1: mode card, setup screen, home flags, banner,
-   scoreboard. Segment M2a: turns, attacks, hand-offs (strike-backs
-   land in M2b; the timer and standings in M3).
+   scoreboard. Segment M2a: turns, attacks, hand-offs. Segment M2b:
+   strike-backs (the timer and standings land in M3).
 
    State shape:
      { v: 1,
@@ -290,10 +290,15 @@ const GeoMulti = {
     );
     GeoMap.reset();
     this.refresh();
-    // Resuming mid-game: hand the device to the player whose turn it is.
+    // Resuming mid-game: hand the device to the player whose turn it is —
+    // or to the defender when a strike-back is still waiting.
     if (this.state.phase === "turn") {
-      const p = this.state.players[this.state.turn];
-      this.showHandoff(this.state.turn, `Pass to ${p.name}`, () => this.refresh());
+      if (this.state.pending && this.state.pending.kind === "strike") {
+        this.strikeHandoff();
+      } else {
+        const p = this.state.players[this.state.turn];
+        this.showHandoff(this.state.turn, `Pass to ${p.name}`, () => this.refresh());
+      }
     }
   },
 
@@ -423,6 +428,11 @@ const GeoMulti = {
   /** The contest hook (GeoGame.contestHook) lands here with the result. */
   onContestDone(c) {
     const s = this.state;
+    // A strike-back contest resolves through finishStrike, not the attack flow.
+    if (s && s.pending && s.pending.kind === "strike") {
+      this.finishStrike(c);
+      return;
+    }
     const atk = this._attack;
     if (!s || !atk) return;
     const attacker = s.players[atk.attacker];
@@ -449,9 +459,88 @@ const GeoMulti = {
     }
   },
 
-  /** M2b replaces this stub with the defender's strike-back. */
+  /**
+   * The attacker missed an enemy country: the defender earns a
+   * strike-back — a question of the same subject and tier, answered
+   * right after the hand-off (startStrike / finishStrike).
+   */
   onEnemyMiss(c) {
-    this.endTurn();
+    const a = this._attack;
+    const s = this.state;
+    s.pending = {
+      kind: "strike",
+      iso3: a.iso3,
+      attacker: a.attacker,
+      defender: a.defender,
+      tier: c.tier,
+      subject: c.subject || "geo",
+    };
+    this.save();
+    this.strikeHandoff();
+  },
+
+  /** Hand the device to the defender for their strike-back question. */
+  strikeHandoff() {
+    const p = this.state.pending;
+    const defName = this.state.players[p.defender].name;
+    const atkName = this.state.players[p.attacker].name;
+    this.showHandoff(
+      p.defender,
+      "🛡️ Strike-back! " + defName + ", answer right to grab one of " + atkName + "'s countries!",
+      () => this.startStrike()
+    );
+  },
+
+  /** The defender answers their strike-back question (same subject & tier). */
+  startStrike() {
+    const p = this.state.pending;
+    this.playerView(p.defender);
+    GeoGame.startContest(p.iso3, p.tier, p.subject);
+  },
+
+  /**
+   * The country a successful strike-back takes from the attacker: one
+   * of their in-scope countries, preferring ones adjacent to the
+   * contested country; their home only when it is their last country.
+   */
+  strikePrize(p) {
+    const s = this.state;
+    const home = s.players[p.attacker].home;
+    const mine = Object.keys(s.ownership).filter(
+      (k) => s.ownership[k] === p.attacker && this.inScope(k)
+    );
+    const neighbours = this.adjacency[p.iso3] || [];
+    const adjacent = mine.filter((k) => k !== home && neighbours.includes(k));
+    const nonHome = mine.filter((k) => k !== home);
+    const group = adjacent.length ? adjacent : nonHome.length ? nonHome : mine;
+    if (!group.length) return null;
+    return group[Math.floor(Math.random() * group.length)];
+  },
+
+  /** Resolve the defender's strike-back, then end the attacker's turn. */
+  finishStrike(c) {
+    const s = this.state;
+    const p = s.pending;
+    const defender = s.players[p.defender];
+    const attacker = s.players[p.attacker];
+    // Math resets the geo streak; geography extends it (per player).
+    if (c.question.type === "math") defender.geoSinceMath = 0;
+    else defender.geoSinceMath = (defender.geoSinceMath || 0) + 1;
+    const prize = c.wasCorrect ? this.strikePrize(p) : null;
+    if (prize) {
+      s.ownership[prize] = p.defender;
+      defender.points += 10;
+      if (attacker.home === prize) attacker.home = null;
+      GeoSound.steal();
+      GeoMap.flash(prize);
+      GeoGame.toast(`🛡️ ${defender.name} struck back and took ${GeoGame.nameOf[prize]} from ${attacker.name}! +10 pts`);
+    } else {
+      GeoGame.toast("🛡️ Strike-back missed — nothing changes.");
+    }
+    this.state.pending = null;
+    this._attack = null;
+    this.checkEliminated();
+    this.endTurn(); // s.turn is still the attacker — the turn passes from them
   },
 
   /** Players with no countries left are out of the game. */

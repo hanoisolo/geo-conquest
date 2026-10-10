@@ -1,0 +1,257 @@
+[
+ {
+  "id": "XF1-E-001",
+  "continent": "North America",
+  "territory": "DOM",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which small brown bird is the national bird of the Dominican Republic and lives only on the island of Hispaniola?",
+  "options": [
+   "The palmchat",
+   "The quetzal",
+   "The toucan",
+   "The hummingbird"
+  ],
+  "answer": 0,
+  "explain": "The palmchat (cigua palmera) is the Dominican Republic's national bird and is found nowhere else in the world."
+ },
+ {
+  "id": "XF1-E-002",
+  "continent": "North America",
+  "territory": "DOM",
+  "tier": "easy",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Santo Domingo is home to the oldest cathedral in the Americas. What is it called?",
+  "options": [
+   "The Cathedral of Santa María la Menor",
+   "The Basilica of Guadalupe",
+   "St. Peter's Basilica",
+   "Notre-Dame de Paris"
+  ],
+  "answer": 0,
+  "explain": "The Cathedral of Santa María la Menor, begun in 1514, is the oldest cathedral in the Americas."
+ },
+ {
+  "id": "XF1-E-003",
+  "continent": "North America",
+  "territory": "HTI",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Griot, a beloved Haitian dish of marinated fried meat, is made from which meat?",
+  "options": [
+   "Pork",
+   "Chicken",
+   "Beef",
+   "Goat"
+  ],
+  "answer": 0,
+  "explain": "Griot is Haiti's famous dish of twice-cooked fried pork, often served with pikliz, a spicy slaw."
+ },
+ {
+  "id": "XF1-E-004",
+  "continent": "North America",
+  "territory": "HTI",
+  "tier": "easy",
+  "type": "text",
+  "category": "landmarks",
+  "q": "On Haiti's coat of arms, a royal palm tree is topped by which red symbol of freedom?",
+  "options": [
+   "A liberty cap",
+   "A crown",
+   "A star",
+   "A torch"
+  ],
+  "answer": 0,
+  "explain": "The red Phrygian cap, a classic symbol of freedom, sits atop the palm tree on Haiti's coat of arms."
+ },
+ {
+  "id": "XF1-M-001",
+  "continent": "North America",
+  "territory": "GTM",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which green-and-red bird, sacred to the ancient Maya, is Guatemala's national bird and gives its name to the country's currency?",
+  "options": [
+   "The resplendent quetzal",
+   "The toucan",
+   "The macaw",
+   "The hummingbird"
+  ],
+  "answer": 0,
+  "explain": "The resplendent quetzal, prized by the Maya for its long green tail feathers, is Guatemala's national bird and names its currency, the quetzal."
+ },
+ {
+  "id": "XF1-M-002",
+  "continent": "North America",
+  "territory": "HTI",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "The island of Tortuga (Île de la Tortue), off Haiti's north coast, was once a famous hideout for whom?",
+  "options": [
+   "Pirates",
+   "Monks",
+   "Fishermen",
+   "Traders"
+  ],
+  "answer": 0,
+  "explain": "Tortuga was a notorious base for Caribbean pirates and buccaneers in the 1600s."
+ },
+ {
+  "id": "XF1-M-003",
+  "continent": "North America",
+  "territory": "HND",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "The Mosquito Coast, along Honduras's Caribbean shore, is named after which indigenous people?",
+  "options": [
+   "The Miskito",
+   "The Maya",
+   "The Lenca",
+   "The Garifuna"
+  ],
+  "answer": 0,
+  "explain": "The Mosquito Coast takes its name from the Miskito people who live along that Caribbean shore."
+ },
+ {
+  "id": "XF1-H-002",
+  "continent": "North America",
+  "territory": "CUB",
+  "tier": "hard",
+  "type": "text",
+  "category": "cities",
+  "q": "Which Cuban city on the southeastern coast is famous for its carnival, its castle El Morro, and its music?",
+  "options": [
+   "Santiago de Cuba",
+   "Camagüey",
+   "Holguín",
+   "Bayamo"
+  ],
+  "answer": 0,
+  "explain": "Santiago de Cuba, on Cuba's southeastern coast, is famous for its carnival, the Castillo del Morro, and its rich musical heritage."
+ },
+ {
+  "id": "XF1-H-004",
+  "continent": "North America",
+  "territory": "PAN",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "Volcán Barú, Panama's highest peak, stands in the west of the country, not far from the border with which country?",
+  "options": [
+   "Costa Rica",
+   "Colombia",
+   "Nicaragua",
+   "Honduras"
+  ],
+  "answer": 0,
+  "explain": "Volcán Barú, an active volcano in the Talamanca range, marks part of the Panama–Costa Rica border."
+ },
+ {
+  "id": "XF1-H-005",
+  "continent": "North America",
+  "territory": "CRI",
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "Which river forms much of Costa Rica's border with Nicaragua?",
+  "options": [
+   "The San Juan River",
+   "The Coco River",
+   "The Usumacinta River",
+   "The Lempa River"
+  ],
+  "answer": 0,
+  "explain": "The San Juan River runs from Lake Nicaragua to the Caribbean Sea, forming much of the Costa Rica–Nicaragua border."
+ },
+ {
+  "id": "XF1-H-006",
+  "continent": "North America",
+  "territory": "CRI",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "The Talamanca mountain range, home to Costa Rica's highest peaks, stretches across the border into which neighbouring country?",
+  "options": [
+   "Panama",
+   "Nicaragua",
+   "Colombia",
+   "Honduras"
+  ],
+  "answer": 0,
+  "explain": "The Cordillera de Talamanca stretches along Costa Rica's southern border with Panama."
+ },
+ {
+  "id": "XF1-H-007",
+  "continent": "North America",
+  "territory": "DOM",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "Pico Duarte, the highest peak in the Caribbean, is part of which mountain range on Hispaniola?",
+  "options": [
+   "The Cordillera Central",
+   "The Sierra de Bahoruco",
+   "The Sierra de Neiba",
+   "The Massif de la Selle"
+  ],
+  "answer": 0,
+  "explain": "Pico Duarte (3,098 m) lies in the Cordillera Central, the great backbone of the island of Hispaniola."
+ },
+ {
+  "id": "XF1-H-008",
+  "continent": "North America",
+  "territory": "DOM",
+  "tier": "hard",
+  "type": "text",
+  "category": "culture",
+  "q": "What is the currency of the Dominican Republic?",
+  "options": [
+   "The peso",
+   "The dollar",
+   "The euro",
+   "The gourde"
+  ],
+  "answer": 0,
+  "explain": "The Dominican Republic uses the Dominican peso."
+ },
+ {
+  "id": "XF1-H-010",
+  "continent": "North America",
+  "territory": "HTI",
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "The Artibonite, the longest river on the island of Hispaniola, flows into which gulf?",
+  "options": [
+   "The Gulf of Gonâve",
+   "The Gulf of Mexico",
+   "The Caribbean Sea",
+   "The Gulf of Panama"
+  ],
+  "answer": 0,
+  "explain": "The Artibonite River empties into the Gulf of Gonâve on Haiti's west coast."
+ },
+ {
+  "id": "XF1-H-011",
+  "continent": "North America",
+  "territory": "HTI",
+  "tier": "hard",
+  "type": "text",
+  "category": "culture",
+  "q": "What is the name of Haiti's currency?",
+  "options": [
+   "The gourde",
+   "The peso",
+   "The colón",
+   "The quetzal"
+  ],
+  "answer": 0,
+  "explain": "Haiti uses the gourde. Its neighbour on Hispaniola, the Dominican Republic, uses the peso."
+ }
+]

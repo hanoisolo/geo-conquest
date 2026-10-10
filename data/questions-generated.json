@@ -1,0 +1,6190 @@
+[
+{
+"id": "CAP-F-CAN",
+"continent": "North America",
+"territory": "CAN",
+"tier": "easy",
+"q": "What is the capital city of Canada?",
+"options": [
+"Washington, D.C.",
+"Kingston",
+"Ottawa",
+"Guatemala City"
+],
+"answer": 2,
+"explain": "Ottawa is the capital of Canada.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-CAN",
+"continent": "North America",
+"territory": "CAN",
+"tier": "easy",
+"q": "Ottawa is the capital of which country?",
+"options": [
+"Guatemala",
+"Dominican Republic",
+"Canada",
+"Haiti"
+],
+"answer": 2,
+"explain": "Ottawa is the capital of Canada.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-CAN",
+"continent": "North America",
+"territory": "CAN",
+"tier": "easy",
+"q": "Which country does this flag belong to?",
+"options": [
+"Dominican Republic",
+"Canada",
+"Cuba",
+"Mexico"
+],
+"answer": 1,
+"explain": "That's the flag of Canada!",
+"type": "flag",
+"image": "assets/flags/CAN.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-CAN",
+"continent": "North America",
+"territory": "CAN",
+"tier": "easy",
+"q": "Which of these is the flag of Canada?",
+"options": [
+"Mexico",
+"Cuba",
+"Dominican Republic",
+"Canada"
+],
+"answer": 3,
+"explain": "That's the flag of Canada!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"MEX",
+"CUB",
+"DOM",
+"CAN"
+]
+},
+{
+"id": "MAP-CAN",
+"continent": "North America",
+"territory": "CAN",
+"tier": "easy",
+"type": "map",
+"category": "map",
+"target": "CAN",
+"answerIsTerritory": true,
+"q": "Find Canada on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Canada is in North America. Its capital is Ottawa."
+},
+{
+"id": "CAP-F-USA",
+"continent": "North America",
+"territory": "USA",
+"tier": "easy",
+"q": "What is the capital city of the United States?",
+"options": [
+"Ottawa",
+"San José",
+"San Salvador",
+"Washington, D.C."
+],
+"answer": 3,
+"explain": "Washington, D.C. is the capital of the United States.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-USA",
+"continent": "North America",
+"territory": "USA",
+"tier": "easy",
+"q": "Washington, D.C. is the capital of which country?",
+"options": [
+"Dominican Republic",
+"Honduras",
+"United States",
+"El Salvador"
+],
+"answer": 2,
+"explain": "Washington, D.C. is the capital of the United States.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-USA",
+"continent": "North America",
+"territory": "USA",
+"tier": "easy",
+"q": "Which country does this flag belong to?",
+"options": [
+"United States",
+"Jamaica",
+"Mexico",
+"Canada"
+],
+"answer": 0,
+"explain": "That's the flag of the United States!",
+"type": "flag",
+"image": "assets/flags/USA.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-USA",
+"continent": "North America",
+"territory": "USA",
+"tier": "easy",
+"q": "Which of these is the flag of the United States?",
+"options": [
+"United States",
+"Mexico",
+"Costa Rica",
+"Honduras"
+],
+"answer": 0,
+"explain": "That's the flag of the United States!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"USA",
+"MEX",
+"CRI",
+"HND"
+]
+},
+{
+"id": "MAP-USA",
+"continent": "North America",
+"territory": "USA",
+"tier": "easy",
+"type": "map",
+"category": "map",
+"target": "USA",
+"answerIsTerritory": true,
+"q": "Find the United States on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "The United States is in North America. Its capital is Washington, D.C.."
+},
+{
+"id": "CAP-F-MEX",
+"continent": "North America",
+"territory": "MEX",
+"tier": "easy",
+"q": "What is the capital city of Mexico?",
+"options": [
+"Washington, D.C.",
+"Santo Domingo",
+"Mexico City",
+"San Salvador"
+],
+"answer": 2,
+"explain": "Mexico City is the capital of Mexico.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-MEX",
+"continent": "North America",
+"territory": "MEX",
+"tier": "easy",
+"q": "Mexico City is the capital of which country?",
+"options": [
+"Jamaica",
+"Haiti",
+"Costa Rica",
+"Mexico"
+],
+"answer": 3,
+"explain": "Mexico City is the capital of Mexico.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-MEX",
+"continent": "North America",
+"territory": "MEX",
+"tier": "easy",
+"q": "Which country does this flag belong to?",
+"options": [
+"Mexico",
+"Jamaica",
+"Guatemala",
+"Cuba"
+],
+"answer": 0,
+"explain": "That's the flag of Mexico!",
+"type": "flag",
+"image": "assets/flags/MEX.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-MEX",
+"continent": "North America",
+"territory": "MEX",
+"tier": "easy",
+"q": "Which of these is the flag of Mexico?",
+"options": [
+"Cuba",
+"El Salvador",
+"Mexico",
+"Honduras"
+],
+"answer": 2,
+"explain": "That's the flag of Mexico!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"CUB",
+"SLV",
+"MEX",
+"HND"
+]
+},
+{
+"id": "MAP-MEX",
+"continent": "North America",
+"territory": "MEX",
+"tier": "easy",
+"type": "map",
+"category": "map",
+"target": "MEX",
+"answerIsTerritory": true,
+"q": "Find Mexico on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Mexico is in North America. Its capital is Mexico City."
+},
+{
+"id": "CAP-F-GTM",
+"continent": "North America",
+"territory": "GTM",
+"tier": "medium",
+"q": "What is the capital city of Guatemala?",
+"options": [
+"Kingston",
+"Ottawa",
+"Guatemala City",
+"Port-au-Prince"
+],
+"answer": 2,
+"explain": "Guatemala City is the capital of Guatemala.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-GTM",
+"continent": "North America",
+"territory": "GTM",
+"tier": "medium",
+"q": "Guatemala City is the capital of which country?",
+"options": [
+"Guatemala",
+"Cuba",
+"El Salvador",
+"Honduras"
+],
+"answer": 0,
+"explain": "Guatemala City is the capital of Guatemala.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-GTM",
+"continent": "North America",
+"territory": "GTM",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"Guatemala",
+"Jamaica",
+"Mexico",
+"Canada"
+],
+"answer": 0,
+"explain": "That's the flag of Guatemala!",
+"type": "flag",
+"image": "assets/flags/GTM.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-GTM",
+"continent": "North America",
+"territory": "GTM",
+"tier": "easy",
+"q": "Which of these is the flag of Guatemala?",
+"options": [
+"Costa Rica",
+"Mexico",
+"Jamaica",
+"Guatemala"
+],
+"answer": 3,
+"explain": "That's the flag of Guatemala!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"CRI",
+"MEX",
+"JAM",
+"GTM"
+]
+},
+{
+"id": "MAP-GTM",
+"continent": "North America",
+"territory": "GTM",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "GTM",
+"answerIsTerritory": true,
+"q": "Find Guatemala on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Guatemala is in North America. Its capital is Guatemala City."
+},
+{
+"id": "CAP-F-CUB",
+"continent": "North America",
+"territory": "CUB",
+"tier": "medium",
+"q": "What is the capital city of Cuba?",
+"options": [
+"Mexico City",
+"Havana",
+"Port-au-Prince",
+"Tegucigalpa"
+],
+"answer": 1,
+"explain": "Havana is the capital of Cuba.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-CUB",
+"continent": "North America",
+"territory": "CUB",
+"tier": "medium",
+"q": "Havana is the capital of which country?",
+"options": [
+"Cuba",
+"United States",
+"Costa Rica",
+"Honduras"
+],
+"answer": 0,
+"explain": "Havana is the capital of Cuba.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-CUB",
+"continent": "North America",
+"territory": "CUB",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"Costa Rica",
+"Honduras",
+"Cuba",
+"Canada"
+],
+"answer": 2,
+"explain": "That's the flag of Cuba!",
+"type": "flag",
+"image": "assets/flags/CUB.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-CUB",
+"continent": "North America",
+"territory": "CUB",
+"tier": "easy",
+"q": "Which of these is the flag of Cuba?",
+"options": [
+"Panama",
+"Cuba",
+"Honduras",
+"Jamaica"
+],
+"answer": 1,
+"explain": "That's the flag of Cuba!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"PAN",
+"CUB",
+"HND",
+"JAM"
+]
+},
+{
+"id": "MAP-CUB",
+"continent": "North America",
+"territory": "CUB",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "CUB",
+"answerIsTerritory": true,
+"q": "Find Cuba on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Cuba is in North America. Its capital is Havana."
+},
+{
+"id": "CAP-F-PAN",
+"continent": "North America",
+"territory": "PAN",
+"tier": "medium",
+"q": "What is the capital city of Panama?",
+"options": [
+"Ottawa",
+"Santo Domingo",
+"San Salvador",
+"Panama City"
+],
+"answer": 3,
+"explain": "Panama City is the capital of Panama.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-PAN",
+"continent": "North America",
+"territory": "PAN",
+"tier": "medium",
+"q": "Panama City is the capital of which country?",
+"options": [
+"Guatemala",
+"Panama",
+"Costa Rica",
+"Cuba"
+],
+"answer": 1,
+"explain": "Panama City is the capital of Panama.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-PAN",
+"continent": "North America",
+"territory": "PAN",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"Dominican Republic",
+"Jamaica",
+"United States",
+"Panama"
+],
+"answer": 3,
+"explain": "That's the flag of Panama!",
+"type": "flag",
+"image": "assets/flags/PAN.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-PAN",
+"continent": "North America",
+"territory": "PAN",
+"tier": "easy",
+"q": "Which of these is the flag of Panama?",
+"options": [
+"Dominican Republic",
+"El Salvador",
+"Jamaica",
+"Panama"
+],
+"answer": 3,
+"explain": "That's the flag of Panama!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"DOM",
+"SLV",
+"JAM",
+"PAN"
+]
+},
+{
+"id": "MAP-PAN",
+"continent": "North America",
+"territory": "PAN",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "PAN",
+"answerIsTerritory": true,
+"q": "Find Panama on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Panama is in North America. Its capital is Panama City."
+},
+{
+"id": "CAP-F-CRI",
+"continent": "North America",
+"territory": "CRI",
+"tier": "medium",
+"q": "What is the capital city of Costa Rica?",
+"options": [
+"Washington, D.C.",
+"Port-au-Prince",
+"San José",
+"San Salvador"
+],
+"answer": 2,
+"explain": "San José is the capital of Costa Rica.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-CRI",
+"continent": "North America",
+"territory": "CRI",
+"tier": "hard",
+"q": "San José is the capital of which country?",
+"options": [
+"Dominican Republic",
+"United States",
+"Costa Rica",
+"Jamaica"
+],
+"answer": 2,
+"explain": "San José is the capital of Costa Rica.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-CRI",
+"continent": "North America",
+"territory": "CRI",
+"tier": "hard",
+"q": "Which country does this flag belong to?",
+"options": [
+"Panama",
+"Guatemala",
+"Jamaica",
+"Costa Rica"
+],
+"answer": 3,
+"explain": "That's the flag of Costa Rica!",
+"type": "flag",
+"image": "assets/flags/CRI.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-CRI",
+"continent": "North America",
+"territory": "CRI",
+"tier": "medium",
+"q": "Which of these is the flag of Costa Rica?",
+"options": [
+"Mexico",
+"Costa Rica",
+"El Salvador",
+"Canada"
+],
+"answer": 1,
+"explain": "That's the flag of Costa Rica!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"MEX",
+"CRI",
+"SLV",
+"CAN"
+]
+},
+{
+"id": "MAP-CRI",
+"continent": "North America",
+"territory": "CRI",
+"tier": "hard",
+"type": "map",
+"category": "map",
+"target": "CRI",
+"answerIsTerritory": true,
+"q": "Find Costa Rica on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Costa Rica is in North America. Its capital is San José."
+},
+{
+"id": "CAP-F-JAM",
+"continent": "North America",
+"territory": "JAM",
+"tier": "medium",
+"q": "What is the capital city of Jamaica?",
+"options": [
+"San José",
+"Port-au-Prince",
+"Washington, D.C.",
+"Kingston"
+],
+"answer": 3,
+"explain": "Kingston is the capital of Jamaica.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-JAM",
+"continent": "North America",
+"territory": "JAM",
+"tier": "medium",
+"q": "Kingston is the capital of which country?",
+"options": [
+"Guatemala",
+"Jamaica",
+"Costa Rica",
+"United States"
+],
+"answer": 1,
+"explain": "Kingston is the capital of Jamaica.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-JAM",
+"continent": "North America",
+"territory": "JAM",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"Jamaica",
+"Cuba",
+"El Salvador",
+"Canada"
+],
+"answer": 0,
+"explain": "That's the flag of Jamaica!",
+"type": "flag",
+"image": "assets/flags/JAM.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-JAM",
+"continent": "North America",
+"territory": "JAM",
+"tier": "easy",
+"q": "Which of these is the flag of Jamaica?",
+"options": [
+"Guatemala",
+"United States",
+"Jamaica",
+"Canada"
+],
+"answer": 2,
+"explain": "That's the flag of Jamaica!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"GTM",
+"USA",
+"JAM",
+"CAN"
+]
+},
+{
+"id": "MAP-JAM",
+"continent": "North America",
+"territory": "JAM",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "JAM",
+"answerIsTerritory": true,
+"q": "Find Jamaica on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Jamaica is in North America. Its capital is Kingston."
+},
+{
+"id": "CAP-F-DOM",
+"continent": "North America",
+"territory": "DOM",
+"tier": "medium",
+"q": "What is the capital city of the Dominican Republic?",
+"options": [
+"Guatemala City",
+"Havana",
+"Santo Domingo",
+"Mexico City"
+],
+"answer": 2,
+"explain": "Santo Domingo is the capital of the Dominican Republic.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-DOM",
+"continent": "North America",
+"territory": "DOM",
+"tier": "hard",
+"q": "Santo Domingo is the capital of which country?",
+"options": [
+"United States",
+"Panama",
+"Mexico",
+"Dominican Republic"
+],
+"answer": 3,
+"explain": "Santo Domingo is the capital of the Dominican Republic.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-DOM",
+"continent": "North America",
+"territory": "DOM",
+"tier": "hard",
+"q": "Which country does this flag belong to?",
+"options": [
+"Dominican Republic",
+"El Salvador",
+"Honduras",
+"Guatemala"
+],
+"answer": 0,
+"explain": "That's the flag of the Dominican Republic!",
+"type": "flag",
+"image": "assets/flags/DOM.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-DOM",
+"continent": "North America",
+"territory": "DOM",
+"tier": "medium",
+"q": "Which of these is the flag of the Dominican Republic?",
+"options": [
+"United States",
+"Dominican Republic",
+"Honduras",
+"Cuba"
+],
+"answer": 1,
+"explain": "That's the flag of the Dominican Republic!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"USA",
+"DOM",
+"HND",
+"CUB"
+]
+},
+{
+"id": "MAP-DOM",
+"continent": "North America",
+"territory": "DOM",
+"tier": "hard",
+"type": "map",
+"category": "map",
+"target": "DOM",
+"answerIsTerritory": true,
+"q": "Find the Dominican Republic on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "The Dominican Republic is in North America. Its capital is Santo Domingo."
+},
+{
+"id": "CAP-F-HTI",
+"continent": "North America",
+"territory": "HTI",
+"tier": "medium",
+"q": "What is the capital city of Haiti?",
+"options": [
+"San José",
+"Port-au-Prince",
+"Kingston",
+"Guatemala City"
+],
+"answer": 1,
+"explain": "Port-au-Prince is the capital of Haiti.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-HTI",
+"continent": "North America",
+"territory": "HTI",
+"tier": "hard",
+"q": "Port-au-Prince is the capital of which country?",
+"options": [
+"Haiti",
+"Cuba",
+"United States",
+"Panama"
+],
+"answer": 0,
+"explain": "Port-au-Prince is the capital of Haiti.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-HTI",
+"continent": "North America",
+"territory": "HTI",
+"tier": "hard",
+"q": "Which country does this flag belong to?",
+"options": [
+"Dominican Republic",
+"Costa Rica",
+"Haiti",
+"Mexico"
+],
+"answer": 2,
+"explain": "That's the flag of Haiti!",
+"type": "flag",
+"image": "assets/flags/HTI.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-HTI",
+"continent": "North America",
+"territory": "HTI",
+"tier": "medium",
+"q": "Which of these is the flag of Haiti?",
+"options": [
+"Haiti",
+"Guatemala",
+"Canada",
+"Mexico"
+],
+"answer": 0,
+"explain": "That's the flag of Haiti!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"HTI",
+"GTM",
+"CAN",
+"MEX"
+]
+},
+{
+"id": "MAP-HTI",
+"continent": "North America",
+"territory": "HTI",
+"tier": "hard",
+"type": "map",
+"category": "map",
+"target": "HTI",
+"answerIsTerritory": true,
+"q": "Find Haiti on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Haiti is in North America. Its capital is Port-au-Prince."
+},
+{
+"id": "CAP-F-HND",
+"continent": "North America",
+"territory": "HND",
+"tier": "medium",
+"q": "What is the capital city of Honduras?",
+"options": [
+"Ottawa",
+"Port-au-Prince",
+"Tegucigalpa",
+"Havana"
+],
+"answer": 2,
+"explain": "Tegucigalpa is the capital of Honduras.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-HND",
+"continent": "North America",
+"territory": "HND",
+"tier": "hard",
+"q": "Tegucigalpa is the capital of which country?",
+"options": [
+"United States",
+"Cuba",
+"Honduras",
+"Guatemala"
+],
+"answer": 2,
+"explain": "Tegucigalpa is the capital of Honduras.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-HND",
+"continent": "North America",
+"territory": "HND",
+"tier": "hard",
+"q": "Which country does this flag belong to?",
+"options": [
+"Jamaica",
+"Canada",
+"Honduras",
+"Haiti"
+],
+"answer": 2,
+"explain": "That's the flag of Honduras!",
+"type": "flag",
+"image": "assets/flags/HND.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-HND",
+"continent": "North America",
+"territory": "HND",
+"tier": "medium",
+"q": "Which of these is the flag of Honduras?",
+"options": [
+"Haiti",
+"Canada",
+"Honduras",
+"Mexico"
+],
+"answer": 2,
+"explain": "That's the flag of Honduras!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"HTI",
+"CAN",
+"HND",
+"MEX"
+]
+},
+{
+"id": "MAP-HND",
+"continent": "North America",
+"territory": "HND",
+"tier": "hard",
+"type": "map",
+"category": "map",
+"target": "HND",
+"answerIsTerritory": true,
+"q": "Find Honduras on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Honduras is in North America. Its capital is Tegucigalpa."
+},
+{
+"id": "CAP-F-SLV",
+"continent": "North America",
+"territory": "SLV",
+"tier": "medium",
+"q": "What is the capital city of El Salvador?",
+"options": [
+"Port-au-Prince",
+"San José",
+"San Salvador",
+"Panama City"
+],
+"answer": 2,
+"explain": "San Salvador is the capital of El Salvador.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-SLV",
+"continent": "North America",
+"territory": "SLV",
+"tier": "hard",
+"q": "San Salvador is the capital of which country?",
+"options": [
+"Costa Rica",
+"Dominican Republic",
+"Jamaica",
+"El Salvador"
+],
+"answer": 3,
+"explain": "San Salvador is the capital of El Salvador.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-SLV",
+"continent": "North America",
+"territory": "SLV",
+"tier": "hard",
+"q": "Which country does this flag belong to?",
+"options": [
+"Costa Rica",
+"Cuba",
+"El Salvador",
+"Haiti"
+],
+"answer": 2,
+"explain": "That's the flag of El Salvador!",
+"type": "flag",
+"image": "assets/flags/SLV.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-SLV",
+"continent": "North America",
+"territory": "SLV",
+"tier": "medium",
+"q": "Which of these is the flag of El Salvador?",
+"options": [
+"El Salvador",
+"Cuba",
+"Panama",
+"United States"
+],
+"answer": 0,
+"explain": "That's the flag of El Salvador!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"SLV",
+"CUB",
+"PAN",
+"USA"
+]
+},
+{
+"id": "MAP-SLV",
+"continent": "North America",
+"territory": "SLV",
+"tier": "hard",
+"type": "map",
+"category": "map",
+"target": "SLV",
+"answerIsTerritory": true,
+"q": "Find El Salvador on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "El Salvador is in North America. Its capital is San Salvador."
+},
+{
+"id": "CAP-F-BRA",
+"continent": "South America",
+"territory": "BRA",
+"tier": "easy",
+"q": "What is the capital city of Brazil?",
+"options": [
+"Santiago",
+"Buenos Aires",
+"Brasília",
+"Montevideo"
+],
+"answer": 2,
+"explain": "Brasília is the capital of Brazil. Many people guess Rio de Janeiro, but Brasília has been the capital since 1960.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-BRA",
+"continent": "South America",
+"territory": "BRA",
+"tier": "easy",
+"q": "Brasília is the capital of which country?",
+"options": [
+"Argentina",
+"Chile",
+"Suriname",
+"Brazil"
+],
+"answer": 3,
+"explain": "Brasília is the capital of Brazil. Many people guess Rio de Janeiro, but Brasília has been the capital since 1960.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-BRA",
+"continent": "South America",
+"territory": "BRA",
+"tier": "easy",
+"q": "Which country does this flag belong to?",
+"options": [
+"Chile",
+"Brazil",
+"Ecuador",
+"Bolivia"
+],
+"answer": 1,
+"explain": "That's the flag of Brazil!",
+"type": "flag",
+"image": "assets/flags/BRA.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-BRA",
+"continent": "South America",
+"territory": "BRA",
+"tier": "easy",
+"q": "Which of these is the flag of Brazil?",
+"options": [
+"Argentina",
+"Guyana",
+"Brazil",
+"Suriname"
+],
+"answer": 2,
+"explain": "That's the flag of Brazil!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"ARG",
+"GUY",
+"BRA",
+"SUR"
+]
+},
+{
+"id": "MAP-BRA",
+"continent": "South America",
+"territory": "BRA",
+"tier": "easy",
+"type": "map",
+"category": "map",
+"target": "BRA",
+"answerIsTerritory": true,
+"q": "Find Brazil on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Brazil is in South America. Its capital is Brasília."
+},
+{
+"id": "CAP-F-ARG",
+"continent": "South America",
+"territory": "ARG",
+"tier": "easy",
+"q": "What is the capital city of Argentina?",
+"options": [
+"Buenos Aires",
+"Montevideo",
+"Brasília",
+"Quito"
+],
+"answer": 0,
+"explain": "Buenos Aires is the capital of Argentina.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-ARG",
+"continent": "South America",
+"territory": "ARG",
+"tier": "easy",
+"q": "Buenos Aires is the capital of which country?",
+"options": [
+"Peru",
+"Argentina",
+"Brazil",
+"Paraguay"
+],
+"answer": 1,
+"explain": "Buenos Aires is the capital of Argentina.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-ARG",
+"continent": "South America",
+"territory": "ARG",
+"tier": "easy",
+"q": "Which country does this flag belong to?",
+"options": [
+"Paraguay",
+"Argentina",
+"Colombia",
+"Guyana"
+],
+"answer": 1,
+"explain": "That's the flag of Argentina!",
+"type": "flag",
+"image": "assets/flags/ARG.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-ARG",
+"continent": "South America",
+"territory": "ARG",
+"tier": "easy",
+"q": "Which of these is the flag of Argentina?",
+"options": [
+"Paraguay",
+"Chile",
+"Argentina",
+"Guyana"
+],
+"answer": 2,
+"explain": "That's the flag of Argentina!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"PRY",
+"CHL",
+"ARG",
+"GUY"
+]
+},
+{
+"id": "MAP-ARG",
+"continent": "South America",
+"territory": "ARG",
+"tier": "easy",
+"type": "map",
+"category": "map",
+"target": "ARG",
+"answerIsTerritory": true,
+"q": "Find Argentina on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Argentina is in South America. Its capital is Buenos Aires."
+},
+{
+"id": "CAP-F-CHL",
+"continent": "South America",
+"territory": "CHL",
+"tier": "medium",
+"q": "What is the capital city of Chile?",
+"options": [
+"Bogotá",
+"Quito",
+"Caracas",
+"Santiago"
+],
+"answer": 3,
+"explain": "Santiago is the capital of Chile.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-CHL",
+"continent": "South America",
+"territory": "CHL",
+"tier": "medium",
+"q": "Santiago is the capital of which country?",
+"options": [
+"Uruguay",
+"Peru",
+"Chile",
+"Colombia"
+],
+"answer": 2,
+"explain": "Santiago is the capital of Chile.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-CHL",
+"continent": "South America",
+"territory": "CHL",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"Chile",
+"Peru",
+"Bolivia",
+"Brazil"
+],
+"answer": 0,
+"explain": "That's the flag of Chile!",
+"type": "flag",
+"image": "assets/flags/CHL.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-CHL",
+"continent": "South America",
+"territory": "CHL",
+"tier": "easy",
+"q": "Which of these is the flag of Chile?",
+"options": [
+"Colombia",
+"Venezuela",
+"Chile",
+"Peru"
+],
+"answer": 2,
+"explain": "That's the flag of Chile!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"COL",
+"VEN",
+"CHL",
+"PER"
+]
+},
+{
+"id": "MAP-CHL",
+"continent": "South America",
+"territory": "CHL",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "CHL",
+"answerIsTerritory": true,
+"q": "Find Chile on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Chile is in South America. Its capital is Santiago."
+},
+{
+"id": "CAP-F-PER",
+"continent": "South America",
+"territory": "PER",
+"tier": "medium",
+"q": "What is the capital city of Peru?",
+"options": [
+"Montevideo",
+"Asunción",
+"Lima",
+"Quito"
+],
+"answer": 2,
+"explain": "Lima is the capital of Peru.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-PER",
+"continent": "South America",
+"territory": "PER",
+"tier": "medium",
+"q": "Lima is the capital of which country?",
+"options": [
+"Peru",
+"Chile",
+"Bolivia",
+"Suriname"
+],
+"answer": 0,
+"explain": "Lima is the capital of Peru.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-PER",
+"continent": "South America",
+"territory": "PER",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"Argentina",
+"Paraguay",
+"Venezuela",
+"Peru"
+],
+"answer": 3,
+"explain": "That's the flag of Peru!",
+"type": "flag",
+"image": "assets/flags/PER.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-PER",
+"continent": "South America",
+"territory": "PER",
+"tier": "easy",
+"q": "Which of these is the flag of Peru?",
+"options": [
+"Ecuador",
+"Peru",
+"Chile",
+"Paraguay"
+],
+"answer": 1,
+"explain": "That's the flag of Peru!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"ECU",
+"PER",
+"CHL",
+"PRY"
+]
+},
+{
+"id": "MAP-PER",
+"continent": "South America",
+"territory": "PER",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "PER",
+"answerIsTerritory": true,
+"q": "Find Peru on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Peru is in South America. Its capital is Lima."
+},
+{
+"id": "CAP-F-COL",
+"continent": "South America",
+"territory": "COL",
+"tier": "medium",
+"q": "What is the capital city of Colombia?",
+"options": [
+"Caracas",
+"Georgetown",
+"Montevideo",
+"Bogotá"
+],
+"answer": 3,
+"explain": "Bogotá is the capital of Colombia.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-COL",
+"continent": "South America",
+"territory": "COL",
+"tier": "medium",
+"q": "Bogotá is the capital of which country?",
+"options": [
+"Venezuela",
+"Colombia",
+"Bolivia",
+"Brazil"
+],
+"answer": 1,
+"explain": "Bogotá is the capital of Colombia.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-COL",
+"continent": "South America",
+"territory": "COL",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"Venezuela",
+"Paraguay",
+"Colombia",
+"Chile"
+],
+"answer": 2,
+"explain": "That's the flag of Colombia!",
+"type": "flag",
+"image": "assets/flags/COL.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-COL",
+"continent": "South America",
+"territory": "COL",
+"tier": "easy",
+"q": "Which of these is the flag of Colombia?",
+"options": [
+"Ecuador",
+"Chile",
+"Colombia",
+"Uruguay"
+],
+"answer": 2,
+"explain": "That's the flag of Colombia!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"ECU",
+"CHL",
+"COL",
+"URY"
+]
+},
+{
+"id": "MAP-COL",
+"continent": "South America",
+"territory": "COL",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "COL",
+"answerIsTerritory": true,
+"q": "Find Colombia on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Colombia is in South America. Its capital is Bogotá."
+},
+{
+"id": "CAP-F-VEN",
+"continent": "South America",
+"territory": "VEN",
+"tier": "medium",
+"q": "What is the capital city of Venezuela?",
+"options": [
+"Buenos Aires",
+"Santiago",
+"Georgetown",
+"Caracas"
+],
+"answer": 3,
+"explain": "Caracas is the capital of Venezuela.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-VEN",
+"continent": "South America",
+"territory": "VEN",
+"tier": "medium",
+"q": "Caracas is the capital of which country?",
+"options": [
+"Ecuador",
+"Paraguay",
+"Uruguay",
+"Venezuela"
+],
+"answer": 3,
+"explain": "Caracas is the capital of Venezuela.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-VEN",
+"continent": "South America",
+"territory": "VEN",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"Paraguay",
+"Ecuador",
+"Peru",
+"Venezuela"
+],
+"answer": 3,
+"explain": "That's the flag of Venezuela!",
+"type": "flag",
+"image": "assets/flags/VEN.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-VEN",
+"continent": "South America",
+"territory": "VEN",
+"tier": "easy",
+"q": "Which of these is the flag of Venezuela?",
+"options": [
+"Suriname",
+"Venezuela",
+"Colombia",
+"Chile"
+],
+"answer": 1,
+"explain": "That's the flag of Venezuela!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"SUR",
+"VEN",
+"COL",
+"CHL"
+]
+},
+{
+"id": "MAP-VEN",
+"continent": "South America",
+"territory": "VEN",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "VEN",
+"answerIsTerritory": true,
+"q": "Find Venezuela on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Venezuela is in South America. Its capital is Caracas."
+},
+{
+"id": "CAP-F-ECU",
+"continent": "South America",
+"territory": "ECU",
+"tier": "medium",
+"q": "What is the capital city of Ecuador?",
+"options": [
+"Buenos Aires",
+"Quito",
+"Sucre",
+"Santiago"
+],
+"answer": 1,
+"explain": "Quito is the capital of Ecuador.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-ECU",
+"continent": "South America",
+"territory": "ECU",
+"tier": "hard",
+"q": "Quito is the capital of which country?",
+"options": [
+"Chile",
+"Bolivia",
+"Guyana",
+"Ecuador"
+],
+"answer": 3,
+"explain": "Quito is the capital of Ecuador.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-ECU",
+"continent": "South America",
+"territory": "ECU",
+"tier": "hard",
+"q": "Which country does this flag belong to?",
+"options": [
+"Ecuador",
+"Brazil",
+"Chile",
+"Peru"
+],
+"answer": 0,
+"explain": "That's the flag of Ecuador!",
+"type": "flag",
+"image": "assets/flags/ECU.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-ECU",
+"continent": "South America",
+"territory": "ECU",
+"tier": "medium",
+"q": "Which of these is the flag of Ecuador?",
+"options": [
+"Peru",
+"Ecuador",
+"Guyana",
+"Argentina"
+],
+"answer": 1,
+"explain": "That's the flag of Ecuador!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"PER",
+"ECU",
+"GUY",
+"ARG"
+]
+},
+{
+"id": "MAP-ECU",
+"continent": "South America",
+"territory": "ECU",
+"tier": "hard",
+"type": "map",
+"category": "map",
+"target": "ECU",
+"answerIsTerritory": true,
+"q": "Find Ecuador on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Ecuador is in South America. Its capital is Quito."
+},
+{
+"id": "CAP-F-BOL",
+"continent": "South America",
+"territory": "BOL",
+"tier": "medium",
+"q": "What is the capital city of Bolivia?",
+"options": [
+"Sucre",
+"Montevideo",
+"Lima",
+"Quito"
+],
+"answer": 0,
+"explain": "Sucre is the capital of Bolivia. Sucre is Bolivia's constitutional capital, while the government works from La Paz.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-BOL",
+"continent": "South America",
+"territory": "BOL",
+"tier": "hard",
+"q": "Sucre is the capital of which country?",
+"options": [
+"Argentina",
+"Chile",
+"Bolivia",
+"Peru"
+],
+"answer": 2,
+"explain": "Sucre is the capital of Bolivia. Sucre is Bolivia's constitutional capital, while the government works from La Paz.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-BOL",
+"continent": "South America",
+"territory": "BOL",
+"tier": "hard",
+"q": "Which country does this flag belong to?",
+"options": [
+"Uruguay",
+"Bolivia",
+"Suriname",
+"Argentina"
+],
+"answer": 1,
+"explain": "That's the flag of Bolivia!",
+"type": "flag",
+"image": "assets/flags/BOL.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-BOL",
+"continent": "South America",
+"territory": "BOL",
+"tier": "medium",
+"q": "Which of these is the flag of Bolivia?",
+"options": [
+"Bolivia",
+"Colombia",
+"Uruguay",
+"Suriname"
+],
+"answer": 0,
+"explain": "That's the flag of Bolivia!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"BOL",
+"COL",
+"URY",
+"SUR"
+]
+},
+{
+"id": "MAP-BOL",
+"continent": "South America",
+"territory": "BOL",
+"tier": "hard",
+"type": "map",
+"category": "map",
+"target": "BOL",
+"answerIsTerritory": true,
+"q": "Find Bolivia on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Bolivia is in South America. Its capital is Sucre."
+},
+{
+"id": "CAP-F-PRY",
+"continent": "South America",
+"territory": "PRY",
+"tier": "medium",
+"q": "What is the capital city of Paraguay?",
+"options": [
+"Montevideo",
+"Buenos Aires",
+"Georgetown",
+"Asunción"
+],
+"answer": 3,
+"explain": "Asunción is the capital of Paraguay.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-PRY",
+"continent": "South America",
+"territory": "PRY",
+"tier": "hard",
+"q": "Asunción is the capital of which country?",
+"options": [
+"Paraguay",
+"Venezuela",
+"Brazil",
+"Guyana"
+],
+"answer": 0,
+"explain": "Asunción is the capital of Paraguay.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-PRY",
+"continent": "South America",
+"territory": "PRY",
+"tier": "hard",
+"q": "Which country does this flag belong to?",
+"options": [
+"Bolivia",
+"Venezuela",
+"Paraguay",
+"Colombia"
+],
+"answer": 2,
+"explain": "That's the flag of Paraguay!",
+"type": "flag",
+"image": "assets/flags/PRY.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-PRY",
+"continent": "South America",
+"territory": "PRY",
+"tier": "medium",
+"q": "Which of these is the flag of Paraguay?",
+"options": [
+"Paraguay",
+"Peru",
+"Brazil",
+"Bolivia"
+],
+"answer": 0,
+"explain": "That's the flag of Paraguay!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"PRY",
+"PER",
+"BRA",
+"BOL"
+]
+},
+{
+"id": "MAP-PRY",
+"continent": "South America",
+"territory": "PRY",
+"tier": "hard",
+"type": "map",
+"category": "map",
+"target": "PRY",
+"answerIsTerritory": true,
+"q": "Find Paraguay on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Paraguay is in South America. Its capital is Asunción."
+},
+{
+"id": "CAP-F-URY",
+"continent": "South America",
+"territory": "URY",
+"tier": "medium",
+"q": "What is the capital city of Uruguay?",
+"options": [
+"Georgetown",
+"Montevideo",
+"Quito",
+"Paramaribo"
+],
+"answer": 1,
+"explain": "Montevideo is the capital of Uruguay.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-URY",
+"continent": "South America",
+"territory": "URY",
+"tier": "hard",
+"q": "Montevideo is the capital of which country?",
+"options": [
+"Argentina",
+"Guyana",
+"Uruguay",
+"Peru"
+],
+"answer": 2,
+"explain": "Montevideo is the capital of Uruguay.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-URY",
+"continent": "South America",
+"territory": "URY",
+"tier": "hard",
+"q": "Which country does this flag belong to?",
+"options": [
+"Uruguay",
+"Colombia",
+"Bolivia",
+"Brazil"
+],
+"answer": 0,
+"explain": "That's the flag of Uruguay!",
+"type": "flag",
+"image": "assets/flags/URY.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-URY",
+"continent": "South America",
+"territory": "URY",
+"tier": "medium",
+"q": "Which of these is the flag of Uruguay?",
+"options": [
+"Uruguay",
+"Chile",
+"Suriname",
+"Argentina"
+],
+"answer": 0,
+"explain": "That's the flag of Uruguay!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"URY",
+"CHL",
+"SUR",
+"ARG"
+]
+},
+{
+"id": "MAP-URY",
+"continent": "South America",
+"territory": "URY",
+"tier": "hard",
+"type": "map",
+"category": "map",
+"target": "URY",
+"answerIsTerritory": true,
+"q": "Find Uruguay on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Uruguay is in South America. Its capital is Montevideo."
+},
+{
+"id": "CAP-F-GUY",
+"continent": "South America",
+"territory": "GUY",
+"tier": "medium",
+"q": "What is the capital city of Guyana?",
+"options": [
+"Asunción",
+"Georgetown",
+"Paramaribo",
+"Buenos Aires"
+],
+"answer": 1,
+"explain": "Georgetown is the capital of Guyana.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-GUY",
+"continent": "South America",
+"territory": "GUY",
+"tier": "hard",
+"q": "Georgetown is the capital of which country?",
+"options": [
+"Ecuador",
+"Brazil",
+"Paraguay",
+"Guyana"
+],
+"answer": 3,
+"explain": "Georgetown is the capital of Guyana.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-GUY",
+"continent": "South America",
+"territory": "GUY",
+"tier": "hard",
+"q": "Which country does this flag belong to?",
+"options": [
+"Brazil",
+"Chile",
+"Venezuela",
+"Guyana"
+],
+"answer": 3,
+"explain": "That's the flag of Guyana!",
+"type": "flag",
+"image": "assets/flags/GUY.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-GUY",
+"continent": "South America",
+"territory": "GUY",
+"tier": "medium",
+"q": "Which of these is the flag of Guyana?",
+"options": [
+"Venezuela",
+"Argentina",
+"Uruguay",
+"Guyana"
+],
+"answer": 3,
+"explain": "That's the flag of Guyana!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"VEN",
+"ARG",
+"URY",
+"GUY"
+]
+},
+{
+"id": "MAP-GUY",
+"continent": "South America",
+"territory": "GUY",
+"tier": "hard",
+"type": "map",
+"category": "map",
+"target": "GUY",
+"answerIsTerritory": true,
+"q": "Find Guyana on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Guyana is in South America. Its capital is Georgetown."
+},
+{
+"id": "CAP-F-SUR",
+"continent": "South America",
+"territory": "SUR",
+"tier": "medium",
+"q": "What is the capital city of Suriname?",
+"options": [
+"Georgetown",
+"Bogotá",
+"Montevideo",
+"Paramaribo"
+],
+"answer": 3,
+"explain": "Paramaribo is the capital of Suriname.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-SUR",
+"continent": "South America",
+"territory": "SUR",
+"tier": "hard",
+"q": "Paramaribo is the capital of which country?",
+"options": [
+"Suriname",
+"Venezuela",
+"Guyana",
+"Paraguay"
+],
+"answer": 0,
+"explain": "Paramaribo is the capital of Suriname.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-SUR",
+"continent": "South America",
+"territory": "SUR",
+"tier": "hard",
+"q": "Which country does this flag belong to?",
+"options": [
+"Colombia",
+"Bolivia",
+"Suriname",
+"Ecuador"
+],
+"answer": 2,
+"explain": "That's the flag of Suriname!",
+"type": "flag",
+"image": "assets/flags/SUR.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-SUR",
+"continent": "South America",
+"territory": "SUR",
+"tier": "medium",
+"q": "Which of these is the flag of Suriname?",
+"options": [
+"Argentina",
+"Bolivia",
+"Suriname",
+"Venezuela"
+],
+"answer": 2,
+"explain": "That's the flag of Suriname!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"ARG",
+"BOL",
+"SUR",
+"VEN"
+]
+},
+{
+"id": "MAP-SUR",
+"continent": "South America",
+"territory": "SUR",
+"tier": "hard",
+"type": "map",
+"category": "map",
+"target": "SUR",
+"answerIsTerritory": true,
+"q": "Find Suriname on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Suriname is in South America. Its capital is Paramaribo."
+},
+{
+"id": "CAP-F-GBR",
+"continent": "Europe",
+"territory": "GBR",
+"tier": "easy",
+"q": "What is the capital city of the United Kingdom?",
+"options": [
+"London",
+"Lisbon",
+"Warsaw",
+"Oslo"
+],
+"answer": 0,
+"explain": "London is the capital of the United Kingdom.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-GBR",
+"continent": "Europe",
+"territory": "GBR",
+"tier": "easy",
+"q": "London is the capital of which country?",
+"options": [
+"Spain",
+"Norway",
+"Ireland",
+"United Kingdom"
+],
+"answer": 3,
+"explain": "London is the capital of the United Kingdom.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-GBR",
+"continent": "Europe",
+"territory": "GBR",
+"tier": "easy",
+"q": "Which country does this flag belong to?",
+"options": [
+"Germany",
+"United Kingdom",
+"Sweden",
+"France"
+],
+"answer": 1,
+"explain": "That's the flag of the United Kingdom!",
+"type": "flag",
+"image": "assets/flags/GBR.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-GBR",
+"continent": "Europe",
+"territory": "GBR",
+"tier": "easy",
+"q": "Which of these is the flag of the United Kingdom?",
+"options": [
+"United Kingdom",
+"France",
+"Norway",
+"Portugal"
+],
+"answer": 0,
+"explain": "That's the flag of the United Kingdom!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"GBR",
+"FRA",
+"NOR",
+"PRT"
+]
+},
+{
+"id": "MAP-GBR",
+"continent": "Europe",
+"territory": "GBR",
+"tier": "easy",
+"type": "map",
+"category": "map",
+"target": "GBR",
+"answerIsTerritory": true,
+"q": "Find the United Kingdom on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "The United Kingdom is in Europe. Its capital is London."
+},
+{
+"id": "CAP-F-IRL",
+"continent": "Europe",
+"territory": "IRL",
+"tier": "medium",
+"q": "What is the capital city of Ireland?",
+"options": [
+"Dublin",
+"Warsaw",
+"Oslo",
+"Madrid"
+],
+"answer": 0,
+"explain": "Dublin is the capital of Ireland.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-IRL",
+"continent": "Europe",
+"territory": "IRL",
+"tier": "medium",
+"q": "Dublin is the capital of which country?",
+"options": [
+"Italy",
+"Netherlands",
+"Germany",
+"Ireland"
+],
+"answer": 3,
+"explain": "Dublin is the capital of Ireland.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-IRL",
+"continent": "Europe",
+"territory": "IRL",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"Italy",
+"Greece",
+"Ireland",
+"France"
+],
+"answer": 2,
+"explain": "That's the flag of Ireland!",
+"type": "flag",
+"image": "assets/flags/IRL.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-IRL",
+"continent": "Europe",
+"territory": "IRL",
+"tier": "easy",
+"q": "Which of these is the flag of Ireland?",
+"options": [
+"Sweden",
+"United Kingdom",
+"Greece",
+"Ireland"
+],
+"answer": 3,
+"explain": "That's the flag of Ireland!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"SWE",
+"GBR",
+"GRC",
+"IRL"
+]
+},
+{
+"id": "MAP-IRL",
+"continent": "Europe",
+"territory": "IRL",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "IRL",
+"answerIsTerritory": true,
+"q": "Find Ireland on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Ireland is in Europe. Its capital is Dublin."
+},
+{
+"id": "CAP-F-FRA",
+"continent": "Europe",
+"territory": "FRA",
+"tier": "easy",
+"q": "What is the capital city of France?",
+"options": [
+"Amsterdam",
+"Paris",
+"Berlin",
+"Rome"
+],
+"answer": 1,
+"explain": "Paris is the capital of France.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-FRA",
+"continent": "Europe",
+"territory": "FRA",
+"tier": "easy",
+"q": "Paris is the capital of which country?",
+"options": [
+"Poland",
+"France",
+"Sweden",
+"Norway"
+],
+"answer": 1,
+"explain": "Paris is the capital of France.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-FRA",
+"continent": "Europe",
+"territory": "FRA",
+"tier": "easy",
+"q": "Which country does this flag belong to?",
+"options": [
+"Portugal",
+"France",
+"Netherlands",
+"Greece"
+],
+"answer": 1,
+"explain": "That's the flag of France!",
+"type": "flag",
+"image": "assets/flags/FRA.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-FRA",
+"continent": "Europe",
+"territory": "FRA",
+"tier": "easy",
+"q": "Which of these is the flag of France?",
+"options": [
+"Greece",
+"France",
+"United Kingdom",
+"Italy"
+],
+"answer": 1,
+"explain": "That's the flag of France!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"GRC",
+"FRA",
+"GBR",
+"ITA"
+]
+},
+{
+"id": "MAP-FRA",
+"continent": "Europe",
+"territory": "FRA",
+"tier": "easy",
+"type": "map",
+"category": "map",
+"target": "FRA",
+"answerIsTerritory": true,
+"q": "Find France on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "France is in Europe. Its capital is Paris."
+},
+{
+"id": "CAP-F-ESP",
+"continent": "Europe",
+"territory": "ESP",
+"tier": "easy",
+"q": "What is the capital city of Spain?",
+"options": [
+"Madrid",
+"Oslo",
+"London",
+"Lisbon"
+],
+"answer": 0,
+"explain": "Madrid is the capital of Spain.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-ESP",
+"continent": "Europe",
+"territory": "ESP",
+"tier": "easy",
+"q": "Madrid is the capital of which country?",
+"options": [
+"Germany",
+"Poland",
+"Spain",
+"Norway"
+],
+"answer": 2,
+"explain": "Madrid is the capital of Spain.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-ESP",
+"continent": "Europe",
+"territory": "ESP",
+"tier": "easy",
+"q": "Which country does this flag belong to?",
+"options": [
+"Spain",
+"Italy",
+"Germany",
+"Sweden"
+],
+"answer": 0,
+"explain": "That's the flag of Spain!",
+"type": "flag",
+"image": "assets/flags/ESP.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-ESP",
+"continent": "Europe",
+"territory": "ESP",
+"tier": "easy",
+"q": "Which of these is the flag of Spain?",
+"options": [
+"Poland",
+"Italy",
+"Greece",
+"Spain"
+],
+"answer": 3,
+"explain": "That's the flag of Spain!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"POL",
+"ITA",
+"GRC",
+"ESP"
+]
+},
+{
+"id": "MAP-ESP",
+"continent": "Europe",
+"territory": "ESP",
+"tier": "easy",
+"type": "map",
+"category": "map",
+"target": "ESP",
+"answerIsTerritory": true,
+"q": "Find Spain on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Spain is in Europe. Its capital is Madrid."
+},
+{
+"id": "CAP-F-PRT",
+"continent": "Europe",
+"territory": "PRT",
+"tier": "medium",
+"q": "What is the capital city of Portugal?",
+"options": [
+"Warsaw",
+"Amsterdam",
+"Lisbon",
+"Oslo"
+],
+"answer": 2,
+"explain": "Lisbon is the capital of Portugal.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-PRT",
+"continent": "Europe",
+"territory": "PRT",
+"tier": "medium",
+"q": "Lisbon is the capital of which country?",
+"options": [
+"Portugal",
+"Netherlands",
+"Ireland",
+"Germany"
+],
+"answer": 0,
+"explain": "Lisbon is the capital of Portugal.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-PRT",
+"continent": "Europe",
+"territory": "PRT",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"Italy",
+"Portugal",
+"France",
+"Norway"
+],
+"answer": 1,
+"explain": "That's the flag of Portugal!",
+"type": "flag",
+"image": "assets/flags/PRT.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-PRT",
+"continent": "Europe",
+"territory": "PRT",
+"tier": "easy",
+"q": "Which of these is the flag of Portugal?",
+"options": [
+"France",
+"Poland",
+"Portugal",
+"Netherlands"
+],
+"answer": 2,
+"explain": "That's the flag of Portugal!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"FRA",
+"POL",
+"PRT",
+"NLD"
+]
+},
+{
+"id": "MAP-PRT",
+"continent": "Europe",
+"territory": "PRT",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "PRT",
+"answerIsTerritory": true,
+"q": "Find Portugal on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Portugal is in Europe. Its capital is Lisbon."
+},
+{
+"id": "CAP-F-DEU",
+"continent": "Europe",
+"territory": "DEU",
+"tier": "easy",
+"q": "What is the capital city of Germany?",
+"options": [
+"Stockholm",
+"Warsaw",
+"Berlin",
+"Amsterdam"
+],
+"answer": 2,
+"explain": "Berlin is the capital of Germany.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-DEU",
+"continent": "Europe",
+"territory": "DEU",
+"tier": "easy",
+"q": "Berlin is the capital of which country?",
+"options": [
+"Germany",
+"Greece",
+"Ireland",
+"United Kingdom"
+],
+"answer": 0,
+"explain": "Berlin is the capital of Germany.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-DEU",
+"continent": "Europe",
+"territory": "DEU",
+"tier": "easy",
+"q": "Which country does this flag belong to?",
+"options": [
+"Germany",
+"Greece",
+"United Kingdom",
+"Portugal"
+],
+"answer": 0,
+"explain": "That's the flag of Germany!",
+"type": "flag",
+"image": "assets/flags/DEU.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-DEU",
+"continent": "Europe",
+"territory": "DEU",
+"tier": "easy",
+"q": "Which of these is the flag of Germany?",
+"options": [
+"Portugal",
+"Germany",
+"United Kingdom",
+"Spain"
+],
+"answer": 1,
+"explain": "That's the flag of Germany!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"PRT",
+"DEU",
+"GBR",
+"ESP"
+]
+},
+{
+"id": "MAP-DEU",
+"continent": "Europe",
+"territory": "DEU",
+"tier": "easy",
+"type": "map",
+"category": "map",
+"target": "DEU",
+"answerIsTerritory": true,
+"q": "Find Germany on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Germany is in Europe. Its capital is Berlin."
+},
+{
+"id": "CAP-F-ITA",
+"continent": "Europe",
+"territory": "ITA",
+"tier": "easy",
+"q": "What is the capital city of Italy?",
+"options": [
+"Stockholm",
+"Rome",
+"Berlin",
+"Oslo"
+],
+"answer": 1,
+"explain": "Rome is the capital of Italy.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-ITA",
+"continent": "Europe",
+"territory": "ITA",
+"tier": "easy",
+"q": "Rome is the capital of which country?",
+"options": [
+"Italy",
+"Netherlands",
+"Spain",
+"Poland"
+],
+"answer": 0,
+"explain": "Rome is the capital of Italy.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-ITA",
+"continent": "Europe",
+"territory": "ITA",
+"tier": "easy",
+"q": "Which country does this flag belong to?",
+"options": [
+"Italy",
+"Greece",
+"Poland",
+"Ireland"
+],
+"answer": 0,
+"explain": "That's the flag of Italy!",
+"type": "flag",
+"image": "assets/flags/ITA.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-ITA",
+"continent": "Europe",
+"territory": "ITA",
+"tier": "easy",
+"q": "Which of these is the flag of Italy?",
+"options": [
+"Ireland",
+"Poland",
+"Germany",
+"Italy"
+],
+"answer": 3,
+"explain": "That's the flag of Italy!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"IRL",
+"POL",
+"DEU",
+"ITA"
+]
+},
+{
+"id": "MAP-ITA",
+"continent": "Europe",
+"territory": "ITA",
+"tier": "easy",
+"type": "map",
+"category": "map",
+"target": "ITA",
+"answerIsTerritory": true,
+"q": "Find Italy on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Italy is in Europe. Its capital is Rome."
+},
+{
+"id": "CAP-F-NLD",
+"continent": "Europe",
+"territory": "NLD",
+"tier": "medium",
+"q": "What is the capital city of the Netherlands?",
+"options": [
+"Dublin",
+"Warsaw",
+"Amsterdam",
+"Lisbon"
+],
+"answer": 2,
+"explain": "Amsterdam is the capital of the Netherlands. Amsterdam is the capital, although the government meets in The Hague.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-NLD",
+"continent": "Europe",
+"territory": "NLD",
+"tier": "medium",
+"q": "Amsterdam is the capital of which country?",
+"options": [
+"Germany",
+"Portugal",
+"Italy",
+"Netherlands"
+],
+"answer": 3,
+"explain": "Amsterdam is the capital of the Netherlands. Amsterdam is the capital, although the government meets in The Hague.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-NLD",
+"continent": "Europe",
+"territory": "NLD",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"France",
+"Netherlands",
+"Norway",
+"Greece"
+],
+"answer": 1,
+"explain": "That's the flag of the Netherlands!",
+"type": "flag",
+"image": "assets/flags/NLD.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-NLD",
+"continent": "Europe",
+"territory": "NLD",
+"tier": "easy",
+"q": "Which of these is the flag of the Netherlands?",
+"options": [
+"Sweden",
+"Spain",
+"Germany",
+"Netherlands"
+],
+"answer": 3,
+"explain": "That's the flag of the Netherlands!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"SWE",
+"ESP",
+"DEU",
+"NLD"
+]
+},
+{
+"id": "MAP-NLD",
+"continent": "Europe",
+"territory": "NLD",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "NLD",
+"answerIsTerritory": true,
+"q": "Find the Netherlands on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "The Netherlands is in Europe. Its capital is Amsterdam."
+},
+{
+"id": "CAP-F-POL",
+"continent": "Europe",
+"territory": "POL",
+"tier": "medium",
+"q": "What is the capital city of Poland?",
+"options": [
+"Berlin",
+"Amsterdam",
+"Stockholm",
+"Warsaw"
+],
+"answer": 3,
+"explain": "Warsaw is the capital of Poland.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-POL",
+"continent": "Europe",
+"territory": "POL",
+"tier": "medium",
+"q": "Warsaw is the capital of which country?",
+"options": [
+"Poland",
+"Italy",
+"Greece",
+"Germany"
+],
+"answer": 0,
+"explain": "Warsaw is the capital of Poland.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-POL",
+"continent": "Europe",
+"territory": "POL",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"France",
+"Norway",
+"Poland",
+"Spain"
+],
+"answer": 2,
+"explain": "That's the flag of Poland!",
+"type": "flag",
+"image": "assets/flags/POL.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-POL",
+"continent": "Europe",
+"territory": "POL",
+"tier": "easy",
+"q": "Which of these is the flag of Poland?",
+"options": [
+"Germany",
+"Poland",
+"Italy",
+"Sweden"
+],
+"answer": 1,
+"explain": "That's the flag of Poland!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"DEU",
+"POL",
+"ITA",
+"SWE"
+]
+},
+{
+"id": "MAP-POL",
+"continent": "Europe",
+"territory": "POL",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "POL",
+"answerIsTerritory": true,
+"q": "Find Poland on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Poland is in Europe. Its capital is Warsaw."
+},
+{
+"id": "CAP-F-SWE",
+"continent": "Europe",
+"territory": "SWE",
+"tier": "medium",
+"q": "What is the capital city of Sweden?",
+"options": [
+"Oslo",
+"Dublin",
+"Warsaw",
+"Stockholm"
+],
+"answer": 3,
+"explain": "Stockholm is the capital of Sweden.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-SWE",
+"continent": "Europe",
+"territory": "SWE",
+"tier": "medium",
+"q": "Stockholm is the capital of which country?",
+"options": [
+"France",
+"Sweden",
+"Norway",
+"United Kingdom"
+],
+"answer": 1,
+"explain": "Stockholm is the capital of Sweden.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-SWE",
+"continent": "Europe",
+"territory": "SWE",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"United Kingdom",
+"Sweden",
+"Greece",
+"Norway"
+],
+"answer": 1,
+"explain": "That's the flag of Sweden!",
+"type": "flag",
+"image": "assets/flags/SWE.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-SWE",
+"continent": "Europe",
+"territory": "SWE",
+"tier": "easy",
+"q": "Which of these is the flag of Sweden?",
+"options": [
+"Italy",
+"Germany",
+"Spain",
+"Sweden"
+],
+"answer": 3,
+"explain": "That's the flag of Sweden!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"ITA",
+"DEU",
+"ESP",
+"SWE"
+]
+},
+{
+"id": "MAP-SWE",
+"continent": "Europe",
+"territory": "SWE",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "SWE",
+"answerIsTerritory": true,
+"q": "Find Sweden on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Sweden is in Europe. Its capital is Stockholm."
+},
+{
+"id": "CAP-F-NOR",
+"continent": "Europe",
+"territory": "NOR",
+"tier": "medium",
+"q": "What is the capital city of Norway?",
+"options": [
+"Stockholm",
+"Lisbon",
+"Dublin",
+"Oslo"
+],
+"answer": 3,
+"explain": "Oslo is the capital of Norway.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-NOR",
+"continent": "Europe",
+"territory": "NOR",
+"tier": "medium",
+"q": "Oslo is the capital of which country?",
+"options": [
+"Spain",
+"Ireland",
+"Portugal",
+"Norway"
+],
+"answer": 3,
+"explain": "Oslo is the capital of Norway.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-NOR",
+"continent": "Europe",
+"territory": "NOR",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"Ireland",
+"Norway",
+"United Kingdom",
+"Poland"
+],
+"answer": 1,
+"explain": "That's the flag of Norway!",
+"type": "flag",
+"image": "assets/flags/NOR.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-NOR",
+"continent": "Europe",
+"territory": "NOR",
+"tier": "easy",
+"q": "Which of these is the flag of Norway?",
+"options": [
+"Greece",
+"Sweden",
+"Norway",
+"Ireland"
+],
+"answer": 2,
+"explain": "That's the flag of Norway!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"GRC",
+"SWE",
+"NOR",
+"IRL"
+]
+},
+{
+"id": "MAP-NOR",
+"continent": "Europe",
+"territory": "NOR",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "NOR",
+"answerIsTerritory": true,
+"q": "Find Norway on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Norway is in Europe. Its capital is Oslo."
+},
+{
+"id": "CAP-F-GRC",
+"continent": "Europe",
+"territory": "GRC",
+"tier": "easy",
+"q": "What is the capital city of Greece?",
+"options": [
+"Athens",
+"Oslo",
+"Paris",
+"Lisbon"
+],
+"answer": 0,
+"explain": "Athens is the capital of Greece.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-GRC",
+"continent": "Europe",
+"territory": "GRC",
+"tier": "easy",
+"q": "Athens is the capital of which country?",
+"options": [
+"United Kingdom",
+"Norway",
+"Greece",
+"Netherlands"
+],
+"answer": 2,
+"explain": "Athens is the capital of Greece.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-GRC",
+"continent": "Europe",
+"territory": "GRC",
+"tier": "easy",
+"q": "Which country does this flag belong to?",
+"options": [
+"Portugal",
+"France",
+"Poland",
+"Greece"
+],
+"answer": 3,
+"explain": "That's the flag of Greece!",
+"type": "flag",
+"image": "assets/flags/GRC.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-GRC",
+"continent": "Europe",
+"territory": "GRC",
+"tier": "easy",
+"q": "Which of these is the flag of Greece?",
+"options": [
+"Germany",
+"Spain",
+"Greece",
+"Netherlands"
+],
+"answer": 2,
+"explain": "That's the flag of Greece!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"DEU",
+"ESP",
+"GRC",
+"NLD"
+]
+},
+{
+"id": "MAP-GRC",
+"continent": "Europe",
+"territory": "GRC",
+"tier": "easy",
+"type": "map",
+"category": "map",
+"target": "GRC",
+"answerIsTerritory": true,
+"q": "Find Greece on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Greece is in Europe. Its capital is Athens."
+},
+{
+"id": "CAP-F-EGY",
+"continent": "Africa",
+"territory": "EGY",
+"tier": "easy",
+"q": "What is the capital city of Egypt?",
+"options": [
+"Addis Ababa",
+"Cairo",
+"Algiers",
+"Tunis"
+],
+"answer": 1,
+"explain": "Cairo is the capital of Egypt.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-EGY",
+"continent": "Africa",
+"territory": "EGY",
+"tier": "easy",
+"q": "Cairo is the capital of which country?",
+"options": [
+"South Africa",
+"Ethiopia",
+"Tanzania",
+"Egypt"
+],
+"answer": 3,
+"explain": "Cairo is the capital of Egypt.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-EGY",
+"continent": "Africa",
+"territory": "EGY",
+"tier": "easy",
+"q": "Which country does this flag belong to?",
+"options": [
+"South Africa",
+"Morocco",
+"Egypt",
+"Ghana"
+],
+"answer": 2,
+"explain": "That's the flag of Egypt!",
+"type": "flag",
+"image": "assets/flags/EGY.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-EGY",
+"continent": "Africa",
+"territory": "EGY",
+"tier": "easy",
+"q": "Which of these is the flag of Egypt?",
+"options": [
+"Egypt",
+"Ethiopia",
+"Kenya",
+"Tanzania"
+],
+"answer": 0,
+"explain": "That's the flag of Egypt!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"EGY",
+"ETH",
+"KEN",
+"TZA"
+]
+},
+{
+"id": "MAP-EGY",
+"continent": "Africa",
+"territory": "EGY",
+"tier": "easy",
+"type": "map",
+"category": "map",
+"target": "EGY",
+"answerIsTerritory": true,
+"q": "Find Egypt on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Egypt is in Africa. Its capital is Cairo."
+},
+{
+"id": "CAP-F-MAR",
+"continent": "Africa",
+"territory": "MAR",
+"tier": "medium",
+"q": "What is the capital city of Morocco?",
+"options": [
+"Accra",
+"Rabat",
+"Abuja",
+"Addis Ababa"
+],
+"answer": 1,
+"explain": "Rabat is the capital of Morocco. Many people guess Casablanca or Marrakesh, but the capital is Rabat.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-MAR",
+"continent": "Africa",
+"territory": "MAR",
+"tier": "hard",
+"q": "Rabat is the capital of which country?",
+"options": [
+"Madagascar",
+"Morocco",
+"South Africa",
+"Egypt"
+],
+"answer": 1,
+"explain": "Rabat is the capital of Morocco. Many people guess Casablanca or Marrakesh, but the capital is Rabat.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-MAR",
+"continent": "Africa",
+"territory": "MAR",
+"tier": "hard",
+"q": "Which country does this flag belong to?",
+"options": [
+"Morocco",
+"Algeria",
+"Nigeria",
+"Egypt"
+],
+"answer": 0,
+"explain": "That's the flag of Morocco!",
+"type": "flag",
+"image": "assets/flags/MAR.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-MAR",
+"continent": "Africa",
+"territory": "MAR",
+"tier": "medium",
+"q": "Which of these is the flag of Morocco?",
+"options": [
+"Morocco",
+"Madagascar",
+"Tanzania",
+"Tunisia"
+],
+"answer": 0,
+"explain": "That's the flag of Morocco!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"MAR",
+"MDG",
+"TZA",
+"TUN"
+]
+},
+{
+"id": "MAP-MAR",
+"continent": "Africa",
+"territory": "MAR",
+"tier": "hard",
+"type": "map",
+"category": "map",
+"target": "MAR",
+"answerIsTerritory": true,
+"q": "Find Morocco on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Morocco is in Africa. Its capital is Rabat."
+},
+{
+"id": "CAP-F-NGA",
+"continent": "Africa",
+"territory": "NGA",
+"tier": "medium",
+"q": "What is the capital city of Nigeria?",
+"options": [
+"Accra",
+"Abuja",
+"Addis Ababa",
+"Tunis"
+],
+"answer": 1,
+"explain": "Abuja is the capital of Nigeria. Lagos is Nigeria's biggest city, but Abuja became the capital in 1991.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-NGA",
+"continent": "Africa",
+"territory": "NGA",
+"tier": "medium",
+"q": "Abuja is the capital of which country?",
+"options": [
+"Nigeria",
+"Morocco",
+"Ghana",
+"Kenya"
+],
+"answer": 0,
+"explain": "Abuja is the capital of Nigeria. Lagos is Nigeria's biggest city, but Abuja became the capital in 1991.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-NGA",
+"continent": "Africa",
+"territory": "NGA",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"Ghana",
+"Nigeria",
+"Ethiopia",
+"Algeria"
+],
+"answer": 1,
+"explain": "That's the flag of Nigeria!",
+"type": "flag",
+"image": "assets/flags/NGA.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-NGA",
+"continent": "Africa",
+"territory": "NGA",
+"tier": "easy",
+"q": "Which of these is the flag of Nigeria?",
+"options": [
+"Morocco",
+"Nigeria",
+"Senegal",
+"Ethiopia"
+],
+"answer": 1,
+"explain": "That's the flag of Nigeria!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"MAR",
+"NGA",
+"SEN",
+"ETH"
+]
+},
+{
+"id": "MAP-NGA",
+"continent": "Africa",
+"territory": "NGA",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "NGA",
+"answerIsTerritory": true,
+"q": "Find Nigeria on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Nigeria is in Africa. Its capital is Abuja."
+},
+{
+"id": "CAP-F-KEN",
+"continent": "Africa",
+"territory": "KEN",
+"tier": "medium",
+"q": "What is the capital city of Kenya?",
+"options": [
+"Nairobi",
+"Accra",
+"Tunis",
+"Addis Ababa"
+],
+"answer": 0,
+"explain": "Nairobi is the capital of Kenya.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-KEN",
+"continent": "Africa",
+"territory": "KEN",
+"tier": "medium",
+"q": "Nairobi is the capital of which country?",
+"options": [
+"Nigeria",
+"Tunisia",
+"Senegal",
+"Kenya"
+],
+"answer": 3,
+"explain": "Nairobi is the capital of Kenya.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-KEN",
+"continent": "Africa",
+"territory": "KEN",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"Madagascar",
+"Algeria",
+"Kenya",
+"Ethiopia"
+],
+"answer": 2,
+"explain": "That's the flag of Kenya!",
+"type": "flag",
+"image": "assets/flags/KEN.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-KEN",
+"continent": "Africa",
+"territory": "KEN",
+"tier": "easy",
+"q": "Which of these is the flag of Kenya?",
+"options": [
+"Kenya",
+"South Africa",
+"Tunisia",
+"Madagascar"
+],
+"answer": 0,
+"explain": "That's the flag of Kenya!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"KEN",
+"ZAF",
+"TUN",
+"MDG"
+]
+},
+{
+"id": "MAP-KEN",
+"continent": "Africa",
+"territory": "KEN",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "KEN",
+"answerIsTerritory": true,
+"q": "Find Kenya on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Kenya is in Africa. Its capital is Nairobi."
+},
+{
+"id": "CAP-F-ZAF",
+"continent": "Africa",
+"territory": "ZAF",
+"tier": "medium",
+"q": "What is the capital city of South Africa?",
+"options": [
+"Abuja",
+"Pretoria",
+"Tunis",
+"Dodoma"
+],
+"answer": 1,
+"explain": "Pretoria is the capital of South Africa. South Africa has three capitals: Pretoria (government), Cape Town (parliament) and Bloemfontein (courts).",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-ZAF",
+"continent": "Africa",
+"territory": "ZAF",
+"tier": "hard",
+"q": "Pretoria is the capital of which country?",
+"options": [
+"Kenya",
+"Egypt",
+"South Africa",
+"Tunisia"
+],
+"answer": 2,
+"explain": "Pretoria is the capital of South Africa. South Africa has three capitals: Pretoria (government), Cape Town (parliament) and Bloemfontein (courts).",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-ZAF",
+"continent": "Africa",
+"territory": "ZAF",
+"tier": "hard",
+"q": "Which country does this flag belong to?",
+"options": [
+"South Africa",
+"Kenya",
+"Madagascar",
+"Tunisia"
+],
+"answer": 0,
+"explain": "That's the flag of South Africa!",
+"type": "flag",
+"image": "assets/flags/ZAF.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-ZAF",
+"continent": "Africa",
+"territory": "ZAF",
+"tier": "medium",
+"q": "Which of these is the flag of South Africa?",
+"options": [
+"South Africa",
+"Senegal",
+"Ghana",
+"Tunisia"
+],
+"answer": 0,
+"explain": "That's the flag of South Africa!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"ZAF",
+"SEN",
+"GHA",
+"TUN"
+]
+},
+{
+"id": "MAP-ZAF",
+"continent": "Africa",
+"territory": "ZAF",
+"tier": "hard",
+"type": "map",
+"category": "map",
+"target": "ZAF",
+"answerIsTerritory": true,
+"q": "Find South Africa on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "South Africa is in Africa. Its capital is Pretoria."
+},
+{
+"id": "CAP-F-ETH",
+"continent": "Africa",
+"territory": "ETH",
+"tier": "medium",
+"q": "What is the capital city of Ethiopia?",
+"options": [
+"Dodoma",
+"Nairobi",
+"Antananarivo",
+"Addis Ababa"
+],
+"answer": 3,
+"explain": "Addis Ababa is the capital of Ethiopia.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-ETH",
+"continent": "Africa",
+"territory": "ETH",
+"tier": "medium",
+"q": "Addis Ababa is the capital of which country?",
+"options": [
+"Ethiopia",
+"Madagascar",
+"Egypt",
+"Tanzania"
+],
+"answer": 0,
+"explain": "Addis Ababa is the capital of Ethiopia.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-ETH",
+"continent": "Africa",
+"territory": "ETH",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"Tanzania",
+"Senegal",
+"Morocco",
+"Ethiopia"
+],
+"answer": 3,
+"explain": "That's the flag of Ethiopia!",
+"type": "flag",
+"image": "assets/flags/ETH.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-ETH",
+"continent": "Africa",
+"territory": "ETH",
+"tier": "easy",
+"q": "Which of these is the flag of Ethiopia?",
+"options": [
+"Tunisia",
+"Ethiopia",
+"Madagascar",
+"Morocco"
+],
+"answer": 1,
+"explain": "That's the flag of Ethiopia!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"TUN",
+"ETH",
+"MDG",
+"MAR"
+]
+},
+{
+"id": "MAP-ETH",
+"continent": "Africa",
+"territory": "ETH",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "ETH",
+"answerIsTerritory": true,
+"q": "Find Ethiopia on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Ethiopia is in Africa. Its capital is Addis Ababa."
+},
+{
+"id": "CAP-F-GHA",
+"continent": "Africa",
+"territory": "GHA",
+"tier": "medium",
+"q": "What is the capital city of Ghana?",
+"options": [
+"Nairobi",
+"Dakar",
+"Accra",
+"Rabat"
+],
+"answer": 2,
+"explain": "Accra is the capital of Ghana.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-GHA",
+"continent": "Africa",
+"territory": "GHA",
+"tier": "medium",
+"q": "Accra is the capital of which country?",
+"options": [
+"Ghana",
+"Nigeria",
+"Kenya",
+"Tunisia"
+],
+"answer": 0,
+"explain": "Accra is the capital of Ghana.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-GHA",
+"continent": "Africa",
+"territory": "GHA",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"Kenya",
+"Algeria",
+"Ghana",
+"Tanzania"
+],
+"answer": 2,
+"explain": "That's the flag of Ghana!",
+"type": "flag",
+"image": "assets/flags/GHA.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-GHA",
+"continent": "Africa",
+"territory": "GHA",
+"tier": "easy",
+"q": "Which of these is the flag of Ghana?",
+"options": [
+"Ghana",
+"Nigeria",
+"Egypt",
+"Kenya"
+],
+"answer": 0,
+"explain": "That's the flag of Ghana!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"GHA",
+"NGA",
+"EGY",
+"KEN"
+]
+},
+{
+"id": "MAP-GHA",
+"continent": "Africa",
+"territory": "GHA",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "GHA",
+"answerIsTerritory": true,
+"q": "Find Ghana on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Ghana is in Africa. Its capital is Accra."
+},
+{
+"id": "CAP-F-DZA",
+"continent": "Africa",
+"territory": "DZA",
+"tier": "medium",
+"q": "What is the capital city of Algeria?",
+"options": [
+"Dodoma",
+"Tunis",
+"Algiers",
+"Nairobi"
+],
+"answer": 2,
+"explain": "Algiers is the capital of Algeria.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-DZA",
+"continent": "Africa",
+"territory": "DZA",
+"tier": "medium",
+"q": "Algiers is the capital of which country?",
+"options": [
+"Madagascar",
+"Ghana",
+"Egypt",
+"Algeria"
+],
+"answer": 3,
+"explain": "Algiers is the capital of Algeria.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-DZA",
+"continent": "Africa",
+"territory": "DZA",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"Morocco",
+"Kenya",
+"Ethiopia",
+"Algeria"
+],
+"answer": 3,
+"explain": "That's the flag of Algeria!",
+"type": "flag",
+"image": "assets/flags/DZA.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-DZA",
+"continent": "Africa",
+"territory": "DZA",
+"tier": "easy",
+"q": "Which of these is the flag of Algeria?",
+"options": [
+"Egypt",
+"Algeria",
+"Ghana",
+"South Africa"
+],
+"answer": 1,
+"explain": "That's the flag of Algeria!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"EGY",
+"DZA",
+"GHA",
+"ZAF"
+]
+},
+{
+"id": "MAP-DZA",
+"continent": "Africa",
+"territory": "DZA",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "DZA",
+"answerIsTerritory": true,
+"q": "Find Algeria on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Algeria is in Africa. Its capital is Algiers."
+},
+{
+"id": "CAP-F-TUN",
+"continent": "Africa",
+"territory": "TUN",
+"tier": "medium",
+"q": "What is the capital city of Tunisia?",
+"options": [
+"Tunis",
+"Dakar",
+"Rabat",
+"Algiers"
+],
+"answer": 0,
+"explain": "Tunis is the capital of Tunisia.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-TUN",
+"continent": "Africa",
+"territory": "TUN",
+"tier": "medium",
+"q": "Tunis is the capital of which country?",
+"options": [
+"Algeria",
+"Morocco",
+"Tunisia",
+"Tanzania"
+],
+"answer": 2,
+"explain": "Tunis is the capital of Tunisia.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-TUN",
+"continent": "Africa",
+"territory": "TUN",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"Tunisia",
+"Nigeria",
+"Madagascar",
+"Ghana"
+],
+"answer": 0,
+"explain": "That's the flag of Tunisia!",
+"type": "flag",
+"image": "assets/flags/TUN.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-TUN",
+"continent": "Africa",
+"territory": "TUN",
+"tier": "easy",
+"q": "Which of these is the flag of Tunisia?",
+"options": [
+"Morocco",
+"Madagascar",
+"Nigeria",
+"Tunisia"
+],
+"answer": 3,
+"explain": "That's the flag of Tunisia!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"MAR",
+"MDG",
+"NGA",
+"TUN"
+]
+},
+{
+"id": "MAP-TUN",
+"continent": "Africa",
+"territory": "TUN",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "TUN",
+"answerIsTerritory": true,
+"q": "Find Tunisia on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Tunisia is in Africa. Its capital is Tunis."
+},
+{
+"id": "CAP-F-TZA",
+"continent": "Africa",
+"territory": "TZA",
+"tier": "medium",
+"q": "What is the capital city of Tanzania?",
+"options": [
+"Algiers",
+"Antananarivo",
+"Addis Ababa",
+"Dodoma"
+],
+"answer": 3,
+"explain": "Dodoma is the capital of Tanzania. Dar es Salaam is Tanzania's largest city, but the official capital is Dodoma.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-TZA",
+"continent": "Africa",
+"territory": "TZA",
+"tier": "hard",
+"q": "Dodoma is the capital of which country?",
+"options": [
+"Tanzania",
+"Nigeria",
+"Kenya",
+"Morocco"
+],
+"answer": 0,
+"explain": "Dodoma is the capital of Tanzania. Dar es Salaam is Tanzania's largest city, but the official capital is Dodoma.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-TZA",
+"continent": "Africa",
+"territory": "TZA",
+"tier": "hard",
+"q": "Which country does this flag belong to?",
+"options": [
+"Senegal",
+"Egypt",
+"Tanzania",
+"Ghana"
+],
+"answer": 2,
+"explain": "That's the flag of Tanzania!",
+"type": "flag",
+"image": "assets/flags/TZA.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-TZA",
+"continent": "Africa",
+"territory": "TZA",
+"tier": "medium",
+"q": "Which of these is the flag of Tanzania?",
+"options": [
+"Tanzania",
+"Senegal",
+"Ghana",
+"Kenya"
+],
+"answer": 0,
+"explain": "That's the flag of Tanzania!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"TZA",
+"SEN",
+"GHA",
+"KEN"
+]
+},
+{
+"id": "MAP-TZA",
+"continent": "Africa",
+"territory": "TZA",
+"tier": "hard",
+"type": "map",
+"category": "map",
+"target": "TZA",
+"answerIsTerritory": true,
+"q": "Find Tanzania on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Tanzania is in Africa. Its capital is Dodoma."
+},
+{
+"id": "CAP-F-SEN",
+"continent": "Africa",
+"territory": "SEN",
+"tier": "medium",
+"q": "What is the capital city of Senegal?",
+"options": [
+"Addis Ababa",
+"Dodoma",
+"Cairo",
+"Dakar"
+],
+"answer": 3,
+"explain": "Dakar is the capital of Senegal.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-SEN",
+"continent": "Africa",
+"territory": "SEN",
+"tier": "hard",
+"q": "Dakar is the capital of which country?",
+"options": [
+"Ghana",
+"Senegal",
+"South Africa",
+"Morocco"
+],
+"answer": 1,
+"explain": "Dakar is the capital of Senegal.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-SEN",
+"continent": "Africa",
+"territory": "SEN",
+"tier": "hard",
+"q": "Which country does this flag belong to?",
+"options": [
+"Ethiopia",
+"Morocco",
+"Senegal",
+"Tunisia"
+],
+"answer": 2,
+"explain": "That's the flag of Senegal!",
+"type": "flag",
+"image": "assets/flags/SEN.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-SEN",
+"continent": "Africa",
+"territory": "SEN",
+"tier": "medium",
+"q": "Which of these is the flag of Senegal?",
+"options": [
+"Egypt",
+"Madagascar",
+"Ethiopia",
+"Senegal"
+],
+"answer": 3,
+"explain": "That's the flag of Senegal!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"EGY",
+"MDG",
+"ETH",
+"SEN"
+]
+},
+{
+"id": "MAP-SEN",
+"continent": "Africa",
+"territory": "SEN",
+"tier": "hard",
+"type": "map",
+"category": "map",
+"target": "SEN",
+"answerIsTerritory": true,
+"q": "Find Senegal on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Senegal is in Africa. Its capital is Dakar."
+},
+{
+"id": "CAP-F-MDG",
+"continent": "Africa",
+"territory": "MDG",
+"tier": "medium",
+"q": "What is the capital city of Madagascar?",
+"options": [
+"Addis Ababa",
+"Antananarivo",
+"Abuja",
+"Nairobi"
+],
+"answer": 1,
+"explain": "Antananarivo is the capital of Madagascar.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-MDG",
+"continent": "Africa",
+"territory": "MDG",
+"tier": "hard",
+"q": "Antananarivo is the capital of which country?",
+"options": [
+"South Africa",
+"Madagascar",
+"Tanzania",
+"Morocco"
+],
+"answer": 1,
+"explain": "Antananarivo is the capital of Madagascar.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-MDG",
+"continent": "Africa",
+"territory": "MDG",
+"tier": "hard",
+"q": "Which country does this flag belong to?",
+"options": [
+"Senegal",
+"Kenya",
+"Algeria",
+"Madagascar"
+],
+"answer": 3,
+"explain": "That's the flag of Madagascar!",
+"type": "flag",
+"image": "assets/flags/MDG.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-MDG",
+"continent": "Africa",
+"territory": "MDG",
+"tier": "medium",
+"q": "Which of these is the flag of Madagascar?",
+"options": [
+"Madagascar",
+"Tanzania",
+"Tunisia",
+"Algeria"
+],
+"answer": 0,
+"explain": "That's the flag of Madagascar!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"MDG",
+"TZA",
+"TUN",
+"DZA"
+]
+},
+{
+"id": "MAP-MDG",
+"continent": "Africa",
+"territory": "MDG",
+"tier": "hard",
+"type": "map",
+"category": "map",
+"target": "MDG",
+"answerIsTerritory": true,
+"q": "Find Madagascar on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Madagascar is in Africa. Its capital is Antananarivo."
+},
+{
+"id": "CAP-F-CHN",
+"continent": "Asia",
+"territory": "CHN",
+"tier": "easy",
+"q": "What is the capital city of China?",
+"options": [
+"Hanoi",
+"Riyadh",
+"Islamabad",
+"Beijing"
+],
+"answer": 3,
+"explain": "Beijing is the capital of China.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-CHN",
+"continent": "Asia",
+"territory": "CHN",
+"tier": "easy",
+"q": "Beijing is the capital of which country?",
+"options": [
+"Thailand",
+"Mongolia",
+"China",
+"India"
+],
+"answer": 2,
+"explain": "Beijing is the capital of China.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-CHN",
+"continent": "Asia",
+"territory": "CHN",
+"tier": "easy",
+"q": "Which country does this flag belong to?",
+"options": [
+"Vietnam",
+"China",
+"Pakistan",
+"Indonesia"
+],
+"answer": 1,
+"explain": "That's the flag of China!",
+"type": "flag",
+"image": "assets/flags/CHN.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-CHN",
+"continent": "Asia",
+"territory": "CHN",
+"tier": "easy",
+"q": "Which of these is the flag of China?",
+"options": [
+"Turkey",
+"Philippines",
+"India",
+"China"
+],
+"answer": 3,
+"explain": "That's the flag of China!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"TUR",
+"PHL",
+"IND",
+"CHN"
+]
+},
+{
+"id": "MAP-CHN",
+"continent": "Asia",
+"territory": "CHN",
+"tier": "easy",
+"type": "map",
+"category": "map",
+"target": "CHN",
+"answerIsTerritory": true,
+"q": "Find China on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "China is in Asia. Its capital is Beijing."
+},
+{
+"id": "CAP-F-IND",
+"continent": "Asia",
+"territory": "IND",
+"tier": "easy",
+"q": "What is the capital city of India?",
+"options": [
+"New Delhi",
+"Bangkok",
+"Ulaanbaatar",
+"Jakarta"
+],
+"answer": 0,
+"explain": "New Delhi is the capital of India.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-IND",
+"continent": "Asia",
+"territory": "IND",
+"tier": "easy",
+"q": "New Delhi is the capital of which country?",
+"options": [
+"China",
+"India",
+"Indonesia",
+"Vietnam"
+],
+"answer": 1,
+"explain": "New Delhi is the capital of India.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-IND",
+"continent": "Asia",
+"territory": "IND",
+"tier": "easy",
+"q": "Which country does this flag belong to?",
+"options": [
+"Japan",
+"India",
+"Indonesia",
+"Mongolia"
+],
+"answer": 1,
+"explain": "That's the flag of India!",
+"type": "flag",
+"image": "assets/flags/IND.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-IND",
+"continent": "Asia",
+"territory": "IND",
+"tier": "easy",
+"q": "Which of these is the flag of India?",
+"options": [
+"Japan",
+"India",
+"Vietnam",
+"Thailand"
+],
+"answer": 1,
+"explain": "That's the flag of India!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"JPN",
+"IND",
+"VNM",
+"THA"
+]
+},
+{
+"id": "MAP-IND",
+"continent": "Asia",
+"territory": "IND",
+"tier": "easy",
+"type": "map",
+"category": "map",
+"target": "IND",
+"answerIsTerritory": true,
+"q": "Find India on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "India is in Asia. Its capital is New Delhi."
+},
+{
+"id": "CAP-F-JPN",
+"continent": "Asia",
+"territory": "JPN",
+"tier": "easy",
+"q": "What is the capital city of Japan?",
+"options": [
+"Manila",
+"Tokyo",
+"Ulaanbaatar",
+"Ankara"
+],
+"answer": 1,
+"explain": "Tokyo is the capital of Japan.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-JPN",
+"continent": "Asia",
+"territory": "JPN",
+"tier": "easy",
+"q": "Tokyo is the capital of which country?",
+"options": [
+"Vietnam",
+"Malaysia",
+"Japan",
+"Philippines"
+],
+"answer": 2,
+"explain": "Tokyo is the capital of Japan.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-JPN",
+"continent": "Asia",
+"territory": "JPN",
+"tier": "easy",
+"q": "Which country does this flag belong to?",
+"options": [
+"Japan",
+"Bangladesh",
+"China",
+"Saudi Arabia"
+],
+"answer": 0,
+"explain": "That's the flag of Japan!",
+"type": "flag",
+"image": "assets/flags/JPN.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-JPN",
+"continent": "Asia",
+"territory": "JPN",
+"tier": "easy",
+"q": "Which of these is the flag of Japan?",
+"options": [
+"Japan",
+"Philippines",
+"Malaysia",
+"South Korea"
+],
+"answer": 0,
+"explain": "That's the flag of Japan!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"JPN",
+"PHL",
+"MYS",
+"KOR"
+]
+},
+{
+"id": "MAP-JPN",
+"continent": "Asia",
+"territory": "JPN",
+"tier": "easy",
+"type": "map",
+"category": "map",
+"target": "JPN",
+"answerIsTerritory": true,
+"q": "Find Japan on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Japan is in Asia. Its capital is Tokyo."
+},
+{
+"id": "CAP-F-KOR",
+"continent": "Asia",
+"territory": "KOR",
+"tier": "medium",
+"q": "What is the capital city of South Korea?",
+"options": [
+"Tokyo",
+"Seoul",
+"Manila",
+"Bangkok"
+],
+"answer": 1,
+"explain": "Seoul is the capital of South Korea.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-KOR",
+"continent": "Asia",
+"territory": "KOR",
+"tier": "medium",
+"q": "Seoul is the capital of which country?",
+"options": [
+"Turkey",
+"Indonesia",
+"South Korea",
+"Japan"
+],
+"answer": 2,
+"explain": "Seoul is the capital of South Korea.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-KOR",
+"continent": "Asia",
+"territory": "KOR",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"China",
+"Thailand",
+"South Korea",
+"Malaysia"
+],
+"answer": 2,
+"explain": "That's the flag of South Korea!",
+"type": "flag",
+"image": "assets/flags/KOR.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-KOR",
+"continent": "Asia",
+"territory": "KOR",
+"tier": "easy",
+"q": "Which of these is the flag of South Korea?",
+"options": [
+"Thailand",
+"Bangladesh",
+"South Korea",
+"Pakistan"
+],
+"answer": 2,
+"explain": "That's the flag of South Korea!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"THA",
+"BGD",
+"KOR",
+"PAK"
+]
+},
+{
+"id": "MAP-KOR",
+"continent": "Asia",
+"territory": "KOR",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "KOR",
+"answerIsTerritory": true,
+"q": "Find South Korea on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "South Korea is in Asia. Its capital is Seoul."
+},
+{
+"id": "CAP-F-IDN",
+"continent": "Asia",
+"territory": "IDN",
+"tier": "medium",
+"q": "What is the capital city of Indonesia?",
+"options": [
+"Kuala Lumpur",
+"Islamabad",
+"Jakarta",
+"Dhaka"
+],
+"answer": 2,
+"explain": "Jakarta is the capital of Indonesia. Indonesia is building a new capital called Nusantara, but Jakarta is still the capital for now.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-IDN",
+"continent": "Asia",
+"territory": "IDN",
+"tier": "medium",
+"q": "Jakarta is the capital of which country?",
+"options": [
+"Indonesia",
+"Malaysia",
+"South Korea",
+"Bangladesh"
+],
+"answer": 0,
+"explain": "Jakarta is the capital of Indonesia. Indonesia is building a new capital called Nusantara, but Jakarta is still the capital for now.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-IDN",
+"continent": "Asia",
+"territory": "IDN",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"South Korea",
+"Mongolia",
+"Indonesia",
+"India"
+],
+"answer": 2,
+"explain": "That's the flag of Indonesia!",
+"type": "flag",
+"image": "assets/flags/IDN.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-IDN",
+"continent": "Asia",
+"territory": "IDN",
+"tier": "easy",
+"q": "Which of these is the flag of Indonesia?",
+"options": [
+"Saudi Arabia",
+"Thailand",
+"Philippines",
+"Indonesia"
+],
+"answer": 3,
+"explain": "That's the flag of Indonesia!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"SAU",
+"THA",
+"PHL",
+"IDN"
+]
+},
+{
+"id": "MAP-IDN",
+"continent": "Asia",
+"territory": "IDN",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "IDN",
+"answerIsTerritory": true,
+"q": "Find Indonesia on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Indonesia is in Asia. Its capital is Jakarta."
+},
+{
+"id": "CAP-F-THA",
+"continent": "Asia",
+"territory": "THA",
+"tier": "medium",
+"q": "What is the capital city of Thailand?",
+"options": [
+"Hanoi",
+"Tokyo",
+"Beijing",
+"Bangkok"
+],
+"answer": 3,
+"explain": "Bangkok is the capital of Thailand.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-THA",
+"continent": "Asia",
+"territory": "THA",
+"tier": "medium",
+"q": "Bangkok is the capital of which country?",
+"options": [
+"Mongolia",
+"Pakistan",
+"Saudi Arabia",
+"Thailand"
+],
+"answer": 3,
+"explain": "Bangkok is the capital of Thailand.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-THA",
+"continent": "Asia",
+"territory": "THA",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"Turkey",
+"Thailand",
+"Philippines",
+"India"
+],
+"answer": 1,
+"explain": "That's the flag of Thailand!",
+"type": "flag",
+"image": "assets/flags/THA.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-THA",
+"continent": "Asia",
+"territory": "THA",
+"tier": "easy",
+"q": "Which of these is the flag of Thailand?",
+"options": [
+"China",
+"Thailand",
+"Japan",
+"Saudi Arabia"
+],
+"answer": 1,
+"explain": "That's the flag of Thailand!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"CHN",
+"THA",
+"JPN",
+"SAU"
+]
+},
+{
+"id": "MAP-THA",
+"continent": "Asia",
+"territory": "THA",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "THA",
+"answerIsTerritory": true,
+"q": "Find Thailand on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Thailand is in Asia. Its capital is Bangkok."
+},
+{
+"id": "CAP-F-VNM",
+"continent": "Asia",
+"territory": "VNM",
+"tier": "medium",
+"q": "What is the capital city of Vietnam?",
+"options": [
+"Manila",
+"Tokyo",
+"Hanoi",
+"Bangkok"
+],
+"answer": 2,
+"explain": "Hanoi is the capital of Vietnam.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-VNM",
+"continent": "Asia",
+"territory": "VNM",
+"tier": "medium",
+"q": "Hanoi is the capital of which country?",
+"options": [
+"China",
+"Vietnam",
+"Saudi Arabia",
+"Malaysia"
+],
+"answer": 1,
+"explain": "Hanoi is the capital of Vietnam.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-VNM",
+"continent": "Asia",
+"territory": "VNM",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"Vietnam",
+"Mongolia",
+"Thailand",
+"Indonesia"
+],
+"answer": 0,
+"explain": "That's the flag of Vietnam!",
+"type": "flag",
+"image": "assets/flags/VNM.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-VNM",
+"continent": "Asia",
+"territory": "VNM",
+"tier": "easy",
+"q": "Which of these is the flag of Vietnam?",
+"options": [
+"China",
+"Indonesia",
+"Saudi Arabia",
+"Vietnam"
+],
+"answer": 3,
+"explain": "That's the flag of Vietnam!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"CHN",
+"IDN",
+"SAU",
+"VNM"
+]
+},
+{
+"id": "MAP-VNM",
+"continent": "Asia",
+"territory": "VNM",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "VNM",
+"answerIsTerritory": true,
+"q": "Find Vietnam on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Vietnam is in Asia. Its capital is Hanoi."
+},
+{
+"id": "CAP-F-PHL",
+"continent": "Asia",
+"territory": "PHL",
+"tier": "medium",
+"q": "What is the capital city of the Philippines?",
+"options": [
+"Manila",
+"Ankara",
+"Kuala Lumpur",
+"Dhaka"
+],
+"answer": 0,
+"explain": "Manila is the capital of the Philippines.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-PHL",
+"continent": "Asia",
+"territory": "PHL",
+"tier": "medium",
+"q": "Manila is the capital of which country?",
+"options": [
+"Japan",
+"Philippines",
+"China",
+"Pakistan"
+],
+"answer": 1,
+"explain": "Manila is the capital of the Philippines.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-PHL",
+"continent": "Asia",
+"territory": "PHL",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"Japan",
+"India",
+"Philippines",
+"Bangladesh"
+],
+"answer": 2,
+"explain": "That's the flag of the Philippines!",
+"type": "flag",
+"image": "assets/flags/PHL.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-PHL",
+"continent": "Asia",
+"territory": "PHL",
+"tier": "easy",
+"q": "Which of these is the flag of the Philippines?",
+"options": [
+"India",
+"Philippines",
+"Indonesia",
+"Mongolia"
+],
+"answer": 1,
+"explain": "That's the flag of the Philippines!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"IND",
+"PHL",
+"IDN",
+"MNG"
+]
+},
+{
+"id": "MAP-PHL",
+"continent": "Asia",
+"territory": "PHL",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "PHL",
+"answerIsTerritory": true,
+"q": "Find the Philippines on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "The Philippines is in Asia. Its capital is Manila."
+},
+{
+"id": "CAP-F-MYS",
+"continent": "Asia",
+"territory": "MYS",
+"tier": "medium",
+"q": "What is the capital city of Malaysia?",
+"options": [
+"Riyadh",
+"Kuala Lumpur",
+"Ulaanbaatar",
+"Dhaka"
+],
+"answer": 1,
+"explain": "Kuala Lumpur is the capital of Malaysia.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-MYS",
+"continent": "Asia",
+"territory": "MYS",
+"tier": "medium",
+"q": "Kuala Lumpur is the capital of which country?",
+"options": [
+"Thailand",
+"Bangladesh",
+"Saudi Arabia",
+"Malaysia"
+],
+"answer": 3,
+"explain": "Kuala Lumpur is the capital of Malaysia.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-MYS",
+"continent": "Asia",
+"territory": "MYS",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"Malaysia",
+"Japan",
+"Mongolia",
+"Thailand"
+],
+"answer": 0,
+"explain": "That's the flag of Malaysia!",
+"type": "flag",
+"image": "assets/flags/MYS.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-MYS",
+"continent": "Asia",
+"territory": "MYS",
+"tier": "easy",
+"q": "Which of these is the flag of Malaysia?",
+"options": [
+"Mongolia",
+"Indonesia",
+"China",
+"Malaysia"
+],
+"answer": 3,
+"explain": "That's the flag of Malaysia!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"MNG",
+"IDN",
+"CHN",
+"MYS"
+]
+},
+{
+"id": "MAP-MYS",
+"continent": "Asia",
+"territory": "MYS",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "MYS",
+"answerIsTerritory": true,
+"q": "Find Malaysia on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Malaysia is in Asia. Its capital is Kuala Lumpur."
+},
+{
+"id": "CAP-F-SAU",
+"continent": "Asia",
+"territory": "SAU",
+"tier": "medium",
+"q": "What is the capital city of Saudi Arabia?",
+"options": [
+"Dhaka",
+"Jakarta",
+"Riyadh",
+"Seoul"
+],
+"answer": 2,
+"explain": "Riyadh is the capital of Saudi Arabia.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-SAU",
+"continent": "Asia",
+"territory": "SAU",
+"tier": "medium",
+"q": "Riyadh is the capital of which country?",
+"options": [
+"India",
+"Bangladesh",
+"Saudi Arabia",
+"Malaysia"
+],
+"answer": 2,
+"explain": "Riyadh is the capital of Saudi Arabia.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-SAU",
+"continent": "Asia",
+"territory": "SAU",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"Vietnam",
+"China",
+"Saudi Arabia",
+"Thailand"
+],
+"answer": 2,
+"explain": "That's the flag of Saudi Arabia!",
+"type": "flag",
+"image": "assets/flags/SAU.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-SAU",
+"continent": "Asia",
+"territory": "SAU",
+"tier": "easy",
+"q": "Which of these is the flag of Saudi Arabia?",
+"options": [
+"Pakistan",
+"Bangladesh",
+"Saudi Arabia",
+"Thailand"
+],
+"answer": 2,
+"explain": "That's the flag of Saudi Arabia!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"PAK",
+"BGD",
+"SAU",
+"THA"
+]
+},
+{
+"id": "MAP-SAU",
+"continent": "Asia",
+"territory": "SAU",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "SAU",
+"answerIsTerritory": true,
+"q": "Find Saudi Arabia on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Saudi Arabia is in Asia. Its capital is Riyadh."
+},
+{
+"id": "CAP-F-TUR",
+"continent": "Asia",
+"territory": "TUR",
+"tier": "medium",
+"q": "What is the capital city of Turkey?",
+"options": [
+"New Delhi",
+"Jakarta",
+"Islamabad",
+"Ankara"
+],
+"answer": 3,
+"explain": "Ankara is the capital of Turkey. Istanbul is Turkey's biggest city, but Ankara is the capital.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-TUR",
+"continent": "Asia",
+"territory": "TUR",
+"tier": "hard",
+"q": "Ankara is the capital of which country?",
+"options": [
+"Turkey",
+"Thailand",
+"Bangladesh",
+"Philippines"
+],
+"answer": 0,
+"explain": "Ankara is the capital of Turkey. Istanbul is Turkey's biggest city, but Ankara is the capital.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-TUR",
+"continent": "Asia",
+"territory": "TUR",
+"tier": "hard",
+"q": "Which country does this flag belong to?",
+"options": [
+"Pakistan",
+"China",
+"Turkey",
+"Thailand"
+],
+"answer": 2,
+"explain": "That's the flag of Turkey!",
+"type": "flag",
+"image": "assets/flags/TUR.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-TUR",
+"continent": "Asia",
+"territory": "TUR",
+"tier": "medium",
+"q": "Which of these is the flag of Turkey?",
+"options": [
+"China",
+"Thailand",
+"South Korea",
+"Turkey"
+],
+"answer": 3,
+"explain": "That's the flag of Turkey!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"CHN",
+"THA",
+"KOR",
+"TUR"
+]
+},
+{
+"id": "MAP-TUR",
+"continent": "Asia",
+"territory": "TUR",
+"tier": "hard",
+"type": "map",
+"category": "map",
+"target": "TUR",
+"answerIsTerritory": true,
+"q": "Find Turkey on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Turkey is in Asia. Its capital is Ankara."
+},
+{
+"id": "CAP-F-PAK",
+"continent": "Asia",
+"territory": "PAK",
+"tier": "medium",
+"q": "What is the capital city of Pakistan?",
+"options": [
+"Manila",
+"Islamabad",
+"Ankara",
+"Jakarta"
+],
+"answer": 1,
+"explain": "Islamabad is the capital of Pakistan.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-PAK",
+"continent": "Asia",
+"territory": "PAK",
+"tier": "hard",
+"q": "Islamabad is the capital of which country?",
+"options": [
+"Pakistan",
+"India",
+"Vietnam",
+"Saudi Arabia"
+],
+"answer": 0,
+"explain": "Islamabad is the capital of Pakistan.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-PAK",
+"continent": "Asia",
+"territory": "PAK",
+"tier": "hard",
+"q": "Which country does this flag belong to?",
+"options": [
+"Malaysia",
+"Pakistan",
+"Turkey",
+"South Korea"
+],
+"answer": 1,
+"explain": "That's the flag of Pakistan!",
+"type": "flag",
+"image": "assets/flags/PAK.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-PAK",
+"continent": "Asia",
+"territory": "PAK",
+"tier": "medium",
+"q": "Which of these is the flag of Pakistan?",
+"options": [
+"Vietnam",
+"Pakistan",
+"Indonesia",
+"Turkey"
+],
+"answer": 1,
+"explain": "That's the flag of Pakistan!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"VNM",
+"PAK",
+"IDN",
+"TUR"
+]
+},
+{
+"id": "MAP-PAK",
+"continent": "Asia",
+"territory": "PAK",
+"tier": "hard",
+"type": "map",
+"category": "map",
+"target": "PAK",
+"answerIsTerritory": true,
+"q": "Find Pakistan on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Pakistan is in Asia. Its capital is Islamabad."
+},
+{
+"id": "CAP-F-BGD",
+"continent": "Asia",
+"territory": "BGD",
+"tier": "medium",
+"q": "What is the capital city of Bangladesh?",
+"options": [
+"Islamabad",
+"Seoul",
+"Dhaka",
+"Ulaanbaatar"
+],
+"answer": 2,
+"explain": "Dhaka is the capital of Bangladesh.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-BGD",
+"continent": "Asia",
+"territory": "BGD",
+"tier": "hard",
+"q": "Dhaka is the capital of which country?",
+"options": [
+"Bangladesh",
+"Indonesia",
+"Turkey",
+"Japan"
+],
+"answer": 0,
+"explain": "Dhaka is the capital of Bangladesh.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-BGD",
+"continent": "Asia",
+"territory": "BGD",
+"tier": "hard",
+"q": "Which country does this flag belong to?",
+"options": [
+"Bangladesh",
+"Philippines",
+"Vietnam",
+"Pakistan"
+],
+"answer": 0,
+"explain": "That's the flag of Bangladesh!",
+"type": "flag",
+"image": "assets/flags/BGD.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-BGD",
+"continent": "Asia",
+"territory": "BGD",
+"tier": "medium",
+"q": "Which of these is the flag of Bangladesh?",
+"options": [
+"Vietnam",
+"India",
+"Turkey",
+"Bangladesh"
+],
+"answer": 3,
+"explain": "That's the flag of Bangladesh!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"VNM",
+"IND",
+"TUR",
+"BGD"
+]
+},
+{
+"id": "MAP-BGD",
+"continent": "Asia",
+"territory": "BGD",
+"tier": "hard",
+"type": "map",
+"category": "map",
+"target": "BGD",
+"answerIsTerritory": true,
+"q": "Find Bangladesh on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Bangladesh is in Asia. Its capital is Dhaka."
+},
+{
+"id": "CAP-F-MNG",
+"continent": "Asia",
+"territory": "MNG",
+"tier": "medium",
+"q": "What is the capital city of Mongolia?",
+"options": [
+"Kuala Lumpur",
+"Beijing",
+"Seoul",
+"Ulaanbaatar"
+],
+"answer": 3,
+"explain": "Ulaanbaatar is the capital of Mongolia.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-MNG",
+"continent": "Asia",
+"territory": "MNG",
+"tier": "hard",
+"q": "Ulaanbaatar is the capital of which country?",
+"options": [
+"Saudi Arabia",
+"Bangladesh",
+"Thailand",
+"Mongolia"
+],
+"answer": 3,
+"explain": "Ulaanbaatar is the capital of Mongolia.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-MNG",
+"continent": "Asia",
+"territory": "MNG",
+"tier": "hard",
+"q": "Which country does this flag belong to?",
+"options": [
+"Vietnam",
+"Bangladesh",
+"Thailand",
+"Mongolia"
+],
+"answer": 3,
+"explain": "That's the flag of Mongolia!",
+"type": "flag",
+"image": "assets/flags/MNG.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-MNG",
+"continent": "Asia",
+"territory": "MNG",
+"tier": "medium",
+"q": "Which of these is the flag of Mongolia?",
+"options": [
+"Japan",
+"Bangladesh",
+"India",
+"Mongolia"
+],
+"answer": 3,
+"explain": "That's the flag of Mongolia!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"JPN",
+"BGD",
+"IND",
+"MNG"
+]
+},
+{
+"id": "MAP-MNG",
+"continent": "Asia",
+"territory": "MNG",
+"tier": "hard",
+"type": "map",
+"category": "map",
+"target": "MNG",
+"answerIsTerritory": true,
+"q": "Find Mongolia on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Mongolia is in Asia. Its capital is Ulaanbaatar."
+},
+{
+"id": "CAP-F-AUS",
+"continent": "Oceania",
+"territory": "AUS",
+"tier": "medium",
+"q": "What is the capital city of Australia?",
+"options": [
+"Honiara",
+"Port Moresby",
+"Canberra",
+"Wellington"
+],
+"answer": 2,
+"explain": "Canberra is the capital of Australia. Sydney is Australia's biggest city, but Canberra is the capital.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-AUS",
+"continent": "Oceania",
+"territory": "AUS",
+"tier": "medium",
+"q": "Canberra is the capital of which country?",
+"options": [
+"Papua New Guinea",
+"Vanuatu",
+"Australia",
+"Solomon Islands"
+],
+"answer": 2,
+"explain": "Canberra is the capital of Australia. Sydney is Australia's biggest city, but Canberra is the capital.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-AUS",
+"continent": "Oceania",
+"territory": "AUS",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"Solomon Islands",
+"New Zealand",
+"Australia",
+"Vanuatu"
+],
+"answer": 2,
+"explain": "That's the flag of Australia!",
+"type": "flag",
+"image": "assets/flags/AUS.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-AUS",
+"continent": "Oceania",
+"territory": "AUS",
+"tier": "easy",
+"q": "Which of these is the flag of Australia?",
+"options": [
+"New Zealand",
+"Fiji",
+"Australia",
+"Vanuatu"
+],
+"answer": 2,
+"explain": "That's the flag of Australia!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"NZL",
+"FJI",
+"AUS",
+"VUT"
+]
+},
+{
+"id": "MAP-AUS",
+"continent": "Oceania",
+"territory": "AUS",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "AUS",
+"answerIsTerritory": true,
+"q": "Find Australia on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Australia is in Oceania. Its capital is Canberra."
+},
+{
+"id": "CAP-F-NZL",
+"continent": "Oceania",
+"territory": "NZL",
+"tier": "medium",
+"q": "What is the capital city of New Zealand?",
+"options": [
+"Suva",
+"Wellington",
+"Port Moresby",
+"Port Vila"
+],
+"answer": 1,
+"explain": "Wellington is the capital of New Zealand.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-NZL",
+"continent": "Oceania",
+"territory": "NZL",
+"tier": "medium",
+"q": "Wellington is the capital of which country?",
+"options": [
+"Fiji",
+"Solomon Islands",
+"Papua New Guinea",
+"New Zealand"
+],
+"answer": 3,
+"explain": "Wellington is the capital of New Zealand.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-NZL",
+"continent": "Oceania",
+"territory": "NZL",
+"tier": "medium",
+"q": "Which country does this flag belong to?",
+"options": [
+"Fiji",
+"Papua New Guinea",
+"New Zealand",
+"Solomon Islands"
+],
+"answer": 2,
+"explain": "That's the flag of New Zealand!",
+"type": "flag",
+"image": "assets/flags/NZL.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-NZL",
+"continent": "Oceania",
+"territory": "NZL",
+"tier": "easy",
+"q": "Which of these is the flag of New Zealand?",
+"options": [
+"New Zealand",
+"Papua New Guinea",
+"Solomon Islands",
+"Fiji"
+],
+"answer": 0,
+"explain": "That's the flag of New Zealand!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"NZL",
+"PNG",
+"SLB",
+"FJI"
+]
+},
+{
+"id": "MAP-NZL",
+"continent": "Oceania",
+"territory": "NZL",
+"tier": "medium",
+"type": "map",
+"category": "map",
+"target": "NZL",
+"answerIsTerritory": true,
+"q": "Find New Zealand on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "New Zealand is in Oceania. Its capital is Wellington."
+},
+{
+"id": "CAP-F-PNG",
+"continent": "Oceania",
+"territory": "PNG",
+"tier": "medium",
+"q": "What is the capital city of Papua New Guinea?",
+"options": [
+"Port Vila",
+"Port Moresby",
+"Wellington",
+"Canberra"
+],
+"answer": 1,
+"explain": "Port Moresby is the capital of Papua New Guinea.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-PNG",
+"continent": "Oceania",
+"territory": "PNG",
+"tier": "hard",
+"q": "Port Moresby is the capital of which country?",
+"options": [
+"Fiji",
+"Australia",
+"Papua New Guinea",
+"Vanuatu"
+],
+"answer": 2,
+"explain": "Port Moresby is the capital of Papua New Guinea.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-PNG",
+"continent": "Oceania",
+"territory": "PNG",
+"tier": "hard",
+"q": "Which country does this flag belong to?",
+"options": [
+"Papua New Guinea",
+"Fiji",
+"New Zealand",
+"Vanuatu"
+],
+"answer": 0,
+"explain": "That's the flag of Papua New Guinea!",
+"type": "flag",
+"image": "assets/flags/PNG.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-PNG",
+"continent": "Oceania",
+"territory": "PNG",
+"tier": "medium",
+"q": "Which of these is the flag of Papua New Guinea?",
+"options": [
+"Vanuatu",
+"Papua New Guinea",
+"Fiji",
+"New Zealand"
+],
+"answer": 1,
+"explain": "That's the flag of Papua New Guinea!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"VUT",
+"PNG",
+"FJI",
+"NZL"
+]
+},
+{
+"id": "MAP-PNG",
+"continent": "Oceania",
+"territory": "PNG",
+"tier": "hard",
+"type": "map",
+"category": "map",
+"target": "PNG",
+"answerIsTerritory": true,
+"q": "Find Papua New Guinea on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Papua New Guinea is in Oceania. Its capital is Port Moresby."
+},
+{
+"id": "CAP-F-FJI",
+"continent": "Oceania",
+"territory": "FJI",
+"tier": "medium",
+"q": "What is the capital city of Fiji?",
+"options": [
+"Honiara",
+"Port Moresby",
+"Wellington",
+"Suva"
+],
+"answer": 3,
+"explain": "Suva is the capital of Fiji.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-FJI",
+"continent": "Oceania",
+"territory": "FJI",
+"tier": "hard",
+"q": "Suva is the capital of which country?",
+"options": [
+"Fiji",
+"Australia",
+"New Zealand",
+"Solomon Islands"
+],
+"answer": 0,
+"explain": "Suva is the capital of Fiji.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-FJI",
+"continent": "Oceania",
+"territory": "FJI",
+"tier": "hard",
+"q": "Which country does this flag belong to?",
+"options": [
+"Fiji",
+"New Zealand",
+"Australia",
+"Vanuatu"
+],
+"answer": 0,
+"explain": "That's the flag of Fiji!",
+"type": "flag",
+"image": "assets/flags/FJI.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-FJI",
+"continent": "Oceania",
+"territory": "FJI",
+"tier": "medium",
+"q": "Which of these is the flag of Fiji?",
+"options": [
+"New Zealand",
+"Australia",
+"Solomon Islands",
+"Fiji"
+],
+"answer": 3,
+"explain": "That's the flag of Fiji!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"NZL",
+"AUS",
+"SLB",
+"FJI"
+]
+},
+{
+"id": "MAP-FJI",
+"continent": "Oceania",
+"territory": "FJI",
+"tier": "hard",
+"type": "map",
+"category": "map",
+"target": "FJI",
+"answerIsTerritory": true,
+"q": "Find Fiji on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Fiji is in Oceania. Its capital is Suva."
+},
+{
+"id": "CAP-F-VUT",
+"continent": "Oceania",
+"territory": "VUT",
+"tier": "medium",
+"q": "What is the capital city of Vanuatu?",
+"options": [
+"Port Vila",
+"Wellington",
+"Port Moresby",
+"Canberra"
+],
+"answer": 0,
+"explain": "Port Vila is the capital of Vanuatu.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-VUT",
+"continent": "Oceania",
+"territory": "VUT",
+"tier": "hard",
+"q": "Port Vila is the capital of which country?",
+"options": [
+"Papua New Guinea",
+"New Zealand",
+"Fiji",
+"Vanuatu"
+],
+"answer": 3,
+"explain": "Port Vila is the capital of Vanuatu.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-VUT",
+"continent": "Oceania",
+"territory": "VUT",
+"tier": "hard",
+"q": "Which country does this flag belong to?",
+"options": [
+"Fiji",
+"New Zealand",
+"Vanuatu",
+"Australia"
+],
+"answer": 2,
+"explain": "That's the flag of Vanuatu!",
+"type": "flag",
+"image": "assets/flags/VUT.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-VUT",
+"continent": "Oceania",
+"territory": "VUT",
+"tier": "medium",
+"q": "Which of these is the flag of Vanuatu?",
+"options": [
+"Solomon Islands",
+"Fiji",
+"Vanuatu",
+"New Zealand"
+],
+"answer": 2,
+"explain": "That's the flag of Vanuatu!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"SLB",
+"FJI",
+"VUT",
+"NZL"
+]
+},
+{
+"id": "MAP-VUT",
+"continent": "Oceania",
+"territory": "VUT",
+"tier": "hard",
+"type": "map",
+"category": "map",
+"target": "VUT",
+"answerIsTerritory": true,
+"q": "Find Vanuatu on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "Vanuatu is in Oceania. Its capital is Port Vila."
+},
+{
+"id": "CAP-F-SLB",
+"continent": "Oceania",
+"territory": "SLB",
+"tier": "medium",
+"q": "What is the capital city of the Solomon Islands?",
+"options": [
+"Port Vila",
+"Honiara",
+"Wellington",
+"Suva"
+],
+"answer": 1,
+"explain": "Honiara is the capital of the Solomon Islands.",
+"type": "text",
+"category": "capitals"
+},
+{
+"id": "CAP-R-SLB",
+"continent": "Oceania",
+"territory": "SLB",
+"tier": "hard",
+"q": "Honiara is the capital of which country?",
+"options": [
+"Fiji",
+"Solomon Islands",
+"New Zealand",
+"Papua New Guinea"
+],
+"answer": 1,
+"explain": "Honiara is the capital of the Solomon Islands.",
+"type": "text",
+"category": "capitals",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-N-SLB",
+"continent": "Oceania",
+"territory": "SLB",
+"tier": "hard",
+"q": "Which country does this flag belong to?",
+"options": [
+"Papua New Guinea",
+"Fiji",
+"Vanuatu",
+"Solomon Islands"
+],
+"answer": 3,
+"explain": "That's the flag of the Solomon Islands!",
+"type": "flag",
+"image": "assets/flags/SLB.svg",
+"category": "flags",
+"answerIsTerritory": true
+},
+{
+"id": "FLAG-P-SLB",
+"continent": "Oceania",
+"territory": "SLB",
+"tier": "medium",
+"q": "Which of these is the flag of the Solomon Islands?",
+"options": [
+"Vanuatu",
+"Solomon Islands",
+"Fiji",
+"Papua New Guinea"
+],
+"answer": 1,
+"explain": "That's the flag of the Solomon Islands!",
+"type": "flag-pick",
+"category": "flags",
+"optionFlags": [
+"VUT",
+"SLB",
+"FJI",
+"PNG"
+]
+},
+{
+"id": "MAP-SLB",
+"continent": "Oceania",
+"territory": "SLB",
+"tier": "hard",
+"type": "map",
+"category": "map",
+"target": "SLB",
+"answerIsTerritory": true,
+"q": "Find the Solomon Islands on the map and tap it!",
+"options": [],
+"answer": null,
+"explain": "The Solomon Islands is in Oceania. Its capital is Honiara."
+}
+]

@@ -5,6 +5,7 @@
   "data/questions-eu.json",
   "data/questions-af.json",
   "data/questions-as.json",
-  "data/questions-oc.json"
+  "data/questions-oc.json",
+  "data/questions-generated.json"
  ]
 }

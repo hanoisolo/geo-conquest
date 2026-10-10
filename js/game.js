@@ -506,6 +506,13 @@ const GeoGame = {
     document.getElementById("find-banner").classList.remove("hidden");
     GeoMap.setFindMode(true, (iso3) => this.onFindTap(iso3));
     GeoMap.setLabelsHidden(true); // no name labels while searching the map
+    // Phones: the map may be scrolled off-screen behind the side panel.
+    const wrap = document.querySelector(".map-wrap");
+    if (wrap) {
+      const bar = document.querySelector(".topbar");
+      const top = wrap.getBoundingClientRect().top + window.scrollY - (bar ? bar.offsetHeight : 0) - 8;
+      window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+    }
   },
 
   /** Leave find mode: restore tooltips/clickability and hide the banner. */
@@ -526,8 +533,13 @@ const GeoGame = {
     const correct = iso3 === target;
     c.wasCorrect = correct;
     c.mapTapped = iso3;
-    this.showMapResult(c, correct, tappedName, targetName);
-    if (!correct) GeoMap.flash(target); // show where the target really is
+    if (correct) {
+      this.showMapResult(c, correct, tappedName, targetName);
+    } else {
+      // Show where the target really is for a moment before the feedback pops up.
+      GeoMap.flash(target);
+      setTimeout(() => this.showMapResult(c, correct, tappedName, targetName), 1400);
+    }
   },
 
   /** "Give up" on a map question counts as a wrong answer. */

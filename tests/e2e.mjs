@@ -34,7 +34,7 @@ async function run(vp, tag) {
     if (info.type === "map") {
       await page.click("#q-options button");
       await wait(300);
-      await page.evaluate(([t, ok]) => GeoGame.onFindTap(ok ? t : (t === "AUS" ? "NZL" : "AUS")), [info.target, correct]);
+      await page.evaluate(([t, ok]) => GeoGame.onFindTap(ok ? t : (t === "AUS" ? "NZL" : "AUS")), [info.target, correct]); await wait(correct ? 100 : 1600);
     } else {
       const i = correct ? info.idx : (info.idx + 1) % info.n;
       await page.locator("#q-options button").nth(i).click();
@@ -93,7 +93,7 @@ async function run(vp, tag) {
     await shot("07-map-find-mode");
     ok(`${tag}: find mode banner`, await vis("#find-banner"));
     ok(`${tag}: no tooltips in find mode`, await page.evaluate(() => [...document.querySelectorAll("#map-svg title")].every((t) => !t.textContent)));
-    await page.evaluate(() => GeoGame.onFindTap("FJI")); await wait(500);
+    await page.evaluate(() => GeoGame.onFindTap("FJI")); await wait(1600);
     await shot("08-map-find-result"); await cont();
   }
   // Baron steal on a wrong Medium answer

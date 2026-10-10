@@ -751,20 +751,25 @@
     const value = rat(ns, L);
     const answerStr = formatFraction(ns, L);
     const q = `What is ${an}/${d1} ${op} ${bn}/${d2}?`;
-    const h2 = { text: `Step 2: ${an}/${d1} = ${na}/${L} (multiply the top and bottom by ${L / d1}).` };
-    if (L <= 24) h2.bars = [{ n: na, d: L, label: `${na}/${L}` }];
-    const h3 = { text: `Step 3: ${bn}/${d2} = ${nb}/${L} (multiply the top and bottom by ${L / d2}).` };
-    if (L <= 24) h3.bars = [{ n: nb, d: L, label: `${nb}/${L}` }];
-    const hints = [
-      { text: `Step 1: The bottoms (denominators) are ${d1} and ${d2}. Find a number both go into: ${L}.`, bars: [
+    // Conversion steps are skipped when a fraction already has the common bottom (no "7/9 = 7/9" steps).
+    const conv = [];
+    if (L !== d1) conv.push({ text: `${an}/${d1} = ${na}/${L} (multiply the top and bottom by ${L / d1}).`, bars: L <= 24 ? [{ n: na, d: L, label: `${na}/${L}` }] : undefined });
+    if (L !== d2) conv.push({ text: `${bn}/${d2} = ${nb}/${L} (multiply the top and bottom by ${L / d2}).`, bars: L <= 24 ? [{ n: nb, d: L, label: `${nb}/${L}` }] : undefined });
+    const keep = L === d1 ? `${an}/${d1}` : L === d2 ? `${bn}/${d2}` : "";
+    const steps = [
+      { text: `The bottoms (denominators) are ${d1} and ${d2}. Find a number both go into: ${L}.` + (keep ? ` ${keep} already has ${L} on the bottom, so it stays the same.` : ""), bars: [
         { n: an, d: d1, label: `${an}/${d1}` },
         { n: bn, d: d2, label: `${bn}/${d2}` },
       ] },
-      h2,
-      h3,
-      { text: `Step 4: ${op === "+" ? "Add" : "Subtract"} the tops: ${na} ${op} ${nb} = ${ns}, so you have ${ns}/${L}.` },
-      { text: `Final step: Write your answer in simplest form!` },
+      ...conv,
+      { text: `${op === "+" ? "Add" : "Subtract"} the tops: ${na} ${op} ${nb} = ${ns}, so you have ${ns}/${L}.` },
     ];
+    const hints = steps.map((h, i) => {
+      const o = { text: `Step ${i + 1}: ${h.text}` };
+      if (h.bars) o.bars = h.bars;
+      return o;
+    });
+    hints.push({ text: `Final step: Write your answer in simplest form!` });
     const candidates = [
       rat(op === "+" ? an + bn : an - bn, d1 + d2), // played with the bottoms too
       rat(op === "+" ? na + bn : na - bn, L),       // forgot to convert the second top
@@ -873,7 +878,10 @@
     const ns = na + nb;
     const wholes = w1 + w2;
     const q = `What is ${w1} ${an}/${b} + ${w2} ${cn}/${d}?`;
-    const h3 = { text: `Step 3: ${an}/${b} = ${na}/${L} and ${cn}/${d} = ${nb}/${L}, so ${na} + ${nb} = ${ns}, giving ${ns}/${L}.` };
+    const convParts = [];
+    if (L !== b) convParts.push(`${an}/${b} = ${na}/${L}`);
+    if (L !== d) convParts.push(`${cn}/${d} = ${nb}/${L}`);
+    const h3 = { text: `Step 3: ${convParts.length ? convParts.join(" and ") + ", so " : ""}${na}/${L} + ${nb}/${L}: ${na} + ${nb} = ${ns}, giving ${ns}/${L}.` };
     if (ns <= L && L <= 24) h3.bars = [{ n: ns, d: L, label: `${ns}/${L}` }];
     const hints = [
       { text: `Step 1: Add the whole numbers: ${w1} + ${w2} = ${wholes}.` },

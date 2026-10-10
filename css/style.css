@@ -35,6 +35,17 @@
 }
 .modal:focus { outline: none; } /* programmatic focus into a dialog */
 
+/* Buttons always get a clearly visible keyboard focus ring */
+.btn:focus-visible,
+.q-option:focus-visible,
+.diff-btn:focus-visible,
+.subject-btn:focus-visible,
+#btn-hint:focus-visible,
+#btn-similar:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
 body {
   margin: 0;
   font-family: "Trebuchet MS", "Segoe UI", Verdana, sans-serif;
@@ -709,9 +720,41 @@ footer a { color: var(--player); }
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+  /* Baron idle/bounce/wiggle animations off */
+  .baron-face,
+  .baron-float-face,
+  .baron-stage,
+  .baron-float {
+    animation: none !important;
+  }
+  /* no transform hover lift on cards */
+  .card:hover,
+  main .card:hover:not(.map-wrap) {
+    transform: none !important;
+  }
 }
 
 /* ---------- Seg 7: never let a toast cover an open question/victory card ---------- */
 .modal-backdrop:not(.hidden) ~ .toast { display: none; }
 /* Seg 7: the phone Baron bubble used to shrink to one word per line inside the 56px avatar box */
 .baron-float-bubble { width: max-content; }
+/* Seg 7: Continue / Try a similar one stay in view at the bottom of a long question card */
+.q-actions {
+  position: sticky;
+  bottom: -1px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), #fff 35%);
+  padding: 0.6rem 0 0.2rem;
+  margin-top: 0.4rem;
+}
+.q-actions:not(:has(.btn:not(.hidden))) { display: none; }
+.q-actions #btn-similar, .q-actions #btn-q-continue { margin: 0; }
+/* Seg 7: on phones the toast sits under the header so it never covers the Baron's bubble (bottom-left) */
+@media (max-width: 700px) {
+  .toast { bottom: auto; top: 4.2rem; }
+  @keyframes toast-in { from { opacity: 0; transform: translate(-50%, -12px); } to { opacity: 1; transform: translate(-50%, 0); } }
+}

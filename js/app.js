@@ -92,6 +92,29 @@ function wireUI() {
   $("btn-hint").addEventListener("click", () => GeoGame.showHint());
   $("btn-similar").addEventListener("click", () => GeoGame.trySimilar());
 
+  // ---- keyboard answers while the question modal is open ----
+  // Keys 1-4 pick an option, H shows a hint, Enter continues (when no button has focus).
+  document.addEventListener("keydown", (e) => {
+    if ($("question-modal").classList.contains("hidden")) return;
+    const active = document.activeElement;
+    const tag = active ? active.tagName : "";
+    if (tag === "INPUT" || tag === "TEXTAREA") return; // typing stays typing
+    if (["1", "2", "3", "4"].includes(e.key) && !e.ctrlKey && !e.metaKey && !e.altKey) {
+      const btn = document.querySelectorAll("#q-options button")[Number(e.key) - 1];
+      if (btn && !btn.disabled) btn.click();
+      return;
+    }
+    if (e.key === "h" || e.key === "H") {
+      const hint = $("btn-hint");
+      if (!hint.classList.contains("hidden") && !hint.disabled) hint.click();
+      return;
+    }
+    if (e.key === "Enter" && tag !== "BUTTON") {
+      const cont = $("btn-q-continue");
+      if (!cont.classList.contains("hidden")) cont.click();
+    }
+  });
+
   // ---- map find mode ("find it on the map" questions) ----
   $("btn-find-giveup").addEventListener("click", () => GeoGame.giveUpFind());
 

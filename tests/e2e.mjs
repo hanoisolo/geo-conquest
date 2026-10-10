@@ -120,10 +120,12 @@ async function run(vp, tag) {
       ok(`${tag}: math question shown`, await page.evaluate(() => GeoGame.currentContest && GeoGame.currentContest.question.type === "math"));
       await shot("10-math-question");
       ok(`${tag}: no toast over the question card`, !(await vis("#toast")));
+      await page.keyboard.press("h"); await wait(200);
+      ok(`${tag}: keyboard H shows a hint`, stage < "b" || (await page.locator("#q-hints li").count()) === 1);
       if (stage >= "b") {
         const hint = page.locator("#btn-hint");
         ok(`${tag}: hint button`, await hint.isVisible());
-        for (let i = 0; i < 2 && (await hint.isVisible()) && (await hint.isEnabled()); i++) { await hint.click(); await wait(300); }
+        for (let i = 0; i < 1 && (await hint.isVisible()) && (await hint.isEnabled()); i++) { await hint.click(); await wait(300); }
         ok(`${tag}: two hint steps shown`, (await page.locator("#q-hints li").count()) === 2);
         ok(`${tag}: fraction bars drawn`, await page.locator("#q-hints svg").count());
         await shot("10b-math-hints");
@@ -132,12 +134,17 @@ async function run(vp, tag) {
         await answer(false); await wait(300); await shot("11-math-wrong-solution");
         ok(`${tag}: worked solution shown`, (await page.locator("#q-feedback li, #q-feedback .solution-step").count()) >= 2);
         ok(`${tag}: try-a-similar-one button`, await vis("#btn-similar"));
+        ok(`${tag}: similar button in view without scrolling`, await page.evaluate(() => { const r = document.getElementById("btn-similar").getBoundingClientRect(); return r.top >= 0 && r.bottom <= innerHeight; }));
         await page.click("#btn-similar"); await wait(500);
         ok(`${tag}: math miss lets the Baron steal`, await page.evaluate((t) => GeoGame.state.ownership[t] === "rival", t2));
         ok(`${tag}: similar practice question opens`, await vis("#q-practice-note") && await page.evaluate(() => GeoGame.currentContest && GeoGame.currentContest.practice && GeoGame.currentContest.question.skill === "fracdiff"));
         await shot("11b-math-practice");
         const pts0 = await page.evaluate(() => GeoGame.state.points);
         await answer(true); await cont();
+        { const tt = await page.evaluate(() => { const t = document.getElementById("toast"); return [t.classList.contains("hidden") ? "" : t.textContent, ...GeoGame._toastQueue.map((x) => x.msg)].join("|"); });
+          const name = await page.evaluate((t) => GeoGame.nameOf[t], t2);
+          const iSteal = tt.lastIndexOf(`seized ${name}`), iPrac = tt.indexOf("Nice practice");
+          ok(`${tag}: toast held during the card shows after it closes`, iSteal >= 0 && iPrac > iSteal); }
         ok(`${tag}: practice changes nothing`, await page.evaluate(([t, p]) => GeoGame.state.ownership[t] === "rival" && GeoGame.state.points === p, [t2, pts0]));
       } else {
         await answer(true); await cont();

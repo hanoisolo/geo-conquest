@@ -960,6 +960,8 @@ const GeoGame = {
     this.currentContest = null;
     this.leaveFindMode();
     this._toastQueue = [];
+    if (this._toastShowing && this._toastShowing.stop) this._toastShowing.stop();
+    this._toastShowing = null;
     clearTimeout(this._toastTimer);
     this._toastBusy = false;
     document.getElementById("toast").classList.add("hidden");
@@ -1058,8 +1060,24 @@ const GeoGame = {
     if (!this._toastBusy) this._nextToast();
   },
 
+  /** True while a question/victory/unlock/how-to card is open (toasts wait until it closes). */
+  _cardOpen() {
+    return !!document.querySelector(".modal-backdrop:not(.hidden)");
+  },
+
   _nextToast() {
     const t = document.getElementById("toast");
+    clearTimeout(this._toastTimer);
+    // A toast that was on screen while a card covered it (CSS hides it) is shown again later.
+    if (this._toastShowing && this._toastShowing.hiddenByCard) this._toastQueue.unshift(this._toastShowing.item);
+    this._toastShowing = null;
+    if (this._toastQueue.length && this._cardOpen()) {
+      // Hold the queue while a card is open; check again shortly.
+      this._toastBusy = true;
+      t.classList.add("hidden");
+      this._toastTimer = setTimeout(() => this._nextToast(), 400);
+      return;
+    }
     const item = this._toastQueue.shift();
     if (!item) {
       this._toastBusy = false;
@@ -1073,13 +1091,22 @@ const GeoGame = {
     t.style.animation = "none";
     void t.offsetWidth;
     t.style.animation = "";
-    clearTimeout(this._toastTimer);
-    this._toastTimer = setTimeout(() => this._nextToast(), item.ms);
+    const showing = { item, hiddenByCard: false };
+    this._toastShowing = showing;
+    // Only replay a toast that a card covered before it was readable (under ~1 s on screen),
+    // so finished messages never pile up and repeat after every question.
+    const shownAt = Date.now();
+    const watch = setInterval(() => {
+      if (this._cardOpen() && Date.now() - shownAt < 1000) showing.hiddenByCard = true;
+    }, 150);
+    this._toastTimer = setTimeout(() => { clearInterval(watch); this._nextToast(); }, item.ms);
+    showing.stop = () => clearInterval(watch);
   },
 
   /** Tap-to-dismiss: skip the current toast, show the next one (if any). */
   dismissToast() {
     clearTimeout(this._toastTimer);
+    if (this._toastShowing) { this._toastShowing.stop && this._toastShowing.stop(); this._toastShowing.hiddenByCard = false; }
     this._nextToast();
   },
 

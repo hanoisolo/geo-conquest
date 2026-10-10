@@ -70,7 +70,7 @@
             <p>Conquer <strong>all six continents</strong>. For true legends only!</p>
           </button>
         </div>
-        <button class="btn btn-big btn-continue hidden" id="btn-continue" type="button">▶ Continue your journey</button>
+        <button class="btn btn-big btn-continue hidden" id="btn-continue" type="button" aria-label="Continue your journey">▶ Continue your journey</button>
         <p class="save-note">Your progress saves automatically in this browser.</p>
       </div>
     </section>
@@ -81,7 +81,7 @@
         <h2 id="pick-title">Choose your starting continent</h2>
         <p class="muted" id="pick-subtitle">This is where your empire begins. Choose wisely, explorer!</p>
         <div class="continent-grid" id="continent-cards"></div>
-        <button class="btn btn-small" id="btn-pick-back" type="button">← Back</button>
+        <button class="btn btn-small" id="btn-pick-back" type="button" aria-label="Back">← Back</button>
       </div>
     </section>
 
@@ -100,7 +100,7 @@
           <div class="map-controls">
             <button class="btn btn-small" id="zoom-in" type="button" aria-label="Zoom in">＋</button>
             <button class="btn btn-small" id="zoom-out" type="button" aria-label="Zoom out">－</button>
-            <button class="btn btn-small" id="zoom-reset" type="button">⟲ Reset view</button>
+            <button class="btn btn-small" id="zoom-reset" type="button" aria-label="Reset view">⟲ Reset view</button>
           </div>
           <div class="legend">
             <span class="legend-item"><i class="swatch sw-player"></i>Yours</span>
@@ -133,14 +133,14 @@
             <p class="muted small easy-note hidden" id="terr-easy-note">😈 The Baron's fortress needs Medium or Hard!</p>
             <p class="muted small" id="terr-hint">Pick a subject and a difficulty, then answer to conquer it!</p>
             <div class="subject-row" role="group" aria-label="Subject">
-              <button class="btn btn-small subject-btn" data-subject="geo" type="button" aria-pressed="true">🌍 Geography</button>
-              <button class="btn btn-small subject-btn" data-subject="math" type="button" aria-pressed="false">🧮 Math</button>
+              <button class="btn btn-small subject-btn" data-subject="geo" type="button" aria-pressed="true" aria-label="Geography questions">🌍 Geography</button>
+              <button class="btn btn-small subject-btn" data-subject="math" type="button" aria-pressed="false" aria-label="Math questions">🧮 Math</button>
             </div>
             <p class="math-nudge hidden" id="terr-math-nudge">🧮 Math challenge: +5 bonus!</p>
             <div class="diff-row">
-              <button class="btn diff-btn diff-easy" data-tier="easy" type="button">😊 Easy<br /><small>+10 pts</small></button>
-              <button class="btn diff-btn diff-medium" data-tier="medium" type="button">🤔 Medium<br /><small>+20 pts</small></button>
-              <button class="btn diff-btn diff-hard" data-tier="hard" type="button">🧠 Hard<br /><small>+30 pts</small></button>
+              <button class="btn diff-btn diff-easy" data-tier="easy" type="button" aria-label="Easy, 10 points">😊 Easy<br /><small>+10 pts</small></button>
+              <button class="btn diff-btn diff-medium" data-tier="medium" type="button" aria-label="Medium, 20 points">🤔 Medium<br /><small>+20 pts</small></button>
+              <button class="btn diff-btn diff-hard" data-tier="hard" type="button" aria-label="Hard, 30 points">🧠 Hard<br /><small>+30 pts</small></button>
             </div>
           </div>
 
@@ -155,7 +155,7 @@
 
   <!-- ============ QUESTION MODAL ============ -->
   <div class="modal-backdrop hidden" id="question-modal">
-    <div class="modal card" tabindex="-1">
+    <div class="modal card" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="q-text">
       <div class="q-meta">
         <span id="q-territory">Country</span>
         <span class="q-meta-right"><span class="q-points" id="q-points"></span><span class="tier-badge" id="q-tier-badge">Easy</span></span>
@@ -165,17 +165,19 @@
       <h2 id="q-text">Question?</h2>
       <img id="q-flag-img" class="q-flag-img hidden" alt="" />
       <div class="q-options" id="q-options"></div>
-      <button class="btn btn-small hidden" id="btn-hint" type="button">💡 Hint</button>
-      <ol class="q-hints hidden" id="q-hints"></ol>
-      <div class="q-feedback hidden" id="q-feedback"></div>
-      <button class="btn hidden" id="btn-similar" type="button">🔁 Try a similar one</button>
-      <button class="btn btn-big hidden" id="btn-q-continue" type="button">Continue →</button>
+      <button class="btn btn-small hidden" id="btn-hint" type="button" aria-label="Show a hint">💡 Hint</button>
+      <ol class="q-hints hidden" id="q-hints" aria-live="polite"></ol>
+      <div class="q-feedback hidden" id="q-feedback" aria-live="polite"></div>
+      <div class="q-actions">
+        <button class="btn hidden" id="btn-similar" type="button" aria-label="Try a similar question">🔁 Try a similar one</button>
+        <button class="btn btn-big hidden" id="btn-q-continue" type="button">Continue →</button>
+      </div>
     </div>
   </div>
 
   <!-- ============ VICTORY MODAL ============ -->
   <div class="modal-backdrop hidden" id="victory-modal">
-    <div class="modal card victory" tabindex="-1">
+    <div class="modal card victory" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="victory-title">
       <div class="hero-emoji" id="victory-emoji">🏆</div>
       <h2 id="victory-title">Continent Conquered!</h2>
       <p id="victory-text"></p>
@@ -183,15 +185,15 @@
       <div class="victory-flags" id="victory-flags"></div>
       <div class="victory-buttons">
         <button class="btn btn-big" id="btn-victory-continue" type="button">Continue →</button>
-        <button class="btn btn-small" id="btn-victory-restart" type="button">↺ New campaign</button>
+        <button class="btn btn-small" id="btn-victory-restart" type="button" aria-label="New campaign">↺ New campaign</button>
       </div>
     </div>
   </div>
 
   <!-- ============ UNLOCK MODAL ============ -->
   <div class="modal-backdrop hidden" id="unlock-modal">
-    <div class="modal card" tabindex="-1">
-      <h2>🗝️ Choose your next conquest</h2>
+    <div class="modal card" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="unlock-title">
+      <h2 id="unlock-title">🗝️ Choose your next conquest</h2>
       <p class="muted">The Baron is regrouping… where will you strike next?</p>
       <div class="continent-grid" id="unlock-cards"></div>
     </div>
@@ -199,8 +201,8 @@
 
   <!-- ============ HOW TO PLAY MODAL ============ -->
   <div class="modal-backdrop hidden" id="how-modal">
-    <div class="modal card" tabindex="-1">
-      <h2>❓ How to play</h2>
+    <div class="modal card" tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="how-title">
+      <h2 id="how-title">❓ How to play</h2>
       <ol class="how-list">
         <li>🖱️ <strong>Tap a country</strong> in your current continent to challenge it.</li>
         <li>🎚️ <strong>Pick a difficulty</strong> — harder questions earn more points! (😊 Easy can't storm the Baron's fortresses — his countries need 🤔 Medium or 🧠 Hard.)</li>
@@ -221,7 +223,7 @@
     <svg class="baron-float-face" viewBox="0 0 120 120" aria-hidden="true"><use href="#baron-face" /></svg>
   </div>
 
-  <div class="toast hidden" id="toast"></div>
+  <div class="toast hidden" id="toast" role="status" aria-live="polite"></div>
 
   <footer>
     <p>Geo Conquest · Map data: <a href="https://www.naturalearthdata.com/" target="_blank" rel="noopener">Natural Earth</a> (public domain) · Made for young explorers 🧭</p>

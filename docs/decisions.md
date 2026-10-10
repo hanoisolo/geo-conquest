@@ -10,3 +10,7 @@
 - Math word problems use generic wording rather than real city distances, so they never teach wrong facts.
 - Hand-written bank generated per continent in smaller Vibe tasks after the single large task hit the 40-minute deadline (NA + SA salvaged from it).
 - Model pinned: mistral-large-4 (wrapper fallback to GLM 5.3 accepted only if it triggers).
+- Multiplayer (§8): one new module `js/multi.js` (`GeoMulti`) owns multiplayer state and its own save key; it reuses GeoMap (via the `onTerritoryClick` callback and `styleFor`) and GeoGame's question modal. GeoGame gets a `mode` flag; `persist()` is a no-op in multiplayer so the solo save can never be overwritten.
+- Multiplayer map is the whole world (68 countries, all unlocked). Choosing a single continent is an option to raise with Don.
+- Strike-back "adjacent" = shares a land border in Natural Earth outlines (56 borders). 17 island/isolated countries have none (e.g. AUS, JPN, KOR, EGY among playable ones) — they fall back to a random attacker country. France borders Brazil/Suriname through French Guiana (true, kept).
+- Start screen keeps the two solo cards and adds a third Multiplayer card rather than a two-step Solo/Multiplayer chooser (one tap fewer, no change for solo players).

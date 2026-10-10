@@ -13,3 +13,12 @@ Max one fix round per segment. One local commit per clean segment. Nothing pushe
 | 5 | Flags + capitals + map-tap generated questions | §5 | done (committed before 4 while data generation ran) — fix round by Forge: phone find-mode scrolls map into view, wrong taps flash the target before feedback; check + e2e 28/28 | seg 5 commit |
 | 6 | Math module + subject choice + hint UI | §6 | done — 6a subject choice done (e2e 38/38); 6b hints + fraction bars + −20% points per hint (min 5) done (e2e 44/44); 6c worked solution + "Try a similar one" practice (no stakes) done (e2e 50/50) | 6a 00462dd, 6b 8218031, 6c a050c58 |
 | 7 | Hardening pass (a11y, mobile, copy) + final screenshots | all | done — toasts wait while a card is open (replayed if covered within 1 s), phone toast under the header (clear of the Baron bubble), sticky Continue/Try-a-similar bar, no-op fraction steps skipped, a11y pass by Vibe (aria labels, dialog roles, live regions, focus rings, reduced motion, keys 1-4/H/Enter); e2e 58/58 | cbf17a7 + seg 7b commit |
+
+## Multiplayer (spec §8) — branch `multiplayer`
+| # | Segment | Spec | Status | Commit |
+|---|---------|------|--------|--------|
+| M0 | Blueprint: spec §8, segments, decisions, land adjacency data (tools/build_adjacency.py → data/adjacency.json) | §8 | done | M0 commit |
+| M1 | Mode card, setup screen, multi.js state + separate save, home flags, turn banner, scoreboard | §8.1 | in progress — Vibe run stalled after writing js/multi.js + index.html; Forge added the game.js/app.js hooks; CSS piece (M1b) not yet run. WIP in /workspace/gc-mp | |
+| M2 | Turns, attacks, home Medium/Hard rule, strike-back hand-off, elimination skip | §8.2 | pending | |
+| M3 | Timer, domination win, final standings, resume | §8.3 | pending | |
+| M4 | e2e-multi tests (2p timed, 4p domination, strike-back, elimination, timer end, solo save intact) + screenshots | §8.4 | pending | |

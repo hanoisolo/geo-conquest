@@ -50,3 +50,30 @@ playthrough passes at 1280x800 and 390x844. Nothing is pushed until Don approves
 - Wrong answer shows the full worked solution plus "Try a similar one" (same skill, practice — no conquest change).
 - Same win/steal rules as geography. Cheap adaptive difficulty: after 2 math misses in a row, the next math question drops a tier; after 3 right, it may go up.
 - Acceptance: `node tests/math.test.js` (thousands of samples, independent recomputation) passes; e2e answers a math question with hints open.
+
+## 8. Multiplayer: local pass-and-play (approved by Don, Oct 2026)
+One device, 2-4 players taking turns. No Baron. Solo stays exactly as it is.
+
+### 8.1 Mode select and setup (segment M1)
+- The start screen keeps the two solo cards (Continent Quest, World Conquest — vs the Baron) under a "Solo" label and adds a third card **👥 Multiplayer — 2-4 players on one device** (`#btn-multi`).
+- Multiplayer setup screen (`#screen-mp-setup`): number of players 2/3/4; per player a name (default "Player 1"..; max 12 chars) and a colour from 4 presets (blue `#2563eb`, red `#dc2626`, green `#16a34a`, orange `#ea580c`; each colour used once); win mode **⏱ Timed** (10 / 20 / 30 min) or **👑 Total domination**; Start button. Validation: names non-empty and unique.
+- Map: the whole world (all 68 countries, all continents unlocked).
+- Home flags: players plant in turn order ("<name>, tap a country to plant your home flag"); each picks a different, unclaimed country. Homes show a 🏠 marker/badge in the scoreboard.
+- Acceptance: setup works at 390px; the map colours each player's countries in their colour; the Baron panel and phone avatar are hidden in multiplayer.
+
+### 8.2 Turns, attacks and strike-backs (segment M2)
+- A turn banner at the top of the game area in the current player's colour: "🎯 <name>'s turn". The scoreboard lists every player (colour, name, countries, points; eliminated players struck through).
+- One attack per turn: tap an unclaimed country or an enemy's country (not your own). The territory card shows the owner, the Geography/Math choice and difficulty (math nudge every 3rd question per player and hints unchanged). Enemy **home** countries need Medium or Hard (Easy disabled, same note as the Baron's fortresses).
+- Unclaimed: right answer takes it (points as solo: tier points, −20% per hint, min 5, +5 math nudge); a miss changes nothing.
+- Enemy: right answer takes it. A miss gives the defender a **strike-back**: hand-off screen "🔄 Pass to <defender>" (full-screen, the defender's colour, a "I'm <defender> — ready!" button), then the defender answers a question of the same subject and tier. Right → the defender takes one of the attacker's countries adjacent to the target (data/adjacency.json, land borders), picked at random; if none is adjacent, a random attacker country. The attacker's home is only taken when it is their last country. Wrong → nothing changes. The defender earns +10 for a successful strike-back.
+- After each turn: hand-off screen "🔄 Pass to <next player>", then that player's turn. Eliminated players (0 countries) are skipped.
+- No turn passes with a modal still open; "Try a similar one" practice stays available and never changes the game.
+
+### 8.3 Winning, timer, standings, saves (segment M3)
+- Timed: a countdown in the banner (mm:ss). When it reaches 0 the current question finishes, then the game ends. Most countries wins; ties broken by points; then shared.
+- Total domination: last player with countries wins.
+- Final standings screen (`#mp-standings`): ranked list with colour, name, countries, points, medals 🥇🥈🥉; buttons "Play again (same players)" and "Back to start".
+- Saves: multiplayer has its own key `geoConquestMultiV1` (players, ownership, homes, turn, phase, win mode, time left, asked ids). Reload resumes at the same turn (timer pauses while the page is closed). Solo save (`geoConquestSaveV1`) is never read, written or cleared by multiplayer. "Continue" on the start screen offers the right mode.
+
+### 8.4 Tests (segment M4)
+- e2e (`tests/e2e-multi.mjs`, desktop + phone): 2-player timed game (home flags, unclaimed capture, miss on unclaimed changes nothing, timer end → standings); 4-player domination game (strike-back success takes an adjacent attacker country, failed strike-back, Easy disabled on an enemy home, an elimination is skipped in turn order, last player standing wins); solo save survives a multiplayer game; reload mid-turn resumes.

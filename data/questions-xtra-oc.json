@@ -1,0 +1,920 @@
+[
+ {
+  "id": "XOC-E-001",
+  "continent": "Oceania",
+  "territory": "AUS",
+  "tier": "easy",
+  "type": "text",
+  "category": "islands",
+  "q": "Which large island lies just south of the Australian mainland, separated from it by Bass Strait?",
+  "options": [
+   "Tasmania",
+   "New Guinea",
+   "Madagascar",
+   "Sri Lanka"
+  ],
+  "answer": 0,
+  "explain": "Tasmania is Australia's island state, a wild and green place famous for its national parks and Tasmanian devils."
+ },
+ {
+  "id": "XOC-E-002",
+  "continent": "Oceania",
+  "territory": "AUS",
+  "tier": "easy",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Which ocean washes along Australia's west coast?",
+  "options": [
+   "The Pacific Ocean",
+   "The Indian Ocean",
+   "The Atlantic Ocean",
+   "The Arctic Ocean"
+  ],
+  "answer": 1,
+  "explain": "The Indian Ocean lies to Australia's west, while the Pacific Ocean lies to the east."
+ },
+ {
+  "id": "XOC-E-003",
+  "continent": "Oceania",
+  "territory": "AUS",
+  "tier": "easy",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Which famous steel arch bridge, nicknamed 'The Coathanger', spans Sydney Harbour?",
+  "options": [
+   "The Sydney Harbour Bridge",
+   "Tower Bridge",
+   "The Golden Gate Bridge",
+   "The Sydney Opera House"
+  ],
+  "answer": 0,
+  "explain": "The Sydney Harbour Bridge opened in 1932, and its big arch looks like a coat hanger — hence the nickname."
+ },
+ {
+  "id": "XOC-E-004",
+  "continent": "Oceania",
+  "territory": "AUS",
+  "tier": "easy",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Which country lies directly north of Australia, across the narrow Torres Strait?",
+  "options": [
+   "Indonesia",
+   "Papua New Guinea",
+   "East Timor",
+   "The Solomon Islands"
+  ],
+  "answer": 1,
+  "explain": "Papua New Guinea sits just north of Australia's Cape York Peninsula, across the Torres Strait."
+ },
+ {
+  "id": "XOC-E-005",
+  "continent": "Oceania",
+  "territory": "NZL",
+  "tier": "easy",
+  "type": "text",
+  "category": "islands",
+  "q": "New Zealand is made up of two main islands — what are they called?",
+  "options": [
+   "The North Island and the South Island",
+   "The North Island and Stewart Island",
+   "The East Island and the West Island",
+   "The North Island and the Chatham Islands"
+  ],
+  "answer": 0,
+  "explain": "New Zealand's two main islands are simply called the North Island and the South Island."
+ },
+ {
+  "id": "XOC-E-006",
+  "continent": "Oceania",
+  "territory": "NZL",
+  "tier": "easy",
+  "type": "text",
+  "category": "islands",
+  "q": "Which of New Zealand's two main islands is the larger one?",
+  "options": [
+   "The South Island",
+   "The North Island",
+   "Stewart Island",
+   "The Chatham Islands"
+  ],
+  "answer": 0,
+  "explain": "The South Island is bigger, but most New Zealanders live on the North Island."
+ },
+ {
+  "id": "XOC-E-007",
+  "continent": "Oceania",
+  "territory": "NZL",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "What are the indigenous people of New Zealand called?",
+  "options": [
+   "The Māori",
+   "The Aboriginal people",
+   "The Inuit",
+   "The Samoans"
+  ],
+  "answer": 0,
+  "explain": "The Māori are the indigenous people of New Zealand, with a rich culture of carving, song, and dance."
+ },
+ {
+  "id": "XOC-E-008",
+  "continent": "Oceania",
+  "territory": "NZL",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which fuzzy green fruit, originally called the Chinese gooseberry, is New Zealand famous for growing?",
+  "options": [
+   "Kiwifruit",
+   "Bananas",
+   "Mangoes",
+   "Pineapples"
+  ],
+  "answer": 0,
+  "explain": "Kiwifruit grow mainly in the Bay of Plenty, and New Zealand ships them all over the world."
+ },
+ {
+  "id": "XOC-M-001",
+  "continent": "Oceania",
+  "territory": "AUS",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Which Australian city is famous for its laneways, coffee culture, street art, and hosting the Australian Open tennis?",
+  "options": [
+   "Sydney",
+   "Melbourne",
+   "Brisbane",
+   "Perth"
+  ],
+  "answer": 1,
+  "explain": "Melbourne, on the Yarra River, is Australia's sporting and cultural capital."
+ },
+ {
+  "id": "XOC-M-002",
+  "continent": "Oceania",
+  "territory": "AUS",
+  "tier": "medium",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest mountain in Australia?",
+  "options": [
+   "Mount Kosciuszko",
+   "Aoraki / Mount Cook",
+   "Mount Kilimanjaro",
+   "Mount Fuji"
+  ],
+  "answer": 0,
+  "explain": "Mount Kosciuszko, in the Snowy Mountains of New South Wales, stands at 2,228 metres."
+ },
+ {
+  "id": "XOC-M-003",
+  "continent": "Oceania",
+  "territory": "AUS",
+  "tier": "medium",
+  "type": "text",
+  "category": "islands",
+  "q": "The Great Barrier Reef lies off the coast of which Australian state?",
+  "options": [
+   "Western Australia",
+   "Queensland",
+   "New South Wales",
+   "Victoria"
+  ],
+  "answer": 1,
+  "explain": "The reef stretches along Queensland's northeast coast, near towns like Cairns and Port Douglas."
+ },
+ {
+  "id": "XOC-M-004",
+  "continent": "Oceania",
+  "territory": "AUS",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Australian rock band, formed in Sydney in 1973, is famous for songs like 'Highway to Hell' and 'Back in Black'?",
+  "options": [
+   "AC/DC",
+   "INXS",
+   "Silverchair",
+   "Cold Chisel"
+  ],
+  "answer": 0,
+  "explain": "AC/DC, with Angus Young's school-uniform look and roaring guitar riffs, became one of the world's biggest rock bands."
+ },
+ {
+  "id": "XOC-M-005",
+  "continent": "Oceania",
+  "territory": "AUS",
+  "tier": "medium",
+  "type": "text",
+  "category": "deserts",
+  "q": "Which is the largest desert in Australia?",
+  "options": [
+   "The Simpson Desert",
+   "The Great Sandy Desert",
+   "The Great Victoria Desert",
+   "The Gibson Desert"
+  ],
+  "answer": 2,
+  "explain": "The Great Victoria Desert stretches across parts of South Australia and Western Australia."
+ },
+ {
+  "id": "XOC-M-006",
+  "continent": "Oceania",
+  "territory": "NZL",
+  "tier": "medium",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Which strait separates New Zealand's North Island from its South Island?",
+  "options": [
+   "The Cook Strait",
+   "The Torres Strait",
+   "The Bass Strait",
+   "The Foveaux Strait"
+  ],
+  "answer": 0,
+  "explain": "Cook Strait, named after Captain James Cook, is a wild, windy stretch of water between the two main islands."
+ },
+ {
+  "id": "XOC-M-007",
+  "continent": "Oceania",
+  "territory": "NZL",
+  "tier": "medium",
+  "type": "text",
+  "category": "general",
+  "q": "Which huge volcanic lake in the North Island is the largest lake in New Zealand?",
+  "options": [
+   "Lake Taupō",
+   "Lake Tekapo",
+   "Lake Wakatipu",
+   "Lake Wanaka"
+  ],
+  "answer": 0,
+  "explain": "Lake Taupō fills the crater of an ancient volcano and is a favourite spot for swimming and boating."
+ },
+ {
+  "id": "XOC-M-008",
+  "continent": "Oceania",
+  "territory": "NZL",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Which South Island city, nicknamed the 'Garden City', is famous for its botanic gardens and punting on the Avon River?",
+  "options": [
+   "Dunedin",
+   "Christchurch",
+   "Queenstown",
+   "Nelson"
+  ],
+  "answer": 1,
+  "explain": "Christchurch, on the east coast of the South Island, is known as the Garden City for its beautiful parks and gardens."
+ },
+ {
+  "id": "XOC-M-009",
+  "continent": "Oceania",
+  "territory": "NZL",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which New Zealand film director brought 'The Lord of the Rings' trilogy to life, filming it in his home country?",
+  "options": [
+   "Peter Jackson",
+   "James Cameron",
+   "Steven Spielberg",
+   "George Lucas"
+  ],
+  "answer": 0,
+  "explain": "Peter Jackson, from Wellington, directed The Lord of the Rings and The Hobbit films in New Zealand's stunning landscapes."
+ },
+ {
+  "id": "XOC-H-001",
+  "continent": "Oceania",
+  "territory": "AUS",
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "The Murray River forms much of the border between which two Australian states?",
+  "options": [
+   "Queensland and the Northern Territory",
+   "New South Wales and Victoria",
+   "South Australia and Victoria",
+   "New South Wales and South Australia"
+  ],
+  "answer": 1,
+  "explain": "The Murray winds along the New South Wales–Victoria border before reaching the sea in South Australia."
+ },
+ {
+  "id": "XOC-H-002",
+  "continent": "Oceania",
+  "territory": "AUS",
+  "tier": "hard",
+  "type": "text",
+  "category": "deserts",
+  "q": "What is the name of the vast, treeless limestone plain across southern Australia, whose name is Latin for 'no trees'?",
+  "options": [
+   "The Nullarbor",
+   "The Outback",
+   "The Simpson",
+   "The Tanami"
+  ],
+  "answer": 0,
+  "explain": "The Nullarbor, from the Latin nullus arbor ('no tree'), is famous for its long, straight roads and underground caves."
+ },
+ {
+  "id": "XOC-H-003",
+  "continent": "Oceania",
+  "territory": "AUS",
+  "tier": "hard",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Which sea lies between northern Australia and the island of New Guinea?",
+  "options": [
+   "The Timor Sea",
+   "The Arafura Sea",
+   "The Coral Sea",
+   "The Tasman Sea"
+  ],
+  "answer": 1,
+  "explain": "The Arafura Sea fills the shallow shelf between Australia's north coast and New Guinea."
+ },
+ {
+  "id": "XOC-H-004",
+  "continent": "Oceania",
+  "territory": "AUS",
+  "tier": "hard",
+  "type": "text",
+  "category": "deserts",
+  "q": "Which Australian desert is famous for its long, parallel red sand dunes?",
+  "options": [
+   "The Great Victoria Desert",
+   "The Simpson Desert",
+   "The Great Sandy Desert",
+   "The Gibson Desert"
+  ],
+  "answer": 1,
+  "explain": "The Simpson Desert, in central Australia, is criss-crossed by hundreds of parallel red dunes."
+ },
+ {
+  "id": "XOC-H-005",
+  "continent": "Oceania",
+  "territory": "NZL",
+  "tier": "hard",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Which nocturnal, flightless parrot, found only in New Zealand, is one of the world's rarest birds?",
+  "options": [
+   "The kākāpō",
+   "The kea",
+   "The kiwi",
+   "The weka"
+  ],
+  "answer": 0,
+  "explain": "The kākāpō is a chubby, green, night-time parrot that cannot fly — conservationists work hard to save it."
+ },
+ {
+  "id": "XOC-H-006",
+  "continent": "Oceania",
+  "territory": "NZL",
+  "tier": "hard",
+  "type": "text",
+  "category": "culture",
+  "q": "What is the name of the Māori meeting ground, centred on a carved wooden meeting house?",
+  "options": [
+   "A marae",
+   "A pa",
+   "A wharenui",
+   "A powhiri"
+  ],
+  "answer": 0,
+  "explain": "A marae is the heart of Māori community life, with its carved meeting house (wharenui) at the centre."
+ },
+ {
+  "id": "XOC-H-007",
+  "continent": "Oceania",
+  "territory": "NZL",
+  "tier": "hard",
+  "type": "text",
+  "category": "islands",
+  "q": "Which group of islands lies about 800 kilometres east of New Zealand in the Pacific Ocean?",
+  "options": [
+   "The Chatham Islands",
+   "The Kermadec Islands",
+   "The Auckland Islands",
+   "The Cook Islands"
+  ],
+  "answer": 0,
+  "explain": "The Chatham Islands are part of New Zealand, though they lie far out in the Pacific east of the South Island."
+ },
+ {
+  "id": "XOC-H-008",
+  "continent": "Oceania",
+  "territory": "NZL",
+  "tier": "hard",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "New Zealand sits on the boundary of which two tectonic plates?",
+  "options": [
+   "The Pacific and Australian plates",
+   "The Pacific and Eurasian plates",
+   "The Australian and Antarctic plates",
+   "The Nazca and South American plates"
+  ],
+  "answer": 0,
+  "explain": "The Pacific and Australian plates meet under New Zealand, which is why the country has so many earthquakes and volcanoes."
+ },
+ {
+  "id": "XOC-E-009",
+  "continent": "Oceania",
+  "territory": "PNG",
+  "tier": "easy",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Which spectacular bird, famous for its dazzling plumes, is the national emblem of Papua New Guinea?",
+  "options": [
+   "The bird of paradise",
+   "The peacock",
+   "The lyrebird",
+   "The secretary bird"
+  ],
+  "answer": 0,
+  "explain": "Birds of paradise live in the rainforests of New Guinea, and the males dance with their brilliant feathers to impress a mate."
+ },
+ {
+  "id": "XOC-E-010",
+  "continent": "Oceania",
+  "territory": "PNG",
+  "tier": "easy",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Which ocean lies along Papua New Guinea's northern and eastern coasts?",
+  "options": [
+   "The Pacific Ocean",
+   "The Indian Ocean",
+   "The Atlantic Ocean",
+   "The Arctic Ocean"
+  ],
+  "answer": 0,
+  "explain": "Papua New Guinea's shores open onto the vast Pacific, the biggest ocean on Earth."
+ },
+ {
+  "id": "XOC-M-010",
+  "continent": "Oceania",
+  "territory": "PNG",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which English-based creole language is one of the three official languages of Papua New Guinea?",
+  "options": [
+   "Tok Pisin",
+   "Bislama",
+   "Pijin",
+   "Hawaiian Pidgin"
+  ],
+  "answer": 0,
+  "explain": "Tok Pisin grew from the English words used by traders and is now spoken across Papua New Guinea, alongside English and Hiri Motu."
+ },
+ {
+  "id": "XOC-M-011",
+  "continent": "Oceania",
+  "territory": "PNG",
+  "tier": "medium",
+  "type": "text",
+  "category": "general",
+  "q": "Papua New Guinea became an independent country in 1975, after being administered by which nation?",
+  "options": [
+   "Australia",
+   "Britain",
+   "Germany",
+   "New Zealand"
+  ],
+  "answer": 0,
+  "explain": "Australia ran Papua New Guinea for decades before the country chose independence in 1975."
+ },
+ {
+  "id": "XOC-M-012",
+  "continent": "Oceania",
+  "territory": "PNG",
+  "tier": "medium",
+  "type": "text",
+  "category": "rivers",
+  "q": "Which long river in northern Papua New Guinea is famous for the woodcarvings and art of the villages along its banks?",
+  "options": [
+   "The Sepik River",
+   "The Fly River",
+   "The Ramu River",
+   "The Strickland River"
+  ],
+  "answer": 0,
+  "explain": "The Sepik winds through northern New Guinea, and its villages are famous for crocodile-shaped masks and carved spirit houses."
+ },
+ {
+  "id": "XOC-H-010",
+  "continent": "Oceania",
+  "territory": "PNG",
+  "tier": "hard",
+  "type": "text",
+  "category": "culture",
+  "q": "Which people of the Papua New Guinea Highlands are famous for their spectacular ceremonial wigs woven from their own hair?",
+  "options": [
+   "The Huli wigmen",
+   "The Asaro mudmen",
+   "The Dani people",
+   "The Trobriand islanders"
+  ],
+  "answer": 0,
+  "explain": "Huli wigmen grow their hair for years and shape it into huge golden wigs for colourful sing-sing festivals."
+ },
+ {
+  "id": "XOC-H-011",
+  "continent": "Oceania",
+  "territory": "PNG",
+  "tier": "hard",
+  "type": "text",
+  "category": "culture",
+  "q": "Which people of Papua New Guinea's Eastern Highlands are famous for their ghostly white clay mud masks?",
+  "options": [
+   "The Asaro mudmen",
+   "The Huli wigmen",
+   "The Abelam people",
+   "The Baining people"
+  ],
+  "answer": 0,
+  "explain": "The Asaro mudmen wear pale clay masks and costumes to tell stories and perform at festivals in the highlands."
+ },
+ {
+  "id": "XOC-E-011",
+  "continent": "Oceania",
+  "territory": "FJI",
+  "tier": "easy",
+  "type": "text",
+  "category": "islands",
+  "q": "About how many islands make up the nation of Fiji?",
+  "options": [
+   "About 30",
+   "About 300",
+   "About 3,000",
+   "About 30,000"
+  ],
+  "answer": 1,
+  "explain": "Fiji has roughly 300 islands, though only about a hundred of them are lived on."
+ },
+ {
+  "id": "XOC-E-012",
+  "continent": "Oceania",
+  "territory": "FJI",
+  "tier": "easy",
+  "type": "text",
+  "category": "islands",
+  "q": "What are the names of Fiji's two largest islands?",
+  "options": [
+   "Viti Levu and Vanua Levu",
+   "Oahu and Maui",
+   "Tahiti and Bora Bora",
+   "Upolu and Savaii"
+  ],
+  "answer": 0,
+  "explain": "Viti Levu and Vanua Levu are the two big islands that most visitors to Fiji explore."
+ },
+ {
+  "id": "XOC-E-013",
+  "continent": "Oceania",
+  "territory": "FJI",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which sport is Fiji's national passion, with a world-famous men's sevens team?",
+  "options": [
+   "Rugby",
+   "Cricket",
+   "Soccer",
+   "Netball"
+  ],
+  "answer": 0,
+  "explain": "Fiji's rugby sevens team is one of the best in the world, and rugby is played everywhere from villages to the Olympics."
+ },
+ {
+  "id": "XOC-M-013",
+  "continent": "Oceania",
+  "territory": "FJI",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which traditional drink, made from the ground root of a pepper plant, is shared in Fijian welcome ceremonies?",
+  "options": [
+   "Kava",
+   "Matcha",
+   "Rooibos",
+   "Chai"
+  ],
+  "answer": 0,
+  "explain": "Kava, also called yaqona, is a mild, earthy drink sipped from a bowl during Fijian ceremonies and gatherings."
+ },
+ {
+  "id": "XOC-M-014",
+  "continent": "Oceania",
+  "territory": "FJI",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Many Fijians are descended from labourers brought from which country to work on sugar cane plantations in the late 1800s and early 1900s?",
+  "options": [
+   "India",
+   "China",
+   "Japan",
+   "Indonesia"
+  ],
+  "answer": 0,
+  "explain": "Thousands of Indian labourers came to Fiji to cut sugar cane, and their descendants now make up a big part of the population."
+ },
+ {
+  "id": "XOC-H-012",
+  "continent": "Oceania",
+  "territory": "FJI",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest mountain in Fiji, on the island of Viti Levu?",
+  "options": [
+   "Tomanivi",
+   "Mount Kosciuszko",
+   "Aoraki / Mount Cook",
+   "Mount Taranaki"
+  ],
+  "answer": 0,
+  "explain": "Tomanivi, once called Mount Victoria, rises 1,324 metres in the highlands of Viti Levu."
+ },
+ {
+  "id": "XOC-H-013",
+  "continent": "Oceania",
+  "territory": "FJI",
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "Which is the longest river in Fiji, flowing across the island of Viti Levu?",
+  "options": [
+   "The Nadi River",
+   "The Rewa River",
+   "The Ba River",
+   "The Sigatoka River"
+  ],
+  "answer": 1,
+  "explain": "The Rewa is Fiji's longest river and flows into the sea on the south coast of Viti Levu."
+ },
+ {
+  "id": "XOC-H-014",
+  "continent": "Oceania",
+  "territory": "FJI",
+  "tier": "hard",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Which sea, dotted with small islands, lies in the middle of Fiji, ringed by Viti Levu, Vanua Levu and the Lau Islands?",
+  "options": [
+   "The Tasman Sea",
+   "The Koro Sea",
+   "The Coral Sea",
+   "The Philippine Sea"
+  ],
+  "answer": 1,
+  "explain": "The Koro Sea is enclosed by Fiji's islands: Viti Levu to the west, Vanua Levu to the north and the Lau group to the east."
+ },
+ {
+  "id": "XOC-E-014",
+  "continent": "Oceania",
+  "territory": "VUT",
+  "tier": "easy",
+  "type": "text",
+  "category": "islands",
+  "q": "About how many islands make up the archipelago of Vanuatu?",
+  "options": [
+   "About 8",
+   "About 80",
+   "About 800",
+   "About 8,000"
+  ],
+  "answer": 1,
+  "explain": "Vanuatu is a chain of roughly 80 islands, and about 65 of them have people living on them."
+ },
+ {
+  "id": "XOC-E-015",
+  "continent": "Oceania",
+  "territory": "VUT",
+  "tier": "easy",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Which island nation lies directly to the east of Vanuatu?",
+  "options": [
+   "Fiji",
+   "Tonga",
+   "Samoa",
+   "New Caledonia"
+  ],
+  "answer": 0,
+  "explain": "Fiji sits just east of Vanuatu, across the water in the South Pacific."
+ },
+ {
+  "id": "XOC-E-016",
+  "continent": "Oceania",
+  "territory": "VUT",
+  "tier": "easy",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Which sea lies between Australia and Vanuatu?",
+  "options": [
+   "The Coral Sea",
+   "The Tasman Sea",
+   "The Timor Sea",
+   "The Arafura Sea"
+  ],
+  "answer": 0,
+  "explain": "The Coral Sea stretches between Australia's northeast coast and the islands of Vanuatu and New Caledonia."
+ },
+ {
+  "id": "XOC-M-015",
+  "continent": "Oceania",
+  "territory": "VUT",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which English-based creole language is one of Vanuatu's three official languages?",
+  "options": [
+   "Bislama",
+   "Tok Pisin",
+   "Pijin",
+   "Palauan"
+  ],
+  "answer": 0,
+  "explain": "Bislama mixes English with local languages and is the language most people in Vanuatu speak every day."
+ },
+ {
+  "id": "XOC-M-016",
+  "continent": "Oceania",
+  "territory": "VUT",
+  "tier": "medium",
+  "type": "text",
+  "category": "mountains",
+  "q": "Which active volcano on the island of Tanna can visitors walk up to and peer down into its glowing crater?",
+  "options": [
+   "Mount Yasur",
+   "Mount Ambrym",
+   "Mount Marum",
+   "Mount Tabwemasana"
+  ],
+  "answer": 0,
+  "explain": "Mount Yasur on Tanna is one of the world's most accessible active volcanoes, rumbling and spitting lava almost every day."
+ },
+ {
+  "id": "XOC-H-015",
+  "continent": "Oceania",
+  "territory": "VUT",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest point in Vanuatu, on the island of Espiritu Santo?",
+  "options": [
+   "Mount Tabwemasana",
+   "Mount Yasur",
+   "Mount Marum",
+   "Mount Benbow"
+  ],
+  "answer": 0,
+  "explain": "Mount Tabwemasana rises 1,879 metres through the cloud forest of Espiritu Santo, Vanuatu's largest island."
+ },
+ {
+  "id": "XOC-H-016",
+  "continent": "Oceania",
+  "territory": "VUT",
+  "tier": "hard",
+  "type": "text",
+  "category": "general",
+  "q": "Before independence in 1980, Vanuatu was called the New Hebrides and was unusual because it was ruled jointly by which two countries?",
+  "options": [
+   "Britain and France",
+   "France and Germany",
+   "Britain and Spain",
+   "Australia and New Zealand"
+  ],
+  "answer": 0,
+  "explain": "The New Hebrides was a rare condominium, where Britain and France shared control until Vanuatu became independent in 1980."
+ },
+ {
+  "id": "XOC-E-017",
+  "continent": "Oceania",
+  "territory": "SLB",
+  "tier": "easy",
+  "type": "text",
+  "category": "general",
+  "q": "The Solomon Islands are named after which biblical king?",
+  "options": [
+   "King Solomon",
+   "King David",
+   "King Saul",
+   "King Herod"
+  ],
+  "answer": 0,
+  "explain": "A Spanish explorer named the islands in 1568 after King Solomon, hoping they held his legendary gold."
+ },
+ {
+  "id": "XOC-E-018",
+  "continent": "Oceania",
+  "territory": "SLB",
+  "tier": "easy",
+  "type": "text",
+  "category": "islands",
+  "q": "About how many islands make up the Solomon Islands?",
+  "options": [
+   "About 10",
+   "About 100",
+   "About 1,000",
+   "About 10,000"
+  ],
+  "answer": 2,
+  "explain": "The Solomon Islands spread across roughly a thousand islands, though only a few hundred are inhabited."
+ },
+ {
+  "id": "XOC-E-019",
+  "continent": "Oceania",
+  "territory": "SLB",
+  "tier": "easy",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Which country lies directly to the west of the Solomon Islands?",
+  "options": [
+   "Papua New Guinea",
+   "Vanuatu",
+   "Fiji",
+   "Australia"
+  ],
+  "answer": 0,
+  "explain": "Papua New Guinea sits just west of the Solomon Islands, across the water in the Pacific."
+ },
+ {
+  "id": "XOC-M-017",
+  "continent": "Oceania",
+  "territory": "SLB",
+  "tier": "medium",
+  "type": "text",
+  "category": "islands",
+  "q": "What is the largest island of the Solomon Islands?",
+  "options": [
+   "Guadalcanal",
+   "Malaita",
+   "New Georgia",
+   "Santa Isabel"
+  ],
+  "answer": 0,
+  "explain": "Guadalcanal is the biggest island in the chain, a long, mountainous island in the south."
+ },
+ {
+  "id": "XOC-M-018",
+  "continent": "Oceania",
+  "territory": "SLB",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which musical instrument, made from a row of bamboo pipes, is traditional in the Solomon Islands?",
+  "options": [
+   "The panpipe",
+   "The didgeridoo",
+   "The ukulele",
+   "The steel drum"
+  ],
+  "answer": 0,
+  "explain": "Solomon Islands panpipes, made from bound bamboo tubes, are played at festivals and ceremonies across the islands."
+ },
+ {
+  "id": "XOC-H-017",
+  "continent": "Oceania",
+  "territory": "SLB",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest point of the Solomon Islands, on the island of Guadalcanal?",
+  "options": [
+   "Mount Popomanaseu",
+   "Mount Wilhelm",
+   "Tomanivi",
+   "Mount Yasur"
+  ],
+  "answer": 0,
+  "explain": "Mount Popomanaseu rises 2,335 metres above Guadalcanal, deep in the island's rainforest."
+ },
+ {
+  "id": "XOC-H-018",
+  "continent": "Oceania",
+  "territory": "SLB",
+  "tier": "hard",
+  "type": "text",
+  "category": "islands",
+  "q": "Which atoll in the Solomon Islands is the world's largest raised coral atoll and a UNESCO World Heritage site?",
+  "options": [
+   "East Rennell",
+   "Bikini Atoll",
+   "Aldabra",
+   "Tubbataha Reef"
+  ],
+  "answer": 0,
+  "explain": "East Rennell, part of Rennell Island, is a huge raised coral atoll whose lake and forests are protected by UNESCO."
+ }
+]

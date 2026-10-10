@@ -1,0 +1,1413 @@
+[
+ {
+  "id": "XNA-E-001",
+  "continent": "North America",
+  "territory": "CAN",
+  "tier": "easy",
+  "type": "text",
+  "category": "rivers",
+  "q": "Which is the longest river in Canada?",
+  "options": [
+   "Mackenzie River",
+   "St. Lawrence River",
+   "Yukon River",
+   "Fraser River"
+  ],
+  "answer": 0,
+  "explain": "The Mackenzie River, at about 4,200 km, is the longest river in Canada and drains into the Arctic Ocean."
+ },
+ {
+  "id": "XNA-E-002",
+  "continent": "North America",
+  "territory": "CAN",
+  "tier": "easy",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Which huge bay in northern Canada is one of the largest bays in the world?",
+  "options": [
+   "James Bay",
+   "Bay of Fundy",
+   "Chesapeake Bay",
+   "Hudson Bay"
+  ],
+  "answer": 3,
+  "explain": "Hudson Bay is an enormous inland sea in northern Canada and one of the largest bays on Earth."
+ },
+ {
+  "id": "XNA-E-003",
+  "continent": "North America",
+  "territory": "CAN",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which two languages are official in Canada?",
+  "options": [
+   "French and German",
+   "English and Mandarin",
+   "English and French",
+   "English and Spanish"
+  ],
+  "answer": 2,
+  "explain": "Canada has two official languages: English and French, a legacy of its British and French colonial history."
+ },
+ {
+  "id": "XNA-M-001",
+  "continent": "North America",
+  "territory": "CAN",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Which Canadian city hosted the 2010 Winter Olympics?",
+  "options": [
+   "Montreal",
+   "Vancouver",
+   "Calgary",
+   "Toronto"
+  ],
+  "answer": 1,
+  "explain": "Vancouver, on Canada's west coast, hosted the 2010 Winter Olympics."
+ },
+ {
+  "id": "XNA-M-002",
+  "continent": "North America",
+  "territory": "CAN",
+  "tier": "medium",
+  "type": "text",
+  "category": "islands",
+  "q": "Which is the largest island in Canada?",
+  "options": [
+   "Baffin Island",
+   "Vancouver Island",
+   "Newfoundland",
+   "Ellesmere Island"
+  ],
+  "answer": 0,
+  "explain": "Baffin Island, in Canada's far north, is the country's largest island and one of the largest in the world."
+ },
+ {
+  "id": "XNA-H-001",
+  "continent": "North America",
+  "territory": "CAN",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest mountain in Canada?",
+  "options": [
+   "Mount Robson",
+   "Mount Assiniboine",
+   "Denali",
+   "Mount Logan"
+  ],
+  "answer": 3,
+  "explain": "Mount Logan, in the Yukon, is Canada's highest peak at 5,959 metres — Denali is in Alaska, USA."
+ },
+ {
+  "id": "XNA-H-002",
+  "continent": "North America",
+  "territory": "CAN",
+  "tier": "easy",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Which country shares the longest land border with Canada?",
+  "options": [
+   "Russia",
+   "Norway",
+   "The United States",
+   "Mexico"
+  ],
+  "answer": 2,
+  "explain": "Canada and the United States share the longest international land border in the world, about 8,900 km."
+ },
+ {
+  "id": "XNA-H-003",
+  "continent": "North America",
+  "territory": "CAN",
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "The St. Lawrence River flows out of which Great Lake?",
+  "options": [
+   "Lake Erie",
+   "Lake Ontario",
+   "Lake Superior",
+   "Lake Huron"
+  ],
+  "answer": 1,
+  "explain": "The St. Lawrence River begins at the outflow of Lake Ontario and flows past Quebec City to the Atlantic."
+ },
+ {
+  "id": "XNA-E-004",
+  "continent": "North America",
+  "territory": "USA",
+  "tier": "easy",
+  "type": "text",
+  "category": "deserts",
+  "q": "Which desert covers parts of California, Nevada, Utah, and Arizona?",
+  "options": [
+   "The Mojave Desert",
+   "The Sonoran Desert",
+   "The Sahara Desert",
+   "The Gobi Desert"
+  ],
+  "answer": 0,
+  "explain": "The Mojave Desert, home to Death Valley, spans parts of four southwestern U.S. states."
+ },
+ {
+  "id": "XNA-E-005",
+  "continent": "North America",
+  "territory": "USA",
+  "tier": "easy",
+  "type": "text",
+  "category": "rivers",
+  "q": "Which river forms much of the border between the United States and Mexico?",
+  "options": [
+   "The Colorado River",
+   "The Mississippi River",
+   "The Columbia River",
+   "The Rio Grande"
+  ],
+  "answer": 3,
+  "explain": "The Rio Grande forms the border between Texas and Mexico for much of its length."
+ },
+ {
+  "id": "XNA-E-006",
+  "continent": "North America",
+  "territory": "USA",
+  "tier": "easy",
+  "type": "text",
+  "category": "cities",
+  "q": "Which U.S. city is home to the Space Needle?",
+  "options": [
+   "Miami",
+   "Denver",
+   "Seattle",
+   "Chicago"
+  ],
+  "answer": 2,
+  "explain": "The Space Needle, built for the 1962 World's Fair, stands in Seattle, Washington."
+ },
+ {
+  "id": "XNA-M-003",
+  "continent": "North America",
+  "territory": "USA",
+  "tier": "medium",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest mountain in the contiguous United States?",
+  "options": [
+   "Denali",
+   "Mount Whitney",
+   "Mount Rainier",
+   "Pikes Peak"
+  ],
+  "answer": 1,
+  "explain": "Mount Whitney, in California's Sierra Nevada, is the highest peak in the contiguous United States; Denali is higher but is in Alaska."
+ },
+ {
+  "id": "XNA-M-004",
+  "continent": "North America",
+  "territory": "USA",
+  "tier": "medium",
+  "type": "text",
+  "category": "rivers",
+  "q": "Which river carved the Grand Canyon?",
+  "options": [
+   "The Colorado River",
+   "The Columbia River",
+   "The Snake River",
+   "The Rio Grande"
+  ],
+  "answer": 0,
+  "explain": "Over millions of years, the Colorado River carved the Grand Canyon in Arizona."
+ },
+ {
+  "id": "XNA-M-005",
+  "continent": "North America",
+  "territory": "USA",
+  "tier": "medium",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "What is the nickname of the central U.S. region where many tornadoes occur?",
+  "options": [
+   "Hurricane Alley",
+   "Typhoon Alley",
+   "Monsoon Alley",
+   "Tornado Alley"
+  ],
+  "answer": 3,
+  "explain": "Tornado Alley is the nickname for the central U.S. plains, where many tornadoes strike each year."
+ },
+ {
+  "id": "XNA-H-004",
+  "continent": "North America",
+  "territory": "USA",
+  "tier": "hard",
+  "type": "text",
+  "category": "general",
+  "q": "Which two states were the last to join the United States, both in 1959?",
+  "options": [
+   "Hawaii and Puerto Rico",
+   "Alaska and Arizona",
+   "Alaska and Hawaii",
+   "Texas and California"
+  ],
+  "answer": 2,
+  "explain": "Alaska and Hawaii both became U.S. states in 1959 — the 49th and 50th states."
+ },
+ {
+  "id": "XNA-H-005",
+  "continent": "North America",
+  "territory": "USA",
+  "tier": "hard",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "The Gulf of Mexico is bordered by the United States, Mexico, and which island nation?",
+  "options": [
+   "The Bahamas",
+   "Cuba",
+   "Jamaica",
+   "Haiti"
+  ],
+  "answer": 1,
+  "explain": "Cuba sits at the entrance to the Gulf of Mexico, which it borders along with the U.S. and Mexico."
+ },
+ {
+  "id": "XNA-E-007",
+  "continent": "North America",
+  "territory": "MEX",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "What is the name of the traditional Mexican hat with a wide brim?",
+  "options": [
+   "A sombrero",
+   "A poncho",
+   "A beret",
+   "A fedora"
+  ],
+  "answer": 0,
+  "explain": "A sombrero is the traditional wide-brimmed Mexican hat, worn to shield from the sun."
+ },
+ {
+  "id": "XNA-E-008",
+  "continent": "North America",
+  "territory": "MEX",
+  "tier": "easy",
+  "type": "text",
+  "category": "islands",
+  "q": "Which Mexican peninsula separates the Gulf of California from the Pacific Ocean?",
+  "options": [
+   "The Yucatán Peninsula",
+   "The Florida Peninsula",
+   "The Iberian Peninsula",
+   "The Baja California Peninsula"
+  ],
+  "answer": 3,
+  "explain": "The Baja California Peninsula runs between the Gulf of California and the Pacific, with famous resort cities like Cabo San Lucas."
+ },
+ {
+  "id": "XNA-E-009",
+  "continent": "North America",
+  "territory": "MEX",
+  "tier": "easy",
+  "type": "text",
+  "category": "deserts",
+  "q": "The Sonoran Desert is shared between Mexico and which U.S. state?",
+  "options": [
+   "Florida",
+   "Nevada",
+   "Arizona",
+   "Texas"
+  ],
+  "answer": 2,
+  "explain": "The Sonoran Desert covers northwestern Mexico and southern Arizona, and is home to the giant saguaro cactus."
+ },
+ {
+  "id": "XNA-M-006",
+  "continent": "North America",
+  "territory": "MEX",
+  "tier": "medium",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest mountain in Mexico?",
+  "options": [
+   "Denali",
+   "Pico de Orizaba",
+   "Popocatépetl",
+   "Iztaccíhuatl"
+  ],
+  "answer": 1,
+  "explain": "Pico de Orizaba, a dormant volcano in southern Mexico, is the country's highest peak at 5,636 metres."
+ },
+ {
+  "id": "XNA-M-007",
+  "continent": "North America",
+  "territory": "MEX",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Cinco de Mayo celebrates Mexico's 1862 victory in which battle?",
+  "options": [
+   "The Battle of Puebla",
+   "The Battle of Chapultepec",
+   "The Battle of Tenochtitlan",
+   "The Battle of Veracruz"
+  ],
+  "answer": 0,
+  "explain": "Cinco de Mayo marks the Mexican army's 1862 victory over the French at the Battle of Puebla."
+ },
+ {
+  "id": "XNA-M-008",
+  "continent": "North America",
+  "territory": "MEX",
+  "tier": "medium",
+  "type": "text",
+  "category": "landmarks",
+  "q": "The ancient pyramids of Teotihuacan stand near which modern Mexican city?",
+  "options": [
+   "Guadalajara",
+   "Cancún",
+   "Monterrey",
+   "Mexico City"
+  ],
+  "answer": 3,
+  "explain": "Teotihuacan, with its huge Pyramid of the Sun, lies about 50 km northeast of Mexico City."
+ },
+ {
+  "id": "XNA-H-006",
+  "continent": "North America",
+  "territory": "MEX",
+  "tier": "hard",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Which two countries border Mexico to the south?",
+  "options": [
+   "Honduras and El Salvador",
+   "Belize and Honduras",
+   "Guatemala and Belize",
+   "Guatemala and Honduras"
+  ],
+  "answer": 2,
+  "explain": "Mexico's southern neighbors are Guatemala and the small country of Belize."
+ },
+ {
+  "id": "XNA-H-007",
+  "continent": "North America",
+  "territory": "MEX",
+  "tier": "hard",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "The Gulf of California is also known by what name?",
+  "options": [
+   "The Gulf of Panama",
+   "The Sea of Cortez",
+   "The Gulf of Mexico",
+   "The Caribbean Sea"
+  ],
+  "answer": 1,
+  "explain": "The Gulf of California, between Baja California and mainland Mexico, is often called the Sea of Cortez."
+ },
+ {
+  "id": "XNA-E-010",
+  "continent": "North America",
+  "territory": "GTM",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "What is the official language of Guatemala?",
+  "options": [
+   "Spanish",
+   "Portuguese",
+   "English",
+   "French"
+  ],
+  "answer": 0,
+  "explain": "Spanish is the official language of Guatemala, though many people also speak Mayan languages."
+ },
+ {
+  "id": "XNA-E-011",
+  "continent": "North America",
+  "territory": "GTM",
+  "tier": "easy",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Guatemala borders Mexico, Belize, Honduras, and which fourth country?",
+  "options": [
+   "Nicaragua",
+   "Costa Rica",
+   "Panama",
+   "El Salvador"
+  ],
+  "answer": 3,
+  "explain": "Guatemala's four neighbors are Mexico, Belize, Honduras, and El Salvador."
+ },
+ {
+  "id": "XNA-M-009",
+  "continent": "North America",
+  "territory": "GTM",
+  "tier": "medium",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Which Guatemalan city is famous for its colorful colonial buildings and nearby volcanoes?",
+  "options": [
+   "Flores",
+   "Quetzaltenango",
+   "Antigua",
+   "Guatemala City"
+  ],
+  "answer": 2,
+  "explain": "Antigua Guatemala, a UNESCO site, is surrounded by three volcanoes including active Volcán de Fuego."
+ },
+ {
+  "id": "XNA-M-010",
+  "continent": "North America",
+  "territory": "GTM",
+  "tier": "medium",
+  "type": "text",
+  "category": "rivers",
+  "q": "Lake Atitlán, surrounded by volcanoes and Mayan villages, is in which country?",
+  "options": [
+   "Costa Rica",
+   "Guatemala",
+   "Honduras",
+   "Nicaragua"
+  ],
+  "answer": 1,
+  "explain": "Lake Atitlán is a deep lake in the Guatemalan highlands, ringed by volcanoes and villages."
+ },
+ {
+  "id": "XNA-H-008",
+  "continent": "North America",
+  "territory": "GTM",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "Which volcano near Antigua is one of the most active in Central America?",
+  "options": [
+   "Volcán de Fuego",
+   "Volcán de Agua",
+   "Pacaya",
+   "Acatenango"
+  ],
+  "answer": 0,
+  "explain": "Volcán de Fuego, towering over Antigua, erupts frequently and is one of Central America's most active volcanoes."
+ },
+ {
+  "id": "XNA-H-009",
+  "continent": "North America",
+  "territory": "GTM",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest peak in Central America?",
+  "options": [
+   "Acatenango",
+   "Volcán de Fuego",
+   "Cerro de Punta",
+   "Tajumulco"
+  ],
+  "answer": 3,
+  "explain": "Tajumulco, a volcano in western Guatemala, is the highest point in Central America at about 4,220 metres."
+ },
+ {
+  "id": "XNA-E-012",
+  "continent": "North America",
+  "territory": "CUB",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which music and dance style, whose name is Spanish for 'sauce', is strongly associated with Cuba?",
+  "options": [
+   "Samba",
+   "Flamenco",
+   "Salsa",
+   "Tango"
+  ],
+  "answer": 2,
+  "explain": "Salsa, whose name means 'sauce' in Spanish, grew out of Cuban son music and is danced worldwide."
+ },
+ {
+  "id": "XNA-E-013",
+  "continent": "North America",
+  "territory": "CUB",
+  "tier": "easy",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Cuba has a tropical climate and is often hit by which powerful rotating storms?",
+  "options": [
+   "Typhoons",
+   "Hurricanes",
+   "Tornadoes",
+   "Monsoons"
+  ],
+  "answer": 1,
+  "explain": "Cuba lies in the Caribbean hurricane belt; typhoons are the same kind of storm but form in the Pacific."
+ },
+ {
+  "id": "XNA-M-011",
+  "continent": "North America",
+  "territory": "CUB",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which classic cars from the 1950s are still a famous sight on Cuba's streets?",
+  "options": [
+   "American cars",
+   "Japanese cars",
+   "German cars",
+   "Cuban-made cars"
+  ],
+  "answer": 0,
+  "explain": "Cuba is famous for its fleet of colourful 1950s American cars, kept running for decades."
+ },
+ {
+  "id": "XNA-M-012",
+  "continent": "North America",
+  "territory": "CUB",
+  "tier": "medium",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "The Windward Passage separates Cuba from which island?",
+  "options": [
+   "Jamaica",
+   "The Bahamas",
+   "The Cayman Islands",
+   "Hispaniola"
+  ],
+  "answer": 3,
+  "explain": "The Windward Passage is the strait between Cuba and Hispaniola, the island shared by Haiti and the Dominican Republic."
+ },
+ {
+  "id": "XNA-H-010",
+  "continent": "North America",
+  "territory": "CUB",
+  "tier": "hard",
+  "type": "text",
+  "category": "general",
+  "q": "The Bay of Pigs (Bahía de Cochinos) is a famous bay on the southern coast of which country?",
+  "options": [
+   "The Dominican Republic",
+   "Panama",
+   "Cuba",
+   "Mexico"
+  ],
+  "answer": 2,
+  "explain": "The Bay of Pigs is an inlet on Cuba's southern coast, near the Zapata Swamp."
+ },
+ {
+  "id": "XNA-H-011",
+  "continent": "North America",
+  "territory": "CUB",
+  "tier": "hard",
+  "type": "text",
+  "category": "islands",
+  "q": "The Isle of Youth (Isla de la Juventud) is the largest island of which country after Cuba itself?",
+  "options": [
+   "The Dominican Republic",
+   "Cuba",
+   "Jamaica",
+   "Haiti"
+  ],
+  "answer": 1,
+  "explain": "The Isle of Youth, south of Cuba, is Cuba's second-largest island."
+ },
+ {
+  "id": "XNA-H-012",
+  "continent": "North America",
+  "territory": "CUB",
+  "tier": "hard",
+  "type": "text",
+  "category": "cities",
+  "q": "Varadero, one of the Caribbean's most famous beach resorts, is in which country?",
+  "options": [
+   "Cuba",
+   "Jamaica",
+   "The Dominican Republic",
+   "The Bahamas"
+  ],
+  "answer": 0,
+  "explain": "Varadero's long white-sand beaches make it one of Cuba's top resort destinations."
+ },
+ {
+  "id": "XNA-E-014",
+  "continent": "North America",
+  "territory": "PAN",
+  "tier": "easy",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Panama shares a border with Costa Rica and which South American country?",
+  "options": [
+   "Venezuela",
+   "Ecuador",
+   "Peru",
+   "Colombia"
+  ],
+  "answer": 3,
+  "explain": "Panama is the bridge between the continents: it borders Costa Rica and Colombia."
+ },
+ {
+  "id": "XNA-E-015",
+  "continent": "North America",
+  "territory": "PAN",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "The Panama hat is actually made in which South American country?",
+  "options": [
+   "Colombia",
+   "Mexico",
+   "Ecuador",
+   "Panama"
+  ],
+  "answer": 2,
+  "explain": "Despite the name, Panama hats are woven in Ecuador from toquilla straw."
+ },
+ {
+  "id": "XNA-M-013",
+  "continent": "North America",
+  "territory": "PAN",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "The colourful mola textile art, made by sewing layers of cloth, is traditional for which Panamanian people?",
+  "options": [
+   "The Aztec",
+   "The Kuna people",
+   "The Maya",
+   "The Inca"
+  ],
+  "answer": 1,
+  "explain": "Kuna women in Panama's San Blas islands create molas, a famous layered textile art."
+ },
+ {
+  "id": "XNA-M-014",
+  "continent": "North America",
+  "territory": "PAN",
+  "tier": "medium",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "The Darién Gap, a stretch of dense jungle, lies on the border between Panama and which country?",
+  "options": [
+   "Colombia",
+   "Costa Rica",
+   "Venezuela",
+   "Ecuador"
+  ],
+  "answer": 0,
+  "explain": "The Darién Gap is a swampy, forested region where the Pan-American Highway is interrupted, on the Panama-Colombia border."
+ },
+ {
+  "id": "XNA-H-013",
+  "continent": "North America",
+  "territory": "PAN",
+  "tier": "hard",
+  "type": "text",
+  "category": "islands",
+  "q": "Coiba Island, a wild Pacific island with a national park, belongs to which country?",
+  "options": [
+   "Costa Rica",
+   "Colombia",
+   "Ecuador",
+   "Panama"
+  ],
+  "answer": 3,
+  "explain": "Coiba Island, off Panama's Pacific coast, is a UNESCO site famous for diving and wildlife."
+ },
+ {
+  "id": "XNA-H-014",
+  "continent": "North America",
+  "territory": "PAN",
+  "tier": "hard",
+  "type": "text",
+  "category": "landmarks",
+  "q": "The Panama Canal cuts through the Continental Divide at a section called what?",
+  "options": [
+   "The Suez Canal",
+   "The Kiel Canal",
+   "The Culebra Cut",
+   "The Corinth Canal"
+  ],
+  "answer": 2,
+  "explain": "The Culebra Cut (once called the Gaillard Cut) is where the Panama Canal crosses the continental divide."
+ },
+ {
+  "id": "XNA-E-016",
+  "continent": "North America",
+  "territory": "CRI",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "What does 'pura vida', a phrase heard everywhere in Costa Rica, mean?",
+  "options": [
+   "Goodbye",
+   "Pure life",
+   "Good morning",
+   "Thank you"
+  ],
+  "answer": 1,
+  "explain": "'Pura vida' means 'pure life' and is Costa Rica's unofficial motto — a greeting, a thank-you, and a way of life."
+ },
+ {
+  "id": "XNA-E-017",
+  "continent": "North America",
+  "territory": "CRI",
+  "tier": "easy",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Costa Rica borders Nicaragua and which other country?",
+  "options": [
+   "Panama",
+   "Honduras",
+   "Colombia",
+   "Guatemala"
+  ],
+  "answer": 0,
+  "explain": "Costa Rica sits between Nicaragua to the north and Panama to the south."
+ },
+ {
+  "id": "XNA-E-018",
+  "continent": "North America",
+  "territory": "CRI",
+  "tier": "easy",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Which slow-moving animal lives in Costa Rica's rainforest canopy?",
+  "options": [
+   "The cheetah",
+   "The kangaroo",
+   "The polar bear",
+   "The three-toed sloth"
+  ],
+  "answer": 3,
+  "explain": "The three-toed sloth spends most of its life hanging upside down in Costa Rica's rainforest trees."
+ },
+ {
+  "id": "XNA-M-015",
+  "continent": "North America",
+  "territory": "CRI",
+  "tier": "medium",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Which active volcano near the town of La Fortuna is one of Costa Rica's most visited?",
+  "options": [
+   "Irazú Volcano",
+   "Rincón de la Vieja",
+   "Arenal Volcano",
+   "Poás Volcano"
+  ],
+  "answer": 2,
+  "explain": "Arenal Volcano, near La Fortuna, is one of Costa Rica's most famous and active volcanoes."
+ },
+ {
+  "id": "XNA-M-016",
+  "continent": "North America",
+  "territory": "CRI",
+  "tier": "medium",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Corcovado National Park, on the Osa Peninsula, is one of the most biodiverse places on Earth — in which country?",
+  "options": [
+   "Ecuador",
+   "Costa Rica",
+   "Panama",
+   "Colombia"
+  ],
+  "answer": 1,
+  "explain": "Costa Rica's Corcovado National Park protects a huge share of the country's plants and animals."
+ },
+ {
+  "id": "XNA-H-015",
+  "continent": "North America",
+  "territory": "CRI",
+  "tier": "hard",
+  "type": "text",
+  "category": "islands",
+  "q": "Cocos Island, a remote Pacific island famous for diving, belongs to which country?",
+  "options": [
+   "Costa Rica",
+   "Panama",
+   "Colombia",
+   "Ecuador"
+  ],
+  "answer": 0,
+  "explain": "Cocos Island, about 550 km off Costa Rica's coast, is a national park and a shark-filled diving hotspot."
+ },
+ {
+  "id": "XNA-E-019",
+  "continent": "North America",
+  "territory": "JAM",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which music style, born in Jamaica in the late 1960s, made Bob Marley world-famous?",
+  "options": [
+   "Salsa",
+   "Calypso",
+   "Samba",
+   "Reggae"
+  ],
+  "answer": 3,
+  "explain": "Reggae music, with its laid-back beat, was born in Jamaica and made Bob Marley a global star."
+ },
+ {
+  "id": "XNA-E-020",
+  "continent": "North America",
+  "territory": "JAM",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "What is the official language of Jamaica?",
+  "options": [
+   "French",
+   "Dutch",
+   "English",
+   "Spanish"
+  ],
+  "answer": 2,
+  "explain": "Jamaica is the largest English-speaking country in the Caribbean."
+ },
+ {
+  "id": "XNA-M-017",
+  "continent": "North America",
+  "territory": "JAM",
+  "tier": "medium",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Dunn's River Falls, a terraced waterfall you can climb, is near which Jamaican town?",
+  "options": [
+   "Kingston",
+   "Ocho Rios",
+   "Montego Bay",
+   "Negril"
+  ],
+  "answer": 1,
+  "explain": "Dunn's River Falls near Ocho Rios is a famous series of cascades you can climb to the top."
+ },
+ {
+  "id": "XNA-M-018",
+  "continent": "North America",
+  "territory": "JAM",
+  "tier": "medium",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the name of Jamaica's highest mountain range?",
+  "options": [
+   "The Blue Mountains",
+   "The Green Mountains",
+   "The White Mountains",
+   "The Rocky Mountains"
+  ],
+  "answer": 0,
+  "explain": "The Blue Mountains, home to Blue Mountain coffee, rise to 2,256 metres at Blue Mountain Peak."
+ },
+ {
+  "id": "XNA-H-016",
+  "continent": "North America",
+  "territory": "JAM",
+  "tier": "hard",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Which island, the largest in the Greater Antilles, lies just north of Jamaica?",
+  "options": [
+   "Hispaniola",
+   "Puerto Rico",
+   "The Bahamas",
+   "Cuba"
+  ],
+  "answer": 3,
+  "explain": "Jamaica lies about 145 km south of Cuba, the largest island of the Greater Antilles."
+ },
+ {
+  "id": "XNA-H-017",
+  "continent": "North America",
+  "territory": "JAM",
+  "tier": "hard",
+  "type": "text",
+  "category": "culture",
+  "q": "What is Jamaica's national motto?",
+  "options": [
+   "Liberty and Justice for All",
+   "Peace, Order and Good Government",
+   "Out of Many, One People",
+   "E Pluribus Unum"
+  ],
+  "answer": 2,
+  "explain": "Jamaica's motto, 'Out of Many, One People', celebrates the country's many peoples united as one nation."
+ },
+ {
+  "id": "XNA-E-021",
+  "continent": "North America",
+  "territory": "DOM",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "The fast-paced dance merengue, with its hip-swinging steps, comes from which country?",
+  "options": [
+   "Colombia",
+   "The Dominican Republic",
+   "Cuba",
+   "Puerto Rico"
+  ],
+  "answer": 1,
+  "explain": "Merengue music and dance were born in the Dominican Republic."
+ },
+ {
+  "id": "XNA-E-022",
+  "continent": "North America",
+  "territory": "DOM",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Many Major League Baseball stars come from which Caribbean country?",
+  "options": [
+   "The Dominican Republic",
+   "Cuba",
+   "Puerto Rico",
+   "Jamaica"
+  ],
+  "answer": 0,
+  "explain": "The Dominican Republic has produced more Major League Baseball players per person than almost anywhere."
+ },
+ {
+  "id": "XNA-E-023",
+  "continent": "North America",
+  "territory": "DOM",
+  "tier": "easy",
+  "type": "text",
+  "category": "mountains",
+  "q": "Pico Duarte, the highest peak in the Caribbean, is in which country?",
+  "options": [
+   "Haiti",
+   "Cuba",
+   "Jamaica",
+   "The Dominican Republic"
+  ],
+  "answer": 3,
+  "explain": "Pico Duarte, at 3,098 metres in the Cordillera Central, is the highest point in the Caribbean."
+ },
+ {
+  "id": "XNA-M-019",
+  "continent": "North America",
+  "territory": "DOM",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Which Dominican city is famous for its well-preserved colonial zone, a UNESCO site?",
+  "options": [
+   "Punta Cana",
+   "La Romana",
+   "Santo Domingo",
+   "Santiago"
+  ],
+  "answer": 2,
+  "explain": "Santo Domingo's Colonial City, founded in 1496, is a UNESCO World Heritage site."
+ },
+ {
+  "id": "XNA-M-020",
+  "continent": "North America",
+  "territory": "DOM",
+  "tier": "medium",
+  "type": "text",
+  "category": "islands",
+  "q": "Saona Island, a tropical island with palm-fringed beaches, is part of which country?",
+  "options": [
+   "Jamaica",
+   "The Dominican Republic",
+   "Haiti",
+   "Cuba"
+  ],
+  "answer": 1,
+  "explain": "Saona Island, in the Dominican Republic's Cotubanamá National Park, is a Caribbean paradise."
+ },
+ {
+  "id": "XNA-H-018",
+  "continent": "North America",
+  "territory": "DOM",
+  "tier": "hard",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "The Mona Passage, a strait with strong currents, separates Hispaniola from which island?",
+  "options": [
+   "Puerto Rico",
+   "Cuba",
+   "Jamaica",
+   "The Bahamas"
+  ],
+  "answer": 0,
+  "explain": "The Mona Passage lies between the island of Hispaniola and Puerto Rico."
+ },
+ {
+  "id": "XNA-E-024",
+  "continent": "North America",
+  "territory": "HTI",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which two languages are official in Haiti?",
+  "options": [
+   "French and Spanish",
+   "English and French",
+   "Spanish and Creole",
+   "Haitian Creole and French"
+  ],
+  "answer": 3,
+  "explain": "Haiti's two official languages are Haitian Creole, which developed from French, and French itself."
+ },
+ {
+  "id": "XNA-E-025",
+  "continent": "North America",
+  "territory": "HTI",
+  "tier": "easy",
+  "type": "text",
+  "category": "general",
+  "q": "Which country became the first independent nation in Latin America and the Caribbean, in 1804?",
+  "options": [
+   "Brazil",
+   "Colombia",
+   "Haiti",
+   "Mexico"
+  ],
+  "answer": 2,
+  "explain": "Haiti declared independence in 1804, the first country in Latin America and the Caribbean to break free from colonial rule."
+ },
+ {
+  "id": "XNA-M-021",
+  "continent": "North America",
+  "territory": "HTI",
+  "tier": "medium",
+  "type": "text",
+  "category": "landmarks",
+  "q": "The Citadelle Laferrière, a huge mountaintop fortress, is a famous landmark of which country?",
+  "options": [
+   "Haiti",
+   "The Dominican Republic",
+   "Cuba",
+   "Jamaica"
+  ],
+  "answer": 0,
+  "explain": "The Citadelle Laferrière, built high in Haiti's mountains after independence, is the largest fortress in the Americas."
+ },
+ {
+  "id": "XNA-M-022",
+  "continent": "North America",
+  "territory": "HTI",
+  "tier": "medium",
+  "type": "text",
+  "category": "landmarks",
+  "q": "The Sans-Souci Palace, built by King Henri Christophe, is in which country?",
+  "options": [
+   "The Dominican Republic",
+   "Jamaica",
+   "Cuba",
+   "Haiti"
+  ],
+  "answer": 3,
+  "explain": "The Sans-Souci Palace, near Milot in northern Haiti, was the royal residence of King Henri Christophe."
+ },
+ {
+  "id": "XNA-H-019",
+  "continent": "North America",
+  "territory": "HTI",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest point in Haiti?",
+  "options": [
+   "Blue Mountain Peak",
+   "Mount Logan",
+   "Pic la Selle",
+   "Pico Duarte"
+  ],
+  "answer": 2,
+  "explain": "Pic la Selle, in the Massif de la Selle, is Haiti's highest point at 2,680 metres."
+ },
+ {
+  "id": "XNA-E-027",
+  "continent": "North America",
+  "territory": "HND",
+  "tier": "easy",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Honduras borders Guatemala, El Salvador, and which country?",
+  "options": [
+   "Belize",
+   "Nicaragua",
+   "Costa Rica",
+   "Panama"
+  ],
+  "answer": 1,
+  "explain": "Honduras sits between Guatemala, El Salvador, and Nicaragua in Central America."
+ },
+ {
+  "id": "XNA-E-028",
+  "continent": "North America",
+  "territory": "HND",
+  "tier": "easy",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Honduras has coastlines on the Pacific Ocean and which sea?",
+  "options": [
+   "The Caribbean Sea",
+   "The Gulf of Mexico",
+   "The Mediterranean Sea",
+   "The Red Sea"
+  ],
+  "answer": 0,
+  "explain": "Honduras has a small Pacific coast at the Gulf of Fonseca and a long Caribbean coastline."
+ },
+ {
+  "id": "XNA-E-029",
+  "continent": "North America",
+  "territory": "HND",
+  "tier": "easy",
+  "type": "text",
+  "category": "landmarks",
+  "q": "The ancient Maya city of Copán, with its famous hieroglyphic stairway, is in which country?",
+  "options": [
+   "Guatemala",
+   "Mexico",
+   "Belize",
+   "Honduras"
+  ],
+  "answer": 3,
+  "explain": "Copán, in western Honduras near the Guatemalan border, is one of the great Maya sites."
+ },
+ {
+  "id": "XNA-M-023",
+  "continent": "North America",
+  "territory": "HND",
+  "tier": "medium",
+  "type": "text",
+  "category": "islands",
+  "q": "The Bay Islands, a Caribbean island group popular with divers, belong to which country?",
+  "options": [
+   "Nicaragua",
+   "Costa Rica",
+   "Honduras",
+   "Belize"
+  ],
+  "answer": 2,
+  "explain": "Honduras's Bay Islands, including Roatán, are a favourite Caribbean diving destination."
+ },
+ {
+  "id": "XNA-M-024",
+  "continent": "North America",
+  "territory": "HND",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Baleadas, thick flour tortillas stuffed with beans and cheese, are a beloved snack of which country?",
+  "options": [
+   "Nicaragua",
+   "Honduras",
+   "El Salvador",
+   "Guatemala"
+  ],
+  "answer": 1,
+  "explain": "Baleadas are a Honduran favourite — a thick tortilla folded around beans, cream, and cheese."
+ },
+ {
+  "id": "XNA-H-020",
+  "continent": "North America",
+  "territory": "HND",
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "The Coco River forms much of the border between Honduras and which country?",
+  "options": [
+   "Nicaragua",
+   "Guatemala",
+   "El Salvador",
+   "Costa Rica"
+  ],
+  "answer": 0,
+  "explain": "The Coco River (Río Segovia) marks the border between Honduras and Nicaragua."
+ },
+ {
+  "id": "XNA-E-030",
+  "continent": "North America",
+  "territory": "SLV",
+  "tier": "easy",
+  "type": "text",
+  "category": "neighbours",
+  "q": "El Salvador borders Honduras and which other country?",
+  "options": [
+   "Nicaragua",
+   "Costa Rica",
+   "Panama",
+   "Guatemala"
+  ],
+  "answer": 3,
+  "explain": "El Salvador lies between Guatemala and Honduras on the Pacific coast of Central America."
+ },
+ {
+  "id": "XNA-E-031",
+  "continent": "North America",
+  "territory": "SLV",
+  "tier": "easy",
+  "type": "text",
+  "category": "general",
+  "q": "El Salvador replaced its currency, the colón, with which currency in 2001?",
+  "options": [
+   "The peso",
+   "The quetzal",
+   "The U.S. dollar",
+   "The euro"
+  ],
+  "answer": 2,
+  "explain": "El Salvador adopted the U.S. dollar as its official currency in 2001."
+ },
+ {
+  "id": "XNA-E-032",
+  "continent": "North America",
+  "territory": "SLV",
+  "tier": "hard",
+  "type": "text",
+  "category": "landmarks",
+  "q": "The ruins of Joya de Cerén, a Maya village preserved by volcanic ash, are in which country?",
+  "options": [
+   "Mexico",
+   "El Salvador",
+   "Guatemala",
+   "Honduras"
+  ],
+  "answer": 1,
+  "explain": "Joya de Cerén in El Salvador, buried by a volcano around 600 AD, is called the 'Pompeii of the Americas'."
+ },
+ {
+  "id": "XNA-M-025",
+  "continent": "North America",
+  "territory": "SLV",
+  "tier": "medium",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest volcano in El Salvador?",
+  "options": [
+   "Santa Ana Volcano",
+   "Izalco Volcano",
+   "San Miguel Volcano",
+   "Conchagua Volcano"
+  ],
+  "answer": 0,
+  "explain": "Santa Ana Volcano (Ilamatepec), at 2,381 metres, is El Salvador's highest volcano."
+ },
+ {
+  "id": "XNA-M-026",
+  "continent": "North America",
+  "territory": "SLV",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Pupusas, thick corn tortillas stuffed with cheese, beans, or meat, are the national dish of which country?",
+  "options": [
+   "Honduras",
+   "Guatemala",
+   "Nicaragua",
+   "El Salvador"
+  ],
+  "answer": 3,
+  "explain": "Pupusas, stuffed corn tortillas, are El Salvador's beloved national dish."
+ },
+ {
+  "id": "XNA-M-027",
+  "continent": "North America",
+  "territory": "SLV",
+  "tier": "medium",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "El Salvador is the only Central American country with no coastline on which sea?",
+  "options": [
+   "The Gulf of Mexico",
+   "The Atlantic Ocean",
+   "The Caribbean Sea",
+   "The Pacific Ocean"
+  ],
+  "answer": 2,
+  "explain": "El Salvador has only a Pacific coastline — it is the only Central American country with no Caribbean shore."
+ },
+ {
+  "id": "XNA-H-021",
+  "continent": "North America",
+  "territory": "SLV",
+  "tier": "hard",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "El Imposible National Park, a cloud forest in the Ahuachapán department, is in which country?",
+  "options": [
+   "Nicaragua",
+   "El Salvador",
+   "Honduras",
+   "Guatemala"
+  ],
+  "answer": 1,
+  "explain": "El Imposible National Park protects a rare cloud forest in western El Salvador."
+ },
+ {
+  "id": "XNA-E-033",
+  "continent": "North America",
+  "territory": null,
+  "tier": "easy",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Which ocean lies to the north of North America?",
+  "options": [
+   "The Arctic Ocean",
+   "The Atlantic Ocean",
+   "The Pacific Ocean",
+   "The Indian Ocean"
+  ],
+  "answer": 0,
+  "explain": "The Arctic Ocean borders North America's northern coast, much of it frozen in winter."
+ },
+ {
+  "id": "XNA-M-028",
+  "continent": "North America",
+  "territory": null,
+  "tier": "medium",
+  "type": "text",
+  "category": "general",
+  "q": "Which line of latitude passes through southern Mexico?",
+  "options": [
+   "The Tropic of Capricorn",
+   "The Equator",
+   "The Arctic Circle",
+   "The Tropic of Cancer"
+  ],
+  "answer": 3,
+  "explain": "The Tropic of Cancer crosses Mexico, marking the northernmost line where the sun can be directly overhead."
+ },
+ {
+  "id": "XNA-M-029",
+  "continent": "North America",
+  "territory": null,
+  "tier": "medium",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest mountain in North America?",
+  "options": [
+   "Pico de Orizaba",
+   "Mount Whitney",
+   "Denali",
+   "Mount Logan"
+  ],
+  "answer": 2,
+  "explain": "Denali, in Alaska, is North America's highest peak at 6,190 metres."
+ },
+ {
+  "id": "XNA-H-022",
+  "continent": "North America",
+  "territory": null,
+  "tier": "hard",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "The Bering Strait separates North America from which continent?",
+  "options": [
+   "Australia",
+   "Asia",
+   "Europe",
+   "South America"
+  ],
+  "answer": 1,
+  "explain": "The Bering Strait, only about 85 km wide at its narrowest, separates Alaska from Russia in Asia."
+ }
+]

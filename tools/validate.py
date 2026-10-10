@@ -62,6 +62,8 @@ REQUIRE_COVERAGE = "--require-coverage" in sys.argv
 for g in gaps:
     (errs.append if REQUIRE_COVERAGE else print)(f"coverage gap {g}" + ("" if REQUIRE_COVERAGE else " (warning)"))
 thin = [(c, t, cov[(c, t)]) for c in isos for t in ("easy", "medium", "hard") if 0 < cov[(c, t)] < 3]
+if "--list-thin" in sys.argv:
+    for c, t in [(c, t) for c in isos for t in ("easy", "medium", "hard") if cov[(c, t)] < 3]: print(f"NEED {3 - cov[(c, t)]} x {t} for {c} ({isos[c]})")
 print(f"{len(allq)} questions in {len(files)} files")
 print("by tier:", dict(collections.Counter(x["tier"] for x in allq)))
 print("by type:", dict(collections.Counter(x.get("type", "text") for x in allq)))

@@ -1,0 +1,1362 @@
+[
+ {
+  "id": "XSA-E-001",
+  "continent": "South America",
+  "territory": "BRA",
+  "tier": "easy",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Most of the Amazon rainforest lies within which country?",
+  "options": [
+   "Brazil",
+   "Peru",
+   "Colombia",
+   "Indonesia"
+  ],
+  "answer": 0,
+  "explain": "About 60% of the Amazon rainforest is inside Brazil, the largest country in South America."
+ },
+ {
+  "id": "XSA-E-002",
+  "continent": "South America",
+  "territory": "BRA",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which sport is Brazil's national passion? Brazil has won the men's World Cup more times than any other country.",
+  "options": [
+   "Basketball",
+   "Tennis",
+   "Rugby",
+   "Soccer"
+  ],
+  "answer": 3,
+  "explain": "Brazil has won the FIFA World Cup five times, more than any other country."
+ },
+ {
+  "id": "XSA-E-003",
+  "continent": "South America",
+  "territory": "BRA",
+  "tier": "easy",
+  "type": "text",
+  "category": "general",
+  "q": "Which two imaginary lines cross Brazil?",
+  "options": [
+   "The Prime Meridian and the Equator",
+   "The Tropic of Cancer and the Tropic of Capricorn",
+   "The Equator and the Tropic of Capricorn",
+   "The Equator and the Tropic of Cancer"
+  ],
+  "answer": 2,
+  "explain": "Both the Equator and the Tropic of Capricorn pass through Brazil."
+ },
+ {
+  "id": "XSA-M-001",
+  "continent": "South America",
+  "territory": "BRA",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Which is the largest city in Brazil?",
+  "options": [
+   "Salvador",
+   "São Paulo",
+   "Rio de Janeiro",
+   "Brasília"
+  ],
+  "answer": 1,
+  "explain": "São Paulo is Brazil's largest city and one of the biggest in the world."
+ },
+ {
+  "id": "XSA-M-002",
+  "continent": "South America",
+  "territory": "BRA",
+  "tier": "medium",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "The Pantanal, one of the world's largest tropical wetlands, is mostly in which country?",
+  "options": [
+   "Brazil",
+   "Argentina",
+   "Bolivia",
+   "Paraguay"
+  ],
+  "answer": 0,
+  "explain": "The Pantanal, a vast seasonally flooded wetland, is mostly in western Brazil."
+ },
+ {
+  "id": "XSA-M-003",
+  "continent": "South America",
+  "territory": "BRA",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Capoeira, a martial art disguised as a dance, comes from which country?",
+  "options": [
+   "Cuba",
+   "Mexico",
+   "Colombia",
+   "Brazil"
+  ],
+  "answer": 3,
+  "explain": "Capoeira was created by enslaved Africans in Brazil, mixing martial arts, music, and dance."
+ },
+ {
+  "id": "XSA-H-001",
+  "continent": "South America",
+  "territory": "BRA",
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "The Rio Negro, a major tributary of the Amazon, meets the Amazon River at which Brazilian city?",
+  "options": [
+   "Rio de Janeiro",
+   "São Paulo",
+   "Manaus",
+   "Belém"
+  ],
+  "answer": 2,
+  "explain": "At Manaus, the dark Rio Negro meets the sandy Amazon — the famous 'Meeting of Waters'."
+ },
+ {
+  "id": "XSA-H-002",
+  "continent": "South America",
+  "territory": "BRA",
+  "tier": "hard",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Brazil shares borders with how many other South American countries?",
+  "options": [
+   "12",
+   "10",
+   "7",
+   "8"
+  ],
+  "answer": 1,
+  "explain": "Brazil borders 10 of South America's 12 countries — every one except Chile and Ecuador."
+ },
+ {
+  "id": "XSA-E-004",
+  "continent": "South America",
+  "territory": "ARG",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which drink, brewed from the yerba mate herb, is a beloved tradition in Argentina?",
+  "options": [
+   "Mate",
+   "Coffee",
+   "Tea",
+   "Horchata"
+  ],
+  "answer": 0,
+  "explain": "Mate is a bitter herbal tea shared from a gourd with a metal straw — a social ritual across Argentina."
+ },
+ {
+  "id": "XSA-E-005",
+  "continent": "South America",
+  "territory": "ARG",
+  "tier": "easy",
+  "type": "text",
+  "category": "rivers",
+  "q": "The Río de la Plata is a huge estuary shared by Argentina and which country?",
+  "options": [
+   "Brazil",
+   "Paraguay",
+   "Chile",
+   "Uruguay"
+  ],
+  "answer": 3,
+  "explain": "The Río de la Plata, the widest river estuary in the world, separates Argentina from Uruguay."
+ },
+ {
+  "id": "XSA-E-006",
+  "continent": "South America",
+  "territory": "ARG",
+  "tier": "easy",
+  "type": "text",
+  "category": "islands",
+  "q": "Tierra del Fuego, the island at the southern tip of South America, is shared by Argentina and which country?",
+  "options": [
+   "Uruguay",
+   "Peru",
+   "Chile",
+   "Brazil"
+  ],
+  "answer": 2,
+  "explain": "Tierra del Fuego, 'Land of Fire', is divided between Argentina and Chile."
+ },
+ {
+  "id": "XSA-M-004",
+  "continent": "South America",
+  "territory": "ARG",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Which Argentine city is famous for the colourful houses of La Boca and the birthplace of tango?",
+  "options": [
+   "Mendoza",
+   "Buenos Aires",
+   "Córdoba",
+   "Rosario"
+  ],
+  "answer": 1,
+  "explain": "Buenos Aires, Argentina's capital, is the home of tango and the brightly painted La Boca district."
+ },
+ {
+  "id": "XSA-M-005",
+  "continent": "South America",
+  "territory": "ARG",
+  "tier": "medium",
+  "type": "text",
+  "category": "general",
+  "q": "Patagonia, the windswept region at the southern end of South America, is shared by Argentina and which country?",
+  "options": [
+   "Chile",
+   "Brazil",
+   "Uruguay",
+   "Bolivia"
+  ],
+  "answer": 0,
+  "explain": "Patagonia, famous for glaciers and wide open plains, spans southern Argentina and Chile."
+ },
+ {
+  "id": "XSA-M-006",
+  "continent": "South America",
+  "territory": "ARG",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Argentine cowboy, famous for his lasso skills and silver-ornamented gear, is a national symbol?",
+  "options": [
+   "The cowboy",
+   "The charro",
+   "The llanero",
+   "The gaucho"
+  ],
+  "answer": 3,
+  "explain": "The gaucho is the iconic horseman of the Argentine and Uruguayan pampas."
+ },
+ {
+  "id": "XSA-H-004",
+  "continent": "South America",
+  "territory": "ARG",
+  "tier": "hard",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Argentina shares borders with Chile, Bolivia, Paraguay, Brazil, and which fifth country?",
+  "options": [
+   "Ecuador",
+   "Uruguay",
+   "Peru",
+   "Colombia"
+  ],
+  "answer": 1,
+  "explain": "Argentina's five neighbors are Chile, Bolivia, Paraguay, Brazil, and Uruguay."
+ },
+ {
+  "id": "XSA-E-007",
+  "continent": "South America",
+  "territory": "CHL",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Chilean poet won the Nobel Prize in Literature in 1971?",
+  "options": [
+   "Pablo Neruda",
+   "Gabriel García Márquez",
+   "Mario Vargas Llosa",
+   "Jorge Luis Borges"
+  ],
+  "answer": 0,
+  "explain": "Pablo Neruda, one of the great poets of the 20th century, won the 1971 Nobel Prize in Literature."
+ },
+ {
+  "id": "XSA-E-008",
+  "continent": "South America",
+  "territory": "CHL",
+  "tier": "easy",
+  "type": "text",
+  "category": "deserts",
+  "q": "The Atacama Desert is so dry that some of its weather stations have never recorded what?",
+  "options": [
+   "Snow",
+   "Wind",
+   "Fog",
+   "Rain"
+  ],
+  "answer": 3,
+  "explain": "Parts of Chile's Atacama Desert are so dry that some weather stations have never recorded any rainfall."
+ },
+ {
+  "id": "XSA-E-009",
+  "continent": "South America",
+  "territory": "CHL",
+  "tier": "easy",
+  "type": "text",
+  "category": "cities",
+  "q": "Valparaíso, a colourful port city with historic funiculars, is in which country?",
+  "options": [
+   "Ecuador",
+   "Colombia",
+   "Chile",
+   "Peru"
+  ],
+  "answer": 2,
+  "explain": "Valparaíso, a hilly port city with brightly painted houses and old funicular lifts, is in Chile."
+ },
+ {
+  "id": "XSA-M-007",
+  "continent": "South America",
+  "territory": "CHL",
+  "tier": "medium",
+  "type": "text",
+  "category": "mountains",
+  "q": "Ojos del Salado, the world's highest volcano, lies on the border of Chile and which country?",
+  "options": [
+   "Ecuador",
+   "Argentina",
+   "Peru",
+   "Bolivia"
+  ],
+  "answer": 1,
+  "explain": "Ojos del Salado, at 6,893 metres on the Chile-Argentina border, is the world's highest volcano."
+ },
+ {
+  "id": "XSA-M-008",
+  "continent": "South America",
+  "territory": "CHL",
+  "tier": "medium",
+  "type": "text",
+  "category": "islands",
+  "q": "The Juan Fernández Islands, where the sailor Alexander Selkirk was stranded, belong to which country?",
+  "options": [
+   "Chile",
+   "Ecuador",
+   "Peru",
+   "Argentina"
+  ],
+  "answer": 0,
+  "explain": "Chile's Juan Fernández Islands, including Robinson Crusoe Island, inspired the novel Robinson Crusoe."
+ },
+ {
+  "id": "XSA-H-006",
+  "continent": "South America",
+  "territory": "CHL",
+  "tier": "hard",
+  "type": "text",
+  "category": "deserts",
+  "q": "The Atacama Desert lies between the Andes Mountains and which ocean?",
+  "options": [
+   "The Caribbean Sea",
+   "The Indian Ocean",
+   "The Pacific Ocean",
+   "The Atlantic Ocean"
+  ],
+  "answer": 2,
+  "explain": "The Atacama, on Chile's northern coast, is squeezed between the Andes and the Pacific Ocean."
+ },
+ {
+  "id": "XSA-E-010",
+  "continent": "South America",
+  "territory": "PER",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Peruvian dish of raw fish 'cooked' in lime juice is famous worldwide?",
+  "options": [
+   "Tacos",
+   "Ceviche",
+   "Sushi",
+   "Paella"
+  ],
+  "answer": 1,
+  "explain": "Ceviche is Peru's signature dish — fresh fish marinated in lime juice with onions and chilli."
+ },
+ {
+  "id": "XSA-E-011",
+  "continent": "South America",
+  "territory": "PER",
+  "tier": "easy",
+  "type": "text",
+  "category": "cities",
+  "q": "Which city was the capital of the Inca Empire?",
+  "options": [
+   "Cusco",
+   "Lima",
+   "Machu Picchu",
+   "Quito"
+  ],
+  "answer": 0,
+  "explain": "Cusco, high in the Andes, was the capital of the Inca Empire."
+ },
+ {
+  "id": "XSA-E-012",
+  "continent": "South America",
+  "territory": "PER",
+  "tier": "easy",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Which animal, used by the Incas to carry goods through the mountains, is a symbol of Peru?",
+  "options": [
+   "The alpaca",
+   "The condor",
+   "The jaguar",
+   "The llama"
+  ],
+  "answer": 3,
+  "explain": "Llamas have carried goods across the Andes for thousands of years and are a symbol of Peru."
+ },
+ {
+  "id": "XSA-M-009",
+  "continent": "South America",
+  "territory": "PER",
+  "tier": "medium",
+  "type": "text",
+  "category": "rivers",
+  "q": "The Amazon River rises in the Andes of which country?",
+  "options": [
+   "Colombia",
+   "Ecuador",
+   "Peru",
+   "Brazil"
+  ],
+  "answer": 2,
+  "explain": "The Amazon's source is a small stream high in the Peruvian Andes."
+ },
+ {
+  "id": "XSA-M-010",
+  "continent": "South America",
+  "territory": "PER",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Which Peruvian city is the gateway to Machu Picchu?",
+  "options": [
+   "Trujillo",
+   "Cusco",
+   "Lima",
+   "Arequipa"
+  ],
+  "answer": 1,
+  "explain": "Travellers pass through Cusco, the old Inca capital, on the way to Machu Picchu."
+ },
+ {
+  "id": "XSA-H-007",
+  "continent": "South America",
+  "territory": "PER",
+  "tier": "hard",
+  "type": "text",
+  "category": "islands",
+  "q": "The Ballestas Islands, home to sea lions, penguins, and huge bird colonies, are often called 'the poor man's Galápagos' — they belong to which country?",
+  "options": [
+   "Peru",
+   "Ecuador",
+   "Chile",
+   "Colombia"
+  ],
+  "answer": 0,
+  "explain": "Peru's Ballestas Islands are a wildlife haven just off the coast near Pisco."
+ },
+ {
+  "id": "XSA-H-008",
+  "continent": "South America",
+  "territory": "PER",
+  "tier": "hard",
+  "type": "text",
+  "category": "landmarks",
+  "q": "The Nazca Lines, giant ancient drawings in the desert, are in which country?",
+  "options": [
+   "Chile",
+   "Bolivia",
+   "Ecuador",
+   "Peru"
+  ],
+  "answer": 3,
+  "explain": "The Nazca Lines in southern Peru are huge geoglyphs best seen from the air."
+ },
+ {
+  "id": "XSA-E-013",
+  "continent": "South America",
+  "territory": "COL",
+  "tier": "easy",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Colombia has coastlines on which two bodies of water?",
+  "options": [
+   "The Pacific Ocean and the Southern Ocean",
+   "The Caribbean Sea and the Mediterranean Sea",
+   "The Pacific Ocean and the Caribbean Sea",
+   "The Atlantic Ocean and the Indian Ocean"
+  ],
+  "answer": 2,
+  "explain": "Colombia is one of the few South American countries with coasts on both the Pacific and the Caribbean."
+ },
+ {
+  "id": "XSA-E-014",
+  "continent": "South America",
+  "territory": "COL",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Colombia is named after which explorer?",
+  "options": [
+   "Vasco da Gama",
+   "Christopher Columbus",
+   "Amerigo Vespucci",
+   "Ferdinand Magellan"
+  ],
+  "answer": 1,
+  "explain": "Colombia is named after Christopher Columbus, the explorer who reached the Americas in 1492."
+ },
+ {
+  "id": "XSA-E-015",
+  "continent": "South America",
+  "territory": "COL",
+  "tier": "easy",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "The 'Coffee Triangle' (Eje Cafetero), a famous coffee-growing region, is in which country?",
+  "options": [
+   "Colombia",
+   "Brazil",
+   "Ethiopia",
+   "Vietnam"
+  ],
+  "answer": 0,
+  "explain": "Colombia's Coffee Triangle, a UNESCO landscape, grows some of the world's finest coffee."
+ },
+ {
+  "id": "XSA-M-011",
+  "continent": "South America",
+  "territory": "COL",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Which Colombian city is nicknamed 'The City of Eternal Spring' for its pleasant climate?",
+  "options": [
+   "Bogotá",
+   "Cali",
+   "Cartagena",
+   "Medellín"
+  ],
+  "answer": 3,
+  "explain": "Medellín, in the Andes, enjoys spring-like weather all year round."
+ },
+ {
+  "id": "XSA-M-012",
+  "continent": "South America",
+  "territory": "COL",
+  "tier": "medium",
+  "type": "text",
+  "category": "rivers",
+  "q": "The Magdalena River, Colombia's principal river, flows into which sea?",
+  "options": [
+   "The Gulf of Mexico",
+   "The Mediterranean Sea",
+   "The Caribbean Sea",
+   "The Pacific Ocean"
+  ],
+  "answer": 2,
+  "explain": "The Magdalena River flows north through Colombia and empties into the Caribbean at Barranquilla."
+ },
+ {
+  "id": "XSA-H-009",
+  "continent": "South America",
+  "territory": "COL",
+  "tier": "hard",
+  "type": "text",
+  "category": "islands",
+  "q": "San Andrés and Providencia, Caribbean islands with a distinct culture, belong to which country?",
+  "options": [
+   "Venezuela",
+   "Colombia",
+   "Nicaragua",
+   "Panama"
+  ],
+  "answer": 1,
+  "explain": "San Andrés and Providencia are a Colombian archipelago in the western Caribbean."
+ },
+ {
+  "id": "XSA-H-010",
+  "continent": "South America",
+  "territory": "COL",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest mountain in Colombia?",
+  "options": [
+   "Pico Cristóbal Colón",
+   "Nevado del Ruiz",
+   "Nevado del Huila",
+   "Pico de Orizaba"
+  ],
+  "answer": 0,
+  "explain": "Pico Cristóbal Colón, in the Sierra Nevada de Santa Marta, is Colombia's highest peak at 5,775 metres."
+ },
+ {
+  "id": "XSA-E-016",
+  "continent": "South America",
+  "territory": "VEN",
+  "tier": "easy",
+  "type": "text",
+  "category": "rivers",
+  "q": "The Orinoco River, one of South America's great rivers, flows mainly through which country?",
+  "options": [
+   "Colombia",
+   "Brazil",
+   "Guyana",
+   "Venezuela"
+  ],
+  "answer": 3,
+  "explain": "The Orinoco River flows about 2,000 km, mostly through Venezuela."
+ },
+ {
+  "id": "XSA-E-017",
+  "continent": "South America",
+  "territory": "VEN",
+  "tier": "easy",
+  "type": "text",
+  "category": "islands",
+  "q": "Margarita Island, a popular Venezuelan resort island, lies in which sea?",
+  "options": [
+   "The Pacific Ocean",
+   "The Mediterranean Sea",
+   "The Caribbean Sea",
+   "The Gulf of Mexico"
+  ],
+  "answer": 2,
+  "explain": "Margarita Island, in the Caribbean Sea, is one of Venezuela's favourite holiday spots."
+ },
+ {
+  "id": "XSA-E-018",
+  "continent": "South America",
+  "territory": "VEN",
+  "tier": "easy",
+  "type": "text",
+  "category": "general",
+  "q": "Venezuela's name means 'little Venice' — explorers saw houses on stilts on which lake?",
+  "options": [
+   "Lake Atitlán",
+   "Lake Maracaibo",
+   "Lake Titicaca",
+   "Lake Nicaragua"
+  ],
+  "answer": 1,
+  "explain": "Venezuela was named 'little Venice' after the stilt houses explorers saw on Lake Maracaibo."
+ },
+ {
+  "id": "XSA-M-013",
+  "continent": "South America",
+  "territory": "VEN",
+  "tier": "medium",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest mountain in Venezuela?",
+  "options": [
+   "Pico Bolívar",
+   "Pico Humboldt",
+   "Pico Bonpland",
+   "Pico Espejo"
+  ],
+  "answer": 0,
+  "explain": "Pico Bolívar, in the Mérida Andes, is Venezuela's highest peak at 4,978 metres."
+ },
+ {
+  "id": "XSA-M-014",
+  "continent": "South America",
+  "territory": "VEN",
+  "tier": "medium",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Angel Falls, the world's tallest waterfall, plunges from which flat-topped mountain?",
+  "options": [
+   "Mount Roraima",
+   "Table Mountain",
+   "Kukenán-tepui",
+   "Auyán-tepui"
+  ],
+  "answer": 3,
+  "explain": "Angel Falls drops 979 metres from the cliffs of Auyán-tepui in Venezuela."
+ },
+ {
+  "id": "XSA-H-011",
+  "continent": "South America",
+  "territory": "VEN",
+  "tier": "hard",
+  "type": "text",
+  "category": "islands",
+  "q": "The Los Roques archipelago, a Caribbean paradise of cays and coral reefs, belongs to which country?",
+  "options": [
+   "Cuba",
+   "The Dominican Republic",
+   "Venezuela",
+   "Colombia"
+  ],
+  "answer": 2,
+  "explain": "Los Roques, a national park of islands and reefs, is a Venezuelan archipelago in the Caribbean."
+ },
+ {
+  "id": "XSA-H-013",
+  "continent": "South America",
+  "territory": "VEN",
+  "tier": "hard",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Venezuela shares borders with Colombia, Brazil, and which third country?",
+  "options": [
+   "Guyana",
+   "Suriname",
+   "Trinidad",
+   "Ecuador"
+  ],
+  "answer": 0,
+  "explain": "Venezuela's three neighbors are Colombia, Brazil, and Guyana."
+ },
+ {
+  "id": "XSA-E-019",
+  "continent": "South America",
+  "territory": "ECU",
+  "tier": "hard",
+  "type": "text",
+  "category": "cities",
+  "q": "Guayaquil, Ecuador's largest city, is a major port on which river?",
+  "options": [
+   "The Amazon River",
+   "The Orinoco River",
+   "The Magdalena River",
+   "The Guayas River"
+  ],
+  "answer": 3,
+  "explain": "Guayaquil, Ecuador's biggest city and main port, sits on the Guayas River."
+ },
+ {
+  "id": "XSA-E-021",
+  "continent": "South America",
+  "territory": "ECU",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Cuenca, a beautiful colonial city high in the Andes, is in which country?",
+  "options": [
+   "Colombia",
+   "Ecuador",
+   "Peru",
+   "Bolivia"
+  ],
+  "answer": 1,
+  "explain": "Cuenca, Ecuador's third-largest city, is a UNESCO-listed colonial gem in the Andes."
+ },
+ {
+  "id": "XSA-M-015",
+  "continent": "South America",
+  "territory": "ECU",
+  "tier": "medium",
+  "type": "text",
+  "category": "mountains",
+  "q": "Cotopaxi, one of the world's highest active volcanoes, is in which country?",
+  "options": [
+   "Ecuador",
+   "Peru",
+   "Chile",
+   "Colombia"
+  ],
+  "answer": 0,
+  "explain": "Cotopaxi, at 5,897 metres in Ecuador, is one of the world's highest active volcanoes."
+ },
+ {
+  "id": "XSA-M-016",
+  "continent": "South America",
+  "territory": "ECU",
+  "tier": "medium",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "The 'Avenue of the Volcanoes', a string of high peaks, is in which country?",
+  "options": [
+   "Peru",
+   "Chile",
+   "Mexico",
+   "Ecuador"
+  ],
+  "answer": 3,
+  "explain": "Ecuador's Avenue of the Volcanoes runs along the Andes, dotted with towering peaks."
+ },
+ {
+  "id": "XSA-H-014",
+  "continent": "South America",
+  "territory": "ECU",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "Which mountain's summit is the farthest point from the Earth's centre, thanks to the equatorial bulge?",
+  "options": [
+   "Aconcagua",
+   "Kilimanjaro",
+   "Chimborazo",
+   "Mount Everest"
+  ],
+  "answer": 2,
+  "explain": "Chimborazo in Ecuador is not the tallest above sea level, but its summit is the farthest from Earth's centre."
+ },
+ {
+  "id": "XSA-E-022",
+  "continent": "South America",
+  "territory": "BOL",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Bolivia is named after which South American independence leader?",
+  "options": [
+   "Miguel Hidalgo",
+   "Simón Bolívar",
+   "José de San Martín",
+   "Bernardo O'Higgins"
+  ],
+  "answer": 1,
+  "explain": "Bolivia is named after Simón Bolívar, the liberator of much of South America."
+ },
+ {
+  "id": "XSA-E-023",
+  "continent": "South America",
+  "territory": "BOL",
+  "tier": "medium",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "The Altiplano, a vast high plateau shared with Peru, is a region of which country?",
+  "options": [
+   "Bolivia",
+   "Chile",
+   "Argentina",
+   "Ecuador"
+  ],
+  "answer": 0,
+  "explain": "Bolivia's Altiplano is a high, treeless plateau where llamas graze and people farm quinoa."
+ },
+ {
+  "id": "XSA-E-024",
+  "continent": "South America",
+  "territory": "BOL",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Which country is home to the city of Potosí, once one of the world's highest cities and a famous silver-mining boomtown?",
+  "options": [
+   "Peru",
+   "Chile",
+   "Argentina",
+   "Bolivia"
+  ],
+  "answer": 3,
+  "explain": "Potosí, in Bolivia, sits at about 4,090 metres and was once the world's largest silver-mining centre."
+ },
+ {
+  "id": "XSA-M-017",
+  "continent": "South America",
+  "territory": "BOL",
+  "tier": "medium",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest peak in Bolivia?",
+  "options": [
+   "Huayna Potosí",
+   "Ancohuma",
+   "Sajama",
+   "Illimani"
+  ],
+  "answer": 2,
+  "explain": "Sajama, a dormant volcano in the Andes, is Bolivia's highest peak at 6,542 metres."
+ },
+ {
+  "id": "XSA-M-018",
+  "continent": "South America",
+  "territory": "BOL",
+  "tier": "medium",
+  "type": "text",
+  "category": "deserts",
+  "q": "The Salar de Uyuni, the world's largest salt flat, is in which country?",
+  "options": [
+   "Peru",
+   "Bolivia",
+   "Chile",
+   "Argentina"
+  ],
+  "answer": 1,
+  "explain": "Bolivia's Salar de Uyuni is the world's largest salt flat — over 10,000 square kilometres of white salt."
+ },
+ {
+  "id": "XSA-H-015",
+  "continent": "South America",
+  "territory": "BOL",
+  "tier": "hard",
+  "type": "text",
+  "category": "deserts",
+  "q": "The Salar de Uyuni sits on huge reserves of which metal used in batteries?",
+  "options": [
+   "Lithium",
+   "Sodium",
+   "Potassium",
+   "Magnesium"
+  ],
+  "answer": 0,
+  "explain": "Under the Salar de Uyuni's salt crust lie some of the world's largest lithium reserves, used in batteries."
+ },
+ {
+  "id": "XSA-E-025",
+  "continent": "South America",
+  "territory": "PRY",
+  "tier": "easy",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Paraguay is landlocked between Bolivia, Brazil, and which third country?",
+  "options": [
+   "Chile",
+   "Uruguay",
+   "Peru",
+   "Argentina"
+  ],
+  "answer": 3,
+  "explain": "Paraguay's three neighbors are Brazil, Bolivia, and Argentina."
+ },
+ {
+  "id": "XSA-E-026",
+  "continent": "South America",
+  "territory": "PRY",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which indigenous language, spoken by most Paraguayans, is an official language alongside Spanish?",
+  "options": [
+   "Aymara",
+   "Mapudungun",
+   "Guaraní",
+   "Quechua"
+  ],
+  "answer": 2,
+  "explain": "Guaraní, an indigenous language, is co-official in Paraguay and spoken by most of the population."
+ },
+ {
+  "id": "XSA-E-027",
+  "continent": "South America",
+  "territory": "PRY",
+  "tier": "medium",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "The Gran Chaco, a hot, semi-arid lowland, covers much of which country?",
+  "options": [
+   "Brazil",
+   "Paraguay",
+   "Bolivia",
+   "Argentina"
+  ],
+  "answer": 1,
+  "explain": "The Gran Chaco, a hot plain of forests and grasslands, covers much of western Paraguay."
+ },
+ {
+  "id": "XSA-M-019",
+  "continent": "South America",
+  "territory": "PRY",
+  "tier": "medium",
+  "type": "text",
+  "category": "rivers",
+  "q": "The Itaipu Dam, one of the world's largest hydroelectric plants, is shared by Paraguay and which country?",
+  "options": [
+   "Brazil",
+   "Argentina",
+   "Bolivia",
+   "Uruguay"
+  ],
+  "answer": 0,
+  "explain": "The Itaipu Dam on the Paraná River is shared by Paraguay and Brazil."
+ },
+ {
+  "id": "XSA-M-020",
+  "continent": "South America",
+  "territory": "PRY",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "The Jesuit missions of La Santísima Trinidad and Jesús de Tavarangue, UNESCO sites, are in which country?",
+  "options": [
+   "Bolivia",
+   "Argentina",
+   "Brazil",
+   "Paraguay"
+  ],
+  "answer": 3,
+  "explain": "Paraguay's Jesuit missions were built by Jesuit priests and Guaraní people in the 1600s and 1700s."
+ },
+ {
+  "id": "XSA-H-016",
+  "continent": "South America",
+  "territory": "PRY",
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "The Paraguay River flows into which larger river?",
+  "options": [
+   "The Uruguay River",
+   "The Orinoco River",
+   "The Paraná River",
+   "The Amazon River"
+  ],
+  "answer": 2,
+  "explain": "The Paraguay River is a major tributary of the Paraná River."
+ },
+ {
+  "id": "XSA-E-028",
+  "continent": "South America",
+  "territory": "URY",
+  "tier": "easy",
+  "type": "text",
+  "category": "general",
+  "q": "Uruguay is the second-smallest country in South America — which country is the smallest?",
+  "options": [
+   "Ecuador",
+   "Suriname",
+   "Guyana",
+   "Paraguay"
+  ],
+  "answer": 1,
+  "explain": "Suriname is South America's smallest country; Uruguay is the second smallest."
+ },
+ {
+  "id": "XSA-E-029",
+  "continent": "South America",
+  "territory": "URY",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Uruguay hosted and won the first ever FIFA World Cup — in which year?",
+  "options": [
+   "1930",
+   "1950",
+   "1966",
+   "1978"
+  ],
+  "answer": 0,
+  "explain": "Uruguay won the first FIFA World Cup on home soil in 1930."
+ },
+ {
+  "id": "XSA-E-030",
+  "continent": "South America",
+  "territory": "URY",
+  "tier": "hard",
+  "type": "text",
+  "category": "general",
+  "q": "Uruguay's full name is 'República Oriental del Uruguay' — 'Oriental' means it lies east of which river?",
+  "options": [
+   "The Paraná River",
+   "The Río de la Plata",
+   "The Amazon River",
+   "The Uruguay River"
+  ],
+  "answer": 3,
+  "explain": "'Oriental' refers to Uruguay's position east of the Uruguay River."
+ },
+ {
+  "id": "XSA-M-021",
+  "continent": "South America",
+  "territory": "URY",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Punta del Este, a glamorous beach resort on the Atlantic coast, is in which country?",
+  "options": [
+   "Brazil",
+   "Chile",
+   "Uruguay",
+   "Argentina"
+  ],
+  "answer": 2,
+  "explain": "Punta del Este is Uruguay's most famous beach resort, east of Montevideo."
+ },
+ {
+  "id": "XSA-M-022",
+  "continent": "South America",
+  "territory": "URY",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "The carnival in which Uruguayan capital is one of the longest in the world?",
+  "options": [
+   "Salto",
+   "Montevideo",
+   "Punta del Este",
+   "Colonia"
+  ],
+  "answer": 1,
+  "explain": "Montevideo's carnival is famous for lasting over 40 days, one of the longest in the world."
+ },
+ {
+  "id": "XSA-H-017",
+  "continent": "South America",
+  "territory": "URY",
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "The Uruguay River forms part of the border between Uruguay and which country?",
+  "options": [
+   "Argentina",
+   "Brazil",
+   "Paraguay",
+   "Chile"
+  ],
+  "answer": 0,
+  "explain": "The Uruguay River separates Uruguay from Argentina."
+ },
+ {
+  "id": "XSA-E-031",
+  "continent": "South America",
+  "territory": "GUY",
+  "tier": "medium",
+  "type": "text",
+  "category": "general",
+  "q": "Guyana is part of a region called the Guianas, along with Suriname and which other territory?",
+  "options": [
+   "Venezuela",
+   "Brazil",
+   "Trinidad",
+   "French Guiana"
+  ],
+  "answer": 3,
+  "explain": "The Guianas are Guyana, Suriname, and French Guiana, on South America's northeast coast."
+ },
+ {
+  "id": "XSA-E-032",
+  "continent": "South America",
+  "territory": "GUY",
+  "tier": "easy",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Kaieteur Falls, one of the world's most powerful waterfalls, is in which country?",
+  "options": [
+   "Brazil",
+   "Suriname",
+   "Guyana",
+   "Venezuela"
+  ],
+  "answer": 2,
+  "explain": "Kaieteur Falls in Guyana drops 226 metres in a single leap — one of the world's tallest single-drop waterfalls."
+ },
+ {
+  "id": "XSA-E-033",
+  "continent": "South America",
+  "territory": "GUY",
+  "tier": "easy",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Guyana borders Venezuela, Brazil, and which third country?",
+  "options": [
+   "Colombia",
+   "Suriname",
+   "French Guiana",
+   "Trinidad"
+  ],
+  "answer": 1,
+  "explain": "Guyana's three neighbors are Venezuela, Brazil, and Suriname."
+ },
+ {
+  "id": "XSA-M-023",
+  "continent": "South America",
+  "territory": "GUY",
+  "tier": "medium",
+  "type": "text",
+  "category": "general",
+  "q": "The name 'Guyana' comes from an indigenous word meaning what?",
+  "options": [
+   "Land of many waters",
+   "Land of the rising sun",
+   "Land of gold",
+   "Land of the eagle"
+  ],
+  "answer": 0,
+  "explain": "Guyana comes from an Arawak word meaning 'land of many waters', for its rivers and waterfalls."
+ },
+ {
+  "id": "XSA-M-024",
+  "continent": "South America",
+  "territory": "GUY",
+  "tier": "medium",
+  "type": "text",
+  "category": "rivers",
+  "q": "Kaieteur Falls is on which river in Guyana?",
+  "options": [
+   "The Essequibo River",
+   "The Demerara River",
+   "The Amazon River",
+   "The Potaro River"
+  ],
+  "answer": 3,
+  "explain": "Kaieteur Falls thunders over a cliff on the Potaro River in western Guyana."
+ },
+ {
+  "id": "XSA-H-018",
+  "continent": "South America",
+  "territory": "GUY",
+  "tier": "hard",
+  "type": "text",
+  "category": "culture",
+  "q": "Mount Roraima, a flat-topped mountain where Guyana, Venezuela and Brazil meet, inspired which famous adventure novel?",
+  "options": [
+   "King Kong",
+   "Treasure Island",
+   "The Lost World",
+   "Jurassic Park"
+  ],
+  "answer": 2,
+  "explain": "Arthur Conan Doyle's 'The Lost World' was inspired by Mount Roraima in Guyana."
+ },
+ {
+  "id": "XSA-E-034",
+  "continent": "South America",
+  "territory": "SUR",
+  "tier": "easy",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Suriname borders Guyana, Brazil, and which other territory?",
+  "options": [
+   "Colombia",
+   "French Guiana",
+   "Venezuela",
+   "Trinidad"
+  ],
+  "answer": 1,
+  "explain": "Suriname's three neighbors are Guyana, French Guiana, and Brazil."
+ },
+ {
+  "id": "XSA-E-035",
+  "continent": "South America",
+  "territory": "SUR",
+  "tier": "easy",
+  "type": "text",
+  "category": "general",
+  "q": "Suriname was formerly a colony of which European country?",
+  "options": [
+   "The Netherlands",
+   "Spain",
+   "Portugal",
+   "Britain"
+  ],
+  "answer": 0,
+  "explain": "Suriname was a Dutch colony, and Dutch is still its official language."
+ },
+ {
+  "id": "XSA-E-036",
+  "continent": "South America",
+  "territory": "SUR",
+  "tier": "easy",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Most of Suriname is covered by which type of landscape?",
+  "options": [
+   "Desert",
+   "Tundra",
+   "Grassland",
+   "Tropical rainforest"
+  ],
+  "answer": 3,
+  "explain": "Tropical rainforest covers most of Suriname, one of the greenest countries on Earth."
+ },
+ {
+  "id": "XSA-M-025",
+  "continent": "South America",
+  "territory": "SUR",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Paramaribo, the capital of Suriname, is a UNESCO site on the bank of which river?",
+  "options": [
+   "The Demerara River",
+   "The Amazon River",
+   "The Suriname River",
+   "The Essequibo River"
+  ],
+  "answer": 2,
+  "explain": "Paramaribo, Suriname's capital, sits on the Suriname River."
+ },
+ {
+  "id": "XSA-M-026",
+  "continent": "South America",
+  "territory": "SUR",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which people, descended from enslaved Africans who escaped into the interior, live in traditional villages in Suriname's rainforests?",
+  "options": [
+   "The Arawak",
+   "The Maroons",
+   "The Maya",
+   "The Inca"
+  ],
+  "answer": 1,
+  "explain": "The Maroons of Suriname live in the rainforest interior, keeping African traditions alive."
+ },
+ {
+  "id": "XSA-E-037",
+  "continent": "South America",
+  "territory": null,
+  "tier": "easy",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "The Drake Passage separates South America from which continent?",
+  "options": [
+   "Antarctica",
+   "Africa",
+   "Australia",
+   "North America"
+  ],
+  "answer": 0,
+  "explain": "The Drake Passage, between Cape Horn and Antarctica, is the roughest sea crossing in the world."
+ },
+ {
+  "id": "XSA-M-027",
+  "continent": "South America",
+  "territory": null,
+  "tier": "medium",
+  "type": "text",
+  "category": "general",
+  "q": "Which line of latitude passes through the northern part of South America?",
+  "options": [
+   "The Tropic of Cancer",
+   "The Tropic of Capricorn",
+   "The Prime Meridian",
+   "The Equator"
+  ],
+  "answer": 3,
+  "explain": "The Equator crosses the northern countries of South America, including Ecuador, Colombia, and Brazil."
+ },
+ {
+  "id": "XSA-M-028",
+  "continent": "South America",
+  "territory": null,
+  "tier": "medium",
+  "type": "text",
+  "category": "mountains",
+  "q": "The Andes Mountains pass through how many South American countries?",
+  "options": [
+   "9",
+   "4",
+   "7",
+   "5"
+  ],
+  "answer": 2,
+  "explain": "The Andes run through seven countries: Venezuela, Colombia, Ecuador, Peru, Bolivia, Chile, and Argentina."
+ },
+ {
+  "id": "XSA-H-019",
+  "continent": "South America",
+  "territory": null,
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "Which South American river has the largest drainage basin in the world?",
+  "options": [
+   "The Magdalena",
+   "The Amazon",
+   "The Paraná",
+   "The Orinoco"
+  ],
+  "answer": 1,
+  "explain": "The Amazon basin drains about 7 million square kilometres — the largest of any river on Earth."
+ }
+]

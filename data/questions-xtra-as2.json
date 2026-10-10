@@ -1,0 +1,750 @@
+[
+ {
+  "id": "XAT-E-001",
+  "continent": "Asia",
+  "territory": "PHL",
+  "tier": "easy",
+  "type": "text",
+  "category": "general",
+  "q": "The Philippines is part of which region of Asia?",
+  "options": [
+   "Southeast Asia",
+   "East Asia",
+   "South Asia",
+   "Central Asia"
+  ],
+  "answer": 0,
+  "explain": "The Philippines is one of the countries of Southeast Asia, a region of jungles, islands, and busy port cities."
+ },
+ {
+  "id": "XAT-E-002",
+  "continent": "Asia",
+  "territory": "PHL",
+  "tier": "easy",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Which sea lies along the western coast of the Philippines?",
+  "options": [
+   "The South China Sea",
+   "The Sulu Sea",
+   "The Pacific Ocean",
+   "The Indian Ocean"
+  ],
+  "answer": 0,
+  "explain": "The South China Sea washes the western shores of the Philippines, while the great Pacific Ocean lies to the east."
+ },
+ {
+  "id": "XAT-E-003",
+  "continent": "Asia",
+  "territory": "MYS",
+  "tier": "easy",
+  "type": "text",
+  "category": "general",
+  "q": "Malaysia is split into two parts separated by a sea — which sea?",
+  "options": [
+   "The South China Sea",
+   "The Andaman Sea",
+   "The Java Sea",
+   "The Celebes Sea"
+  ],
+  "answer": 0,
+  "explain": "Peninsular Malaysia and Malaysian Borneo are separated by the South China Sea, hundreds of kilometres wide."
+ },
+ {
+  "id": "XAT-E-004",
+  "continent": "Asia",
+  "territory": "MYS",
+  "tier": "easy",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Which famous pair of matching skyscrapers stands in Kuala Lumpur, Malaysia?",
+  "options": [
+   "The Petronas Towers",
+   "The Burj Khalifa",
+   "Taipei 101",
+   "The Willis Tower"
+  ],
+  "answer": 0,
+  "explain": "The Petronas Towers, linked by a shiny skybridge, are Malaysia's most famous landmark and were once the world's tallest buildings."
+ },
+ {
+  "id": "XAT-E-005",
+  "continent": "Asia",
+  "territory": "SAU",
+  "tier": "easy",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Which sea lies to the west of Saudi Arabia, separating it from Africa?",
+  "options": [
+   "The Red Sea",
+   "The Mediterranean Sea",
+   "The Arabian Sea",
+   "The Persian Gulf"
+  ],
+  "answer": 0,
+  "explain": "The Red Sea runs along Saudi Arabia's western coast, with the shores of Africa lying on the other side."
+ },
+ {
+  "id": "XAT-E-006",
+  "continent": "Asia",
+  "territory": "TUR",
+  "tier": "easy",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Which famous domed building in Istanbul, Turkey, was built as a church over 1,400 years ago?",
+  "options": [
+   "The Hagia Sophia",
+   "The Blue Mosque",
+   "Topkapi Palace",
+   "The Grand Bazaar"
+  ],
+  "answer": 0,
+  "explain": "The Hagia Sophia's enormous dome has stood in Istanbul for nearly 1,500 years, first as a church and later as a mosque."
+ },
+ {
+  "id": "XAT-E-007",
+  "continent": "Asia",
+  "territory": "TUR",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which sweet, chewy Turkish treat, flavoured with rosewater and dusted with sugar, is famous worldwide?",
+  "options": [
+   "Turkish delight",
+   "Baklava",
+   "Halva",
+   "Nougat"
+  ],
+  "answer": 0,
+  "explain": "Turkish delight, or lokum, is a soft, jelly-like sweet that has been made in Turkey for centuries."
+ },
+ {
+  "id": "XAT-E-008",
+  "continent": "Asia",
+  "territory": "TUR",
+  "tier": "easy",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Which sea lies to the north of Turkey?",
+  "options": [
+   "The Black Sea",
+   "The Mediterranean Sea",
+   "The Aegean Sea",
+   "The Red Sea"
+  ],
+  "answer": 0,
+  "explain": "Turkey's northern coast opens onto the Black Sea, while the Mediterranean and Aegean lap its southern and western shores."
+ },
+ {
+  "id": "XAT-E-009",
+  "continent": "Asia",
+  "territory": "PAK",
+  "tier": "easy",
+  "type": "text",
+  "category": "mountains",
+  "q": "Which mountain in northern Pakistan is the second-highest peak on Earth?",
+  "options": [
+   "K2",
+   "Mount Everest",
+   "Kangchenjunga",
+   "Nanga Parbat"
+  ],
+  "answer": 0,
+  "explain": "K2, in the Karakoram range, stands at 8,611 metres — only Mount Everest is taller."
+ },
+ {
+  "id": "XAT-E-010",
+  "continent": "Asia",
+  "territory": "PAK",
+  "tier": "easy",
+  "type": "text",
+  "category": "rivers",
+  "q": "Which great river, the longest in Pakistan, flows south to the Arabian Sea?",
+  "options": [
+   "The Indus River",
+   "The Ganges River",
+   "The Brahmaputra River",
+   "The Mekong River"
+  ],
+  "answer": 0,
+  "explain": "The Indus River gave its name to India and has watered the region for thousands of years."
+ },
+ {
+  "id": "XAT-E-011",
+  "continent": "Asia",
+  "territory": "PAK",
+  "tier": "easy",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Which sea lies to the south of Pakistan?",
+  "options": [
+   "The Arabian Sea",
+   "The Red Sea",
+   "The Mediterranean Sea",
+   "The Bay of Bengal"
+  ],
+  "answer": 0,
+  "explain": "Pakistan's southern coastline opens onto the Arabian Sea, the northwestern part of the Indian Ocean."
+ },
+ {
+  "id": "XAT-E-012",
+  "continent": "Asia",
+  "territory": "BGD",
+  "tier": "easy",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "The Ganges and Brahmaputra rivers form a huge delta in Bangladesh that empties into which bay?",
+  "options": [
+   "The Bay of Bengal",
+   "The Arabian Sea",
+   "The Gulf of Oman",
+   "The Gulf of Thailand"
+  ],
+  "answer": 0,
+  "explain": "The Ganges–Brahmaputra delta is the largest river delta in the world and pours into the Bay of Bengal."
+ },
+ {
+  "id": "XAT-E-013",
+  "continent": "Asia",
+  "territory": "BGD",
+  "tier": "easy",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "The Sundarbans, a vast mangrove forest in Bangladesh, is famous for which big cat?",
+  "options": [
+   "The Bengal tiger",
+   "The Asian lion",
+   "The snow leopard",
+   "The jaguar"
+  ],
+  "answer": 0,
+  "explain": "The Bengal tiger prowls the mangrove swamps of the Sundarbans, the world's largest mangrove forest."
+ },
+ {
+  "id": "XAT-E-014",
+  "continent": "Asia",
+  "territory": "BGD",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "What is the main language spoken in Bangladesh?",
+  "options": [
+   "Bengali",
+   "Hindi",
+   "Urdu",
+   "Nepali"
+  ],
+  "answer": 0,
+  "explain": "Bengali, also called Bangla, is the main language of Bangladesh and is written in its own beautiful script."
+ },
+ {
+  "id": "XAT-E-015",
+  "continent": "Asia",
+  "territory": "MNG",
+  "tier": "easy",
+  "type": "text",
+  "category": "deserts",
+  "q": "The Gobi Desert, which stretches across southern Mongolia, is what kind of desert?",
+  "options": [
+   "A cold desert",
+   "A hot desert",
+   "A coastal desert",
+   "A polar desert"
+  ],
+  "answer": 0,
+  "explain": "The Gobi is a cold desert, with freezing winters and dry, hot summers, famous for its dinosaur fossils."
+ },
+ {
+  "id": "XAT-E-016",
+  "continent": "Asia",
+  "territory": "MNG",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Mongol leader, born around 1162, united the Mongol tribes and built a huge empire across Asia?",
+  "options": [
+   "Genghis Khan",
+   "Attila the Hun",
+   "Alexander the Great",
+   "Tamerlane"
+  ],
+  "answer": 0,
+  "explain": "Genghis Khan united the Mongol tribes and created one of the largest empires the world has ever seen."
+ },
+ {
+  "id": "XAT-E-017",
+  "continent": "Asia",
+  "territory": "MNG",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "What are the round, felt tents used by nomads in Mongolia called?",
+  "options": [
+   "Yurts",
+   "Tipis",
+   "Wigwams",
+   "Igloos"
+  ],
+  "answer": 0,
+  "explain": "Yurts, also called gers, are round tents that nomads can pack up and carry as they move with their herds."
+ },
+ {
+  "id": "XAT-M-001",
+  "continent": "Asia",
+  "territory": "PHL",
+  "tier": "medium",
+  "type": "text",
+  "category": "landmarks",
+  "q": "The Banaue Rice Terraces, carved into a mountainside by hand over 2,000 years ago, are on which Philippine island?",
+  "options": [
+   "Luzon",
+   "Mindanao",
+   "Bohol",
+   "Palawan"
+  ],
+  "answer": 0,
+  "explain": "The Banaue Rice Terraces climb the mountains of Luzon, the Philippines' largest island, in Ifugao province."
+ },
+ {
+  "id": "XAT-M-002",
+  "continent": "Asia",
+  "territory": "PHL",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "The Philippines was named after which Spanish king?",
+  "options": [
+   "King Philip II of Spain",
+   "King Ferdinand of Spain",
+   "King Charles I of Spain",
+   "King Louis XIV of France"
+  ],
+  "answer": 0,
+  "explain": "Spanish explorers named the islands Las Filipinas in honour of King Philip II of Spain."
+ },
+ {
+  "id": "XAT-M-003",
+  "continent": "Asia",
+  "territory": "MYS",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which dish of rice cooked in coconut milk, usually served with peanuts, egg, and spicy sambal, is Malaysia's national dish?",
+  "options": [
+   "Nasi lemak",
+   "Pad thai",
+   "Bibimbap",
+   "Kimchi"
+  ],
+  "answer": 0,
+  "explain": "Nasi lemak, which means 'fat rice', is the beloved national dish of Malaysia, often eaten for breakfast."
+ },
+ {
+  "id": "XAT-M-004",
+  "continent": "Asia",
+  "territory": "MYS",
+  "tier": "medium",
+  "type": "text",
+  "category": "islands",
+  "q": "Malaysia shares the island of Borneo with which two other countries?",
+  "options": [
+   "Indonesia and Brunei",
+   "Indonesia and Singapore",
+   "Thailand and Indonesia",
+   "Indonesia and Timor-Leste"
+  ],
+  "answer": 0,
+  "explain": "Borneo is divided between Malaysia, Indonesia, and the small sultanate of Brunei."
+ },
+ {
+  "id": "XAT-M-005",
+  "continent": "Asia",
+  "territory": "SAU",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Which Saudi Arabian port city on the Red Sea is the traditional gateway for travellers heading to Mecca?",
+  "options": [
+   "Jeddah",
+   "Mecca",
+   "Medina",
+   "Taif"
+  ],
+  "answer": 0,
+  "explain": "Jeddah, on the Red Sea coast, has been the main port and gateway to Mecca for centuries."
+ },
+ {
+  "id": "XAT-M-006",
+  "continent": "Asia",
+  "territory": "SAU",
+  "tier": "medium",
+  "type": "text",
+  "category": "deserts",
+  "q": "What is the name of the huge desert in southern Saudi Arabia whose name means 'Empty Quarter'?",
+  "options": [
+   "The Rub' al Khali",
+   "The Sahara",
+   "The Gobi",
+   "The Kalahari"
+  ],
+  "answer": 0,
+  "explain": "The Rub' al Khali, or Empty Quarter, is one of the largest sand deserts on Earth and is almost impossible to cross."
+ },
+ {
+  "id": "XAT-M-007",
+  "continent": "Asia",
+  "territory": "TUR",
+  "tier": "medium",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "The Bosphorus Strait in Istanbul connects the Black Sea with which smaller sea?",
+  "options": [
+   "The Sea of Marmara",
+   "The Mediterranean Sea",
+   "The Aegean Sea",
+   "The Caspian Sea"
+  ],
+  "answer": 0,
+  "explain": "The Bosphorus links the Black Sea to the Sea of Marmara, which then leads on to the Aegean and Mediterranean."
+ },
+ {
+  "id": "XAT-M-008",
+  "continent": "Asia",
+  "territory": "PAK",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which sport, played on grass with sticks and a small hard ball, is the official national sport of Pakistan?",
+  "options": [
+   "Field hockey",
+   "Cricket",
+   "Football",
+   "Polo"
+  ],
+  "answer": 0,
+  "explain": "Field hockey is Pakistan's national sport, and the team has won the Hockey World Cup several times."
+ },
+ {
+  "id": "XAT-M-009",
+  "continent": "Asia",
+  "territory": "BGD",
+  "tier": "medium",
+  "type": "text",
+  "category": "neighbours",
+  "q": "The Sundarbans, the world's largest mangrove forest, is shared between Bangladesh and which neighbouring country?",
+  "options": [
+   "India",
+   "Myanmar",
+   "Nepal",
+   "Sri Lanka"
+  ],
+  "answer": 0,
+  "explain": "Most of the Sundarbans lies in Bangladesh, but the forest also stretches across the border into India."
+ },
+ {
+  "id": "XAT-M-010",
+  "continent": "Asia",
+  "territory": "MNG",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Mongolia's Naadam festival, held every July, features wrestling and horse racing — what is the third traditional sport?",
+  "options": [
+   "Archery",
+   "Boxing",
+   "Fencing",
+   "Shooting"
+  ],
+  "answer": 0,
+  "explain": "The three sports of Naadam are wrestling, horse racing, and archery, a tradition going back to the time of Genghis Khan."
+ },
+ {
+  "id": "XAT-H-001",
+  "continent": "Asia",
+  "territory": "PHL",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest mountain in the Philippines?",
+  "options": [
+   "Mount Apo",
+   "Mount Pulag",
+   "Mount Kitanglad",
+   "Mount Mayon"
+  ],
+  "answer": 0,
+  "explain": "Mount Apo, a dormant volcano on the island of Mindanao, is the Philippines' highest peak at 2,954 metres."
+ },
+ {
+  "id": "XAT-H-002",
+  "continent": "Asia",
+  "territory": "PHL",
+  "tier": "hard",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Which Philippine volcano erupted in 1991, sending ash so high that it cooled the whole planet's climate for a while?",
+  "options": [
+   "Mount Pinatubo",
+   "Mount Mayon",
+   "Mount Taal",
+   "Mount Kanlaon"
+  ],
+  "answer": 0,
+  "explain": "Mount Pinatubo's 1991 eruption on Luzon was one of the 20th century's biggest, and its ash circled the globe."
+ },
+ {
+  "id": "XAT-H-003",
+  "continent": "Asia",
+  "territory": "PHL",
+  "tier": "hard",
+  "type": "text",
+  "category": "islands",
+  "q": "The Chocolate Hills, more than a thousand matching grass-covered mounds, are on which Philippine island?",
+  "options": [
+   "Bohol",
+   "Cebu",
+   "Negros",
+   "Panay"
+  ],
+  "answer": 0,
+  "explain": "Bohol's Chocolate Hills turn brown in the dry season, looking like rows of giant chocolate kisses."
+ },
+ {
+  "id": "XAT-H-004",
+  "continent": "Asia",
+  "territory": "MYS",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest mountain in Malaysia, a peak inside a UNESCO World Heritage park on the island of Borneo?",
+  "options": [
+   "Mount Kinabalu",
+   "Mount Tahan",
+   "Mount Fuji",
+   "Mount Everest"
+  ],
+  "answer": 0,
+  "explain": "Mount Kinabalu, in Sabah on Borneo, rises to 4,095 metres and is protected inside Kinabalu Park."
+ },
+ {
+  "id": "XAT-H-005",
+  "continent": "Asia",
+  "territory": "MYS",
+  "tier": "hard",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "The Strait of Malacca, one of the world's busiest shipping routes, separates the Malay Peninsula from which large Indonesian island?",
+  "options": [
+   "Sumatra",
+   "Borneo",
+   "Java",
+   "Sulawesi"
+  ],
+  "answer": 0,
+  "explain": "The Strait of Malacca runs between the Malay Peninsula and the Indonesian island of Sumatra."
+ },
+ {
+  "id": "XAT-H-006",
+  "continent": "Asia",
+  "territory": "MYS",
+  "tier": "hard",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Which great ape, sharing about 97% of its DNA with humans, lives only in the rainforests of Borneo and Sumatra?",
+  "options": [
+   "The orangutan",
+   "The gorilla",
+   "The chimpanzee",
+   "The gibbon"
+  ],
+  "answer": 0,
+  "explain": "Orangutans, whose name means 'person of the forest', are found only on the islands of Borneo and Sumatra."
+ },
+ {
+  "id": "XAT-H-007",
+  "continent": "Asia",
+  "territory": "SAU",
+  "tier": "hard",
+  "type": "text",
+  "category": "landmarks",
+  "q": "The ancient rock-cut tombs of Mada'in Salih in northwestern Saudi Arabia were carved by which civilisation — the same builders as Petra in Jordan?",
+  "options": [
+   "The Nabataeans",
+   "The Romans",
+   "The Persians",
+   "The Egyptians"
+  ],
+  "answer": 0,
+  "explain": "The Nabataeans carved both Petra in Jordan and Mada'in Salih, also called Hegra, in Saudi Arabia."
+ },
+ {
+  "id": "XAT-H-008",
+  "continent": "Asia",
+  "territory": "SAU",
+  "tier": "hard",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Which country lies directly to the south of Saudi Arabia, across the Empty Quarter desert?",
+  "options": [
+   "Yemen",
+   "Oman",
+   "Jordan",
+   "Iraq"
+  ],
+  "answer": 0,
+  "explain": "Yemen sits on the southern edge of the Arabian Peninsula, below Saudi Arabia's Rub' al Khali desert."
+ },
+ {
+  "id": "XAT-H-009",
+  "continent": "Asia",
+  "territory": "TUR",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest mountain in Turkey, a snow-capped dormant volcano in the far east of the country?",
+  "options": [
+   "Mount Ararat",
+   "Uludağ",
+   "Mount Hasan",
+   "Mount Erciyes"
+  ],
+  "answer": 0,
+  "explain": "Mount Ararat, at 5,137 metres, is Turkey's highest peak and stands in the far east near the Armenian border."
+ },
+ {
+  "id": "XAT-H-010",
+  "continent": "Asia",
+  "territory": "TUR",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Which city on the Bosphorus, once the capital of the Byzantine and Ottoman empires, was formerly called Constantinople?",
+  "options": [
+   "Istanbul",
+   "Ankara",
+   "Izmir",
+   "Bursa"
+  ],
+  "answer": 0,
+  "explain": "Istanbul, straddling Europe and Asia on the Bosphorus, was known as Byzantium and then Constantinople before taking its modern name."
+ },
+ {
+  "id": "XAT-H-011",
+  "continent": "Asia",
+  "territory": "TUR",
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "What is the longest river that lies entirely within Turkey, flowing north into the Black Sea?",
+  "options": [
+   "The Kızılırmak",
+   "The Euphrates",
+   "The Tigris",
+   "The Büyük Menderes"
+  ],
+  "answer": 0,
+  "explain": "The Kızılırmak, about 1,355 kilometres long, is the longest river that stays entirely inside Turkey; the Euphrates and Tigris flow on into other countries."
+ },
+ {
+  "id": "XAT-H-012",
+  "continent": "Asia",
+  "territory": "PAK",
+  "tier": "hard",
+  "type": "text",
+  "category": "general",
+  "q": "The Karakoram Highway, one of the highest paved roads in the world, links Pakistan with which country?",
+  "options": [
+   "China",
+   "India",
+   "Afghanistan",
+   "Iran"
+  ],
+  "answer": 0,
+  "explain": "The Karakoram Highway winds through the mountains from Pakistan into China and is often called the Friendship Highway."
+ },
+ {
+  "id": "XAT-H-013",
+  "continent": "Asia",
+  "territory": "PAK",
+  "tier": "hard",
+  "type": "text",
+  "category": "cities",
+  "q": "Which ancient city of the Indus Valley civilisation, famous for its Great Bath and straight grid-pattern streets, is in Pakistan?",
+  "options": [
+   "Mohenjo-daro",
+   "Harappa",
+   "Taxila",
+   "Persepolis"
+  ],
+  "answer": 0,
+  "explain": "Mohenjo-daro, in Pakistan's Sindh province, was a great city of the Indus Valley civilisation over 4,000 years ago."
+ },
+ {
+  "id": "XAT-H-014",
+  "continent": "Asia",
+  "territory": "BGD",
+  "tier": "hard",
+  "type": "text",
+  "category": "cities",
+  "q": "Which Bangladeshi city, the country's second largest, is a major port on the Karnaphuli River near the Bay of Bengal?",
+  "options": [
+   "Chittagong",
+   "Khulna",
+   "Sylhet",
+   "Rajshahi"
+  ],
+  "answer": 0,
+  "explain": "Chittagong, now officially Chattogram, is Bangladesh's main seaport, sitting on the Karnaphuli River."
+ },
+ {
+  "id": "XAT-H-015",
+  "continent": "Asia",
+  "territory": "BGD",
+  "tier": "hard",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "The Sundarbans mangrove forest takes its name from the sundari — what kind of thing is a sundari?",
+  "options": [
+   "A mangrove tree",
+   "A river",
+   "A fish",
+   "A bird"
+  ],
+  "answer": 0,
+  "explain": "The sundari is a mangrove tree that grows throughout the forest, giving the Sundarbans its name."
+ },
+ {
+  "id": "XAT-H-016",
+  "continent": "Asia",
+  "territory": "MNG",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "Which mountain range runs along Mongolia's western border, shared with China and Russia?",
+  "options": [
+   "The Altai Mountains",
+   "The Himalayas",
+   "The Tien Shan",
+   "The Ural Mountains"
+  ],
+  "answer": 0,
+  "explain": "The Altai Mountains stretch along Mongolia's western edge, shared with China and Russia."
+ },
+ {
+  "id": "XAT-H-017",
+  "continent": "Asia",
+  "territory": "MNG",
+  "tier": "hard",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Which rare wild horse of Mongolia, also called the takhi, was saved from extinction and returned to the Mongolian grasslands?",
+  "options": [
+   "Przewalski's horse",
+   "The mustang",
+   "The Arabian horse",
+   "The zebra"
+  ],
+  "answer": 0,
+  "explain": "Przewalski's horse (the takhi) once vanished from the wild, but zoo-bred horses were released back into Mongolia, where herds roam again."
+ }
+]

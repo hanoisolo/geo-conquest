@@ -1,0 +1,767 @@
+[
+ {
+  "id": "XAS-E-001",
+  "continent": "Asia",
+  "territory": "CHN",
+  "tier": "easy",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Which bear, famous for its black-and-white fur and its diet of bamboo, lives in the wild only in the mountain forests of China?",
+  "options": [
+   "The giant panda",
+   "The grizzly bear",
+   "The polar bear",
+   "The sun bear"
+  ],
+  "answer": 0,
+  "explain": "The giant panda eats almost nothing but bamboo and lives in misty mountain forests in central China."
+ },
+ {
+  "id": "XAS-E-002",
+  "continent": "Asia",
+  "territory": "CHN",
+  "tier": "easy",
+  "type": "text",
+  "category": "rivers",
+  "q": "Which river of northern China, called the cradle of Chinese civilisation, carries so much yellow silt that it is named after its colour?",
+  "options": [
+   "The Yangtze",
+   "The Yellow River",
+   "The Pearl River",
+   "The Heilongjiang"
+  ],
+  "answer": 1,
+  "explain": "The Yellow River, or Huang He, picks up golden silt from the loess plateau, which gives the water its colour and the river its name."
+ },
+ {
+  "id": "XAS-M-001",
+  "continent": "Asia",
+  "territory": "CHN",
+  "tier": "medium",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Which buried army of thousands of life-size terracotta soldiers, made to guard China's first emperor in the afterlife, was discovered by farmers near Xi'an in 1974?",
+  "options": [
+   "The Bronze Warriors",
+   "The Jade Guard",
+   "The Terracotta Army",
+   "The Stone Sentinels"
+  ],
+  "answer": 2,
+  "explain": "The Terracotta Army, with more than 8,000 soldiers, horses, and chariots, was buried with Emperor Qin Shi Huang over 2,000 years ago."
+ },
+ {
+  "id": "XAS-M-002",
+  "continent": "Asia",
+  "territory": "CHN",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Which city on China's east coast, famous for its futuristic skyline and the historic Bund waterfront, stands near the mouth of the Yangtze?",
+  "options": [
+   "Shanghai",
+   "Guangzhou",
+   "Shenzhen",
+   "Tianjin"
+  ],
+  "answer": 0,
+  "explain": "Shanghai, near where the Yangtze meets the sea, grew from a small fishing town into one of the world's great port cities."
+ },
+ {
+  "id": "XAS-M-003",
+  "continent": "Asia",
+  "territory": "CHN",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which board game, invented in China more than 2,000 years ago, is played on a grid of 361 intersections with black and white stones?",
+  "options": [
+   "Chess",
+   "Backgammon",
+   "Checkers",
+   "Go"
+  ],
+  "answer": 3,
+  "explain": "Go, called Weiqi in Chinese, is one of the oldest board games in the world and is still played by millions of people."
+ },
+ {
+  "id": "XAS-H-001",
+  "continent": "Asia",
+  "territory": "CHN",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "Mount Everest, the highest peak in the world, stands on the border of China and Nepal — what is its Tibetan name?",
+  "options": [
+   "Kangchenjunga",
+   "Qomolangma",
+   "Annapurna",
+   "Dhaulagiri"
+  ],
+  "answer": 1,
+  "explain": "Qomolangma, which means Goddess Mother of the World in Tibetan, is the name local people have long used for Mount Everest."
+ },
+ {
+  "id": "XAS-H-002",
+  "continent": "Asia",
+  "territory": "CHN",
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "The Three Gorges Dam, the world's largest hydroelectric power station, spans which great river in central China?",
+  "options": [
+   "The Yellow River",
+   "The Pearl River",
+   "The Yangtze",
+   "The Mekong"
+  ],
+  "answer": 2,
+  "explain": "The Three Gorges Dam crosses the Yangtze River in Hubei province, holding back a huge reservoir and generating enormous amounts of electricity."
+ },
+ {
+  "id": "XAS-E-003",
+  "continent": "Asia",
+  "territory": "IND",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Hindu festival of lights, celebrated across India every autumn with oil lamps, candles, and fireworks, marks the victory of light over darkness?",
+  "options": [
+   "Diwali",
+   "Holi",
+   "Pongal",
+   "Vesak"
+  ],
+  "answer": 0,
+  "explain": "Diwali is one of India's biggest and brightest celebrations, with lamps glowing in windows and streets all over the country."
+ },
+ {
+  "id": "XAS-E-004",
+  "continent": "Asia",
+  "territory": "IND",
+  "tier": "easy",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Which big cat, with orange fur and black stripes, is India's national animal and prowls forests and grasslands across the country?",
+  "options": [
+   "The Asiatic lion",
+   "The leopard",
+   "The Bengal tiger",
+   "The snow leopard"
+  ],
+  "answer": 2,
+  "explain": "The Bengal tiger, India's national animal, is protected in national parks and reserves across the country."
+ },
+ {
+  "id": "XAS-M-004",
+  "continent": "Asia",
+  "territory": "IND",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Indian stringed instrument, with a long neck and a round gourd body, is famous in Indian classical music?",
+  "options": [
+   "The tabla",
+   "The sitar",
+   "The sarod",
+   "The veena"
+  ],
+  "answer": 1,
+  "explain": "The sitar, with its long neck and shimmering strings, creates the sliding, singing sounds heard in Indian classical music."
+ },
+ {
+  "id": "XAS-M-005",
+  "continent": "Asia",
+  "territory": "IND",
+  "tier": "medium",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Which hilltop fort near Jaipur in Rajasthan, built from red sandstone and pale marble, is famous for its glittering hall of mirrors?",
+  "options": [
+   "The Red Fort",
+   "The Mysore Palace",
+   "The Golconda Fort",
+   "The Amber Fort"
+  ],
+  "answer": 3,
+  "explain": "The Amber Fort, also called Amer Fort, overlooks Jaipur and its Sheesh Mahal hall is covered inside with tiny mirrors."
+ },
+ {
+  "id": "XAS-M-006",
+  "continent": "Asia",
+  "territory": "IND",
+  "tier": "medium",
+  "type": "text",
+  "category": "rivers",
+  "q": "Which river rises in the Western Ghats of Karnataka, flows east across southern India, and empties into the Bay of Bengal in Tamil Nadu?",
+  "options": [
+   "The Kaveri",
+   "The Godavari",
+   "The Krishna",
+   "The Narmada"
+  ],
+  "answer": 0,
+  "explain": "The Kaveri, also spelled Cauvery, flows for roughly 800 kilometres, watering farmland across Karnataka and Tamil Nadu."
+ },
+ {
+  "id": "XAS-H-003",
+  "continent": "Asia",
+  "territory": "IND",
+  "tier": "hard",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Which state in India's far northeast is famous for its tea gardens on the Brahmaputra plains and for Kaziranga National Park, home of the one-horned rhinoceros?",
+  "options": [
+   "Kerala",
+   "Assam",
+   "Punjab",
+   "Rajasthan"
+  ],
+  "answer": 1,
+  "explain": "Assam's Kaziranga National Park is one of the last strongholds of the one-horned rhinoceros, and the state's hills grow some of India's finest tea."
+ },
+ {
+  "id": "XAS-H-004",
+  "continent": "Asia",
+  "territory": "IND",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "Which peak in the Indian Himalaya of Uttarakhand is the highest mountain located entirely within India?",
+  "options": [
+   "Nanda Devi",
+   "Kangchenjunga",
+   "Kamet",
+   "Trisul"
+  ],
+  "answer": 0,
+  "explain": "Nanda Devi, at 7,816 metres, is the highest peak wholly inside India; Kangchenjunga, though higher, stands on the border with Nepal."
+ },
+ {
+  "id": "XAS-E-005",
+  "continent": "Asia",
+  "territory": "JPN",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Japanese dish of vinegared rice topped or wrapped with raw fish has become a favourite food all over the world?",
+  "options": [
+   "Ramen",
+   "Tempura",
+   "Sushi",
+   "Teriyaki"
+  ],
+  "answer": 2,
+  "explain": "Sushi, vinegared rice paired with raw fish or other toppings, is now eaten in almost every country on Earth."
+ },
+ {
+  "id": "XAS-E-006",
+  "continent": "Asia",
+  "territory": "JPN",
+  "tier": "easy",
+  "type": "text",
+  "category": "general",
+  "q": "What is the name of Japan's famous high-speed train, nicknamed the bullet train, which has raced between cities since 1964?",
+  "options": [
+   "The Shinkansen",
+   "The TGV",
+   "The ICE",
+   "The AVE"
+  ],
+  "answer": 0,
+  "explain": "The Shinkansen, or bullet train, was the world's first high-speed rail service and still carries millions of passengers every day."
+ },
+ {
+  "id": "XAS-M-007",
+  "continent": "Asia",
+  "territory": "JPN",
+  "tier": "medium",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Which pavilion in Kyoto, covered in gold leaf and reflecting in a pond, is one of Japan's most photographed landmarks?",
+  "options": [
+   "The Silver Pavilion",
+   "The Golden Pavilion",
+   "Kiyomizu Temple",
+   "Himeji Castle"
+  ],
+  "answer": 1,
+  "explain": "Kinkaku-ji, the Golden Pavilion, was built in the 1300s and its top two floors are covered in gold leaf."
+ },
+ {
+  "id": "XAS-M-008",
+  "continent": "Asia",
+  "territory": "JPN",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Japanese company, founded in Kyoto in 1889 as a playing-card maker, now makes the Switch console and Mario games?",
+  "options": [
+   "Sony",
+   "Sega",
+   "Capcom",
+   "Nintendo"
+  ],
+  "answer": 3,
+  "explain": "Nintendo began by making hanafuda playing cards in 1889 and grew into one of the world's most famous video game companies."
+ },
+ {
+  "id": "XAS-H-005",
+  "continent": "Asia",
+  "territory": "JPN",
+  "tier": "hard",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Which warm ocean current, one of the strongest in the world, sweeps northeast along Japan's southern Pacific coast?",
+  "options": [
+   "The Kuroshio",
+   "The Gulf Stream",
+   "The Humboldt Current",
+   "The Labrador Current"
+  ],
+  "answer": 0,
+  "explain": "The Kuroshio, or Japan Current, carries warm tropical water north along Japan's east coast, shaping its climate and rich fisheries."
+ },
+ {
+  "id": "XAS-H-006",
+  "continent": "Asia",
+  "territory": "JPN",
+  "tier": "medium",
+  "type": "text",
+  "category": "islands",
+  "q": "Which island, the northernmost of Japan's four main islands, is famous for its ski resorts, hot springs, and the Snow Festival in Sapporo?",
+  "options": [
+   "Honshu",
+   "Kyushu",
+   "Hokkaido",
+   "Shikoku"
+  ],
+  "answer": 2,
+  "explain": "Hokkaido, Japan's second-largest island, lies north of Honshu and is loved for its powder snow and wide-open spaces."
+ },
+ {
+  "id": "XAS-H-007",
+  "continent": "Asia",
+  "territory": "JPN",
+  "tier": "hard",
+  "type": "text",
+  "category": "culture",
+  "q": "Which traditional Japanese theatre, performed by male actors, is famous for its dramatic face paint, stylised poses, and stories of samurai and merchants?",
+  "options": [
+   "Noh",
+   "Kabuki",
+   "Bunraku",
+   "Kyogen"
+  ],
+  "answer": 1,
+  "explain": "Kabuki actors wear bold kumadori makeup and strike mie poses to tell tales of heroes, villains, and everyday life."
+ },
+ {
+  "id": "XAS-E-007",
+  "continent": "Asia",
+  "territory": "KOR",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which spicy Korean side dish of fermented vegetables, usually napa cabbage and radish with chilli and garlic, is served at almost every meal?",
+  "options": [
+   "Kimchi",
+   "Sauerkraut",
+   "Tsukemono",
+   "Sushi"
+  ],
+  "answer": 0,
+  "explain": "Kimchi is Korea's national dish, with hundreds of recipes, and many families keep a special fridge just for fermenting it."
+ },
+ {
+  "id": "XAS-E-008",
+  "continent": "Asia",
+  "territory": "KOR",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "What is the name of the Korean pop music phenomenon, with catchy songs, colourful videos, and devoted fan clubs, that has swept the world since the 2000s?",
+  "options": [
+   "J-pop",
+   "C-pop",
+   "K-pop",
+   "Reggaeton"
+  ],
+  "answer": 2,
+  "explain": "K-pop, short for Korean pop, has become a worldwide craze with its catchy songs and high-energy dance routines."
+ },
+ {
+  "id": "XAS-M-009",
+  "continent": "Asia",
+  "territory": "KOR",
+  "tier": "medium",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Which grand palace in Seoul, with its colourful throne hall and changing-of-the-guard ceremony, was the main royal palace of Korea's Joseon kings?",
+  "options": [
+   "Gyeongbokgung",
+   "Changdeokgung",
+   "Deoksugung",
+   "Gyeonghuigung"
+  ],
+  "answer": 0,
+  "explain": "Gyeongbokgung, built in 1395, was the largest and most important of Seoul's five grand palaces."
+ },
+ {
+  "id": "XAS-M-010",
+  "continent": "Asia",
+  "territory": "KOR",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Korean martial art, whose name means the way of the hand and the foot, is practised by millions of people worldwide and became an Olympic sport in 2000?",
+  "options": [
+   "Judo",
+   "Taekwondo",
+   "Karate",
+   "Kung fu"
+  ],
+  "answer": 1,
+  "explain": "Taekwondo, known for its high, fast kicks, became a full Olympic medal sport at the Sydney Games in 2000."
+ },
+ {
+  "id": "XAS-H-008",
+  "continent": "Asia",
+  "territory": "KOR",
+  "tier": "medium",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Which country shares South Korea's only land border, across the heavily fortified Korean Demilitarized Zone?",
+  "options": [
+   "China",
+   "Japan",
+   "Russia",
+   "North Korea"
+  ],
+  "answer": 3,
+  "explain": "The Korean Peninsula's only land border is between North and South Korea, marked by the 250-kilometre-long DMZ."
+ },
+ {
+  "id": "XAS-H-009",
+  "continent": "Asia",
+  "territory": "KOR",
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "Which river forms part of the boundary between North Korea and China before flowing southwest into the Yellow Sea?",
+  "options": [
+   "The Yalu",
+   "The Tumen",
+   "The Han",
+   "The Imjin"
+  ],
+  "answer": 0,
+  "explain": "The Yalu River, about 800 kilometres long, separates North Korea from China's Liaoning province for much of its course."
+ },
+ {
+  "id": "XAS-E-009",
+  "continent": "Asia",
+  "territory": "IDN",
+  "tier": "easy",
+  "type": "text",
+  "category": "islands",
+  "q": "Which Indonesian island, famous for its Hindu temples, terraced rice fields, and beach resorts, welcomes millions of holidaymakers every year?",
+  "options": [
+   "Lombok",
+   "Bali",
+   "Sumatra",
+   "Sulawesi"
+  ],
+  "answer": 1,
+  "explain": "Bali, the Island of the Gods, is Indonesia's most famous holiday island, known for its temples, rice terraces, and surf beaches."
+ },
+ {
+  "id": "XAS-E-010",
+  "continent": "Asia",
+  "territory": "IDN",
+  "tier": "easy",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Which giant lizard, the largest living lizard on Earth, is found in the wild only on Komodo and a few nearby islands of Indonesia?",
+  "options": [
+   "The Gila monster",
+   "The marine iguana",
+   "The Komodo dragon",
+   "The chameleon"
+  ],
+  "answer": 2,
+  "explain": "The Komodo dragon can grow over three metres long and lives in the wild only on a handful of Indonesian islands."
+ },
+ {
+  "id": "XAS-M-011",
+  "continent": "Asia",
+  "territory": "IDN",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Indonesian dish of fried rice, seasoned with sweet soy sauce and shallots and often topped with a fried egg, is a national favourite?",
+  "options": [
+   "Nasi goreng",
+   "Pad thai",
+   "Bibimbap",
+   "Kimchi fried rice"
+  ],
+  "answer": 0,
+  "explain": "Nasi goreng, which simply means fried rice in Indonesian, is cooked in almost every home and street stall across the country."
+ },
+ {
+  "id": "XAS-M-012",
+  "continent": "Asia",
+  "territory": "IDN",
+  "tier": "medium",
+  "type": "text",
+  "category": "islands",
+  "q": "Borneo, the world's third-largest island, is shared by Indonesia, Malaysia, and which tiny sultanate on its northern coast?",
+  "options": [
+   "Singapore",
+   "Timor-Leste",
+   "Brunei",
+   "The Philippines"
+  ],
+  "answer": 2,
+  "explain": "Brunei, a small sultanate, occupies two stretches of Borneo's northern coast, while Malaysia and Indonesia share the rest of the island."
+ },
+ {
+  "id": "XAS-H-010",
+  "continent": "Asia",
+  "territory": "IDN",
+  "tier": "hard",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Which ancient temple in central Java, built around 800 AD with hundreds of Buddha statues and stupas, is the world's largest Buddhist temple?",
+  "options": [
+   "Borobudur",
+   "Angkor Wat",
+   "The Shwedagon Pagoda",
+   "The Temple of the Tooth"
+  ],
+  "answer": 0,
+  "explain": "Borobudur, on the island of Java, was buried under volcanic ash for centuries and is now a UNESCO World Heritage Site."
+ },
+ {
+  "id": "XAS-H-011",
+  "continent": "Asia",
+  "territory": "IDN",
+  "tier": "hard",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Which strait separates the Indonesian islands of Sumatra and Java, and is overlooked by the Krakatoa volcano group?",
+  "options": [
+   "The Strait of Malacca",
+   "The Sunda Strait",
+   "The Lombok Strait",
+   "The Makassar Strait"
+  ],
+  "answer": 1,
+  "explain": "The Sunda Strait lies between Java and Sumatra, and the Krakatoa volcanoes rise from its waters."
+ },
+ {
+  "id": "XAS-E-011",
+  "continent": "Asia",
+  "territory": "THA",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which animal, with its long trunk and tusks, is a sacred symbol of Thailand and once helped people carry logs through the forests?",
+  "options": [
+   "The elephant",
+   "The tiger",
+   "The water buffalo",
+   "The gibbon"
+  ],
+  "answer": 0,
+  "explain": "The Asian elephant is Thailand's national animal and a sacred symbol, and many now live in ethical sanctuaries."
+ },
+ {
+  "id": "XAS-E-012",
+  "continent": "Asia",
+  "territory": "THA",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Thai noodle dish, stir-fried with tamarind, peanuts, bean sprouts, and lime, is one of the world's most famous street foods?",
+  "options": [
+   "Ramen",
+   "Pho",
+   "Pad see ew",
+   "Pad thai"
+  ],
+  "answer": 3,
+  "explain": "Pad thai is the stir-fried noodle dish you will find on Thai street corners everywhere, topped with crushed peanuts and lime."
+ },
+ {
+  "id": "XAS-M-013",
+  "continent": "Asia",
+  "territory": "THA",
+  "tier": "medium",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Which dazzling white temple in Chiang Rai, decorated with mirrors and glass, was designed and built by a contemporary Thai artist?",
+  "options": [
+   "The White Temple",
+   "The Temple of Dawn",
+   "The Temple of the Reclining Buddha",
+   "The Marble Temple"
+  ],
+  "answer": 0,
+  "explain": "Wat Rong Khun, the White Temple, is the life's work of Thai artist Chalermchai Kositpipat and is still being built."
+ },
+ {
+  "id": "XAS-M-014",
+  "continent": "Asia",
+  "territory": "THA",
+  "tier": "medium",
+  "type": "text",
+  "category": "rivers",
+  "q": "Which river, called the River of Kings, flows through the heart of Bangkok and has shaped Thai life, trade, and farming for centuries?",
+  "options": [
+   "The Mekong",
+   "The Irrawaddy",
+   "The Chao Phraya",
+   "The Salween"
+  ],
+  "answer": 2,
+  "explain": "The Chao Phraya runs through central Thailand past Bangkok and into the Gulf of Thailand, watering the country's rice farms."
+ },
+ {
+  "id": "XAS-H-012",
+  "continent": "Asia",
+  "territory": "THA",
+  "tier": "hard",
+  "type": "text",
+  "category": "general",
+  "q": "Which narrow strip of land, the slimmest part of the Malay Peninsula, connects mainland Asia to the peninsula and has long been discussed as a site for a canal?",
+  "options": [
+   "The Isthmus of Panama",
+   "The Kra Isthmus",
+   "The Isthmus of Suez",
+   "The Palk Strait"
+  ],
+  "answer": 1,
+  "explain": "The Kra Isthmus, in southern Thailand, is only about 44 kilometres wide at its narrowest point."
+ },
+ {
+  "id": "XAS-H-013",
+  "continent": "Asia",
+  "territory": "THA",
+  "tier": "hard",
+  "type": "text",
+  "category": "culture",
+  "q": "Which classical Thai dance, with glittering costumes, elegant hand gestures, and masked performers, tells stories from the Ramakien, the Thai version of the Ramayana?",
+  "options": [
+   "Khon",
+   "Kathakali",
+   "Bharatanatyam",
+   "Wayang"
+  ],
+  "answer": 0,
+  "explain": "Khon is Thailand's classical masked dance, traditionally performed by men, with every gesture following strict rules."
+ },
+ {
+  "id": "XAS-E-013",
+  "continent": "Asia",
+  "territory": "VNM",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Vietnamese noodle soup, with fragrant broth, rice noodles, fresh herbs, and slices of beef or chicken, is eaten for breakfast all over Vietnam?",
+  "options": [
+   "Ramen",
+   "Pho",
+   "Laksa",
+   "Udon"
+  ],
+  "answer": 1,
+  "explain": "Pho, pronounced fuh, is Vietnam's most famous dish, and a hot bowl of it is a typical Vietnamese breakfast."
+ },
+ {
+  "id": "XAS-E-014",
+  "continent": "Asia",
+  "territory": "VNM",
+  "tier": "easy",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Which bay in northern Vietnam, dotted with thousands of limestone islands and islets rising from green water, is a UNESCO World Heritage Site?",
+  "options": [
+   "Ha Long Bay",
+   "Maya Bay",
+   "Railay Bay",
+   "Phang Nga Bay"
+  ],
+  "answer": 0,
+  "explain": "Ha Long Bay, whose name means where the dragon descends to the sea, is famous for its towering limestone karsts."
+ },
+ {
+  "id": "XAS-M-015",
+  "continent": "Asia",
+  "territory": "VNM",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which traditional Vietnamese dress, a long close-fitting silk tunic worn over trousers, is worn at weddings, graduations, and the Lunar New Year?",
+  "options": [
+   "The kimono",
+   "The hanbok",
+   "The áo dài",
+   "The cheongsam"
+  ],
+  "answer": 2,
+  "explain": "The áo dài, with its high collar and flowing panels, is the traditional dress of Vietnam, often worn on special occasions."
+ },
+ {
+  "id": "XAS-M-016",
+  "continent": "Asia",
+  "territory": "VNM",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Which city in central Vietnam, on the Perfume River, was the imperial capital of the Nguyen emperors and is famous for its ancient citadel?",
+  "options": [
+   "Da Nang",
+   "Hoi An",
+   "Nha Trang",
+   "Huế"
+  ],
+  "answer": 3,
+  "explain": "Huế, on the Perfume River, was Vietnam's imperial capital, and its Citadel is a UNESCO World Heritage Site."
+ },
+ {
+  "id": "XAS-H-014",
+  "continent": "Asia",
+  "territory": "VNM",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "Which mountain range, also called the Truong Son, runs along the border between Vietnam and Laos?",
+  "options": [
+   "The Annamite Range",
+   "The Cardamom Mountains",
+   "The Arakan Mountains",
+   "The Bilauktaung Range"
+  ],
+  "answer": 0,
+  "explain": "The Annamite Range, or Truong Son, forms much of the long border between Vietnam and Laos, with dense forests and rare wildlife."
+ },
+ {
+  "id": "XAS-H-015",
+  "continent": "Asia",
+  "territory": "VNM",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Which city in southern Vietnam, on the Saigon River, is the country's largest and was formerly known as Saigon?",
+  "options": [
+   "Da Nang",
+   "Ho Chi Minh City",
+   "Can Tho",
+   "Hai Phong"
+  ],
+  "answer": 1,
+  "explain": "Ho Chi Minh City, Vietnam's biggest city, was called Saigon until it was renamed in 1976."
+ }
+]

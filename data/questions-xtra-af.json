@@ -1,0 +1,1413 @@
+[
+ {
+  "id": "XAF-E-001",
+  "continent": "Africa",
+  "territory": "EGY",
+  "tier": "easy",
+  "type": "text",
+  "category": "landmarks",
+  "q": "The Lighthouse of Alexandria, one of the Seven Wonders of the Ancient World, stood in which Egyptian city?",
+  "options": [
+   "Alexandria",
+   "Cairo",
+   "Luxor",
+   "Aswan"
+  ],
+  "answer": 0,
+  "explain": "The Pharos Lighthouse guided ships into the busy port of Alexandria, on Egypt's Mediterranean coast, for many centuries."
+ },
+ {
+  "id": "XAF-E-002",
+  "continent": "Africa",
+  "territory": "EGY",
+  "tier": "easy",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Which sea borders Egypt to the north?",
+  "options": [
+   "The Mediterranean Sea",
+   "The Red Sea",
+   "The Arabian Sea",
+   "The Black Sea"
+  ],
+  "answer": 0,
+  "explain": "Egypt's northern coastline lies on the Mediterranean Sea, which also washes the shores of southern Europe and North Africa."
+ },
+ {
+  "id": "XAF-M-001",
+  "continent": "Africa",
+  "territory": "EGY",
+  "tier": "medium",
+  "type": "text",
+  "category": "rivers",
+  "q": "The Aswan High Dam, one of the biggest dams in the world, was built across which river?",
+  "options": [
+   "The Nile",
+   "The Zambezi",
+   "The Niger",
+   "The Congo"
+  ],
+  "answer": 0,
+  "explain": "The Aswan High Dam blocks the Nile in southern Egypt and created the vast Lake Nasser behind it."
+ },
+ {
+  "id": "XAF-M-002",
+  "continent": "Africa",
+  "territory": "EGY",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Egyptian queen, the last active pharaoh of ancient Egypt, was allied with Rome's Julius Caesar and Mark Antony?",
+  "options": [
+   "Nefertiti",
+   "Hatshepsut",
+   "Cleopatra",
+   "Sobekneferu"
+  ],
+  "answer": 2,
+  "explain": "Cleopatra VII was the last ruler of ancient Egypt before the kingdom became part of the Roman Empire."
+ },
+ {
+  "id": "XAF-H-001",
+  "continent": "Africa",
+  "territory": "EGY",
+  "tier": "hard",
+  "type": "text",
+  "category": "landmarks",
+  "q": "What is the name of the huge artificial lake created by the Aswan High Dam?",
+  "options": [
+   "Lake Kariba",
+   "Lake Volta",
+   "Lake Nasser",
+   "Lake Tanganyika"
+  ],
+  "answer": 2,
+  "explain": "Lake Nasser, named after Egypt's president Gamal Abdel Nasser, stretches from southern Egypt deep into Sudan."
+ },
+ {
+  "id": "XAF-H-002",
+  "continent": "Africa",
+  "territory": "EGY",
+  "tier": "hard",
+  "type": "text",
+  "category": "cities",
+  "q": "The Valley of the Kings, where pharaohs were buried in rock-cut tombs, lies on the west bank of the Nile near which modern Egyptian city?",
+  "options": [
+   "Alexandria",
+   "Aswan",
+   "Luxor",
+   "Port Said"
+  ],
+  "answer": 2,
+  "explain": "Luxor, ancient Thebes, sits across the Nile from the Valley of the Kings, where Tutankhamun's tomb was discovered."
+ },
+ {
+  "id": "XAF-E-003",
+  "continent": "Africa",
+  "territory": "MAR",
+  "tier": "easy",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Which ocean borders Morocco to the west?",
+  "options": [
+   "The Atlantic Ocean",
+   "The Indian Ocean",
+   "The Pacific Ocean",
+   "The Arctic Ocean"
+  ],
+  "answer": 0,
+  "explain": "Morocco's long western coastline faces the Atlantic Ocean, whose beaches are famous with surfers."
+ },
+ {
+  "id": "XAF-E-004",
+  "continent": "Africa",
+  "territory": "MAR",
+  "tier": "medium",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Which tree, which grows almost only in southwestern Morocco, produces the prized argan oil used in cooking and cosmetics?",
+  "options": [
+   "The argan tree",
+   "The olive tree",
+   "The date palm",
+   "The cork oak"
+  ],
+  "answer": 0,
+  "explain": "Argan oil is pressed from the nuts of the argan tree, and goats in Morocco are famous for climbing them to eat the fruit."
+ },
+ {
+  "id": "XAF-E-005",
+  "continent": "Africa",
+  "territory": "MAR",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Which Moroccan city is famous for its old town painted bright blue?",
+  "options": [
+   "Chefchaouen",
+   "Marrakech",
+   "Fez",
+   "Tangier"
+  ],
+  "answer": 0,
+  "explain": "Chefchaouen, tucked into Morocco's Rif Mountains, is loved for its blue-painted streets and alleyways."
+ },
+ {
+  "id": "XAF-M-003",
+  "continent": "Africa",
+  "territory": "MAR",
+  "tier": "medium",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest mountain in Morocco?",
+  "options": [
+   "Mount Toubkal",
+   "Mount Kenya",
+   "Kilimanjaro",
+   "Ras Dashen"
+  ],
+  "answer": 0,
+  "explain": "Mount Toubkal, in Morocco's Atlas Mountains, is Morocco's and North Africa's highest peak at 4,167 metres."
+ },
+ {
+  "id": "XAF-M-004",
+  "continent": "Africa",
+  "territory": "MAR",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which two languages are official in Morocco?",
+  "options": [
+   "Arabic and French",
+   "Spanish and Arabic",
+   "Arabic and Berber",
+   "French and Spanish"
+  ],
+  "answer": 2,
+  "explain": "Morocco's 2011 constitution made Arabic and Berber (Amazigh) the official languages; French is also widely spoken."
+ },
+ {
+  "id": "XAF-H-003",
+  "continent": "Africa",
+  "territory": "MAR",
+  "tier": "hard",
+  "type": "text",
+  "category": "culture",
+  "q": "The University of Al Quaraouiyine, founded in 859 and one of the oldest universities in the world, is in which Moroccan city?",
+  "options": [
+   "Fez",
+   "Marrakech",
+   "Rabat",
+   "Casablanca"
+  ],
+  "answer": 0,
+  "explain": "Al Quaraouiyine in Fez has taught students for over 1,100 years and is often called the world's oldest university."
+ },
+ {
+  "id": "XAF-H-004",
+  "continent": "Africa",
+  "territory": "MAR",
+  "tier": "hard",
+  "type": "text",
+  "category": "cities",
+  "q": "The windy Atlantic port of Essaouira, with its old sea walls and fortifications, was known for centuries by which other name?",
+  "options": [
+   "Mogador",
+   "Casablanca",
+   "Agadir",
+   "Tangier"
+  ],
+  "answer": 0,
+  "explain": "European traders and sailors called Essaouira 'Mogador' for hundreds of years."
+ },
+ {
+  "id": "XAF-E-006",
+  "continent": "Africa",
+  "territory": "NGA",
+  "tier": "easy",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Which gulf does Nigeria's southern coastline open onto?",
+  "options": [
+   "The Gulf of Guinea",
+   "The Gulf of Mexico",
+   "The Persian Gulf",
+   "The Gulf of Aden"
+  ],
+  "answer": 0,
+  "explain": "Nigeria's coast lies on the Gulf of Guinea, the part of the Atlantic Ocean that borders much of West Africa."
+ },
+ {
+  "id": "XAF-E-007",
+  "continent": "Africa",
+  "territory": "NGA",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Nollywood, the nickname of Nigeria's booming film industry, is a play on which famous American place?",
+  "options": [
+   "Hollywood",
+   "Broadway",
+   "Silicon Valley",
+   "Las Vegas"
+  ],
+  "answer": 0,
+  "explain": "Like Hollywood, Nollywood makes hundreds of films a year, and Nigerian movies are hugely popular across Africa."
+ },
+ {
+  "id": "XAF-E-008",
+  "continent": "Africa",
+  "territory": "NGA",
+  "tier": "easy",
+  "type": "text",
+  "category": "rivers",
+  "q": "As the Niger River reaches the sea, it spreads out into a huge swampy region called what?",
+  "options": [
+   "The Niger Delta",
+   "The Nile Delta",
+   "The Zambezi Delta",
+   "The Congo Delta"
+  ],
+  "answer": 0,
+  "explain": "The Niger Delta is one of the world's great river deltas, a maze of mangrove creeks and fishing villages."
+ },
+ {
+  "id": "XAF-M-005",
+  "continent": "Africa",
+  "territory": "NGA",
+  "tier": "medium",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Nigeria shares borders with Benin, Niger, Chad, and which country to the east?",
+  "options": [
+   "Cameroon",
+   "Ghana",
+   "Sudan",
+   "Mali"
+  ],
+  "answer": 0,
+  "explain": "Cameroon lies along Nigeria's eastern border, and the two countries share a long frontier."
+ },
+ {
+  "id": "XAF-M-006",
+  "continent": "Africa",
+  "territory": "NGA",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Nigerian author wrote 'Things Fall Apart', a classic novel about life in an Igbo village before colonial times?",
+  "options": [
+   "Chinua Achebe",
+   "Wole Soyinka",
+   "Ngũgĩ wa Thiong'o",
+   "Chimamanda Ngozi Adichie"
+  ],
+  "answer": 0,
+  "explain": "Chinua Achebe's 'Things Fall Apart', published in 1958, is one of the most widely read African novels ever written."
+ },
+ {
+  "id": "XAF-H-005",
+  "continent": "Africa",
+  "territory": "NGA",
+  "tier": "hard",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Which giant granite monolith rises beside the road north of Abuja and is a famous landmark of Nigeria?",
+  "options": [
+   "Zuma Rock",
+   "Uluru",
+   "Table Mountain",
+   "Devils Tower"
+  ],
+  "answer": 0,
+  "explain": "Zuma Rock, a huge monolith over 700 metres tall, towers beside the road from Abuja towards Niger State."
+ },
+ {
+  "id": "XAF-H-006",
+  "continent": "Africa",
+  "territory": "NGA",
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "The Benue River is a major tributary of which great West African river?",
+  "options": [
+   "The Niger River",
+   "The Nile",
+   "The Zambezi",
+   "The Congo"
+  ],
+  "answer": 0,
+  "explain": "The Benue is the Niger's largest tributary and meets it at the town of Lokoja in central Nigeria."
+ },
+ {
+  "id": "XAF-E-009",
+  "continent": "Africa",
+  "territory": "KEN",
+  "tier": "easy",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest mountain in Kenya?",
+  "options": [
+   "Mount Kenya",
+   "Kilimanjaro",
+   "Mount Elgon",
+   "Ras Dashen"
+  ],
+  "answer": 0,
+  "explain": "Mount Kenya, an extinct volcano near the equator, is Kenya's highest peak at 5,199 metres; Kilimanjaro lies just over the border in Tanzania."
+ },
+ {
+  "id": "XAF-E-010",
+  "continent": "Africa",
+  "territory": "KEN",
+  "tier": "easy",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Which Kenyan lake in the Great Rift Valley is world-famous for its huge flocks of pink flamingos?",
+  "options": [
+   "Lake Nakuru",
+   "Lake Tanganyika",
+   "Lake Chad",
+   "Lake Turkana"
+  ],
+  "answer": 0,
+  "explain": "Lake Nakuru National Park is one of the best places on Earth to see lesser flamingos standing in pink clouds on the water."
+ },
+ {
+  "id": "XAF-M-007",
+  "continent": "Africa",
+  "territory": "KEN",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "The Maasai people of Kenya and Tanzania are famous for wrapping themselves in which colourful cloth?",
+  "options": [
+   "A shuka",
+   "A sari",
+   "A kimono",
+   "A kilt"
+  ],
+  "answer": 0,
+  "explain": "A shuka is a bright checked cloth that Maasai warriors and elders drape over their shoulders."
+ },
+ {
+  "id": "XAF-M-008",
+  "continent": "Africa",
+  "territory": "KEN",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Which Kenyan city, a historic port on the Indian Ocean, is famous for its Old Town with beautifully carved wooden doors?",
+  "options": [
+   "Mombasa",
+   "Lamu",
+   "Malindi",
+   "Kisumu"
+  ],
+  "answer": 0,
+  "explain": "Mombasa has been a trading port for centuries, and its Old Town doors are carved with Swahili patterns."
+ },
+ {
+  "id": "XAF-H-007",
+  "continent": "Africa",
+  "territory": "KEN",
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "The Tana River, the longest river in Kenya, flows southeast into which ocean?",
+  "options": [
+   "The Indian Ocean",
+   "The Atlantic Ocean",
+   "The Red Sea",
+   "The Mediterranean Sea"
+  ],
+  "answer": 0,
+  "explain": "The Tana travels about 1,000 kilometres from the highlands near Mount Kenya to the Indian Ocean."
+ },
+ {
+  "id": "XAF-H-008",
+  "continent": "Africa",
+  "territory": "KEN",
+  "tier": "hard",
+  "type": "text",
+  "category": "islands",
+  "q": "Which Kenyan island town, a UNESCO site where cars are banned and dhows sail in the harbour, is famous for its Swahili culture?",
+  "options": [
+   "Lamu",
+   "Zanzibar",
+   "Pemba",
+   "Mafia"
+  ],
+  "answer": 0,
+  "explain": "Lamu Old Town, on Lamu Island, has been a Swahili trading centre for more than 600 years."
+ },
+ {
+  "id": "XAF-H-009",
+  "continent": "Africa",
+  "territory": "KEN",
+  "tier": "hard",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Which country lies along Kenya's northeastern border, with a long coastline on the Indian Ocean?",
+  "options": [
+   "Somalia",
+   "Ethiopia",
+   "Tanzania",
+   "Uganda"
+  ],
+  "answer": 0,
+  "explain": "Somalia stretches along Kenya's northeastern frontier, from the Ethiopian border down to the sea."
+ },
+ {
+  "id": "XAF-E-011",
+  "continent": "Africa",
+  "territory": "ZAF",
+  "tier": "easy",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Cape Agulhas, the southernmost point of the African continent, is where which two oceans meet?",
+  "options": [
+   "The Atlantic and Indian Oceans",
+   "The Indian and Pacific Oceans",
+   "The Atlantic and Pacific Oceans",
+   "The Red Sea and the Mediterranean Sea"
+  ],
+  "answer": 0,
+  "explain": "By tradition, the Atlantic and Indian Oceans meet at Cape Agulhas, at the very tip of Africa."
+ },
+ {
+  "id": "XAF-E-012",
+  "continent": "Africa",
+  "territory": "ZAF",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Afrikaans, one of South Africa's official languages, developed mainly from which European language?",
+  "options": [
+   "Dutch",
+   "English",
+   "French",
+   "Portuguese"
+  ],
+  "answer": 0,
+  "explain": "Afrikaans grew from the Dutch spoken by settlers who arrived at the Cape in the 1600s."
+ },
+ {
+  "id": "XAF-E-013",
+  "continent": "Africa",
+  "territory": "ZAF",
+  "tier": "easy",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Which flightless bird, black and white with a loud braying call, breeds on the beaches of South Africa?",
+  "options": [
+   "The African penguin",
+   "The emperor penguin",
+   "The ostrich",
+   "The albatross"
+  ],
+  "answer": 0,
+  "explain": "African penguins, sometimes called jackass penguins for their donkey-like call, nest at places like Boulders Beach near Cape Town."
+ },
+ {
+  "id": "XAF-M-009",
+  "continent": "Africa",
+  "territory": "ZAF",
+  "tier": "medium",
+  "type": "text",
+  "category": "mountains",
+  "q": "The Drakensberg, whose name means 'Dragon Mountains', runs along the border between South Africa and which small, mountainous country?",
+  "options": [
+   "Lesotho",
+   "Eswatini",
+   "Namibia",
+   "Botswana"
+  ],
+  "answer": 0,
+  "explain": "Lesotho, a kingdom entirely surrounded by South Africa, is often called the 'Kingdom in the Sky' for its high mountains."
+ },
+ {
+  "id": "XAF-M-010",
+  "continent": "Africa",
+  "territory": "ZAF",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which South African dried meat snack, seasoned with vinegar and spices and similar to jerky, is a national favourite?",
+  "options": [
+   "Biltong",
+   "Salami",
+   "Prosciutto",
+   "Pemmican"
+  ],
+  "answer": 0,
+  "explain": "Biltong is made by air-drying strips of spiced meat, and beef biltong is sold in shops everywhere in South Africa."
+ },
+ {
+  "id": "XAF-H-010",
+  "continent": "Africa",
+  "territory": "ZAF",
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "Which river forms much of South Africa's northern border before turning east and flowing into the Indian Ocean?",
+  "options": [
+   "The Limpopo",
+   "The Orange",
+   "The Zambezi",
+   "The Cunene"
+  ],
+  "answer": 0,
+  "explain": "The Limpopo winds north and east across southern Africa, forming borders with Botswana and Zimbabwe."
+ },
+ {
+  "id": "XAF-H-011",
+  "continent": "Africa",
+  "territory": "ZAF",
+  "tier": "hard",
+  "type": "text",
+  "category": "landmarks",
+  "q": "The Big Hole, a huge open-pit diamond mine and famous landmark, is in which South African city?",
+  "options": [
+   "Kimberley",
+   "Johannesburg",
+   "Durban",
+   "Port Elizabeth"
+  ],
+  "answer": 0,
+  "explain": "The Big Hole in Kimberley was dug by hand by thousands of miners during the 1870s diamond rush and is now a museum."
+ },
+ {
+  "id": "XAF-E-014",
+  "continent": "Africa",
+  "territory": "ETH",
+  "tier": "medium",
+  "type": "text",
+  "category": "rivers",
+  "q": "The Blue Nile and the White Nile meet at which city?",
+  "options": [
+   "Khartoum",
+   "Cairo",
+   "Nairobi",
+   "Lagos"
+  ],
+  "answer": 0,
+  "explain": "At Khartoum, the capital of Sudan, the Blue Nile, which rises in Ethiopia, joins the White Nile to form the great Nile."
+ },
+ {
+  "id": "XAF-E-015",
+  "continent": "Africa",
+  "territory": "ETH",
+  "tier": "easy",
+  "type": "text",
+  "category": "rivers",
+  "q": "The Blue Nile flows out of which large Ethiopian lake?",
+  "options": [
+   "Lake Tana",
+   "Lake Victoria",
+   "Lake Turkana",
+   "Lake Albert"
+  ],
+  "answer": 0,
+  "explain": "Lake Tana, Ethiopia's largest lake, is the source of the Blue Nile, which carries water all the way to Egypt."
+ },
+ {
+  "id": "XAF-M-011",
+  "continent": "Africa",
+  "territory": "ETH",
+  "tier": "medium",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Which Ethiopian town is famous for its 11 churches carved out of solid rock at Lalibela?",
+  "options": [
+   "Lalibela",
+   "Aksum",
+   "Harar",
+   "Gondar"
+  ],
+  "answer": 0,
+  "explain": "King Lalibela had the churches of Lalibela cut from the pink volcanic rock about 800 years ago, and they are still used today."
+ },
+ {
+  "id": "XAF-M-012",
+  "continent": "Africa",
+  "territory": "ETH",
+  "tier": "medium",
+  "type": "text",
+  "category": "mountains",
+  "q": "Which mountain range in northern Ethiopia, a UNESCO World Heritage site, is home to the gelada baboon and the rare Ethiopian wolf?",
+  "options": [
+   "The Simien Mountains",
+   "The Atlas Mountains",
+   "The Drakensberg",
+   "The Rwenzori Mountains"
+  ],
+  "answer": 0,
+  "explain": "The Simien Mountains have dramatic cliffs and valleys, and the gelada baboon lives almost nowhere else on Earth."
+ },
+ {
+  "id": "XAF-M-013",
+  "continent": "Africa",
+  "territory": "ETH",
+  "tier": "medium",
+  "type": "text",
+  "category": "neighbours",
+  "q": "The ancient Kingdom of Aksum, famous for its giant stone stelae, was centered in what is now Ethiopia and which neighbouring country?",
+  "options": [
+   "Eritrea",
+   "Kenya",
+   "Sudan",
+   "Djibouti"
+  ],
+  "answer": 0,
+  "explain": "Aksum's heartland spanned northern Ethiopia and today's Eritrea, and its tall carved stelae still stand at Aksum."
+ },
+ {
+  "id": "XAF-H-012",
+  "continent": "Africa",
+  "territory": "ETH",
+  "tier": "hard",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Dallol, in Ethiopia's Danakil Depression, is famous for its colourful landscape of what?",
+  "options": [
+   "Hot springs and sulfur fields",
+   "Penguin colonies",
+   "Glaciers and fjords",
+   "Redwood forests"
+  ],
+  "answer": 0,
+  "explain": "Dallol's boiling springs, yellow sulfur deposits, and salt plains make it one of the strangest and hottest places on Earth."
+ },
+ {
+  "id": "XAF-H-013",
+  "continent": "Africa",
+  "territory": "ETH",
+  "tier": "hard",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Ethiopia shares borders with Eritrea, Djibouti, Somalia, Kenya, and South Sudan. Which country lies to its west?",
+  "options": [
+   "Sudan",
+   "Egypt",
+   "Uganda",
+   "Tanzania"
+  ],
+  "answer": 0,
+  "explain": "Sudan lies along Ethiopia's western border, and the two countries share a long frontier."
+ },
+ {
+  "id": "XAF-E-016",
+  "continent": "Africa",
+  "territory": "GHA",
+  "tier": "medium",
+  "type": "text",
+  "category": "landmarks",
+  "q": "The Akosombo Dam on the Volta River created which huge lake, one of the world's largest man-made lakes?",
+  "options": [
+   "Lake Volta",
+   "Lake Kariba",
+   "Lake Cahora Bassa",
+   "Lake Nasser"
+  ],
+  "answer": 0,
+  "explain": "Lake Volta is one of the largest reservoirs on Earth by surface area, stretching across much of eastern Ghana."
+ },
+ {
+  "id": "XAF-E-017",
+  "continent": "Africa",
+  "territory": "GHA",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "What is the name of the brightly coloured woven cloth traditionally made by the Ashanti people of Ghana?",
+  "options": [
+   "Kente cloth",
+   "A kimono",
+   "A sari",
+   "Tartan"
+  ],
+  "answer": 0,
+  "explain": "Kente cloth is woven in narrow strips on a loom and then sewn together, and each pattern can tell a story."
+ },
+ {
+  "id": "XAF-M-014",
+  "continent": "Africa",
+  "territory": "GHA",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "The Golden Stool, the sacred symbol of the Ashanti nation, is kept in which Ghanaian city?",
+  "options": [
+   "Kumasi",
+   "Accra",
+   "Tamale",
+   "Cape Coast"
+  ],
+  "answer": 0,
+  "explain": "Kumasi, the heart of the Ashanti kingdom, is where the Golden Stool is guarded as the soul of the Ashanti people."
+ },
+ {
+  "id": "XAF-M-015",
+  "continent": "Africa",
+  "territory": "GHA",
+  "tier": "medium",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Ghana is bordered by Burkina Faso, Côte d'Ivoire, and which smaller country to the east?",
+  "options": [
+   "Togo",
+   "Benin",
+   "Nigeria",
+   "Mali"
+  ],
+  "answer": 0,
+  "explain": "Togo is a narrow country squeezed between Ghana and Benin on the Gulf of Guinea."
+ },
+ {
+  "id": "XAF-H-014",
+  "continent": "Africa",
+  "territory": "GHA",
+  "tier": "hard",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Mole National Park, in northern Ghana, is best known for which large animals?",
+  "options": [
+   "Elephants",
+   "Mountain gorillas",
+   "Polar bears",
+   "Kangaroos"
+  ],
+  "answer": 0,
+  "explain": "Mole National Park is famous for its elephants, which you can watch from a hide as they gather at the waterholes."
+ },
+ {
+  "id": "XAF-H-015",
+  "continent": "Africa",
+  "territory": "GHA",
+  "tier": "hard",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Lake Bosumtwi, Ghana's only natural lake, fills the crater left by what?",
+  "options": [
+   "A meteorite impact",
+   "A volcanic eruption",
+   "A glacier",
+   "A dried-up sea"
+  ],
+  "answer": 0,
+  "explain": "A meteorite smashed into Ghana about a million years ago, and the bowl it left behind filled with rain to form Lake Bosumtwi."
+ },
+ {
+  "id": "XAF-H-016",
+  "continent": "Africa",
+  "territory": "GHA",
+  "tier": "hard",
+  "type": "text",
+  "category": "culture",
+  "q": "Fufu, a beloved staple of Ghanaian meals, is made by pounding which two starchy foods together?",
+  "options": [
+   "Cassava and plantains",
+   "Rice and beans",
+   "Wheat and barley",
+   "Maize and potatoes"
+  ],
+  "answer": 0,
+  "explain": "Boiled cassava and plantains are pounded into a smooth dough and eaten with soup, and it takes a strong arm to make it."
+ },
+ {
+  "id": "XAF-E-018",
+  "continent": "Africa",
+  "territory": "DZA",
+  "tier": "easy",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Which sea borders Algeria to the north?",
+  "options": [
+   "The Mediterranean Sea",
+   "The Red Sea",
+   "The Atlantic Ocean",
+   "The Indian Ocean"
+  ],
+  "answer": 0,
+  "explain": "Algeria's northern coast lies on the Mediterranean Sea, whose shores link Europe, North Africa, and the Middle East."
+ },
+ {
+  "id": "XAF-E-019",
+  "continent": "Africa",
+  "territory": "DZA",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Which Algerian city, perched above a deep gorge and famous for its many bridges, is called the 'City of Bridges'?",
+  "options": [
+   "Constantine",
+   "Oran",
+   "Tlemcen",
+   "Sétif"
+  ],
+  "answer": 0,
+  "explain": "Constantine sits on rocky cliffs above the Rhumel River gorge, and its bridges have linked the city for centuries."
+ },
+ {
+  "id": "XAF-M-017",
+  "continent": "Africa",
+  "territory": "DZA",
+  "tier": "medium",
+  "type": "text",
+  "category": "mountains",
+  "q": "Which volcanic mountain range in the Sahara, home to the Tuareg people, lies in southern Algeria?",
+  "options": [
+   "The Hoggar Mountains",
+   "The Atlas Mountains",
+   "The Tibesti Mountains",
+   "The Mitumba Mountains"
+  ],
+  "answer": 0,
+  "explain": "The Hoggar Mountains rise from the Sahara like a rocky island, and Mount Tahat, Algeria's highest peak, is among them."
+ },
+ {
+  "id": "XAF-H-017",
+  "continent": "Africa",
+  "territory": "DZA",
+  "tier": "hard",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Which Algerian plateau, a UNESCO site, holds thousands of prehistoric rock paintings and engravings in the middle of the Sahara?",
+  "options": [
+   "Tassili n'Ajjer",
+   "The Deccan Plateau",
+   "The Colorado Plateau",
+   "The Ethiopian Highlands"
+  ],
+  "answer": 0,
+  "explain": "Tassili n'Ajjer's sandstone cliffs are covered with paintings of giraffes, elephants, and people from thousands of years ago."
+ },
+ {
+  "id": "XAF-H-018",
+  "continent": "Africa",
+  "territory": "DZA",
+  "tier": "hard",
+  "type": "text",
+  "category": "deserts",
+  "q": "Which vast sand sea of huge orange dunes lies in western Algeria?",
+  "options": [
+   "The Grand Erg Occidental",
+   "The Grand Erg Oriental",
+   "The Libyan Desert",
+   "The Nubian Desert"
+  ],
+  "answer": 0,
+  "explain": "The Grand Erg Occidental is one of the Sahara's biggest dune fields, a sea of sand that is hard to cross even today."
+ },
+ {
+  "id": "XAF-H-019",
+  "continent": "Africa",
+  "territory": "DZA",
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "The Chelif River, the longest river that lies entirely within Algeria, flows into which sea?",
+  "options": [
+   "The Mediterranean Sea",
+   "The Red Sea",
+   "The Atlantic Ocean",
+   "The Black Sea"
+  ],
+  "answer": 0,
+  "explain": "The Chelif winds about 700 kilometres through northern Algeria before reaching the Mediterranean near Mostaganem."
+ },
+ {
+  "id": "XAF-E-020",
+  "continent": "Africa",
+  "territory": "TUN",
+  "tier": "medium",
+  "type": "text",
+  "category": "islands",
+  "q": "Which Tunisian island, the country's largest, is famous for sandy beaches and the old town of Houmt Souk?",
+  "options": [
+   "Djerba",
+   "Malta",
+   "Sicily",
+   "Corsica"
+  ],
+  "answer": 0,
+  "explain": "Djerba, in Tunisia's south, has been a trading island for thousands of years and is linked to the mainland by a causeway."
+ },
+ {
+  "id": "XAF-E-021",
+  "continent": "Africa",
+  "territory": "TUN",
+  "tier": "easy",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Which Tunisian town is home to a huge Roman amphitheatre, one of the best preserved in the world?",
+  "options": [
+   "El Jem",
+   "Dougga",
+   "Sbeitla",
+   "Carthage"
+  ],
+  "answer": 0,
+  "explain": "The amphitheatre of El Jem, built around 238 AD, could hold about 35,000 spectators for gladiator games."
+ },
+ {
+  "id": "XAF-M-018",
+  "continent": "Africa",
+  "territory": "TUN",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "What is the traditional red woollen cap with a black tassel worn in Tunisia called?",
+  "options": [
+   "The chechia",
+   "The fez",
+   "The sombrero",
+   "The beret"
+  ],
+  "answer": 0,
+  "explain": "The chechia has been part of Tunisian dress for centuries and is still worn at festivals and celebrations."
+ },
+ {
+  "id": "XAF-M-019",
+  "continent": "Africa",
+  "territory": "TUN",
+  "tier": "medium",
+  "type": "text",
+  "category": "islands",
+  "q": "Which group of low-lying islands off Tunisia's east coast is known for fishing, olive trees, and palm groves?",
+  "options": [
+   "The Kerkennah Islands",
+   "The Canary Islands",
+   "The Balearic Islands",
+   "The Azores"
+  ],
+  "answer": 0,
+  "explain": "The Kerkennah Islands are flat and quiet, a world away from the busy streets of the mainland."
+ },
+ {
+  "id": "XAF-H-020",
+  "continent": "Africa",
+  "territory": "TUN",
+  "tier": "hard",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Which Tunisian ruins include a well-preserved Roman theatre, temples, and ancient paved streets?",
+  "options": [
+   "Dougga",
+   "Volubilis",
+   "Leptis Magna",
+   "Ephesus"
+  ],
+  "answer": 0,
+  "explain": "Dougga, high on a hill in northern Tunisia, is one of the finest Roman towns in North Africa."
+ },
+ {
+  "id": "XAF-H-021",
+  "continent": "Africa",
+  "territory": "TUN",
+  "tier": "hard",
+  "type": "text",
+  "category": "deserts",
+  "q": "Which Tunisian salt flat is a vast shallow lake that dries into a white crust in summer?",
+  "options": [
+   "The Chott el Djerid",
+   "The Salar de Uyuni",
+   "The Great Salt Lake",
+   "The Dead Sea"
+  ],
+  "answer": 0,
+  "explain": "The Chott el Djerid is so salty that in summer its bed turns into a shimmering white plain."
+ },
+ {
+  "id": "XAF-H-022",
+  "continent": "Africa",
+  "territory": "TUN",
+  "tier": "hard",
+  "type": "text",
+  "category": "cities",
+  "q": "Which Tunisian town, perched on a cliff above the sea, is famous for its white houses with blue shutters?",
+  "options": [
+   "Sidi Bou Said",
+   "Chefchaouen",
+   "Santorini",
+   "Mykonos"
+  ],
+  "answer": 0,
+  "explain": "Sidi Bou Said, just north of Tunis, has been a favourite haunt of artists for over a century."
+ },
+ {
+  "id": "XAF-E-022",
+  "continent": "Africa",
+  "territory": "TZA",
+  "tier": "easy",
+  "type": "text",
+  "category": "islands",
+  "q": "Which Tanzanian island, the largest in the Zanzibar archipelago, is famous for Stone Town and its spice markets?",
+  "options": [
+   "Zanzibar",
+   "Pemba",
+   "Mafia",
+   "Madagascar"
+  ],
+  "answer": 0,
+  "explain": "Zanzibar island, also called Unguja, has been a trading hub for spices like cloves for centuries."
+ },
+ {
+  "id": "XAF-E-023",
+  "continent": "Africa",
+  "territory": "TZA",
+  "tier": "easy",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Which Tanzanian landmark is a huge volcanic caldera, one of the world's largest, where thousands of animals live on the crater floor?",
+  "options": [
+   "The Ngorongoro Crater",
+   "The Grand Canyon",
+   "The Great Blue Hole",
+   "The Serengeti Plain"
+  ],
+  "answer": 0,
+  "explain": "The Ngorongoro Crater was formed when a giant volcano collapsed, and today lions, elephants, and rhinos roam its floor."
+ },
+ {
+  "id": "XAF-E-024",
+  "continent": "Africa",
+  "territory": "TZA",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Swahili, a language blending Bantu and Arabic words, is the lingua franca of which part of Africa?",
+  "options": [
+   "East Africa",
+   "West Africa",
+   "North Africa",
+   "Southern Africa"
+  ],
+  "answer": 0,
+  "explain": "Swahili is spoken from Kenya to Mozambique and is the everyday language of millions of East Africans."
+ },
+ {
+  "id": "XAF-M-020",
+  "continent": "Africa",
+  "territory": "TZA",
+  "tier": "medium",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Which channel separates the island of Zanzibar from mainland Tanzania?",
+  "options": [
+   "The Zanzibar Channel",
+   "The Mozambique Channel",
+   "The Pemba Channel",
+   "The Strait of Gibraltar"
+  ],
+  "answer": 0,
+  "explain": "The Zanzibar Channel is a busy stretch of water that ferries shuttle across between the island and the mainland."
+ },
+ {
+  "id": "XAF-H-023",
+  "continent": "Africa",
+  "territory": "TZA",
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "The Rufiji River, Tanzania's largest river, flows through a huge national park into which ocean?",
+  "options": [
+   "The Indian Ocean",
+   "The Atlantic Ocean",
+   "The Pacific Ocean",
+   "The Mediterranean Sea"
+  ],
+  "answer": 0,
+  "explain": "The Rufiji winds through the great Selous reserve, now Nyerere National Park, where hippos and crocodiles slide into its waters."
+ },
+ {
+  "id": "XAF-H-024",
+  "continent": "Africa",
+  "territory": "TZA",
+  "tier": "hard",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Tanzania borders Kenya, Uganda, Rwanda, Burundi, DR Congo, Zambia, and Malawi. Which country lies along its southeastern side?",
+  "options": [
+   "Mozambique",
+   "Kenya",
+   "Zambia",
+   "Madagascar"
+  ],
+  "answer": 0,
+  "explain": "Mozambique stretches along Tanzania's southern border, down to the Ruvuma River."
+ },
+ {
+  "id": "XAF-H-025",
+  "continent": "Africa",
+  "territory": "TZA",
+  "tier": "hard",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Which Tanzanian gorge, a UNESCO site, is famous for the early human fossils discovered there by the Leakey family?",
+  "options": [
+   "Olduvai Gorge",
+   "The Grand Canyon",
+   "Sterkfontein",
+   "The Zambezi Gorge"
+  ],
+  "answer": 0,
+  "explain": "Olduvai Gorge's layers of rock have yielded some of the oldest human ancestor fossils ever found."
+ },
+ {
+  "id": "XAF-E-025",
+  "continent": "Africa",
+  "territory": "SEN",
+  "tier": "medium",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Which Senegalese lake is nicknamed the Pink Lake because algae turn its water reddish?",
+  "options": [
+   "Lake Retba",
+   "Lake Chad",
+   "Lake Turkana",
+   "Lake Tanganyika"
+  ],
+  "answer": 0,
+  "explain": "Lake Retba, near Dakar, gets its pink colour from salt-loving algae, and its water is so salty you can float in it easily."
+ },
+ {
+  "id": "XAF-E-026",
+  "continent": "Africa",
+  "territory": "SEN",
+  "tier": "hard",
+  "type": "text",
+  "category": "culture",
+  "q": "What is the name of Senegal's national sport, a traditional form of wrestling?",
+  "options": [
+   "Laamb",
+   "Capoeira",
+   "Sumo",
+   "Judo"
+  ],
+  "answer": 0,
+  "explain": "Laamb, also called Senegalese wrestling, fills stadiums across the country and is hugely popular on television."
+ },
+ {
+  "id": "XAF-E-027",
+  "continent": "Africa",
+  "territory": "SEN",
+  "tier": "medium",
+  "type": "text",
+  "category": "rivers",
+  "q": "The Senegal River forms the border between Senegal and which country to the north?",
+  "options": [
+   "Mauritania",
+   "Mali",
+   "Guinea",
+   "Niger"
+  ],
+  "answer": 0,
+  "explain": "The Senegal River flows west along the border with Mauritania and empties into the Atlantic near Saint-Louis."
+ },
+ {
+  "id": "XAF-M-022",
+  "continent": "Africa",
+  "territory": "SEN",
+  "tier": "medium",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "The Djoudj National Bird Sanctuary, a UNESCO site in the Senegal River delta, is a winter home for migratory birds from which continent?",
+  "options": [
+   "Europe",
+   "South America",
+   "Australia",
+   "Asia"
+  ],
+  "answer": 0,
+  "explain": "Every winter, ducks, pelicans, and flamingos fly from Europe to rest and feed in the Djoudj wetlands."
+ },
+ {
+  "id": "XAF-M-023",
+  "continent": "Africa",
+  "territory": "SEN",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Which Senegalese city, built on an island where the Senegal River meets the sea, was once the capital of French West Africa?",
+  "options": [
+   "Saint-Louis",
+   "Dakar",
+   "Banjul",
+   "Conakry"
+  ],
+  "answer": 0,
+  "explain": "Saint-Louis, with its colonial buildings on a narrow island, was the capital of French West Africa until 1902."
+ },
+ {
+  "id": "XAF-H-026",
+  "continent": "Africa",
+  "territory": "SEN",
+  "tier": "hard",
+  "type": "text",
+  "category": "islands",
+  "q": "Which Senegalese national park is a group of rocky islets, a haven for nesting seabirds, off the coast near Dakar?",
+  "options": [
+   "The Madeleine Islands",
+   "The Bijagós Islands",
+   "The Canary Islands",
+   "The Cape Verde Islands"
+  ],
+  "answer": 0,
+  "explain": "The Madeleine Islands are a tiny national park where frigatebirds and other seabirds nest on the bare rock."
+ },
+ {
+  "id": "XAF-H-027",
+  "continent": "Africa",
+  "territory": "SEN",
+  "tier": "hard",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Senegalese singer, famous for mbalax music and the duet '7 Seconds', became a global star?",
+  "options": [
+   "Youssou N'Dour",
+   "Salif Keita",
+   "Angélique Kidjo",
+   "Cesária Évora"
+  ],
+  "answer": 0,
+  "explain": "Youssou N'Dour has sold millions of records and performed with artists from all around the world."
+ },
+ {
+  "id": "XAF-H-028",
+  "continent": "Africa",
+  "territory": "SEN",
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "The Gambia River runs through which narrow country that is almost entirely surrounded by Senegal?",
+  "options": [
+   "The Gambia",
+   "Guinea",
+   "Mali",
+   "Sierra Leone"
+  ],
+  "answer": 0,
+  "explain": "The Gambia is a thin ribbon of a country, never more than about 50 kilometres wide, following the river to the Atlantic."
+ },
+ {
+  "id": "XAF-E-028",
+  "continent": "Africa",
+  "territory": "MDG",
+  "tier": "easy",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Madagascar is a huge island in which ocean, off the southeast coast of Africa?",
+  "options": [
+   "The Indian Ocean",
+   "The Atlantic Ocean",
+   "The Pacific Ocean",
+   "The Mediterranean Sea"
+  ],
+  "answer": 0,
+  "explain": "Madagascar lies in the Indian Ocean, about 400 kilometres from the coast of Mozambique."
+ },
+ {
+  "id": "XAF-E-029",
+  "continent": "Africa",
+  "territory": "MDG",
+  "tier": "medium",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Which giant flightless bird, taller than a grown-up, once lived only on Madagascar and is now extinct?",
+  "options": [
+   "The elephant bird",
+   "The dodo",
+   "The ostrich",
+   "The moa"
+  ],
+  "answer": 0,
+  "explain": "The elephant bird stood up to three metres tall and laid the largest eggs of any bird."
+ },
+ {
+  "id": "XAF-M-024",
+  "continent": "Africa",
+  "territory": "MDG",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Malagasy, the main language of Madagascar, is most closely related to languages spoken on which large island in Indonesia?",
+  "options": [
+   "Borneo",
+   "Sumatra",
+   "Java",
+   "Sulawesi"
+  ],
+  "answer": 0,
+  "explain": "Long ago, sailors from Borneo crossed the Indian Ocean and settled Madagascar, and their language became Malagasy."
+ },
+ {
+  "id": "XAF-M-025",
+  "continent": "Africa",
+  "territory": "MDG",
+  "tier": "medium",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Which Madagascar primate taps on tree bark with a long thin middle finger to find insect larvae?",
+  "options": [
+   "The aye-aye",
+   "The tarsier",
+   "The slow loris",
+   "The ring-tailed lemur"
+  ],
+  "answer": 0,
+  "explain": "The aye-aye's extra-long finger lets it drum on wood and pull grubs out of their tunnels, and it is mostly active at night."
+ },
+ {
+  "id": "XAF-H-029",
+  "continent": "Africa",
+  "territory": "MDG",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the name of the highest mountain in Madagascar, in the Tsaratanana Massif?",
+  "options": [
+   "Maromokotro",
+   "Mount Kenya",
+   "Ras Dashen",
+   "Mount Toubkal"
+  ],
+  "answer": 0,
+  "explain": "Maromokotro rises to 2,876 metres in the Tsaratanana Massif in the far north of Madagascar."
+ },
+ {
+  "id": "XAF-H-030",
+  "continent": "Africa",
+  "territory": "MDG",
+  "tier": "hard",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Which Madagascar UNESCO site is a 'forest' of sharp limestone pinnacles called tsingy?",
+  "options": [
+   "The Tsingy de Bemaraha",
+   "The Giant's Causeway",
+   "The Stone Forest",
+   "The Chocolate Hills"
+  ],
+  "answer": 0,
+  "explain": "The Tsingy de Bemaraha is a maze of razor-sharp limestone towers where lemurs leap from peak to peak."
+ },
+ {
+  "id": "XAF-H-031",
+  "continent": "Africa",
+  "territory": "MDG",
+  "tier": "hard",
+  "type": "text",
+  "category": "culture",
+  "q": "Madagascar is one of the world's leading growers of which fragrant spice used in cakes and ice cream?",
+  "options": [
+   "Vanilla",
+   "Cinnamon",
+   "Cloves",
+   "Black pepper"
+  ],
+  "answer": 0,
+  "explain": "Madagascar grows a large share of the world's natural vanilla, and the orchid flowers are pollinated by hand."
+ }
+]

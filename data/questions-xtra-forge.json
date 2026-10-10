@@ -1,0 +1,138 @@
+[
+ {
+  "id": "XFG-H-001",
+  "continent": "North America",
+  "territory": "CUB",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "Pico Turquino, Cuba's highest mountain, is in which mountain range?",
+  "options": [
+   "Sierra Maestra",
+   "Sierra Nevada",
+   "Sierra Madre Occidental",
+   "Blue Mountains"
+  ],
+  "answer": 0,
+  "explain": "Pico Turquino (about 1,970 m) rises in the Sierra Maestra in south-eastern Cuba."
+ },
+ {
+  "id": "XFG-H-002",
+  "continent": "North America",
+  "territory": "CUB",
+  "tier": "hard",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Which stretch of water, only about 150 km wide at its narrowest, separates Cuba from the Florida Keys?",
+  "options": [
+   "Straits of Florida",
+   "Yucatán Channel",
+   "Mona Passage",
+   "Strait of Magellan"
+  ],
+  "answer": 0,
+  "explain": "The Straits of Florida link the Gulf of Mexico to the Atlantic, between Cuba and the Florida Keys."
+ },
+ {
+  "id": "XFG-H-003",
+  "continent": "North America",
+  "territory": "SLV",
+  "tier": "hard",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "What is the largest lake in El Salvador, which fills the crater of an ancient volcano?",
+  "options": [
+   "Lake Ilopango",
+   "Lake Atitlán",
+   "Lake Nicaragua",
+   "Lake Yojoa"
+  ],
+  "answer": 0,
+  "explain": "Lake Ilopango lies just east of San Salvador. Lake Atitlán is in Guatemala, Lake Yojoa in Honduras."
+ },
+ {
+  "id": "XFG-H-004",
+  "continent": "North America",
+  "territory": "SLV",
+  "tier": "hard",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "The Gulf of Fonseca, an inlet of the Pacific Ocean, is shared by El Salvador, Nicaragua and which other country?",
+  "options": [
+   "Honduras",
+   "Guatemala",
+   "Costa Rica",
+   "Belize"
+  ],
+  "answer": 0,
+  "explain": "Honduras sits between El Salvador and Nicaragua on the Gulf of Fonseca, so all three share its shores."
+ },
+ {
+  "id": "XFG-E-001",
+  "continent": "South America",
+  "territory": "ECU",
+  "tier": "easy",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Which famous scientist studied the animals of Ecuador's Galápagos Islands, which helped him form his ideas about evolution?",
+  "options": [
+   "Charles Darwin",
+   "Isaac Newton",
+   "Albert Einstein",
+   "Marie Curie"
+  ],
+  "answer": 0,
+  "explain": "Charles Darwin visited the Galápagos in 1835 on the ship HMS Beagle."
+ },
+ {
+  "id": "XFG-E-002",
+  "continent": "South America",
+  "territory": "ECU",
+  "tier": "easy",
+  "type": "text",
+  "category": "mountains",
+  "q": "Which great mountain range runs through the middle of Ecuador?",
+  "options": [
+   "The Andes",
+   "The Alps",
+   "The Himalayas",
+   "The Rocky Mountains"
+  ],
+  "answer": 0,
+  "explain": "The Andes run down the whole west side of South America, right through Ecuador. Its capital, Quito, sits high in the Andes."
+ },
+ {
+  "id": "XFG-E-003",
+  "continent": "Africa",
+  "territory": "SEN",
+  "tier": "easy",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Senegal's coast faces which ocean?",
+  "options": [
+   "The Atlantic Ocean",
+   "The Pacific Ocean",
+   "The Indian Ocean",
+   "The Arctic Ocean"
+  ],
+  "answer": 0,
+  "explain": "Senegal is on the far west of Africa, on the Atlantic coast."
+ },
+ {
+  "id": "XFG-E-004",
+  "continent": "Africa",
+  "territory": "SEN",
+  "tier": "easy",
+  "type": "text",
+  "category": "deserts",
+  "q": "Which huge desert lies to the north of Senegal?",
+  "options": [
+   "The Sahara",
+   "The Gobi",
+   "The Kalahari",
+   "The Atacama"
+  ],
+  "answer": 0,
+  "explain": "The Sahara covers much of North Africa, including most of Senegal's northern neighbour, Mauritania."
+ }
+]

@@ -1,0 +1,1447 @@
+[
+ {
+  "id": "XEU-E-001",
+  "continent": "Europe",
+  "territory": "GBR",
+  "tier": "easy",
+  "type": "text",
+  "category": "rivers",
+  "q": "Which river flows through London?",
+  "options": [
+   "The Thames",
+   "The Seine",
+   "The Rhine",
+   "The Danube"
+  ],
+  "answer": 0,
+  "explain": "The Thames winds through southern England, flowing past Big Ben and the Tower of London."
+ },
+ {
+  "id": "XEU-M-001",
+  "continent": "Europe",
+  "territory": "GBR",
+  "tier": "medium",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Which ancient stone circle on Salisbury Plain in southern England was raised more than 4,000 years ago?",
+  "options": [
+   "Stonehenge",
+   "Machu Picchu",
+   "The Easter Island statues",
+   "The Nazca Lines"
+  ],
+  "answer": 0,
+  "explain": "Stonehenge is a ring of giant standing stones on Salisbury Plain, raised by people who lived long before the Romans."
+ },
+ {
+  "id": "XEU-M-002",
+  "continent": "Europe",
+  "territory": "GBR",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which band from Liverpool became one of the most famous bands in the world in the 1960s?",
+  "options": [
+   "The Beatles",
+   "ABBA",
+   "The Rolling Stones",
+   "Queen"
+  ],
+  "answer": 0,
+  "explain": "The Beatles, four lads from Liverpool, changed pop music forever with songs like 'Hey Jude'."
+ },
+ {
+  "id": "XEU-M-003",
+  "continent": "Europe",
+  "territory": "GBR",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which British author wrote the Harry Potter books?",
+  "options": [
+   "J.K. Rowling",
+   "Roald Dahl",
+   "Enid Blyton",
+   "Charles Dickens"
+  ],
+  "answer": 0,
+  "explain": "J.K. Rowling, a British writer, created Harry Potter, the boy wizard loved by millions of readers."
+ },
+ {
+  "id": "XEU-H-001",
+  "continent": "Europe",
+  "territory": "GBR",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest mountain in the United Kingdom?",
+  "options": [
+   "Ben Nevis",
+   "Snowdon",
+   "Scafell Pike",
+   "Helvellyn"
+  ],
+  "answer": 0,
+  "explain": "Ben Nevis, in the Scottish Highlands, stands at 1,345 metres and is the UK's highest peak; Snowdon is the highest in Wales."
+ },
+ {
+  "id": "XEU-H-002",
+  "continent": "Europe",
+  "territory": "GBR",
+  "tier": "medium",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Which country shares a land border with the United Kingdom?",
+  "options": [
+   "France",
+   "Ireland",
+   "Norway",
+   "Iceland"
+  ],
+  "answer": 1,
+  "explain": "The UK's only land border is with Ireland — Northern Ireland touches the Republic of Ireland on the island of Ireland."
+ },
+ {
+  "id": "XEU-E-002",
+  "continent": "Europe",
+  "territory": "IRL",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which sport, played with a curved stick and a small hard ball, is Ireland's ancient national game?",
+  "options": [
+   "Hurling",
+   "Lacrosse",
+   "Field hockey",
+   "Polo"
+  ],
+  "answer": 0,
+  "explain": "Hurling, often called the fastest field game in the world, has been played in Ireland for thousands of years."
+ },
+ {
+  "id": "XEU-E-003",
+  "continent": "Europe",
+  "territory": "IRL",
+  "tier": "easy",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Which ocean lies to the west of Ireland?",
+  "options": [
+   "The Pacific Ocean",
+   "The Indian Ocean",
+   "The Atlantic Ocean",
+   "The Arctic Ocean"
+  ],
+  "answer": 2,
+  "explain": "Ireland looks out over the Atlantic Ocean, whose waves and winds have shaped the island's history."
+ },
+ {
+  "id": "XEU-M-004",
+  "continent": "Europe",
+  "territory": "IRL",
+  "tier": "medium",
+  "type": "text",
+  "category": "rivers",
+  "q": "Cork, a major city in the south of Ireland, sits on which river?",
+  "options": [
+   "The River Lee",
+   "The River Liffey",
+   "The River Shannon",
+   "The River Boyne"
+  ],
+  "answer": 0,
+  "explain": "The River Lee flows through the heart of Cork city and out to sea at Cork Harbour."
+ },
+ {
+  "id": "XEU-M-005",
+  "continent": "Europe",
+  "territory": "IRL",
+  "tier": "medium",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Which famous landmark on the north coast of the island of Ireland is made of thousands of hexagonal stone columns?",
+  "options": [
+   "The Giant's Causeway",
+   "The Cliffs of Moher",
+   "The Ring of Kerry",
+   "The Burren"
+  ],
+  "answer": 0,
+  "explain": "The Giant's Causeway looks man-made, but its hexagonal columns are lava that cooled and cracked millions of years ago."
+ },
+ {
+  "id": "XEU-H-003",
+  "continent": "Europe",
+  "territory": "IRL",
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "What is the longest river on the island of Ireland?",
+  "options": [
+   "The Shannon",
+   "The Liffey",
+   "The Lee",
+   "The Boyne"
+  ],
+  "answer": 0,
+  "explain": "The River Shannon is the longest river on the island of Ireland, flowing from the north to the southwest."
+ },
+ {
+  "id": "XEU-H-004",
+  "continent": "Europe",
+  "territory": "IRL",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest mountain in Ireland?",
+  "options": [
+   "Carrauntoohil",
+   "Ben Nevis",
+   "Snowdon",
+   "Slieve Donard"
+  ],
+  "answer": 0,
+  "explain": "Carrauntoohil, in the MacGillycuddy's Reeks of County Kerry, is Ireland's highest peak at 1,038 metres."
+ },
+ {
+  "id": "XEU-H-005",
+  "continent": "Europe",
+  "territory": "IRL",
+  "tier": "hard",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Which warm ocean current keeps Ireland's climate much milder than other places at the same latitude?",
+  "options": [
+   "The Gulf Stream",
+   "The Labrador Current",
+   "The Humboldt Current",
+   "The Kuroshio Current"
+  ],
+  "answer": 0,
+  "explain": "The Gulf Stream carries warm water from the tropics across the Atlantic, giving Ireland mild, wet weather."
+ },
+ {
+  "id": "XEU-E-004",
+  "continent": "Europe",
+  "territory": "FRA",
+  "tier": "easy",
+  "type": "text",
+  "category": "rivers",
+  "q": "Which river flows through Paris?",
+  "options": [
+   "The Seine",
+   "The Loire",
+   "The Rhine",
+   "The Rhône"
+  ],
+  "answer": 0,
+  "explain": "The Seine winds through the heart of Paris, past the Eiffel Tower and the Louvre."
+ },
+ {
+  "id": "XEU-M-006",
+  "continent": "Europe",
+  "territory": "FRA",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Which French city on the Mediterranean coast hosts one of the world's most famous film festivals every May?",
+  "options": [
+   "Nice",
+   "Marseille",
+   "Cannes",
+   "Lyon"
+  ],
+  "answer": 2,
+  "explain": "Cannes, on the French Riviera, rolls out the red carpet for its famous film festival every May."
+ },
+ {
+  "id": "XEU-M-007",
+  "continent": "Europe",
+  "territory": "FRA",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "What is the name of the long, thin, crusty loaf of bread that is France's most famous bread?",
+  "options": [
+   "The baguette",
+   "The croissant",
+   "The brioche",
+   "The pain au chocolat"
+  ],
+  "answer": 0,
+  "explain": "The baguette, with its crispy crust, is baked fresh every day in bakeries across France."
+ },
+ {
+  "id": "XEU-M-008",
+  "continent": "Europe",
+  "territory": "FRA",
+  "tier": "medium",
+  "type": "text",
+  "category": "rivers",
+  "q": "Which is the longest river in France?",
+  "options": [
+   "The Loire",
+   "The Seine",
+   "The Rhône",
+   "The Garonne"
+  ],
+  "answer": 0,
+  "explain": "The Loire, at about 1,000 kilometres, is the longest river in France and is lined with famous châteaux."
+ },
+ {
+  "id": "XEU-H-006",
+  "continent": "Europe",
+  "territory": "FRA",
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "The Rhône River rises in the Swiss Alps and flows south through France into which sea?",
+  "options": [
+   "The North Sea",
+   "The Mediterranean Sea",
+   "The Black Sea",
+   "The Baltic Sea"
+  ],
+  "answer": 1,
+  "explain": "The Rhône flows past Lyon and Avignon before emptying into the Mediterranean Sea."
+ },
+ {
+  "id": "XEU-H-007",
+  "continent": "Europe",
+  "territory": "FRA",
+  "tier": "hard",
+  "type": "text",
+  "category": "islands",
+  "q": "Which French island in the Mediterranean is famous for its rugged mountains, turquoise coves, and wild maquis scrub?",
+  "options": [
+   "Corsica",
+   "Sardinia",
+   "Sicily",
+   "Malta"
+  ],
+  "answer": 0,
+  "explain": "Corsica is a mountainous French island in the Mediterranean, lying between the French mainland and Sardinia."
+ },
+ {
+  "id": "XEU-E-005",
+  "continent": "Europe",
+  "territory": "ESP",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Spanish dance, with stamping feet, swirling dresses, and passionate guitar music, comes from Andalusia?",
+  "options": [
+   "Flamenco",
+   "Tango",
+   "Salsa",
+   "The waltz"
+  ],
+  "answer": 0,
+  "explain": "Flamenco, born in the Andalusia region of southern Spain, mixes guitar, song, and dance."
+ },
+ {
+  "id": "XEU-E-006",
+  "continent": "Europe",
+  "territory": "ESP",
+  "tier": "hard",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Spanish painter, a master at the royal court in the 1600s, painted the masterpiece 'Las Meninas'?",
+  "options": [
+   "Diego Velázquez",
+   "Pablo Picasso",
+   "Salvador Dalí",
+   "Francisco Goya"
+  ],
+  "answer": 0,
+  "explain": "Diego Velázquez painted 'Las Meninas' and many portraits of the Spanish royal family."
+ },
+ {
+  "id": "XEU-M-009",
+  "continent": "Europe",
+  "territory": "ESP",
+  "tier": "medium",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest mountain in mainland Spain?",
+  "options": [
+   "Mulhacén",
+   "Teide",
+   "Aneto",
+   "Mont Blanc"
+  ],
+  "answer": 0,
+  "explain": "Mulhacén, in the Sierra Nevada of southern Spain, is the highest peak in mainland Spain; Teide, which is higher, stands in the Canary Islands."
+ },
+ {
+  "id": "XEU-M-010",
+  "continent": "Europe",
+  "territory": "ESP",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Spanish dish of saffron rice, cooked with chicken, seafood, or vegetables in a wide shallow pan, comes from Valencia?",
+  "options": [
+   "Paella",
+   "Tapas",
+   "Gazpacho",
+   "Tortilla"
+  ],
+  "answer": 0,
+  "explain": "Paella, named after the wide pan it is cooked in, was born in the rice fields around Valencia."
+ },
+ {
+  "id": "XEU-M-011",
+  "continent": "Europe",
+  "territory": "ESP",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Which Spanish city is famous for the Alhambra palace, with the snowy Sierra Nevada rising behind it?",
+  "options": [
+   "Seville",
+   "Granada",
+   "Córdoba",
+   "Toledo"
+  ],
+  "answer": 1,
+  "explain": "Granada's Alhambra, a stunning palace and fortress, sits in the foothills of the Sierra Nevada."
+ },
+ {
+  "id": "XEU-H-008",
+  "continent": "Europe",
+  "territory": "ESP",
+  "tier": "hard",
+  "type": "text",
+  "category": "islands",
+  "q": "The Canary Islands, a Spanish archipelago off the northwest coast of Africa, lie in which ocean?",
+  "options": [
+   "The Pacific Ocean",
+   "The Indian Ocean",
+   "The Atlantic Ocean",
+   "The Mediterranean Sea"
+  ],
+  "answer": 2,
+  "explain": "The Canary Islands, including Tenerife and Lanzarote, are Spanish territory in the Atlantic Ocean."
+ },
+ {
+  "id": "XEU-H-009",
+  "continent": "Europe",
+  "territory": "ESP",
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "Which river, called the Tajo in Spanish, flows west across the Iberian Peninsula and reaches the Atlantic at Lisbon?",
+  "options": [
+   "The Douro",
+   "The Tagus",
+   "The Ebro",
+   "The Guadalquivir"
+  ],
+  "answer": 1,
+  "explain": "The Tagus is the longest river in the Iberian Peninsula, flowing through Spain and Portugal to the sea at Lisbon."
+ },
+ {
+  "id": "XEU-H-010",
+  "continent": "Europe",
+  "territory": "ESP",
+  "tier": "hard",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Which small country, high in the Pyrenees, is bordered only by Spain and France?",
+  "options": [
+   "Andorra",
+   "Monaco",
+   "Switzerland",
+   "Luxembourg"
+  ],
+  "answer": 0,
+  "explain": "Andorra, a tiny principality in the Pyrenees, has just two neighbours: Spain and France."
+ },
+ {
+  "id": "XEU-E-007",
+  "continent": "Europe",
+  "territory": "PRT",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which sweet Portuguese custard tart, with a caramelised top, is the country's most famous treat?",
+  "options": [
+   "Pastel de nata",
+   "Crème brûlée",
+   "Tiramisu",
+   "Baklava"
+  ],
+  "answer": 0,
+  "explain": "Pastéis de nata are little egg-custard tarts with a caramelised top — best eaten warm with cinnamon."
+ },
+ {
+  "id": "XEU-E-008",
+  "continent": "Europe",
+  "territory": "PRT",
+  "tier": "easy",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Portugal's long coastline, famous for its beaches, faces which ocean?",
+  "options": [
+   "The Pacific Ocean",
+   "The Indian Ocean",
+   "The Atlantic Ocean",
+   "The Arctic Ocean"
+  ],
+  "answer": 2,
+  "explain": "Portugal looks west over the Atlantic Ocean, whose waves have shaped the country's seafaring history."
+ },
+ {
+  "id": "XEU-E-009",
+  "continent": "Europe",
+  "territory": "PRT",
+  "tier": "hard",
+  "type": "text",
+  "category": "landmarks",
+  "q": "What is the name of the colourful painted ceramic tiles, often blue and white, that decorate buildings across Portugal?",
+  "options": [
+   "Azulejos",
+   "Mosaics",
+   "Frescoes",
+   "Stained glass"
+  ],
+  "answer": 0,
+  "explain": "Azulejos are the decorative painted tiles that cover churches, stations, and houses all over Portugal."
+ },
+ {
+  "id": "XEU-M-012",
+  "continent": "Europe",
+  "territory": "PRT",
+  "tier": "medium",
+  "type": "text",
+  "category": "islands",
+  "q": "Which Portuguese island group of nine volcanic islands lies in the middle of the Atlantic Ocean, far from the mainland?",
+  "options": [
+   "The Azores",
+   "Madeira",
+   "The Canary Islands",
+   "The Balearic Islands"
+  ],
+  "answer": 0,
+  "explain": "The Azores are a Portuguese archipelago of nine volcanic islands in the middle of the Atlantic Ocean."
+ },
+ {
+  "id": "XEU-M-013",
+  "continent": "Europe",
+  "territory": "PRT",
+  "tier": "medium",
+  "type": "text",
+  "category": "rivers",
+  "q": "The Douro River, famous for its terraced vineyards that produce port wine, meets the Atlantic at which Portuguese city?",
+  "options": [
+   "Lisbon",
+   "Porto",
+   "Faro",
+   "Coimbra"
+  ],
+  "answer": 1,
+  "explain": "The Douro valley's steep vineyards grow the grapes for port wine, and the river reaches the sea at Porto."
+ },
+ {
+  "id": "XEU-M-014",
+  "continent": "Europe",
+  "territory": "PRT",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "The university city of Coimbra, home to one of Europe's oldest universities, lies on which river?",
+  "options": [
+   "The Mondego",
+   "The Tagus",
+   "The Douro",
+   "The Guadiana"
+  ],
+  "answer": 0,
+  "explain": "Coimbra, in central Portugal, sits on the Mondego River and its university was founded in 1290."
+ },
+ {
+  "id": "XEU-H-011",
+  "continent": "Europe",
+  "territory": "PRT",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest mountain in mainland Portugal?",
+  "options": [
+   "Torre",
+   "Pico",
+   "Teide",
+   "Mulhacén"
+  ],
+  "answer": 0,
+  "explain": "Torre, in the Serra da Estrela range, is mainland Portugal's highest point at 1,993 metres; Pico, which is higher, is in the Azores."
+ },
+ {
+  "id": "XEU-H-012",
+  "continent": "Europe",
+  "territory": "PRT",
+  "tier": "hard",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Portugal shares its entire land border with just one country — which one?",
+  "options": [
+   "Spain",
+   "France",
+   "Andorra",
+   "Morocco"
+  ],
+  "answer": 0,
+  "explain": "Portugal's only land neighbour is Spain; the two countries share the western edge of the Iberian Peninsula."
+ },
+ {
+  "id": "XEU-E-010",
+  "continent": "Europe",
+  "territory": "DEU",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which German festival, held every autumn in Munich with beer tents and brass bands, draws millions of visitors?",
+  "options": [
+   "Oktoberfest",
+   "Carnival",
+   "La Tomatina",
+   "Diwali"
+  ],
+  "answer": 0,
+  "explain": "Oktoberfest, held in Munich every autumn, is one of the world's largest folk festivals, with beer tents, brass bands, and traditional dress."
+ },
+ {
+  "id": "XEU-E-011",
+  "continent": "Europe",
+  "territory": "DEU",
+  "tier": "easy",
+  "type": "text",
+  "category": "rivers",
+  "q": "Which river rises in Czechia and flows northwest through Germany, past Hamburg, into the North Sea?",
+  "options": [
+   "The Rhine",
+   "The Danube",
+   "The Elbe",
+   "The Oder"
+  ],
+  "answer": 2,
+  "explain": "The Elbe flows through cities like Dresden and Hamburg before reaching the North Sea."
+ },
+ {
+  "id": "XEU-M-015",
+  "continent": "Europe",
+  "territory": "DEU",
+  "tier": "medium",
+  "type": "text",
+  "category": "landmarks",
+  "q": "The Neuschwanstein Castle, said to have inspired Disney's Sleeping Beauty castle, stands in which German region?",
+  "options": [
+   "Bavaria",
+   "Brandenburg",
+   "Hesse",
+   "Saxony"
+  ],
+  "answer": 0,
+  "explain": "Neuschwanstein, King Ludwig II's fairy-tale castle, sits in the Bavarian Alps of southern Germany."
+ },
+ {
+  "id": "XEU-M-016",
+  "continent": "Europe",
+  "territory": "DEU",
+  "tier": "medium",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "The Black Forest, a region of dense evergreen forests famous for cuckoo clocks, is in which German state?",
+  "options": [
+   "Bavaria",
+   "Baden-Württemberg",
+   "Saxony",
+   "Thuringia"
+  ],
+  "answer": 1,
+  "explain": "The Black Forest (Schwarzwald) covers a large area of Baden-Württemberg in southwestern Germany."
+ },
+ {
+  "id": "XEU-H-013",
+  "continent": "Europe",
+  "territory": "DEU",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest mountain in Germany?",
+  "options": [
+   "Zugspitze",
+   "Mont Blanc",
+   "Großglockner",
+   "The Matterhorn"
+  ],
+  "answer": 0,
+  "explain": "The Zugspitze, in the Bavarian Alps on the border with Austria, is Germany's highest peak at 2,962 metres."
+ },
+ {
+  "id": "XEU-H-014",
+  "continent": "Europe",
+  "territory": "DEU",
+  "tier": "hard",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Which of these countries does NOT share a land border with Germany?",
+  "options": [
+   "Sweden",
+   "Poland",
+   "Czechia",
+   "France"
+  ],
+  "answer": 0,
+  "explain": "Sweden lies across the Baltic Sea, so it does not share a land border with Germany."
+ },
+ {
+  "id": "XEU-H-015",
+  "continent": "Europe",
+  "territory": "DEU",
+  "tier": "hard",
+  "type": "text",
+  "category": "culture",
+  "q": "Which German-born physicist developed the theory of relativity?",
+  "options": [
+   "Isaac Newton",
+   "Albert Einstein",
+   "Niels Bohr",
+   "Galileo Galilei"
+  ],
+  "answer": 1,
+  "explain": "Albert Einstein, born in Ulm, Germany, developed the famous theory of relativity."
+ },
+ {
+  "id": "XEU-E-012",
+  "continent": "Europe",
+  "territory": "ITA",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Italian dessert layers coffee-soaked biscuits with creamy mascarpone cheese?",
+  "options": [
+   "Tiramisu",
+   "Gelato",
+   "Cannoli",
+   "Panna cotta"
+  ],
+  "answer": 0,
+  "explain": "Tiramisu, which means 'pick me up' in Italian, is a coffee-flavoured dessert loved across Italy."
+ },
+ {
+  "id": "XEU-M-017",
+  "continent": "Europe",
+  "territory": "ITA",
+  "tier": "medium",
+  "type": "text",
+  "category": "mountains",
+  "q": "Which active volcano looms over the Bay of Naples and famously buried the Roman city of Pompeii in 79 AD?",
+  "options": [
+   "Vesuvius",
+   "Etna",
+   "Stromboli",
+   "Teide"
+  ],
+  "answer": 0,
+  "explain": "Mount Vesuvius, near Naples, is one of the world's most famous active volcanoes."
+ },
+ {
+  "id": "XEU-M-018",
+  "continent": "Europe",
+  "territory": "ITA",
+  "tier": "medium",
+  "type": "text",
+  "category": "islands",
+  "q": "Sicily, Italy's largest island, is separated from the mainland by which narrow strait?",
+  "options": [
+   "The Strait of Messina",
+   "The Strait of Gibraltar",
+   "The Strait of Bonifacio",
+   "The Strait of Otranto"
+  ],
+  "answer": 0,
+  "explain": "The Strait of Messina, only a few kilometres wide at its narrowest, separates Sicily from the Italian mainland."
+ },
+ {
+  "id": "XEU-H-016",
+  "continent": "Europe",
+  "territory": "ITA",
+  "tier": "hard",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Which Italian city is home to a huge red-tiled Renaissance dome designed by Brunelleschi?",
+  "options": [
+   "Florence",
+   "Siena",
+   "Pisa",
+   "Milan"
+  ],
+  "answer": 0,
+  "explain": "Florence's cathedral, Il Duomo, has a famous red-tiled dome designed by Brunelleschi in the 1400s."
+ },
+ {
+  "id": "XEU-H-017",
+  "continent": "Europe",
+  "territory": "ITA",
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "Which river flows through Rome and reaches the Mediterranean Sea near the ancient port of Ostia?",
+  "options": [
+   "The Tiber",
+   "The Po",
+   "The Arno",
+   "The Adige"
+  ],
+  "answer": 0,
+  "explain": "The Tiber (Tevere in Italian) flows through the heart of Rome on its way to the sea."
+ },
+ {
+  "id": "XEU-H-018",
+  "continent": "Europe",
+  "territory": "ITA",
+  "tier": "hard",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Italian artist painted the ceiling of the Sistine Chapel, including the scene 'The Creation of Adam'?",
+  "options": [
+   "Leonardo da Vinci",
+   "Michelangelo",
+   "Raphael",
+   "Botticelli"
+  ],
+  "answer": 1,
+  "explain": "Michelangelo painted the Sistine Chapel ceiling, including 'The Creation of Adam', between 1508 and 1512."
+ },
+ {
+  "id": "XEU-E-013",
+  "continent": "Europe",
+  "territory": "NLD",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which wooden shoes, carved from a single block of wood, are a traditional Dutch souvenir?",
+  "options": [
+   "Clogs",
+   "Slippers",
+   "Sandals",
+   "Boots"
+  ],
+  "answer": 0,
+  "explain": "Dutch clogs (klompen) are wooden shoes that farmers and fishermen have worn for centuries."
+ },
+ {
+  "id": "XEU-E-014",
+  "continent": "Europe",
+  "territory": "NLD",
+  "tier": "easy",
+  "type": "text",
+  "category": "general",
+  "q": "Large parts of the Netherlands lie below sea level — what protects the land from flooding?",
+  "options": [
+   "Dikes",
+   "Walls",
+   "Hedges",
+   "Canals"
+  ],
+  "answer": 0,
+  "explain": "Dikes, along with pumps and windmills, keep the low-lying Netherlands dry and safe from the sea."
+ },
+ {
+  "id": "XEU-E-015",
+  "continent": "Europe",
+  "territory": "NLD",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Which Dutch city is one of Europe's major port cities and is known for its striking modern skyline?",
+  "options": [
+   "Rotterdam",
+   "Utrecht",
+   "Eindhoven",
+   "Haarlem"
+  ],
+  "answer": 0,
+  "explain": "Rotterdam, on the Nieuwe Maas river, is one of Europe's major ports and has a bold, modern skyline."
+ },
+ {
+  "id": "XEU-M-019",
+  "continent": "Europe",
+  "territory": "NLD",
+  "tier": "medium",
+  "type": "text",
+  "category": "landmarks",
+  "q": "A row of 19 historic windmills at Kinderdijk, a UNESCO site, was built to do what?",
+  "options": [
+   "Pump water out of the lowlands",
+   "Grind grain",
+   "Saw wood",
+   "Generate electricity"
+  ],
+  "answer": 0,
+  "explain": "Kinderdijk's windmills were built to pump water out of the low-lying land and keep it dry."
+ },
+ {
+  "id": "XEU-M-020",
+  "continent": "Europe",
+  "territory": "NLD",
+  "tier": "medium",
+  "type": "text",
+  "category": "rivers",
+  "q": "The Meuse River, called the Maas in Dutch, flows through which historic city in the far south of the Netherlands?",
+  "options": [
+   "Maastricht",
+   "Utrecht",
+   "Groningen",
+   "Eindhoven"
+  ],
+  "answer": 0,
+  "explain": "The Meuse (Maas) flows through Maastricht, one of the oldest cities in the Netherlands."
+ },
+ {
+  "id": "XEU-M-021",
+  "continent": "Europe",
+  "territory": "NLD",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Dutch artist painted 'The Starry Night' and 'Sunflowers'?",
+  "options": [
+   "Vincent van Gogh",
+   "Rembrandt",
+   "Vermeer",
+   "Mondrian"
+  ],
+  "answer": 0,
+  "explain": "Vincent van Gogh, one of the world's most famous painters, was born in the Netherlands."
+ },
+ {
+  "id": "XEU-H-019",
+  "continent": "Europe",
+  "territory": "NLD",
+  "tier": "hard",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "The Afsluitdijk, a long dam completed in 1932, closed off which former sea, creating the IJsselmeer?",
+  "options": [
+   "The Zuiderzee",
+   "The Wadden Sea",
+   "The North Sea",
+   "The IJsselmeer"
+  ],
+  "answer": 0,
+  "explain": "The Afsluitdijk dam closed off the Zuiderzee in 1932, turning it into the freshwater IJsselmeer."
+ },
+ {
+  "id": "XEU-H-020",
+  "continent": "Europe",
+  "territory": "NLD",
+  "tier": "hard",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Which two countries share a land border with the Netherlands?",
+  "options": [
+   "Germany and Belgium",
+   "France and Belgium",
+   "Germany and Luxembourg",
+   "France and Germany"
+  ],
+  "answer": 0,
+  "explain": "The Netherlands is bordered by Germany to the east and Belgium to the south."
+ },
+ {
+  "id": "XEU-E-016",
+  "continent": "Europe",
+  "territory": "POL",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Polish astronomer worked out that the Earth and the other planets orbit the Sun?",
+  "options": [
+   "Nicolaus Copernicus",
+   "Galileo Galilei",
+   "Isaac Newton",
+   "Johannes Kepler"
+  ],
+  "answer": 0,
+  "explain": "Nicolaus Copernicus, born in Toruń, Poland, showed that the Earth travels around the Sun."
+ },
+ {
+  "id": "XEU-E-017",
+  "continent": "Europe",
+  "territory": "POL",
+  "tier": "medium",
+  "type": "text",
+  "category": "rivers",
+  "q": "Which is the longest river in Poland?",
+  "options": [
+   "The Vistula",
+   "The Oder",
+   "The Warta",
+   "The Bug"
+  ],
+  "answer": 0,
+  "explain": "The Vistula (Wisła) is Poland's longest river, flowing north through Kraków and Warsaw to the Baltic Sea."
+ },
+ {
+  "id": "XEU-E-018",
+  "continent": "Europe",
+  "territory": "POL",
+  "tier": "easy",
+  "type": "text",
+  "category": "mountains",
+  "q": "Which mountain range runs along Poland's southern border?",
+  "options": [
+   "The Alps",
+   "The Carpathians",
+   "The Pyrenees",
+   "The Apennines"
+  ],
+  "answer": 1,
+  "explain": "The Carpathian Mountains curve along Poland's southern border with Slovakia and Ukraine."
+ },
+ {
+  "id": "XEU-M-022",
+  "continent": "Europe",
+  "territory": "POL",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Which Polish city on the Vistula was the country's royal capital before Warsaw?",
+  "options": [
+   "Kraków",
+   "Wrocław",
+   "Gdańsk",
+   "Poznań"
+  ],
+  "answer": 0,
+  "explain": "Kraków, in southern Poland, was the country's capital for centuries before the court moved to Warsaw."
+ },
+ {
+  "id": "XEU-M-023",
+  "continent": "Europe",
+  "territory": "POL",
+  "tier": "medium",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Poland's northern coastline, with ports like Gdańsk, opens onto which sea?",
+  "options": [
+   "The Baltic Sea",
+   "The North Sea",
+   "The Black Sea",
+   "The Mediterranean Sea"
+  ],
+  "answer": 0,
+  "explain": "Poland's coast on the Baltic Sea includes the historic port cities of Gdańsk and Szczecin."
+ },
+ {
+  "id": "XEU-M-024",
+  "continent": "Europe",
+  "territory": "POL",
+  "tier": "medium",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Polish composer, born near Warsaw, wrote famous piano music including the 'Revolutionary' étude?",
+  "options": [
+   "Frédéric Chopin",
+   "Wolfgang Amadeus Mozart",
+   "Ludwig van Beethoven",
+   "Johann Sebastian Bach"
+  ],
+  "answer": 0,
+  "explain": "Frédéric Chopin is Poland's most famous composer, celebrated for his beautiful piano works."
+ },
+ {
+  "id": "XEU-H-021",
+  "continent": "Europe",
+  "territory": "POL",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "Which mountain range in southern Poland is the highest part of the Carpathians?",
+  "options": [
+   "The Tatras",
+   "The Sudetes",
+   "The Alps",
+   "The Harz"
+  ],
+  "answer": 0,
+  "explain": "The Tatras, shared with Slovakia, are the highest part of the Carpathians and a popular skiing area."
+ },
+ {
+  "id": "XEU-H-022",
+  "continent": "Europe",
+  "territory": "POL",
+  "tier": "hard",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Which of these countries does NOT share a land border with Poland?",
+  "options": [
+   "Lithuania",
+   "Hungary",
+   "Belarus",
+   "Czechia"
+  ],
+  "answer": 1,
+  "explain": "Poland's land neighbours include Lithuania, Belarus, and Czechia — but not Hungary, which lies farther south."
+ },
+ {
+  "id": "XEU-E-019",
+  "continent": "Europe",
+  "territory": "SWE",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Swedish company, founded by Ingvar Kamprad, sells flat-pack furniture and meatballs worldwide?",
+  "options": [
+   "IKEA",
+   "LEGO",
+   "H&M",
+   "Volvo"
+  ],
+  "answer": 0,
+  "explain": "IKEA, founded in Sweden by Ingvar Kamprad, sells flat-pack furniture in stores around the world."
+ },
+ {
+  "id": "XEU-E-020",
+  "continent": "Europe",
+  "territory": "SWE",
+  "tier": "easy",
+  "type": "text",
+  "category": "general",
+  "q": "Sweden, Norway, and Denmark together make up which region of northern Europe?",
+  "options": [
+   "Scandinavia",
+   "Benelux",
+   "Iberia",
+   "The Baltics"
+  ],
+  "answer": 0,
+  "explain": "Sweden, Norway, and Denmark are the three countries of Scandinavia."
+ },
+ {
+  "id": "XEU-M-025",
+  "continent": "Europe",
+  "territory": "SWE",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Which Swedish city, a major port on the west coast, is home to the Liseberg amusement park and the Volvo Museum?",
+  "options": [
+   "Gothenburg",
+   "Malmö",
+   "Uppsala",
+   "Stockholm"
+  ],
+  "answer": 0,
+  "explain": "Gothenburg (Göteborg) is a major port city on Sweden's west coast."
+ },
+ {
+  "id": "XEU-M-026",
+  "continent": "Europe",
+  "territory": "SWE",
+  "tier": "medium",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "North of the Arctic Circle in Sweden, what happens to the sun in midsummer?",
+  "options": [
+   "It never rises",
+   "It stays up all night",
+   "It rises at noon",
+   "It sets at noon"
+  ],
+  "answer": 1,
+  "explain": "In summer, the 'midnight sun' keeps the sky bright in northern Sweden even at midnight."
+ },
+ {
+  "id": "XEU-H-023",
+  "continent": "Europe",
+  "territory": "SWE",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest mountain in Sweden?",
+  "options": [
+   "Kebnekaise",
+   "Galdhøpiggen",
+   "Mont Blanc",
+   "Kilimanjaro"
+  ],
+  "answer": 0,
+  "explain": "Kebnekaise, in the Scandinavian Mountains of northern Sweden, is the country's highest peak at about 2,100 metres."
+ },
+ {
+  "id": "XEU-H-024",
+  "continent": "Europe",
+  "territory": "SWE",
+  "tier": "hard",
+  "type": "text",
+  "category": "islands",
+  "q": "Gotland, Sweden's largest island, with the medieval town of Visby, lies in which sea?",
+  "options": [
+   "The North Sea",
+   "The Baltic Sea",
+   "The Norwegian Sea",
+   "The Irish Sea"
+  ],
+  "answer": 1,
+  "explain": "Gotland is a large limestone island in the Baltic Sea, off Sweden's southeast coast."
+ },
+ {
+  "id": "XEU-H-025",
+  "continent": "Europe",
+  "territory": "SWE",
+  "tier": "hard",
+  "type": "text",
+  "category": "neighbours",
+  "q": "The Øresund Bridge links Sweden with which country?",
+  "options": [
+   "Denmark",
+   "Norway",
+   "Finland",
+   "Germany"
+  ],
+  "answer": 0,
+  "explain": "The Øresund Bridge carries road and rail traffic between Malmö in Sweden and Copenhagen in Denmark."
+ },
+ {
+  "id": "XEU-E-021",
+  "continent": "Europe",
+  "territory": "NOR",
+  "tier": "easy",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Norway's famous fjords — deep, narrow inlets of the sea — were carved by what?",
+  "options": [
+   "Glaciers",
+   "Rivers",
+   "Wind",
+   "Volcanoes"
+  ],
+  "answer": 0,
+  "explain": "Fjords are deep, narrow sea inlets carved by ancient glaciers and later flooded by the sea."
+ },
+ {
+  "id": "XEU-E-022",
+  "continent": "Europe",
+  "territory": "NOR",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Norwegian explorer was the first person to reach the South Pole?",
+  "options": [
+   "Roald Amundsen",
+   "Robert Scott",
+   "Ernest Shackleton",
+   "Neil Armstrong"
+  ],
+  "answer": 0,
+  "explain": "Roald Amundsen led the first expedition to reach the South Pole, in December 1911."
+ },
+ {
+  "id": "XEU-M-027",
+  "continent": "Europe",
+  "territory": "NOR",
+  "tier": "medium",
+  "type": "text",
+  "category": "cities",
+  "q": "Bergen, a city on Norway's west coast, is famous for its colourful old wooden wharf — what is it called?",
+  "options": [
+   "Bryggen",
+   "Nyhavn",
+   "Gamla Stan",
+   "Tivoli"
+  ],
+  "answer": 0,
+  "explain": "Bryggen, Bergen's old Hanseatic harbour, is a UNESCO site of colourful wooden houses."
+ },
+ {
+  "id": "XEU-M-028",
+  "continent": "Europe",
+  "territory": "NOR",
+  "tier": "medium",
+  "type": "text",
+  "category": "general",
+  "q": "What is the name of the dramatic cliff on an island in Norway's far north, a popular spot for visitors?",
+  "options": [
+   "The North Cape",
+   "Land's End",
+   "John o' Groats",
+   "Cape Horn"
+  ],
+  "answer": 0,
+  "explain": "Nordkapp, the North Cape, is a steep cliff on the island of Magerøya in Norway's far north."
+ },
+ {
+  "id": "XEU-M-029",
+  "continent": "Europe",
+  "territory": "NOR",
+  "tier": "medium",
+  "type": "text",
+  "category": "rivers",
+  "q": "What is the longest river in Norway?",
+  "options": [
+   "The Glomma",
+   "The Drammen",
+   "The Lågen",
+   "The Tana"
+  ],
+  "answer": 0,
+  "explain": "The Glomma is Norway's longest river, flowing through southeastern Norway to the sea."
+ },
+ {
+  "id": "XEU-H-026",
+  "continent": "Europe",
+  "territory": "NOR",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest mountain in Norway?",
+  "options": [
+   "Galdhøpiggen",
+   "Kebnekaise",
+   "Mont Blanc",
+   "Zugspitze"
+  ],
+  "answer": 0,
+  "explain": "Galdhøpiggen, in the Jotunheimen range, is Norway's — and Scandinavia's — highest peak at 2,469 metres."
+ },
+ {
+  "id": "XEU-H-027",
+  "continent": "Europe",
+  "territory": "NOR",
+  "tier": "hard",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Which three countries share a land border with Norway?",
+  "options": [
+   "Sweden, Finland and Russia",
+   "Denmark, Sweden and Finland",
+   "Sweden, Finland and Iceland",
+   "Sweden, Denmark and Finland"
+  ],
+  "answer": 0,
+  "explain": "Norway's land neighbours are Sweden, Finland, and Russia in the far north."
+ },
+ {
+  "id": "XEU-E-023",
+  "continent": "Europe",
+  "territory": "GRC",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which sweet Greek dessert is made of layers of filo pastry, chopped nuts, and honey syrup?",
+  "options": [
+   "Baklava",
+   "Tiramisu",
+   "Croissant",
+   "Strudel"
+  ],
+  "answer": 0,
+  "explain": "Baklava, with its crispy filo pastry, nuts, and sweet syrup, is a beloved dessert across Greece."
+ },
+ {
+  "id": "XEU-M-030",
+  "continent": "Europe",
+  "territory": "GRC",
+  "tier": "medium",
+  "type": "text",
+  "category": "islands",
+  "q": "Which Greek island group in the Aegean Sea includes Naxos, Paros, and Mykonos?",
+  "options": [
+   "The Cyclades",
+   "The Ionian Islands",
+   "The Dodecanese",
+   "The Sporades"
+  ],
+  "answer": 0,
+  "explain": "The Cyclades are a group of Greek islands in the Aegean Sea, famous for whitewashed villages and blue domes."
+ },
+ {
+  "id": "XEU-M-031",
+  "continent": "Europe",
+  "territory": "GRC",
+  "tier": "medium",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest mountain in Greece, the mythical home of the Greek gods?",
+  "options": [
+   "Mount Olympus",
+   "Mount Parnassus",
+   "Mount Ida",
+   "Mount Athos"
+  ],
+  "answer": 0,
+  "explain": "Mount Olympus, in northern Greece, is the country's highest peak at 2,917 metres."
+ },
+ {
+  "id": "XEU-M-032",
+  "continent": "Europe",
+  "territory": "GRC",
+  "tier": "medium",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Which sea, dotted with Greek islands, lies between Greece and Turkey?",
+  "options": [
+   "The Aegean Sea",
+   "The Ionian Sea",
+   "The Adriatic Sea",
+   "The Black Sea"
+  ],
+  "answer": 0,
+  "explain": "The Aegean Sea lies between Greece and Turkey and is scattered with hundreds of Greek islands."
+ },
+ {
+  "id": "XEU-H-028",
+  "continent": "Europe",
+  "territory": "GRC",
+  "tier": "hard",
+  "type": "text",
+  "category": "islands",
+  "q": "The Colossus of Rhodes, one of the Seven Wonders of the Ancient World, was a giant statue on which Greek island?",
+  "options": [
+   "Rhodes",
+   "Crete",
+   "Cyprus",
+   "Delos"
+  ],
+  "answer": 0,
+  "explain": "The Colossus of Rhodes was a huge statue of the sun god Helios that stood in the harbour of Rhodes."
+ },
+ {
+  "id": "XEU-H-029",
+  "continent": "Europe",
+  "territory": "GRC",
+  "tier": "hard",
+  "type": "text",
+  "category": "culture",
+  "q": "Which Greek philosopher founded the Academy in Athens and wrote 'The Republic'?",
+  "options": [
+   "Plato",
+   "Aristotle",
+   "Socrates",
+   "Herodotus"
+  ],
+  "answer": 0,
+  "explain": "Plato, an Athenian philosopher, founded the Academy and wrote famous dialogues like 'The Republic'."
+ },
+ {
+  "id": "XEU-H-030",
+  "continent": "Europe",
+  "territory": "GRC",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "Which mountain range runs down the spine of mainland Greece?",
+  "options": [
+   "The Pindus",
+   "The Alps",
+   "The Carpathians",
+   "The Pyrenees"
+  ],
+  "answer": 0,
+  "explain": "The Pindus range runs down the spine of mainland Greece, with rugged peaks popular with hikers."
+ }
+]

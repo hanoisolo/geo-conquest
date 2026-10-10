@@ -1,11 +1,19 @@
 {
  "questionFiles": [
-  "data/questions-na.json",
-  "data/questions-sa.json",
-  "data/questions-eu.json",
   "data/questions-af.json",
   "data/questions-as.json",
+  "data/questions-eu.json",
+  "data/questions-generated.json",
+  "data/questions-na.json",
   "data/questions-oc.json",
-  "data/questions-generated.json"
+  "data/questions-sa.json",
+  "data/questions-xtra-af.json",
+  "data/questions-xtra-as.json",
+  "data/questions-xtra-as2.json",
+  "data/questions-xtra-eu.json",
+  "data/questions-xtra-na.json",
+  "data/questions-xtra-oc.json",
+  "data/questions-xtra-sa.json",
+  "data/questions-xtra-forge.json"
  ]
 }

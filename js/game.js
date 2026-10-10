@@ -257,13 +257,14 @@ const GeoGame = {
   /* ================= contests & questions ================= */
   /**
    * Open the question modal for a contest on iso3 at the given tier.
-   * subject is a hook for later work: "math" (default "geo") uses
-   * window.GeoMath.generate(tier) when that module is present.
+   * subject "math" (default "geo") uses window.GeoMath.generate(tier)
+   * when that module is present; opts.skill pins the math skill and
+   * opts.practice marks a no-stakes practice round.
    */
-  startContest(iso3, tier, subject = "geo") {
+  startContest(iso3, tier, subject = "geo", opts = {}) {
     let q;
     if (subject === "math" && window.GeoMath) {
-      q = window.GeoMath.generate(tier);
+      q = window.GeoMath.generate(tier, opts.skill ? { skill: opts.skill } : {});
     } else {
       q = this.pickQuestion(iso3, tier);
     }
@@ -275,6 +276,7 @@ const GeoGame = {
     this.currentContest = {
       iso3, tier, subject,
       nudged: subject === "math" && (this.state.geoSinceMath || 0) >= 2,
+      practice: !!opts.practice,
       question: q, type,
       options: order.map((i) => q.options[i]),
       answerIdx: order.indexOf(q.answer),
@@ -296,6 +298,8 @@ const GeoGame = {
     flagImg.removeAttribute("src");
     document.getElementById("q-feedback").classList.add("hidden");
     document.getElementById("btn-q-continue").classList.add("hidden");
+    document.getElementById("btn-similar").classList.add("hidden");
+    document.getElementById("q-practice-note").classList.toggle("hidden", !opts.practice);
     // Hints: math questions carry step-by-step hints. Reset the list and
     // show the hint button only when there is something to reveal.
     const hintsList = document.getElementById("q-hints");
@@ -310,6 +314,7 @@ const GeoGame = {
       hintBtn.classList.add("hidden");
     }
     this.updatePointsLabel();
+    if (opts.practice) document.getElementById("q-points").textContent = "Practice";
 
     if (type === "map") {
       // "Find it on the map" question: one big button enters find mode.
@@ -385,6 +390,7 @@ const GeoGame = {
     const c = this.currentContest;
     const el = document.getElementById("q-points");
     if (!c || !el) return;
+    if (c.practice) { el.textContent = "Practice"; return; }
     const base = this.TIER_POINTS[c.tier];
     const points = this.contestPoints(c);
     const shown = c.hintsShown || 0;
@@ -565,14 +571,68 @@ const GeoGame = {
         c.question.options[c.question.answer]
       )}</strong>. ${this.escapeHtml(c.question.explain)}`;
     }
+    // A wrong math answer gets the full worked solution (the hints are
+    // the steps) plus an offer to try a similar question for practice.
+    if (!correct && c.question.type === "math") {
+      const title = document.createElement("p");
+      title.className = "solution-title";
+      title.textContent = "📝 Here's how to solve it:";
+      fb.appendChild(title);
+      const steps = document.createElement("ol");
+      steps.className = "solution";
+      for (const hint of c.question.hints || []) {
+        const li = document.createElement("li");
+        li.className = "solution-step";
+        li.textContent = hint.text;
+        if (hint.bars) {
+          for (const bar of hint.bars) li.appendChild(this.fractionBarSvg(bar));
+        }
+        steps.appendChild(li);
+      }
+      fb.appendChild(steps);
+      document.getElementById("q-hints").classList.add("hidden");
+      document.getElementById("btn-similar").classList.remove("hidden");
+    }
     document.getElementById("btn-q-continue").classList.remove("hidden");
     c.wasCorrect = correct;
+  },
+
+  /**
+   * "Try a similar one": after a math question, resolve the real
+   * contest (if any) exactly as Continue would, then open a fresh
+   * practice question of the same skill — no country at stake.
+   */
+  trySimilar() {
+    const c = this.currentContest;
+    if (!c || c.question.type !== "math") return;
+    const next = {
+      iso3: c.iso3,
+      tier: c.tier,
+      skill: c.question.skill,
+      practice: c.practice,
+    };
+    if (!next.practice) {
+      this.resolveContest(); // apply the real result (e.g. the Baron's steal)
+    } else {
+      document.getElementById("question-modal").classList.add("hidden");
+      this.currentContest = null;
+    }
+    this.startContest(next.iso3, next.tier, "math", { skill: next.skill, practice: true });
   },
 
   /** Apply the contest result once the player taps Continue. */
   resolveContest() {
     const c = this.currentContest;
     if (!c) return;
+    // Practice rounds are no-stakes: close the modal and leave the
+    // campaign (ownership, points, streak, stats, geoSinceMath) and
+    // the territory card exactly as they were.
+    if (c.practice) {
+      document.getElementById("question-modal").classList.add("hidden");
+      this.currentContest = null;
+      this.toast(c.wasCorrect ? "🧮 Nice practice!" : "🧮 Keep practising — you've got this!");
+      return;
+    }
     document.getElementById("question-modal").classList.add("hidden");
     document.getElementById("territory-card").classList.add("hidden");
     this.leaveFindMode();

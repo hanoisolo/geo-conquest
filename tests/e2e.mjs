@@ -131,8 +131,13 @@ async function run(vp, tag) {
         await answer(false); await wait(300); await shot("11-math-wrong-solution");
         ok(`${tag}: worked solution shown`, (await page.locator("#q-feedback li, #q-feedback .solution-step").count()) >= 2);
         ok(`${tag}: try-a-similar-one button`, await vis("#btn-similar"));
-        await cont();
+        await page.click("#btn-similar"); await wait(500);
         ok(`${tag}: math miss lets the Baron steal`, await page.evaluate((t) => GeoGame.state.ownership[t] === "rival", t2));
+        ok(`${tag}: similar practice question opens`, await vis("#q-practice-note") && await page.evaluate(() => GeoGame.currentContest && GeoGame.currentContest.practice && GeoGame.currentContest.question.skill === "fracdiff"));
+        await shot("11b-math-practice");
+        const pts0 = await page.evaluate(() => GeoGame.state.points);
+        await answer(true); await cont();
+        ok(`${tag}: practice changes nothing`, await page.evaluate(([t, p]) => GeoGame.state.ownership[t] === "rival" && GeoGame.state.points === p, [t2, pts0]));
       } else {
         await answer(true); await cont();
         ok(`${tag}: math win conquers`, await page.evaluate((t) => GeoGame.state.ownership[t] === "player", t2));

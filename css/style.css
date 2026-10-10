@@ -577,6 +577,29 @@ main .card:hover:not(.map-wrap) { transform: translateY(-3px); box-shadow: var(-
 .fb-off { fill: #e2e8f0; stroke: #fff; }
 .frac-bar text { font-size: 14px; font-weight: 700; fill: #334155; }
 
+/* ---- worked solution after a wrong math answer ---- */
+.solution-title { font-weight: 700; margin: 0.6rem 0 0.2rem; }
+.solution { padding-left: 1.3rem; margin: 0; font-size: 0.95rem; text-align: left; }
+.solution-step { margin: 0.3rem 0; }
+#btn-similar {
+  margin: 0.6rem 0.5rem 0 0;
+  background: var(--violet);
+  color: #fff;
+  box-shadow: 0 3px 0 #6d28d9;
+}
+#btn-similar:active { box-shadow: 0 1px 0 #6d28d9; }
+/* small pill notes in the question modal (practice / easier) */
+.q-note {
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: #ede9fe;
+  color: #5b21b6;
+  display: inline-block;
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  margin: 0.2rem 0;
+}
+
 .victory { text-align: center; }
 /* big animated trophy/continent emoji */
 .victory .hero-emoji {

@@ -237,7 +237,16 @@ async function runRules(vp, tag) {
   await page.locator("#mp-players input").nth(0).fill("Mia");
   await page.locator("#mp-players input").nth(1).fill("Leo");
   await page.click("#btn-mp-start"); await wait(800);
+  await page.evaluate(() => { const t = GeoGame.toast.bind(GeoGame); GeoGame.toast = (m, ms) => { window.__lastToast = m; t(m, ms); }; });
   for (const iso of ["CAN", "BRA"]) { await page.evaluate((i) => GeoMap.onTerritoryClick(i), iso); await wait(300); }
+  await page.evaluate(() => GeoGame.toast("🧪 stale test message")); // extra stale message behind the hand-off
+  await page.evaluate(() => GeoGame.toast("🧪 latest test message"));
+  await wait(900);
+  ok(`${tag}: hand-off keeps only the latest message`, await vis("#mp-handoff") && await page.evaluate(() => GeoGame._toastQueue.length <= 1));
+  await ready(); await wait(300);
+  ok(`${tag}: latest message shows after the hand-off`, (await page.locator("#toast").textContent()) === "🧪 latest test message");
+  await wait(2600);
+  ok(`${tag}: no late messages after it`, await page.evaluate(() => GeoGame._toastQueue.length === 0) && !(await vis("#toast")));
   await open("USA");
   ok(`${tag}: unclaimed country allows all three levels`, (await allowed()) === "easy,medium,hard" && !(await vis("#terr-fort")));
   await page.click('[data-subject="geo"]'); await page.click('.diff-btn[data-tier="easy"]'); await wait(450);

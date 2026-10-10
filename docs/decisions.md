@@ -19,3 +19,4 @@
 - Players tied on countries and points share a rank (and medal) in the standings.
 - Easy rules / fortify (multiplayer, Oct 2026): Easy only on unclaimed; owned countries remember the tier they were won at (`levels`), attacks need max(Medium, level); strike-back prizes take the defender's tier; saves without `levels` load as easy. Built by Vibe on GLM 5.3 (one run, no stall).
 - Solo keeps its rules: the Baron never attacks the player's countries. He only takes the country the player just missed (unclaimed or already his) and grabs unclaimed ones every 3rd contest, so a fortify level on player countries would have no effect. Baron countries already need Medium or Hard.
+- Toasts behind the multiplayer hand-off screen: only the newest message is kept (it replaces anything waiting or hidden), so nothing pops up a turn late.

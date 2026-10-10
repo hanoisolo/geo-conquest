@@ -1081,8 +1081,24 @@ const GeoGame = {
    * toast dismisses the current message early.
    */
   toast(msg, ms = 2200) {
+    if (this._handoffOpen()) {
+      // Behind the multiplayer hand-off screen only the newest message counts:
+      // it replaces anything waiting (or hidden on screen) so nothing shows up late.
+      clearTimeout(this._toastTimer);
+      if (this._toastShowing && this._toastShowing.stop) this._toastShowing.stop();
+      this._toastShowing = null;
+      this._toastQueue = [{ msg, ms }];
+      this._nextToast();
+      return;
+    }
     this._toastQueue.push({ msg, ms });
     if (!this._toastBusy) this._nextToast();
+  },
+
+  /** True while the multiplayer pass-the-device screen is up. */
+  _handoffOpen() {
+    const h = document.getElementById("mp-handoff");
+    return !!h && !h.classList.contains("hidden");
   },
 
   /** True while a question/victory/unlock/how-to card is open (toasts wait until it closes). */
@@ -1096,6 +1112,11 @@ const GeoGame = {
     // A toast that was on screen while a card covered it (CSS hides it) is shown again later.
     if (this._toastShowing && this._toastShowing.hiddenByCard) this._toastQueue.unshift(this._toastShowing.item);
     this._toastShowing = null;
+    // Multiplayer hand-off screen: messages wait behind it, but only the
+    // latest one is kept so nothing pops up a turn or two late.
+    if (this._handoffOpen() && this._toastQueue.length > 1) {
+      this._toastQueue = this._toastQueue.slice(-1);
+    }
     if (this._toastQueue.length && this._cardOpen()) {
       // Hold the queue while a card is open; check again shortly.
       this._toastBusy = true;

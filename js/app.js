@@ -17,18 +17,23 @@ window.addEventListener("DOMContentLoaded", () => {
     loadJson("data/territories.json"),
     loadJson("data/capitals.json"),
     loadJson("data/manifest.json"),
+    loadJson("data/adjacency.json"),
   ])
-    .then(([geojson, territories, capitals, manifest]) => {
+    .then(([geojson, territories, capitals, manifest, adjacency]) => {
       const files = (manifest && manifest.questionFiles) || [];
       if (!files.length) throw new Error("manifest.json (empty questionFiles)");
       return Promise.all(files.map(loadJson)).then((qBanks) => ({
-        geojson, territories, capitals,
+        geojson, territories, capitals, adjacency,
         questions: qBanks.flat(),
       }));
     })
     .then((data) => {
       GeoGame.init(data);
+      GeoMulti.init({ adjacency: data.adjacency });
       wireUI();
+      GeoMulti.wireSetup();
+      const mp = GeoMulti.load();
+      if (mp && mp.phase !== "over") document.getElementById("btn-mp-continue").classList.remove("hidden");
       // Offer "Continue" when a save exists.
       const save = GeoStorage.load();
       if (save && save.activeContinent) {
@@ -53,6 +58,9 @@ function wireUI() {
   $("btn-quest").addEventListener("click", () => GeoGame.newCampaign("quest"));
   $("btn-world").addEventListener("click", () => GeoGame.newCampaign("world"));
   $("btn-continue").addEventListener("click", () => GeoGame.continueCampaign());
+  $("btn-multi").addEventListener("click", () => GeoMulti.openSetup());
+  $("btn-mp-back").addEventListener("click", () => { document.body.classList.remove("mp-mode"); GeoGame.showScreen("screen-start"); });
+  $("btn-mp-continue").addEventListener("click", () => GeoMulti.resume());
   $("btn-how").addEventListener("click", () => {
     $("how-modal").classList.remove("hidden");
     $("btn-how-close").focus(); // move focus into the opened modal
@@ -147,6 +155,7 @@ function wireUI() {
 
   // ---- new campaign (top bar) ----
   $("btn-restart").addEventListener("click", () => {
+    if (GeoGame.mode === "multi") { GeoMulti.quit(); return; } // multiplayer save is kept for "Continue"
     if (confirm("Start a brand-new campaign? Your current progress will be erased.")) {
       GeoStorage.clear();
       location.reload();

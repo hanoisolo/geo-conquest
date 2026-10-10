@@ -26,6 +26,7 @@ const GeoGame = {
 
   /* ---- mutable campaign state ---- */
   state: null,
+  mode: "solo",         // "solo" | "multi" (GeoMulti owns multiplayer state)
   pickingHome: false,   // true while the player plants their first flag
   currentContest: null, // { iso3, tier, subject, nudged, question, options, answerIdx, ... }
   selectedSubject: "geo", // "geo" | "math" — chosen on the territory card
@@ -82,11 +83,12 @@ const GeoGame = {
     if (data.capitals && Array.isArray(data.capitals.countries)) {
       for (const c of data.capitals.countries) addVariant(c.iso3, c.name);
     }
-    GeoMap.onTerritoryClick = (iso3) => this.onTerritoryClick(iso3);
+    GeoMap.onTerritoryClick = (iso3) => (this.mode === "multi" ? GeoMulti.onTerritoryClick(iso3) : this.onTerritoryClick(iso3));
   },
 
   /* ================= campaign setup ================= */
   newCampaign(mode) {
+    this.mode = "solo"; document.body.classList.remove("mp-mode");
     this.state = {
       version: GeoStorage.SAVE_VERSION, mode,
       activeContinent: null, unlocked: [], conquered: [],
@@ -100,6 +102,7 @@ const GeoGame = {
   },
 
   continueCampaign() {
+    this.mode = "solo"; document.body.classList.remove("mp-mode");
     const s = GeoStorage.load();
     if (!s) return;
     this.state = s;
@@ -1036,7 +1039,7 @@ const GeoGame = {
   },
 
   /* ================= helpers ================= */
-  persist() { GeoStorage.save(this.state); },
+  persist() { if (this.mode === "multi") return; GeoStorage.save(this.state); }, // multiplayer never touches the solo save
 
   /** Move keyboard focus into a freshly opened modal (the dialog itself). */
   focusModal(id) {
@@ -1117,7 +1120,7 @@ const GeoGame = {
   },
 
   showScreen(id) {
-    for (const s of ["screen-start", "screen-pick-continent", "screen-game"]) {
+    for (const s of ["screen-start", "screen-pick-continent", "screen-mp-setup", "screen-game"]) {
       document.getElementById(s).classList.toggle("hidden", s !== id);
     }
     window.scrollTo(0, 0);

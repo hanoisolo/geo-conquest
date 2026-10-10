@@ -58,6 +58,7 @@
         <div class="hero-emoji">🗺️</div>
         <h1>Geo Conquest</h1>
         <p class="tagline">Outsmart <strong>Baron von Blunder</strong>, conquer continents,<br />and become the greatest geography explorer ever!</p>
+        <p class="mode-label">Solo — you vs Baron von Blunder</p>
         <div class="mode-cards">
           <button class="mode-card" id="btn-quest" type="button">
             <div class="mode-emoji">🏝️</div>
@@ -69,9 +70,42 @@
             <h2>World Conquest <span class="hard-badge">HARD</span></h2>
             <p>Conquer <strong>all six continents</strong>. For true legends only!</p>
           </button>
+          <button class="mode-card mode-multi" id="btn-multi" type="button">
+            <div class="mode-emoji">👥</div>
+            <h2>Multiplayer</h2>
+            <p>2-4 players take turns on one device. No Baron — just you and your friends!</p>
+          </button>
         </div>
         <button class="btn btn-big btn-continue hidden" id="btn-continue" type="button" aria-label="Continue your journey">▶ Continue your journey</button>
+        <button id="btn-mp-continue" class="btn btn-big btn-continue hidden" type="button">▶ Continue multiplayer game</button>
         <p class="save-note">Your progress saves automatically in this browser.</p>
+      </div>
+    </section>
+
+    <!-- ============ MULTIPLAYER SETUP ============ -->
+    <section id="screen-mp-setup" class="screen hidden">
+      <div class="card narrow">
+        <h2>👥 Multiplayer setup</h2>
+        <div class="mp-group" id="mp-count" role="group" aria-label="Number of players">
+          <button class="btn btn-small mp-toggle active" data-count="2" type="button" aria-pressed="true">2 players</button>
+          <button class="btn btn-small mp-toggle" data-count="3" type="button" aria-pressed="false">3 players</button>
+          <button class="btn btn-small mp-toggle" data-count="4" type="button" aria-pressed="false">4 players</button>
+        </div>
+        <div id="mp-players"></div>
+        <div class="mp-group" id="mp-win" role="group" aria-label="Win mode">
+          <button class="btn btn-small mp-toggle active" data-mode="timed" type="button" aria-pressed="true">⏱ Timed</button>
+          <button class="btn btn-small mp-toggle" data-mode="domination" type="button" aria-pressed="false">👑 Total domination</button>
+        </div>
+        <div class="mp-group" id="mp-minutes" role="group" aria-label="Game length in minutes">
+          <button class="btn btn-small mp-toggle active" data-min="10" type="button" aria-pressed="true">10 min</button>
+          <button class="btn btn-small mp-toggle" data-min="20" type="button" aria-pressed="false">20 min</button>
+          <button class="btn btn-small mp-toggle" data-min="30" type="button" aria-pressed="false">30 min</button>
+        </div>
+        <p id="mp-setup-error" class="easy-note hidden"></p>
+        <div class="mp-actions">
+          <button class="btn btn-big" id="btn-mp-start" type="button">🚩 Start game</button>
+          <button class="btn btn-small" id="btn-mp-back" type="button">← Back</button>
+        </div>
       </div>
     </section>
 
@@ -89,6 +123,7 @@
     <section id="screen-game" class="screen hidden">
       <div class="game-layout">
         <div class="map-wrap card">
+          <div class="map-banner mp-only hidden" id="mp-banner"><span id="mp-timer"></span></div>
           <div class="map-banner hidden" id="home-banner">🚩 Tap a country in <strong id="home-continent-name"></strong> to plant your flag!</div>
           <div class="map-banner find-banner hidden" id="find-banner">
             📍 Tap <strong id="find-country-name"></strong>!
@@ -111,6 +146,8 @@
         </div>
 
         <aside class="side-panel">
+          <div class="card mp-only" id="mp-scoreboard"></div>
+
           <div class="card objective-card">
             <h3>🎯 Objective</h3>
             <p id="objective-text">Choose a continent to begin!</p>
@@ -144,7 +181,7 @@
             </div>
           </div>
 
-          <div class="card">
+          <div class="card continents-card">
             <h3>🌎 Continents</h3>
             <div id="continent-list"></div>
           </div>
@@ -236,6 +273,7 @@
   <script src="js/baron.js"></script>
   <script src="js/math.js"></script>
   <script src="js/game.js"></script>
+  <script src="js/multi.js"></script>
   <script src="js/app.js"></script>
 </body>
 </html>

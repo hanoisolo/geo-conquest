@@ -763,3 +763,122 @@ footer a { color: var(--player); }
   .q-actions { flex-wrap: nowrap; }
   .q-actions .btn:not(.hidden) { flex: 1 1 0; width: auto; min-width: 0; }
 }
+
+/* ============================================================
+   Multiplayer (spec §8) — local pass-and-play, 2-4 players
+   ============================================================ */
+
+/* Multiplayer-only UI stays hidden until the body enters mp mode */
+.mp-only { display: none; }
+body.mp-mode .mp-only { display: block; }
+.mp-only.hidden { display: none !important; }
+
+/* No Baron, no solo objective/continents list, no solo points/streak pills */
+body.mp-mode .objective-card,
+body.mp-mode #baron-card,
+body.mp-mode .baron-float,
+body.mp-mode .continents-card,
+body.mp-mode #score-chip,
+body.mp-mode #streak-chip { display: none !important; }
+
+/* Player territory colours — same selector pattern and specificity as the
+   .t-player rules above, so they win; hover comes from .clickable:hover */
+#map-svg path.t-mpc-blue { fill: #2563eb; }
+#map-svg path.t-mpc-red { fill: #dc2626; }
+#map-svg path.t-mpc-green { fill: #16a34a; }
+#map-svg path.t-mpc-orange { fill: #ea580c; }
+#map-svg circle.marker.t-mpc-blue { fill: #2563eb; }
+#map-svg circle.marker.t-mpc-red { fill: #dc2626; }
+#map-svg circle.marker.t-mpc-green { fill: #16a34a; }
+#map-svg circle.marker.t-mpc-orange { fill: #ea580c; }
+
+/* Start screen: small "Solo" label + green-accented multiplayer card */
+.mode-label { font-size: 0.85rem; font-weight: 700; color: var(--muted); margin: 0.4rem 0 0; }
+.mode-multi { border-color: #86efac; background: #f0fdf4; }
+.mode-multi .mode-emoji { filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.55)); }
+
+/* ---------- Multiplayer setup screen ---------- */
+.mp-group { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.7rem 0; }
+.mp-toggle {
+  flex: 1 1 auto;
+  background: #f1f5f9;
+  color: var(--ink);
+  border: 2px solid #e2e8f0;
+  box-shadow: none;
+  font-size: 0.9rem;
+}
+.mp-toggle.active { background: var(--green); border-color: var(--green); color: #fff; }
+
+.mp-player-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-bottom: 0.6rem; }
+.mp-player-row .mp-name {
+  flex: 1;
+  min-width: 0;
+  min-height: 44px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0 0.7rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  background: #fff;
+}
+.mp-swatches { display: flex; gap: 0.4rem; flex: 0 0 auto; }
+.mp-swatch {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.15), var(--shadow-sm);
+  cursor: pointer;
+  padding: 0;
+  flex: 0 0 auto;
+  transition: transform 0.1s ease;
+}
+.mp-swatch:hover:not(:disabled) { transform: scale(1.12); }
+.mp-swatch.selected { box-shadow: 0 0 0 3px #1e293b; }
+.mp-swatch:disabled, .mp-swatch.used { opacity: 0.3; cursor: not-allowed; }
+
+.mp-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; margin-top: 0.9rem; }
+
+/* ---------- Turn banner (top of the map card, current player's colour) ---------- */
+#mp-banner {
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  padding: 0.5rem 0.9rem;
+  text-align: left;
+}
+body.mp-mode #mp-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+}
+#mp-timer {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  padding: 0.1rem 0.6rem;
+  white-space: nowrap;
+}
+
+/* ---------- Scoreboard (side panel) ---------- */
+.mp-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: 8px;
+}
+.mp-row .mp-dot { width: 14px; height: 14px; border-radius: 50%; flex: 0 0 auto; }
+.mp-row .mp-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mp-row .mp-stats { margin-left: auto; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.mp-row.current { background: #f1f5f9; font-weight: 700; }
+.mp-row.out { text-decoration: line-through; opacity: 0.5; }
+/* M1 fix round: solo-only legend and the empty timer pill stay out of multiplayer; setup counts as multiplayer */
+body.mp-mode .legend { display: none; }
+#mp-timer:empty { display: none; }

@@ -1,0 +1,121 @@
+[
+ {
+  "id": "XF6-E-001",
+  "continent": "Africa",
+  "territory": "MAR",
+  "tier": "easy",
+  "type": "text",
+  "category": "mountains",
+  "q": "Which mountain range runs like a giant backbone across Morocco?",
+  "options": [
+   "The Atlas Mountains",
+   "The Alps",
+   "The Andes",
+   "The Himalayas"
+  ],
+  "answer": 0,
+  "explain": "The Atlas Mountains stretch across Morocco and its neighbours in northwest Africa."
+ },
+ {
+  "id": "XF6-E-002",
+  "continent": "Africa",
+  "territory": "ETH",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Ethiopia is famous as the birthplace of which popular drink?",
+  "options": [
+   "Coffee",
+   "Tea",
+   "Hot chocolate",
+   "Cola"
+  ],
+  "answer": 0,
+  "explain": "Legend says coffee was discovered in Ethiopia after a goat herder saw his goats become lively from the berries."
+ },
+ {
+  "id": "XF6-E-003",
+  "continent": "Africa",
+  "territory": "GHA",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Ghana is one of the world's biggest growers of which crop, used to make chocolate?",
+  "options": [
+   "Cocoa",
+   "Coffee",
+   "Rice",
+   "Wheat"
+  ],
+  "answer": 0,
+  "explain": "Ghana is one of the world's top cocoa growers, and cocoa beans are what chocolate is made from."
+ },
+ {
+  "id": "XF6-E-004",
+  "continent": "Africa",
+  "territory": "DZA",
+  "tier": "easy",
+  "type": "text",
+  "category": "deserts",
+  "q": "Which giant hot desert covers most of Algeria?",
+  "options": [
+   "The Sahara",
+   "The Kalahari",
+   "The Gobi",
+   "The Atacama"
+  ],
+  "answer": 0,
+  "explain": "The Sahara, the world's largest hot desert, spreads across the whole southern part of Algeria."
+ },
+ {
+  "id": "XF6-E-005",
+  "continent": "Africa",
+  "territory": "TUN",
+  "tier": "easy",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Which ancient city, home of the general Hannibal, stood where Tunisia is today?",
+  "options": [
+   "Carthage",
+   "Rome",
+   "Athens",
+   "Sparta"
+  ],
+  "answer": 0,
+  "explain": "Carthage was a powerful ancient city near modern Tunis, famous for Hannibal and his war elephants."
+ },
+ {
+  "id": "XF6-E-006",
+  "continent": "Africa",
+  "territory": "SEN",
+  "tier": "easy",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Which ocean washes the western coast of Senegal?",
+  "options": [
+   "The Atlantic Ocean",
+   "The Indian Ocean",
+   "The Pacific Ocean",
+   "The Arctic Ocean"
+  ],
+  "answer": 0,
+  "explain": "Senegal sits on Africa's westernmost bulge, right beside the Atlantic Ocean."
+ },
+ {
+  "id": "XF6-E-007",
+  "continent": "Africa",
+  "territory": "MDG",
+  "tier": "easy",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Which big-eyed primates live in the wild almost only on the island of Madagascar?",
+  "options": [
+   "Lemurs",
+   "Gorillas",
+   "Kangaroos",
+   "Sloths"
+  ],
+  "answer": 0,
+  "explain": "Lemurs live in the wild only on Madagascar, apart from a couple of kinds on the nearby Comoros islands that people probably brought there long ago."
+ }
+]

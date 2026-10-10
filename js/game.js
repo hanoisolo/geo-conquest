@@ -22,6 +22,7 @@ const GeoGame = {
   nameOf: {},           // iso3 -> display name
   contOf: {},           // iso3 -> continent id
   contNameOf: {},       // continent id -> display name
+  playableIsos: new Set(), // every playable territory iso3 (map markers + labels)
 
   /* ---- mutable campaign state ---- */
   state: null,
@@ -59,6 +60,7 @@ const GeoGame = {
       for (const t of c.territories) {
         this.nameOf[t.iso3] = t.name;
         this.contOf[t.iso3] = c.id;
+        this.playableIsos.add(t.iso3);
       }
     }
     // Also index every rendered country name for tooltips.
@@ -142,6 +144,7 @@ const GeoGame = {
       this.state.unlocked.push(contId);
       this.persist();
       this.refreshAll();
+      this.focusActiveContinent();
       this.toast(`🗝️ New frontier: ${this.contNameOf[contId]}! Plant your flag! 🚩`);
     }
   },
@@ -151,9 +154,14 @@ const GeoGame = {
     GeoMap.render(
       document.getElementById("map-svg"),
       this.geojson.features,
-      (f) => this.styleFor(f)
+      (f) => this.styleFor(f),
+      {
+        playable: this.playableIsos,
+        nameFor: (f) => this.nameOf[f.properties.iso3] || f.properties.name,
+      }
     );
     GeoMap.reset();
+    this.focusActiveContinent();
     this.pickingHome = needHomeBase;
     const banner = document.getElementById("home-banner");
     if (needHomeBase) {
@@ -164,6 +172,13 @@ const GeoGame = {
       banner.classList.add("hidden");
     }
     this.refreshAll();
+  },
+
+  /** Smoothly zoom the map to the active continent's bounding box. */
+  focusActiveContinent() {
+    const cont = this.continents.find((c) => c.id === this.state.activeContinent);
+    if (!cont) return;
+    GeoMap.focusIsos(cont.territories.map((t) => t.iso3), true);
   },
 
   /* ================= map interaction ================= */
@@ -475,11 +490,13 @@ const GeoGame = {
     document.getElementById("find-country-name").textContent = this.nameOf[target] || target;
     document.getElementById("find-banner").classList.remove("hidden");
     GeoMap.setFindMode(true, (iso3) => this.onFindTap(iso3));
+    GeoMap.setLabelsHidden(true); // no name labels while searching the map
   },
 
   /** Leave find mode: restore tooltips/clickability and hide the banner. */
   leaveFindMode() {
     GeoMap.setFindMode(false, null);
+    GeoMap.setLabelsHidden(false);
     document.getElementById("find-banner").classList.add("hidden");
   },
 

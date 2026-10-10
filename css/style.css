@@ -8,7 +8,7 @@
   --muted: #64748b;
   --player: #3b82f6;   /* your territories: bright blue */
   --rival: #ef4444;    /* Baron von Blunder: red */
-  --neutral: #cbd5e1;  /* unclaimed: light slate */
+  --neutral: #e8c47c;  /* unclaimed: warm sand */
   --locked: #94a3b8;   /* locked continents: dim slate */
   --accent: #f59e0b;   /* gold for buttons/highlights */
   --accent-dark: #d97706;
@@ -166,14 +166,17 @@ main { flex: 1; padding: 1.2rem; max-width: 1280px; margin: 0 auto; width: 100%;
   align-items: start;
 }
 .map-wrap { padding: 0.8rem; position: relative; }
-.map-scroll { overflow: hidden; border-radius: 12px; }
+.map-scroll { overflow: hidden; border-radius: 12px; aspect-ratio: 2 / 1; }
 #map-svg {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
-  background: #bfe3ff; /* ocean */
+  background: #cfe9fb; /* ocean fallback behind the SVG gradient */
   border-radius: 12px;
-  touch-action: manipulation;
+  touch-action: none; /* pan/pinch are handled with Pointer Events */
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 .map-banner {
   background: #fef3c7;
@@ -203,16 +206,48 @@ main { flex: 1; padding: 1.2rem; max-width: 1280px; margin: 0 auto; width: 100%;
 .sw-locked { background: var(--locked); }
 
 /* Map territories */
-#map-svg path { stroke: #ffffff; stroke-width: 0.6; transition: fill 0.25s ease, opacity 0.25s ease; }
+#map-svg path {
+  stroke: rgba(255, 255, 255, 0.9);
+  stroke-width: 0.4;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  transition: fill 0.6s ease, opacity 0.25s ease;
+}
 #map-svg path.t-backdrop { fill: #e8eef5; }
 #map-svg path.t-player { fill: var(--player); }
 #map-svg path.t-rival { fill: var(--rival); }
 #map-svg path.t-neutral { fill: var(--neutral); }
-#map-svg path.t-locked { fill: var(--locked); opacity: 0.55; }
+#map-svg path.t-locked { fill: var(--locked); filter: saturate(0.35) brightness(1.06); opacity: 0.7; }
 #map-svg path.clickable { cursor: pointer; }
-#map-svg path.clickable:hover { filter: brightness(1.15); stroke-width: 1.4; }
-#map-svg path.t-flash { animation: flash 0.9s ease 2; }
+#map-svg path.clickable:hover { filter: brightness(1.15); stroke-width: 1.2; }
+#map-svg .t-flash { animation: flash 0.9s ease 2; }
 @keyframes flash { 0%,100% { filter: none; } 50% { filter: brightness(1.6); } }
+
+/* Ocean graticule (one line every 30°, very faint) */
+#map-svg .graticule line { stroke: #ffffff; stroke-opacity: 0.35; stroke-width: 0.5; }
+
+/* Tiny-country markers (kept on top of the country paths) */
+#map-svg circle.marker {
+  stroke: rgba(255, 255, 255, 0.95);
+  transition: fill 0.6s ease;
+}
+#map-svg circle.marker.t-player { fill: var(--player); }
+#map-svg circle.marker.t-rival { fill: var(--rival); }
+#map-svg circle.marker.t-neutral { fill: var(--neutral); }
+#map-svg circle.marker.t-locked { fill: var(--locked); filter: saturate(0.35) brightness(1.06); opacity: 0.7; }
+#map-svg circle.marker.clickable { cursor: pointer; }
+#map-svg circle.marker.clickable:hover { filter: brightness(1.2); }
+
+/* Country name labels (shown when zoomed in) */
+#map-svg text.map-label {
+  font-family: "Trebuchet MS", "Segoe UI", Verdana, sans-serif;
+  font-weight: 700;
+  fill: #1e293b;
+  stroke: #ffffff;
+  stroke-linejoin: round;
+  paint-order: stroke; /* white halo behind the text */
+  pointer-events: none;
+}
 
 /* ---------- Side panel ---------- */
 .side-panel { display: flex; flex-direction: column; gap: 1rem; }
@@ -335,6 +370,10 @@ footer { text-align: center; padding: 1rem; color: var(--muted); font-size: 0.85
 footer a { color: var(--player); }
 
 /* ---------- Responsive ---------- */
+@media (max-width: 700px) {
+  /* Phones get a taller map area; the viewBox aspect follows it. */
+  .map-scroll { aspect-ratio: auto; height: 55vh; min-height: 300px; }
+}
 @media (max-width: 920px) {
   .game-layout { grid-template-columns: 1fr; }
   .hero h1 { font-size: 2.2rem; }

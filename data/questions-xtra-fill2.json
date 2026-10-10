@@ -1,0 +1,274 @@
+[
+ {
+  "id": "XF4-H-001",
+  "continent": "North America",
+  "territory": "HND",
+  "tier": "hard",
+  "type": "text",
+  "category": "islands",
+  "q": "Roatán, the largest of Honduras's Bay Islands, sits on which huge coral reef, the second-largest barrier reef in the world?",
+  "options": [
+   "The Mesoamerican Barrier Reef",
+   "The Great Barrier Reef",
+   "The Florida Reef",
+   "The Red Sea Reef"
+  ],
+  "answer": 0,
+  "explain": "The Mesoamerican Barrier Reef runs along the Caribbean coasts of Mexico, Belize, Guatemala and Honduras."
+ },
+ {
+  "id": "XF4-H-002",
+  "continent": "North America",
+  "territory": "HND",
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "What is the largest natural lake in Honduras, a freshwater lake set in the western highlands?",
+  "options": [
+   "Lake Yojoa",
+   "Lake Nicaragua",
+   "Lake Managua",
+   "Lake Atitlán"
+  ],
+  "answer": 0,
+  "explain": "Lake Yojoa is the largest natural lake in Honduras and a favourite spot for boating and birdwatching."
+ },
+ {
+  "id": "XF4-H-003",
+  "continent": "North America",
+  "territory": "SLV",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "Which volcano in El Salvador, born in 1770, erupted so often that sailors called it the 'Lighthouse of the Pacific'?",
+  "options": [
+   "Izalco",
+   "Santa Ana",
+   "San Miguel",
+   "Conchagua"
+  ],
+  "answer": 0,
+  "explain": "Izalco glowed with near-constant eruptions for almost 200 years, guiding ships at night. It has been quiet since 1966."
+ },
+ {
+  "id": "XF4-E-001",
+  "continent": "South America",
+  "territory": "CHL",
+  "tier": "easy",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Chile is a very long, thin country that runs down the coast of which ocean?",
+  "options": [
+   "The Pacific Ocean",
+   "The Atlantic Ocean",
+   "The Indian Ocean",
+   "The Arctic Ocean"
+  ],
+  "answer": 0,
+  "explain": "Chile stretches about 4,300 km along South America's Pacific coast, but is rarely more than 200 km wide."
+ },
+ {
+  "id": "XF4-H-004",
+  "continent": "South America",
+  "territory": "CHL",
+  "tier": "hard",
+  "type": "text",
+  "category": "culture",
+  "q": "The giant stone moai statues of Easter Island were carved by the island's Polynesian people, who are known as what?",
+  "options": [
+   "The Rapa Nui",
+   "The Maori",
+   "The Samoans",
+   "The Tongans"
+  ],
+  "answer": 0,
+  "explain": "The Rapa Nui people of Easter Island, which is part of Chile, carved the famous moai statues over many centuries."
+ },
+ {
+  "id": "XF4-H-005",
+  "continent": "South America",
+  "territory": "PER",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest mountain in Peru, a snow-capped peak in the Andes?",
+  "options": [
+   "Huascarán",
+   "Aconcagua",
+   "Sajama",
+   "Chimborazo"
+  ],
+  "answer": 0,
+  "explain": "Huascarán, in Peru's Cordillera Blanca, is the country's highest peak and a famous challenge for climbers."
+ },
+ {
+  "id": "XF4-H-006",
+  "continent": "South America",
+  "territory": "PER",
+  "tier": "hard",
+  "type": "text",
+  "category": "landmarks",
+  "q": "The ruined city of Machu Picchu, set high in the Andes of Peru, was built by which civilisation in the 1400s?",
+  "options": [
+   "The Inca",
+   "The Maya",
+   "The Aztec",
+   "The Olmec"
+  ],
+  "answer": 0,
+  "explain": "Machu Picchu was built by the Inca civilisation around 1450 and is one of the most famous archaeological sites in the world."
+ },
+ {
+  "id": "XF4-H-007",
+  "continent": "South America",
+  "territory": "VEN",
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "Which major river forms part of the border between Venezuela and Colombia, then flows east across Venezuela to the Atlantic Ocean?",
+  "options": [
+   "The Orinoco",
+   "The Amazon",
+   "The Magdalena",
+   "The Paraná"
+  ],
+  "answer": 0,
+  "explain": "The Orinoco is Venezuela's great river. It ends in a huge delta on the Atlantic coast."
+ },
+ {
+  "id": "XF4-H-008",
+  "continent": "South America",
+  "territory": "VEN",
+  "tier": "hard",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "The Catatumbo lightning, one of the world's most constant thunderstorms, flashes almost every night over which Venezuelan lake?",
+  "options": [
+   "Lake Maracaibo",
+   "Lake Titicaca",
+   "Lake Nicaragua",
+   "Lake Valencia"
+  ],
+  "answer": 0,
+  "explain": "The Catatumbo lightning storms over Lake Maracaibo in Venezuela are among the most constant thunderstorms on Earth."
+ },
+ {
+  "id": "XF4-E-002",
+  "continent": "South America",
+  "territory": "ECU",
+  "tier": "easy",
+  "type": "text",
+  "category": "islands",
+  "q": "Which famous islands, home to giant tortoises and marine iguanas found nowhere else, belong to Ecuador?",
+  "options": [
+   "The Galápagos Islands",
+   "The Falkland Islands",
+   "The Canary Islands",
+   "The Maldives"
+  ],
+  "answer": 0,
+  "explain": "The Galápagos Islands, a province of Ecuador, are famous for their unique wildlife, including giant tortoises and marine iguanas."
+ },
+ {
+  "id": "XF4-M-001",
+  "continent": "South America",
+  "territory": "ECU",
+  "tier": "medium",
+  "type": "text",
+  "category": "general",
+  "q": "Ecuador is named after which imaginary line that runs around the middle of the Earth?",
+  "options": [
+   "The Equator",
+   "The Tropic of Cancer",
+   "The Prime Meridian",
+   "The Tropic of Capricorn"
+  ],
+  "answer": 0,
+  "explain": "Ecuador takes its name from the Equator, the imaginary line of latitude that circles the globe and passes right through the country."
+ },
+ {
+  "id": "XF4-H-009",
+  "continent": "South America",
+  "territory": "ECU",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "Ecuador's capital, Quito, is built on the slopes of which active volcano?",
+  "options": [
+   "Pichincha",
+   "Popocatépetl",
+   "Mount Etna",
+   "Mount Fuji"
+  ],
+  "answer": 0,
+  "explain": "Quito lies on the eastern slopes of Pichincha, high in the Andes. Popocatépetl is in Mexico, Etna in Italy and Fuji in Japan."
+ },
+ {
+  "id": "XF4-E-003",
+  "continent": "South America",
+  "territory": "BOL",
+  "tier": "easy",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Bolivia shares the huge, high Lake Titicaca with which neighbouring country?",
+  "options": [
+   "Peru",
+   "Chile",
+   "Brazil",
+   "Argentina"
+  ],
+  "answer": 0,
+  "explain": "Lake Titicaca sits high in the Andes on the border between Bolivia and Peru."
+ },
+ {
+  "id": "XF4-H-010",
+  "continent": "South America",
+  "territory": "BOL",
+  "tier": "hard",
+  "type": "text",
+  "category": "cities",
+  "q": "Bolivia has two capital cities — La Paz is where the government sits, but which city is the official constitutional capital?",
+  "options": [
+   "Sucre",
+   "Santa Cruz",
+   "Cochabamba",
+   "Potosí"
+  ],
+  "answer": 0,
+  "explain": "Sucre is Bolivia's constitutional capital, while La Paz is the seat of government and the country's largest city."
+ },
+ {
+  "id": "XF4-H-011",
+  "continent": "South America",
+  "territory": "BOL",
+  "tier": "hard",
+  "type": "text",
+  "category": "landmarks",
+  "q": "The ancient ruins of Tiwanaku, with their famous Gateway of the Sun, lie near which huge lake high in the Andes?",
+  "options": [
+   "Lake Titicaca",
+   "Lake Maracaibo",
+   "Lake Victoria",
+   "Lake Baikal"
+  ],
+  "answer": 0,
+  "explain": "Tiwanaku was the centre of a great civilisation near the southern shore of Lake Titicaca, long before the Inca."
+ },
+ {
+  "id": "XF4-E-004",
+  "continent": "South America",
+  "territory": "PRY",
+  "tier": "easy",
+  "type": "text",
+  "category": "neighbours",
+  "q": "Paraguay is one of only two landlocked countries in South America — which is the other?",
+  "options": [
+   "Bolivia",
+   "Chile",
+   "Peru",
+   "Uruguay"
+  ],
+  "answer": 0,
+  "explain": "Bolivia and Paraguay are the only two landlocked countries in South America."
+ }
+]

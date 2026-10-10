@@ -206,7 +206,79 @@ async function runWin(vp, tag) {
   if (errs.length) console.log(errs);
   await page.close();
 }
+// Easy rules: Easy only on unclaimed, fortify by the level a country was won at, migration.
+async function runRules(vp, tag) {
+  const page = await browser.newPage({ viewport: vp });
+  const errs = [];
+  page.on("pageerror", (e) => errs.push(e.message));
+  const wait = (ms = 400) => page.waitForTimeout(ms);
+  const shot = (n) => page.screenshot({ path: join(shots, `rules-${tag}-${n}.png`) });
+  const vis = (sel) => page.locator(sel).isVisible();
+  const ready = async () => { if (await vis("#mp-handoff")) { await page.click("#btn-mp-ready"); await wait(300); } };
+  async function answer(correct) {
+    const info = await page.evaluate(() => { const c = GeoGame.currentContest; return { type: c.question.type || "text", idx: c.answerIdx, target: c.question.target, n: c.options.length }; });
+    if (info.type === "map") {
+      await page.click("#q-options button"); await wait(300);
+      await page.evaluate(([t, ok]) => GeoGame.onFindTap(ok ? t : (t === "AUS" ? "NZL" : "AUS")), [info.target, correct]); await wait(correct ? 100 : 1600);
+    } else await page.locator("#q-options button").nth(correct ? info.idx : (info.idx + 1) % info.n).click();
+    await wait(250); await page.click("#btn-q-continue"); await wait(500);
+  }
+  const open = async (iso) => { await ready(); await page.evaluate((i) => GeoMap.onTerritoryClick(i), iso); await wait(250); };
+  const allowed = () => page.evaluate(() => [...document.querySelectorAll(".diff-btn")].filter((b) => !b.disabled).map((b) => b.dataset.tier).join(","));
+  async function attack(iso, tier, correct) {
+    await open(iso);
+    await page.click('[data-subject="geo"]'); await page.click(`.diff-btn[data-tier="${tier}"]`); await wait(450);
+    await answer(correct);
+  }
+  const lvl = (iso) => page.evaluate((i) => GeoMulti.state.levels[i], iso);
+  await page.goto(`http://localhost:${PORT}/`); await wait(1200);
+  await page.evaluate(() => localStorage.clear()); await page.reload(); await wait(1200);
+  await page.click("#btn-multi"); await wait(300);
+  await page.locator("#mp-players input").nth(0).fill("Mia");
+  await page.locator("#mp-players input").nth(1).fill("Leo");
+  await page.click("#btn-mp-start"); await wait(800);
+  for (const iso of ["CAN", "BRA"]) { await page.evaluate((i) => GeoMap.onTerritoryClick(i), iso); await wait(300); }
+  await open("USA");
+  ok(`${tag}: unclaimed country allows all three levels`, (await allowed()) === "easy,medium,hard" && !(await vis("#terr-fort")));
+  await page.click('[data-subject="geo"]'); await page.click('.diff-btn[data-tier="easy"]'); await wait(450);
+  await answer(true);
+  ok(`${tag}: capture remembers the level (easy)`, (await lvl("USA")) === "easy");
+  await open("USA"); // Leo's turn: USA is Mia's, won on Easy
+  ok(`${tag}: Easy is locked on another player's country`, (await allowed()) === "medium,hard" && /Easy only works on unclaimed/.test(await page.locator("#terr-easy-note").textContent()));
+  ok(`${tag}: fortify pips show on the card`, await vis("#terr-fort") && /●○○/.test(await page.locator("#terr-fort").textContent()));
+  await shot("01-easy-locked");
+  await open("CAN");
+  ok(`${tag}: enemy home needs Medium or Hard`, (await allowed()) === "medium,hard" && /home/.test(await page.locator("#terr-easy-note").textContent()));
+  await page.click('[data-subject="geo"]'); await page.click('.diff-btn[data-tier="hard"]'); await wait(450);
+  await answer(true);
+  ok(`${tag}: home captured on Hard is fortified at Hard`, (await lvl("CAN")) === "hard");
+  await open("CAN"); // Mia's turn: CAN now Leo's, won on Hard
+  ok(`${tag}: Hard-won country allows only Hard`, (await allowed()) === "hard" && /Fortified/.test(await page.locator("#terr-easy-note").textContent()) && /●●●/.test(await page.locator("#terr-fort").textContent()));
+  ok(`${tag}: map tooltip shows the fortify level`, await page.evaluate(() => /🛡️ Hard/.test(GeoMulti.styleFor({ properties: { iso3: "CAN" } }).title || "")));
+  await shot("02-fortified-hard");
+  // Mia attacks Leo's Brazil (home, easy level) on Medium and misses -> Leo strikes back at Medium and wins.
+  await page.evaluate(() => { GeoMulti.state.ownership.ARG = 0; GeoMulti.state.levels.ARG = "easy"; GeoMulti.save(); });
+  await open("BRA");
+  await page.click('[data-subject="geo"]'); await page.click('.diff-btn[data-tier="medium"]'); await wait(450);
+  await answer(false);
+  await ready(); await answer(true);
+  const prize = await page.evaluate(() => Object.keys(GeoMulti.state.ownership).find((k) => k === "ARG" || k === "USA") && ["ARG", "USA"].find((k) => GeoMulti.state.ownership[k] === 1));
+  ok(`${tag}: strike-back capture keeps the defender's level (medium)`, !!prize && (await lvl(prize)) === "medium");
+  // Migration: an old save with no levels -> owned countries count as Easy (Medium minimum).
+  await page.evaluate(() => { const s = JSON.parse(localStorage.getItem("geoConquestMultiV1")); delete s.levels; localStorage.setItem("geoConquestMultiV1", JSON.stringify(s)); });
+  await page.reload(); await wait(1200);
+  await page.click("#btn-mp-continue"); await wait(900);
+  ok(`${tag}: old save without levels loads`, await page.evaluate(() => !!GeoMulti.state.levels && typeof GeoMulti.state.levels === "object"));
+  const enemyOf = await page.evaluate(() => { const s = GeoMulti.state; return Object.keys(s.ownership).find((k) => s.ownership[k] !== s.turn && s.players[s.ownership[k]].home !== k); });
+  await open(enemyOf);
+  ok(`${tag}: migrated countries count as Easy-won (Medium or Hard)`, (await allowed()) === "medium,hard");
+  ok(`${tag}: no page errors (rules run)`, errs.length === 0);
+  if (errs.length) console.log(errs);
+  await page.close();
+}
 await run({ width: 1280, height: 800 }, "desktop");
+await runRules({ width: 1280, height: 800 }, "desktop");
+await runRules({ width: 390, height: 844 }, "phone");
 await runWin({ width: 1280, height: 800 }, "desktop");
 await runWin({ width: 390, height: 844 }, "phone");
 await runStrike({ width: 1280, height: 800 }, "desktop");

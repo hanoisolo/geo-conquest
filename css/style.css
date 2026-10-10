@@ -323,7 +323,15 @@ main .card:hover:not(.map-wrap) { transform: translateY(-3px); box-shadow: var(-
 .diff-easy:active { box-shadow: 0 1px 0 #15803d; }
 .diff-medium:active { box-shadow: 0 1px 0 #b45309; }
 .diff-hard:active { box-shadow: 0 1px 0 #6d28d9; }
+.diff-btn:disabled { opacity: 0.45; filter: grayscale(0.85); cursor: not-allowed; box-shadow: none; transform: none; }
 .easy-note { color: var(--rival); font-weight: 700; }
+/* Fortify line on the territory card (multiplayer): small, muted, letter-spaced pips. */
+.terr-fort {
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+  margin: 0.15rem 0 0;
+}
 
 /* ---------- Subject toggle (territory card) ---------- */
 .subject-row { display: flex; gap: 0.5rem; margin-top: 0.7rem; }

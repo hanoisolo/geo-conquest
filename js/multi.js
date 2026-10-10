@@ -18,6 +18,7 @@
                    points: 0, geoSinceMath: 0, hintsUsed: 0,
                    alive: true }],
        ownership: { iso3: playerIndex },
+       levels: { iso3: "easy" | "medium" | "hard" }, // tier each country was won at
        turn: 0,
        phase: "homes" | "turn" | "over",
        win: { mode: "timed" | "domination", minutes },
@@ -25,6 +26,13 @@
        timeLeftMs, timeUp, asked: [], pending: null }
    ============================================================ */
 "use strict";
+
+/* Difficulty order (fortify rules): easy < medium < hard. */
+const TIER_RANK = { easy: 0, medium: 1, hard: 2 };
+
+/* Fortify display per level: pips on the territory card, label in tooltips. */
+const LEVEL_PIPS = { easy: "●○○", medium: "●●○", hard: "●●●" };
+const LEVEL_LABEL = { easy: "Easy", medium: "Medium", hard: "Hard" };
 
 const GeoMulti = {
   /* Player colours (one per player, each used at most once). */
@@ -105,6 +113,7 @@ const GeoMulti = {
       if (!s || typeof s !== "object" || Array.isArray(s)) return null;
       if (s.v !== 1 || !Array.isArray(s.players) || !s.players.length) return null;
       if (!s.ownership || typeof s.ownership !== "object") s.ownership = {};
+      if (!s.levels || typeof s.levels !== "object") s.levels = {}; // pre-fortify saves: every country counts as easy-won
       if (!Array.isArray(s.asked)) s.asked = [];
       if (!s.mapScope) s.mapScope = "world"; // M1 saves predate the scope choice
       return s;
@@ -290,6 +299,7 @@ const GeoMulti = {
         alive: true,
       })),
       ownership: {},
+      levels: {},
       turn: 0,
       phase: "homes",
       win: {
@@ -385,6 +395,7 @@ const GeoMulti = {
       }
       const p = s.players[s.turn];
       s.ownership[iso3] = s.turn;
+      s.levels[iso3] = "easy"; // home flags are planted, not won — they count as easy
       p.home = iso3;
       GeoGame.toast(`🏠 ${p.name} planted their home flag in ${GeoGame.nameOf[iso3]}!`);
       GeoMap.flash(iso3);
@@ -454,6 +465,24 @@ const GeoMulti = {
     return out;
   },
 
+  /** The tier iso3 was won at — "easy" for homes and pre-fortify saves. */
+  levelOf(iso3) {
+    return (this.state && this.state.levels && this.state.levels[iso3]) || "easy";
+  },
+
+  /**
+   * The minimum tier needed to attack iso3: null when unclaimed,
+   * otherwise the higher of "medium" and the level it was won at
+   * (enemy homes keep their Medium minimum; hard-won countries only
+   * fall to Hard).
+   */
+  minTier(iso3) {
+    const s = this.state;
+    if (!s || s.ownership[iso3] === undefined || s.ownership[iso3] === null) return null;
+    const level = this.levelOf(iso3);
+    return TIER_RANK[level] > TIER_RANK.medium ? level : "medium";
+  },
+
   /**
    * One attack per turn: open the territory card for iso3. The subject
    * and difficulty buttons start the contest (GeoGame.startContest);
@@ -470,19 +499,31 @@ const GeoMulti = {
     this.playerView(s.turn);
     GeoGame.showTerritoryCard(iso3, "neutral");
     const ownerEl = document.getElementById("terr-owner");
-    const easyBtn = document.querySelector('.diff-btn[data-tier="easy"]');
     const easyNote = document.getElementById("terr-easy-note");
-    if (owner === undefined || owner === null) {
+    const fortEl = document.getElementById("terr-fort");
+    const min = this.minTier(iso3);
+    if (min === null) {
       ownerEl.textContent = "⚪ Unclaimed — a right answer takes it!";
     } else {
       const defender = s.players[owner];
       ownerEl.textContent = `⚔️ Held by ${defender.name} — miss and ${defender.name} gets a strike-back!`;
+      // Fortify: buttons below the required minimum tier are locked.
+      document.querySelectorAll(".diff-btn").forEach((btn) => {
+        btn.disabled = TIER_RANK[btn.dataset.tier] < TIER_RANK[min];
+      });
+      const isHome = defender.home === iso3;
+      if (min === "hard") {
+        easyNote.textContent = `🛡️ Fortified! ${defender.name} won it on Hard — only Hard can take it.`;
+      } else if (isHome) {
+        easyNote.textContent = `🏠 ${defender.name}'s home needs Medium or Hard!`;
+      } else {
+        easyNote.textContent = "⚔️ Easy only works on unclaimed countries — use Medium or Hard.";
+      }
+      easyNote.classList.remove("hidden");
+      const level = this.levelOf(iso3);
+      fortEl.textContent = `🛡️ Fortify: ${LEVEL_PIPS[level]} (won on ${LEVEL_LABEL[level]})`;
+      fortEl.classList.remove("hidden");
     }
-    // Enemy home countries need Medium or Hard (same rule as the Baron's fortresses).
-    const isHome = owner !== undefined && owner !== null && s.players[owner].home === iso3;
-    easyBtn.disabled = isHome;
-    easyNote.classList.toggle("hidden", !isHome);
-    if (isHome) easyNote.textContent = `🏠 ${s.players[owner].name}'s home needs Medium or Hard!`;
     this._attack = { iso3, attacker: s.turn, defender: owner === undefined ? null : owner };
   },
 
@@ -503,6 +544,7 @@ const GeoMulti = {
     const country = GeoGame.nameOf[atk.iso3];
     if (c.wasCorrect) {
       s.ownership[atk.iso3] = atk.attacker;
+      s.levels[atk.iso3] = c.tier; // the country is now fortified at the tier it was won at
       const pts = GeoGame.contestPoints(c) + (c.nudged ? 5 : 0);
       attacker.points += pts;
       GeoSound.conquer();
@@ -590,6 +632,7 @@ const GeoMulti = {
     const prize = c.wasCorrect ? this.strikePrize(p) : null;
     if (prize) {
       s.ownership[prize] = p.defender;
+      s.levels[prize] = c.tier; // fortified at the tier the defender answered at
       defender.points += 10;
       if (attacker.home === prize) attacker.home = null;
       GeoSound.steal();
@@ -815,7 +858,7 @@ const GeoMulti = {
       return {
         cls: "t-mp t-mpc-" + this.COLORS[p.color].id,
         clickable: true,
-        title: name + " — " + p.name + (isHome ? " 🏠" : ""),
+        title: name + " — " + p.name + (isHome ? " 🏠" : "") + " · 🛡️ " + LEVEL_LABEL[this.levelOf(iso3)],
       };
     }
     return { cls: "t-neutral", clickable: true, title: name };

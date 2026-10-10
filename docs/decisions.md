@@ -17,3 +17,5 @@
 - Vibe retries after a mistral-large-4 stall/loop/error run on GLM 5.3 (`/workspace/tools/vt-glm.sh`, `--model glm-5-3`), per Don (Large 4 is in preview). The stall rule applies to the GLM retry too.
 - Domination ends early when only one player is left, even on a one-continent map with unclaimed countries remaining (nobody can contest them; continuing alone would be busywork). Otherwise one-continent domination = owning every country of that continent.
 - Players tied on countries and points share a rank (and medal) in the standings.
+- Easy rules / fortify (multiplayer, Oct 2026): Easy only on unclaimed; owned countries remember the tier they were won at (`levels`), attacks need max(Medium, level); strike-back prizes take the defender's tier; saves without `levels` load as easy. Built by Vibe on GLM 5.3 (one run, no stall).
+- Solo keeps its rules: the Baron never attacks the player's countries. He only takes the country the player just missed (unclaimed or already his) and grabs unclaimed ones every 3rd contest, so a fortify level on player countries would have no effect. Baron countries already need Medium or Hard.

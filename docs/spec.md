@@ -77,3 +77,9 @@ One device, 2-4 players taking turns. No Baron. Solo stays exactly as it is.
 
 ### 8.4 Tests (segment M4)
 - e2e (`tests/e2e-multi.mjs`, desktop + phone): 2-player timed game (home flags, unclaimed capture, miss on unclaimed changes nothing, timer end → standings); 4-player domination game (strike-back success takes an adjacent attacker country, failed strike-back, Easy disabled on an enemy home, an elimination is skipped in turn order, last player standing wins); solo save survives a multiplayer game; reload mid-turn resumes.
+
+### 8.5 Fortify — Easy only on unclaimed (Oct 2026)
+- Easy can only take **unclaimed** countries. A country owned by another player needs Medium or Hard.
+- Every owned country remembers the tier it was won at (`levels`; a missing entry counts as easy — old saves and home flags). Attacking an owned country needs that tier or higher, with a minimum of Medium: easy/medium-won → Medium or Hard; hard-won → only Hard. Enemy homes keep their Medium minimum (the requirement is the higher of Medium and the level).
+- A successful strike-back fortifies the taken country at the tier the defender answered at.
+- The territory card shows the fortify level (🛡️ pips + "won on Easy/Medium/Hard"); map tooltips append it (e.g. "Brazil — Mia 🏠 · 🛡️ Hard").

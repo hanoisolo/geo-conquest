@@ -243,6 +243,11 @@ const GeoGame = {
       : "⚪ Unclaimed — ripe for conquest!";
     // Easy is too gentle for the Baron's fortresses — those need Medium or Hard.
     document.querySelector('.diff-btn[data-tier="easy"]').disabled = owner === "rival";
+    // Multiplayer may have locked Medium (fortified countries); solo never does.
+    document.querySelector('.diff-btn[data-tier="medium"]').disabled = false;
+    document.querySelector('.diff-btn[data-tier="hard"]').disabled = false;
+    const fort = document.getElementById("terr-fort");
+    if (fort) fort.classList.add("hidden");
     document.getElementById("terr-easy-note").classList.toggle("hidden", owner !== "rival");
     // Nudge a math question roughly every 3rd question.
     const nudge = document.getElementById("terr-math-nudge");

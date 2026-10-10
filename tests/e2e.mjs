@@ -119,6 +119,7 @@ async function run(vp, tag) {
       await page.click('.diff-btn[data-tier="hard"]'); await wait(450);
       ok(`${tag}: math question shown`, await page.evaluate(() => GeoGame.currentContest && GeoGame.currentContest.question.type === "math"));
       await shot("10-math-question");
+      ok(`${tag}: no toast over the question card`, !(await vis("#toast")));
       if (stage >= "b") {
         const hint = page.locator("#btn-hint");
         ok(`${tag}: hint button`, await hint.isVisible());

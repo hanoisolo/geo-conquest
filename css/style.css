@@ -710,3 +710,8 @@ footer a { color: var(--player); }
     scroll-behavior: auto !important;
   }
 }
+
+/* ---------- Seg 7: never let a toast cover an open question/victory card ---------- */
+.modal-backdrop:not(.hidden) ~ .toast { display: none; }
+/* Seg 7: the phone Baron bubble used to shrink to one word per line inside the 56px avatar box */
+.baron-float-bubble { width: max-content; }

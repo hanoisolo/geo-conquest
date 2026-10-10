@@ -1,0 +1,10 @@
+{
+ "questionFiles": [
+  "data/questions-na.json",
+  "data/questions-sa.json",
+  "data/questions-eu.json",
+  "data/questions-af.json",
+  "data/questions-as.json",
+  "data/questions-oc.json"
+ ]
+}

@@ -58,6 +58,10 @@
       <div class="game-layout">
         <div class="map-wrap card">
           <div class="map-banner hidden" id="home-banner">🚩 Tap a country in <strong id="home-continent-name"></strong> to plant your flag!</div>
+          <div class="map-banner find-banner hidden" id="find-banner">
+            📍 Tap <strong id="find-country-name"></strong>!
+            <button class="btn btn-small btn-danger" id="btn-find-giveup" type="button">Give up</button>
+          </div>
           <div class="map-scroll">
             <svg id="map-svg" viewBox="0 0 1000 500" role="img" aria-label="Interactive world map"></svg>
           </div>
@@ -83,6 +87,7 @@
           <div class="card territory-card hidden" id="territory-card">
             <h3 id="terr-name">Country</h3>
             <p class="muted" id="terr-owner"></p>
+            <p class="muted small easy-note hidden" id="terr-easy-note">😈 The Baron's fortress needs Medium or Hard!</p>
             <p class="muted small" id="terr-hint">Pick a difficulty, then answer to conquer it!</p>
             <div class="diff-row">
               <button class="btn diff-btn diff-easy" data-tier="easy" type="button">😊 Easy<br /><small>+10 pts</small></button>
@@ -105,6 +110,7 @@
     <div class="modal card">
       <div class="q-meta"><span id="q-territory">Country</span><span class="tier-badge" id="q-tier-badge">Easy</span></div>
       <h2 id="q-text">Question?</h2>
+      <img id="q-flag-img" class="q-flag-img hidden" alt="" />
       <div class="q-options" id="q-options"></div>
       <div class="q-feedback hidden" id="q-feedback"></div>
       <button class="btn btn-big hidden" id="btn-q-continue" type="button">Continue →</button>
@@ -139,7 +145,8 @@
       <h2>❓ How to play</h2>
       <ol class="how-list">
         <li>🖱️ <strong>Tap a country</strong> in your current continent to challenge it.</li>
-        <li>🎚️ <strong>Pick a difficulty</strong> — harder questions earn more points!</li>
+        <li>🎚️ <strong>Pick a difficulty</strong> — harder questions earn more points! (😊 Easy can't storm the Baron's fortresses — his countries need 🤔 Medium or 🧠 Hard.)</li>
+        <li>🚩 Questions come as text, <strong>flags to recognize</strong>, or <strong>find-it-on-the-map</strong> challenges!</li>
         <li>✅ <strong>Answer correctly</strong> to conquer the country. Get it wrong and <strong>Baron von Blunder</strong> steals it! 😈</li>
         <li>🌍 <strong>Conquer every country</strong> in a continent to unlock the next one.</li>
         <li>🏆 <strong>Continent Quest:</strong> conquer one continent to win.<br />🌐 <strong>World Conquest:</strong> conquer all six!</li>

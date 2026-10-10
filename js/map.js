@@ -14,6 +14,9 @@ const GeoMap = {
   view: { x: 0, y: 0, w: 1000, h: 500 },
   ZOOM_MIN: 180,          // smallest viewBox width (max zoom)
   ZOOM_MAX_W: 1000,
+  findMode: false,        // "find it on the map" questions: every path clickable
+  onFindPick: null,       // callback(iso3) while findMode is on
+  _styleFor: null,        // last styleFor, used to restore styles after find mode
 
   /* lon/lat -> SVG coordinates */
   project(lon, lat) {
@@ -71,13 +74,20 @@ const GeoMap = {
     // Single delegated click listener for the whole map.
     svgEl.addEventListener("click", (ev) => {
       const t = ev.target.closest("path");
-      if (!t || t.dataset.clickable !== "1" || !t.dataset.iso) return;
+      if (!t || !t.dataset.iso) return;
+      if (this.findMode) {
+        // Find mode: every country counts as an answer, playable or not.
+        if (typeof this.onFindPick === "function") this.onFindPick(t.dataset.iso);
+        return;
+      }
+      if (t.dataset.clickable !== "1") return;
       if (typeof this.onTerritoryClick === "function") this.onTerritoryClick(t.dataset.iso);
     });
   },
 
   /** Re-color / re-label every path without rebuilding geometry. */
   refresh(styleFor) {
+    this._styleFor = styleFor;
     for (const { el, titleEl, feature } of this.paths) {
       const s = styleFor(feature);
       el.setAttribute("class", s.cls + (s.clickable ? " clickable" : ""));
@@ -94,6 +104,26 @@ const GeoMap = {
         void el.getBoundingClientRect(); // restart the animation
         el.classList.add("t-flash");
       }
+    }
+  },
+
+  /**
+   * Find mode for "find it on the map" questions: every country path
+   * (locked and backdrop ones included) becomes clickable and all
+   * tooltips are blanked so hovering can't reveal country names.
+   * Turning it off restores the normal styles.
+   */
+  setFindMode(on, onPick) {
+    this.findMode = !!on;
+    this.onFindPick = onPick || null;
+    if (on) {
+      for (const { el, titleEl } of this.paths) {
+        el.dataset.clickable = "1";
+        el.classList.add("clickable");
+        titleEl.textContent = "";
+      }
+    } else if (this._styleFor) {
+      this.refresh(this._styleFor);
     }
   },
 

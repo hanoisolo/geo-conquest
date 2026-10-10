@@ -10,7 +10,7 @@ Geo Conquest is a single-player strategy-quiz game for young explorers (built wi
 
 1. **Pick a mode** — 🏝️ *Continent Quest* (conquer one continent to win) or 🌐 *World Conquest* (hard mode: conquer all six!).
 2. **Choose your starting continent**, then tap a country to plant your flag 🚩.
-3. **Tap any country** in your current continent to challenge it, pick a difficulty (😊 Easy +10 · 🤔 Medium +20 · 🧠 Hard +30), and answer the question.
+3. **Tap any country** in your current continent to challenge it, pick a difficulty (😊 Easy +10 · 🤔 Medium +20 · 🧠 Hard +30), and answer the question. (😊 Easy can't break the Baron's fortresses — his countries need 🤔 Medium or 🧠 Hard!)
 4. **Answer correctly** → the country is yours! **Answer wrong** → Baron von Blunder swoops in and steals it! 😈 (He also grabs an unclaimed country every few turns — stay sharp!)
 5. **Conquer every country in a continent** to unlock the next one. Your mastery % per continent is tracked in the side panel.
 6. Your progress **saves automatically** in the browser — close the tab and resume anytime!
@@ -20,7 +20,9 @@ Questions come in three tiers across all six continents:
 - 🤔 **Medium** — capitals, flags, famous landmarks
 - 🧠 **Hard** — rivers, mountain ranges, populations, currencies
 
-The bank holds **312 questions** (`data/questions-*.json`), preferring questions about the exact country you're attacking.
+They also come in different **formats**: plain text, 🚩 flags to recognize (shown big, or as a 2×2 flag lineup to pick from), and 🗺️ "find it on the map" challenges where you tap the country on the map.
+
+The bank holds **589 questions** (the file list lives in `data/manifest.json`, loaded from `data/questions-*.json`), preferring questions about the exact country you're attacking.
 
 ## 🗂️ Project structure
 
@@ -36,7 +38,8 @@ geo-conquest/
 ├── data/
 │   ├── countries.geojson # World map: Natural Earth 110m (public domain), slimmed
 │   ├── territories.json  # Playable countries per continent (68 total)
-│   └── questions-*.json  # 312-question bank, 52 per continent
+│   ├── manifest.json     # Question-file list, loaded at boot
+│   └── questions-*.json  # 589-question bank (text, flags, map challenges)
 ├── CNAME                 # Custom domain for GitHub Pages
 └── README.md
 ```

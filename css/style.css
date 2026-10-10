@@ -184,6 +184,15 @@ main { flex: 1; padding: 1.2rem; max-width: 1280px; margin: 0 auto; width: 100%;
   text-align: center;
   font-weight: 700;
 }
+.find-banner {
+  background: #dbeafe;
+  border: 2px dashed var(--player);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
 .map-controls { display: flex; gap: 0.5rem; margin-top: 0.6rem; }
 .legend { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 0.6rem; font-size: 0.9rem; }
 .legend-item { display: inline-flex; align-items: center; gap: 0.35rem; }
@@ -216,6 +225,7 @@ main { flex: 1; padding: 1.2rem; max-width: 1280px; margin: 0 auto; width: 100%;
 .diff-easy:active { box-shadow: 0 1px 0 #15803d; }
 .diff-medium:active { box-shadow: 0 1px 0 #b45309; }
 .diff-hard:active { box-shadow: 0 1px 0 #6d28d9; }
+.easy-note { color: var(--rival); font-weight: 700; }
 
 .cont-row { margin-bottom: 0.7rem; }
 .cont-row .cont-head { display: flex; justify-content: space-between; font-weight: 700; font-size: 0.95rem; }
@@ -246,7 +256,35 @@ main { flex: 1; padding: 1.2rem; max-width: 1280px; margin: 0 auto; width: 100%;
 .tier-badge.medium { background: #f59e0b; }
 .tier-badge.hard { background: #8b5cf6; }
 #q-text { font-size: 1.25rem; margin: 0.4rem 0 1rem; }
+.q-flag-img {
+  display: block;
+  max-width: 220px;
+  margin: 0 auto 1rem;
+  border: 3px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.25);
+  background: #fff;
+}
 .q-options { display: grid; gap: 0.6rem; }
+.q-options.flag-grid { grid-template-columns: 1fr 1fr; }
+.q-flag-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.6rem;
+}
+.q-flag-option img {
+  width: 120px;
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+}
+.q-flag-option .flag-name { font-size: 0.85rem; font-weight: 700; color: var(--muted); }
+.q-flag-option.correct img { border-color: var(--green); }
+.q-flag-option.wrong img { border-color: var(--rival); }
 .q-option {
   text-align: left;
   background: #f1f5f9;
@@ -288,6 +326,7 @@ main { flex: 1; padding: 1.2rem; max-width: 1280px; margin: 0 auto; width: 100%;
   animation: toast-in 0.3s ease;
   max-width: 90vw;
   text-align: center;
+  cursor: pointer; /* tap to dismiss early */
 }
 @keyframes toast-in { from { opacity: 0; transform: translate(-50%, 12px); } to { opacity: 1; transform: translate(-50%, 0); } }
 
@@ -302,4 +341,7 @@ footer a { color: var(--player); }
   .topbar { padding: 0.6rem 0.8rem; }
   main { padding: 0.8rem; }
   #q-text { font-size: 1.1rem; }
+}
+@media (max-width: 480px) {
+  .q-flag-option img { width: 100px; }
 }

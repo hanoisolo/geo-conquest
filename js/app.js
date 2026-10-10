@@ -5,36 +5,29 @@
 "use strict";
 
 window.addEventListener("DOMContentLoaded", () => {
-  const QUESTION_FILES = [
-    "data/questions-na.json",
-    "data/questions-sa.json",
-    "data/questions-eu.json",
-    "data/questions-af.json",
-    "data/questions-as.json",
-    "data/questions-oc.json",
-  ];
-
-  const loads = [
-    fetch("data/countries.geojson").then((r) => {
-      if (!r.ok) throw new Error("countries.geojson");
+  const loadJson = (path) =>
+    fetch(path).then((r) => {
+      if (!r.ok) throw new Error(path);
       return r.json();
-    }),
-    fetch("data/territories.json").then((r) => {
-      if (!r.ok) throw new Error("territories.json");
-      return r.json();
-    }),
-    ...QUESTION_FILES.map((f) =>
-      fetch(f).then((r) => {
-        if (!r.ok) throw new Error(f);
-        return r.json();
-      })
-    ),
-  ];
+    });
 
-  Promise.all(loads)
-    .then(([geojson, territories, ...qBanks]) => {
-      const questions = qBanks.flat();
-      GeoGame.init({ geojson, territories, questions });
+  // The question-file list lives in data/manifest.json.
+  Promise.all([
+    loadJson("data/countries.geojson"),
+    loadJson("data/territories.json"),
+    loadJson("data/capitals.json"),
+    loadJson("data/manifest.json"),
+  ])
+    .then(([geojson, territories, capitals, manifest]) => {
+      const files = (manifest && manifest.questionFiles) || [];
+      if (!files.length) throw new Error("manifest.json (empty questionFiles)");
+      return Promise.all(files.map(loadJson)).then((qBanks) => ({
+        geojson, territories, capitals,
+        questions: qBanks.flat(),
+      }));
+    })
+    .then((data) => {
+      GeoGame.init(data);
       wireUI();
       // Offer "Continue" when a save exists.
       const save = GeoStorage.load();
@@ -84,6 +77,12 @@ function wireUI() {
 
   // ---- question modal ----
   $("btn-q-continue").addEventListener("click", () => GeoGame.resolveContest());
+
+  // ---- map find mode ("find it on the map" questions) ----
+  $("btn-find-giveup").addEventListener("click", () => GeoGame.giveUpFind());
+
+  // ---- toast: tap to dismiss the current message early ----
+  $("toast").addEventListener("click", () => GeoGame.dismissToast());
 
   // ---- victory modal ----
   $("btn-victory-restart").addEventListener("click", () => {

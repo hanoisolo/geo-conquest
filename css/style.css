@@ -314,6 +314,30 @@ main .card:hover:not(.map-wrap) { transform: translateY(-3px); box-shadow: var(-
 .diff-hard:active { box-shadow: 0 1px 0 #6d28d9; }
 .easy-note { color: var(--rival); font-weight: 700; }
 
+/* ---------- Subject toggle (territory card) ---------- */
+.subject-row { display: flex; gap: 0.5rem; margin-top: 0.7rem; }
+.subject-btn {
+  flex: 1;
+  background: #f1f5f9;
+  color: var(--ink);
+  border: 2px solid #e2e8f0;
+  box-shadow: none;
+  font-size: 0.9rem;
+}
+.subject-btn.active { background: var(--player); border-color: var(--player); color: #fff; }
+.subject-btn[data-subject="math"].active { background: var(--violet); border-color: var(--violet); }
+.math-nudge {
+  display: inline-block;
+  background: #ede9fe;
+  border: 2px solid #c4b5fd;
+  color: #5b21b6;
+  border-radius: 999px;
+  padding: 0.15rem 0.7rem;
+  font-weight: 800;
+  font-size: 0.8rem;
+  margin: 0.5rem 0 0;
+}
+
 .cont-row { margin-bottom: 0.7rem; }
 .cont-row .cont-head { display: flex; justify-content: space-between; font-weight: 700; font-size: 0.95rem; }
 .cont-row.locked .cont-head { color: var(--muted); }

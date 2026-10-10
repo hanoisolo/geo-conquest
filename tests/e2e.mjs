@@ -105,26 +105,39 @@ async function run(vp, tag) {
     ok(`${tag}: Easy disabled on Baron country`, await page.locator('.diff-btn[data-tier="easy"]').isDisabled());
     await shot("09-baron");
   }
-  // math with hints
+  // math: subject choice (6a), hints (6b), worked solution + similar (6c). MATH_STAGE=a|b|c (default c)
+  const stage = process.env.MATH_STAGE || "c";
   const hasMath = await page.evaluate(() => !!window.GeoMath);
   if (hasMath) {
     const t2 = await page.evaluate(() => ["PNG", "FJI", "VUT", "SLB"].find((i) => GeoGame.state.ownership[i] !== "player"));
     if (t2) {
+      await page.evaluate(() => { GeoGame.state.geoSinceMath = 2; });
       await page.evaluate((t) => GeoGame.onTerritoryClick(t), t2); await wait(200);
-      const subj = page.locator('[data-subject="math"]');
-      ok(`${tag}: math subject button`, await subj.count());
-      if (await subj.count()) await subj.first().click();
+      ok(`${tag}: math nudged after 2 geography questions`, await vis("#terr-math-nudge"));
+      ok(`${tag}: math subject preselected`, await page.locator('[data-subject="math"].active').count());
       await page.evaluate(() => { const o = GeoMath.generate.bind(GeoMath); GeoMath.generate = (tier, opts = {}) => { GeoMath.generate = o; return o(tier, { ...opts, skill: "fracdiff" }); }; });
       await page.click('.diff-btn[data-tier="hard"]'); await wait(450);
-      const hint = page.locator("#btn-hint");
-      ok(`${tag}: hint button`, await hint.count());
-      for (let i = 0; i < 3 && (await hint.count()) && (await hint.isEnabled()); i++) { await hint.click(); await wait(300); }
-      await shot("10-math-hints");
-      ok(`${tag}: fraction bars drawn`, await page.locator("#q-hints svg, #q-hints canvas, #q-hints .frac-bar").count());
-      await answer(false); await wait(300); await shot("11-math-wrong-solution");
-      const sim = page.locator("#btn-similar");
-      ok(`${tag}: try-a-similar-one button`, await sim.count() && await sim.isVisible());
-      await cont();
+      ok(`${tag}: math question shown`, await page.evaluate(() => GeoGame.currentContest && GeoGame.currentContest.question.type === "math"));
+      await shot("10-math-question");
+      if (stage >= "b") {
+        const hint = page.locator("#btn-hint");
+        ok(`${tag}: hint button`, await hint.isVisible());
+        for (let i = 0; i < 2 && (await hint.isVisible()) && (await hint.isEnabled()); i++) { await hint.click(); await wait(300); }
+        ok(`${tag}: two hint steps shown`, (await page.locator("#q-hints li").count()) === 2);
+        ok(`${tag}: fraction bars drawn`, await page.locator("#q-hints svg").count());
+        await shot("10b-math-hints");
+      }
+      if (stage >= "c") {
+        await answer(false); await wait(300); await shot("11-math-wrong-solution");
+        ok(`${tag}: worked solution shown`, (await page.locator("#q-feedback li, #q-feedback .solution-step").count()) >= 2);
+        ok(`${tag}: try-a-similar-one button`, await vis("#btn-similar"));
+        await cont();
+        ok(`${tag}: math miss lets the Baron steal`, await page.evaluate((t) => GeoGame.state.ownership[t] === "rival", t2));
+      } else {
+        await answer(true); await cont();
+        ok(`${tag}: math win conquers`, await page.evaluate((t) => GeoGame.state.ownership[t] === "player", t2));
+        ok(`${tag}: math resets the every-3rd counter`, await page.evaluate(() => GeoGame.state.geoSinceMath === 0));
+      }
     }
   }
   // reload mid-game

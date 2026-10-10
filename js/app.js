@@ -76,11 +76,14 @@ function wireUI() {
   $("zoom-out").addEventListener("click", () => GeoMap.zoom(1.4));
   $("zoom-reset").addEventListener("click", () => GeoMap.reset());
 
-  // ---- territory card: difficulty buttons start a contest ----
+  // ---- territory card: subject toggle + difficulty buttons start a contest ----
+  document.querySelectorAll(".subject-btn").forEach((btn) => {
+    btn.addEventListener("click", () => GeoGame.setSubject(btn.dataset.subject));
+  });
   document.querySelectorAll(".diff-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       const iso3 = $("territory-card").dataset.iso3;
-      if (iso3) GeoGame.startContest(iso3, btn.dataset.tier);
+      if (iso3) GeoGame.startContest(iso3, btn.dataset.tier, GeoGame.selectedSubject);
     });
   });
 

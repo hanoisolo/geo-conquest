@@ -131,7 +131,12 @@
             </div>
             <p class="muted" id="terr-owner"></p>
             <p class="muted small easy-note hidden" id="terr-easy-note">😈 The Baron's fortress needs Medium or Hard!</p>
-            <p class="muted small" id="terr-hint">Pick a difficulty, then answer to conquer it!</p>
+            <p class="muted small" id="terr-hint">Pick a subject and a difficulty, then answer to conquer it!</p>
+            <div class="subject-row" role="group" aria-label="Subject">
+              <button class="btn btn-small subject-btn" data-subject="geo" type="button" aria-pressed="true">🌍 Geography</button>
+              <button class="btn btn-small subject-btn" data-subject="math" type="button" aria-pressed="false">🧮 Math</button>
+            </div>
+            <p class="math-nudge hidden" id="terr-math-nudge">🧮 Math challenge: +5 bonus!</p>
             <div class="diff-row">
               <button class="btn diff-btn diff-easy" data-tier="easy" type="button">😊 Easy<br /><small>+10 pts</small></button>
               <button class="btn diff-btn diff-medium" data-tier="medium" type="button">🤔 Medium<br /><small>+20 pts</small></button>
@@ -151,11 +156,19 @@
   <!-- ============ QUESTION MODAL ============ -->
   <div class="modal-backdrop hidden" id="question-modal">
     <div class="modal card" tabindex="-1">
-      <div class="q-meta"><span id="q-territory">Country</span><span class="tier-badge" id="q-tier-badge">Easy</span></div>
+      <div class="q-meta">
+        <span id="q-territory">Country</span>
+        <span class="q-meta-right"><span class="q-points" id="q-points"></span><span class="tier-badge" id="q-tier-badge">Easy</span></span>
+      </div>
+      <p class="q-note hidden" id="q-practice-note">🧮 Practice — no country at stake</p>
+      <p class="q-note hidden" id="q-easier-note">💪 We made this one a bit easier!</p>
       <h2 id="q-text">Question?</h2>
       <img id="q-flag-img" class="q-flag-img hidden" alt="" />
       <div class="q-options" id="q-options"></div>
+      <button class="btn btn-small hidden" id="btn-hint" type="button">💡 Hint</button>
+      <ol class="q-hints hidden" id="q-hints"></ol>
       <div class="q-feedback hidden" id="q-feedback"></div>
+      <button class="btn hidden" id="btn-similar" type="button">🔁 Try a similar one</button>
       <button class="btn btn-big hidden" id="btn-q-continue" type="button">Continue →</button>
     </div>
   </div>
@@ -219,6 +232,7 @@
   <script src="js/sound.js"></script>
   <script src="js/confetti.js"></script>
   <script src="js/baron.js"></script>
+  <script src="js/math.js"></script>
   <script src="js/game.js"></script>
   <script src="js/app.js"></script>
 </body>

@@ -27,7 +27,8 @@ const GeoGame = {
   /* ---- mutable campaign state ---- */
   state: null,
   pickingHome: false,   // true while the player plants their first flag
-  currentContest: null, // { iso3, tier, question, options, answerIdx, ... }
+  currentContest: null, // { iso3, tier, subject, nudged, question, options, answerIdx, ... }
+  selectedSubject: "geo", // "geo" | "math" — chosen on the territory card
   nameVariantsOf: {},   // iso3 -> Set of normalized name spellings (giveaway check)
   _toastQueue: [],      // pending toast messages (shown one after another)
   _toastBusy: false,
@@ -215,6 +216,16 @@ const GeoGame = {
     this.showTerritoryCard(iso3, owner);
   },
 
+  /** Set the active subject and reflect it on the subject toggle buttons. */
+  setSubject(s) {
+    this.selectedSubject = s;
+    document.querySelectorAll(".subject-btn").forEach((btn) => {
+      const on = btn.dataset.subject === s;
+      btn.classList.toggle("active", on);
+      btn.setAttribute("aria-pressed", String(on));
+    });
+  },
+
   showTerritoryCard(iso3, owner) {
     const card = document.getElementById("territory-card");
     document.getElementById("terr-name").textContent =
@@ -229,6 +240,15 @@ const GeoGame = {
     // Easy is too gentle for the Baron's fortresses — those need Medium or Hard.
     document.querySelector('.diff-btn[data-tier="easy"]').disabled = owner === "rival";
     document.getElementById("terr-easy-note").classList.toggle("hidden", owner !== "rival");
+    // Nudge a math question roughly every 3rd question.
+    const nudge = document.getElementById("terr-math-nudge");
+    if ((this.state.geoSinceMath || 0) >= 2) {
+      this.setSubject("math");
+      nudge.classList.remove("hidden");
+    } else {
+      this.setSubject("geo");
+      nudge.classList.add("hidden");
+    }
     card.classList.remove("hidden");
     card.dataset.iso3 = iso3;
     card.scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -253,12 +273,16 @@ const GeoGame = {
     // Shuffle options so replaying stays fresh; track the new answer index.
     const order = this.shuffle(q.options.map((_, i) => i));
     this.currentContest = {
-      iso3, tier, question: q, type,
+      iso3, tier, subject,
+      nudged: subject === "math" && (this.state.geoSinceMath || 0) >= 2,
+      question: q, type,
       options: order.map((i) => q.options[i]),
       answerIdx: order.indexOf(q.answer),
       optionFlags: type === "flag-pick" ? order.map((i) => q.optionFlags[i]) : null,
     };
-    document.getElementById("q-territory").textContent = this.nameOf[iso3];
+    document.getElementById("q-territory").textContent = subject === "math"
+      ? "🧮 " + this.nameOf[iso3]
+      : this.nameOf[iso3];
     const badge = document.getElementById("q-tier-badge");
     badge.textContent = this.TIER_LABEL[tier];
     badge.className = "tier-badge " + tier;
@@ -449,6 +473,9 @@ const GeoGame = {
     if (!byCat[cat]) byCat[cat] = { asked: 0, correct: 0 };
     byCat[cat].asked++;
     if (c.wasCorrect) byCat[cat].correct++;
+    // Math questions reset the geo streak; geography questions extend it.
+    if (c.question.type === "math") this.state.geoSinceMath = 0;
+    else this.state.geoSinceMath = (this.state.geoSinceMath || 0) + 1;
 
     if (c.wasCorrect) {
       this.state.ownership[c.iso3] = "player";
@@ -457,6 +484,7 @@ const GeoGame = {
       this.state.bestStreak = Math.max(this.state.bestStreak, this.state.streak);
       let pts = this.TIER_POINTS[c.tier];
       if (this.state.streak >= 3) pts += 5; // streak bonus
+      if (c.nudged) pts += 5; // math nudge bonus
       this.state.points += pts;
       GeoSound.conquer();
       GeoConfetti.burst({ at: c.iso3, count: 60, power: 420 });

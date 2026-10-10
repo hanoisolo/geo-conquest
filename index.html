@@ -92,6 +92,7 @@
           <button class="btn btn-small mp-toggle" data-count="4" type="button" aria-pressed="false">4 players</button>
         </div>
         <div id="mp-players"></div>
+        <p class="mode-label">🏁 How to win</p>
         <div class="mp-group" id="mp-win" role="group" aria-label="Win mode">
           <button class="btn btn-small mp-toggle active" data-mode="timed" type="button" aria-pressed="true">⏱ Timed</button>
           <button class="btn btn-small mp-toggle" data-mode="domination" type="button" aria-pressed="false">👑 Total domination</button>
@@ -100,6 +101,16 @@
           <button class="btn btn-small mp-toggle active" data-min="10" type="button" aria-pressed="true">10 min</button>
           <button class="btn btn-small mp-toggle" data-min="20" type="button" aria-pressed="false">20 min</button>
           <button class="btn btn-small mp-toggle" data-min="30" type="button" aria-pressed="false">30 min</button>
+        </div>
+        <p class="mode-label">🗺️ Map</p>
+        <div class="mp-group" id="mp-map" role="group" aria-label="Map">
+          <button class="btn btn-small mp-toggle active" data-scope="world" type="button" aria-pressed="true">🌍 Whole world</button>
+          <button class="btn btn-small mp-toggle" data-scope="north-america" type="button" aria-pressed="false">🌎 North America</button>
+          <button class="btn btn-small mp-toggle" data-scope="south-america" type="button" aria-pressed="false">🌎 South America</button>
+          <button class="btn btn-small mp-toggle" data-scope="europe" type="button" aria-pressed="false">🏰 Europe</button>
+          <button class="btn btn-small mp-toggle" data-scope="africa" type="button" aria-pressed="false">🦁 Africa</button>
+          <button class="btn btn-small mp-toggle" data-scope="asia" type="button" aria-pressed="false">🐉 Asia</button>
+          <button class="btn btn-small mp-toggle" data-scope="oceania" type="button" aria-pressed="false">🦘 Oceania</button>
         </div>
         <p id="mp-setup-error" class="easy-note hidden"></p>
         <div class="mp-actions">
@@ -266,6 +277,13 @@
     aria-labelledby="mp-handoff-text"><div class="mp-handoff-box"><div class="hero-emoji">🔄</div>
     <h2 id="mp-handoff-text"></h2><p>Hand the device over — no peeking at their question!</p>
     <button class="btn btn-big" id="btn-mp-ready" type="button">Ready!</button></div></div>
+
+  <!-- ============ MULTIPLAYER FINAL STANDINGS ============ -->
+  <div class="modal-backdrop hidden" id="mp-standings"><div class="modal card"
+    tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="mp-standings-title"><div class="hero-emoji">🏁</div>
+    <h2 id="mp-standings-title"></h2><ol class="mp-standings-list" id="mp-standings-list"></ol><div class="victory-buttons">
+    <button class="btn btn-big" id="btn-mp-again" type="button">🔁 Play again (same players)</button>
+    <button class="btn btn-small" id="btn-mp-home" type="button">🏠 Back to start</button></div></div></div>
 
   <div class="toast hidden" id="toast" role="status" aria-live="polite"></div>
 

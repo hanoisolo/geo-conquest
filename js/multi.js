@@ -10,7 +10,7 @@
 
    Segment M1: mode card, setup screen, home flags, banner,
    scoreboard. Segment M2a: turns, attacks, hand-offs. Segment M2b:
-   strike-backs (the timer and standings land in M3).
+   strike-backs. Segment M3: map choice, timer, winning, standings.
 
    State shape:
      { v: 1,
@@ -21,8 +21,8 @@
        turn: 0,
        phase: "homes" | "turn" | "over",
        win: { mode: "timed" | "domination", minutes },
-       mapScope: "world",   // later: one continent only
-       timeLeftMs, asked: [], pending: null }
+       mapScope: "world" | continent id,
+       timeLeftMs, timeUp, asked: [], pending: null }
    ============================================================ */
 "use strict";
 
@@ -53,6 +53,10 @@ const GeoMulti = {
   /* Callback for the hand-off screen's "ready" button (wired once in init). */
   _onReady: null,
 
+  /* Countdown interval for timed games (1 s tick) and its tick counter. */
+  _timer: null,
+  _ticks: 0,
+
   /* ================= boot ================= */
   init({ adjacency }) {
     this.adjacency = adjacency || {};
@@ -64,6 +68,21 @@ const GeoMulti = {
       const onReady = this._onReady;
       this._onReady = null;
       if (onReady) onReady();
+    });
+    // Final standings: play again with the same players, or back to start.
+    document.getElementById("btn-mp-again").addEventListener("click", () => {
+      document.getElementById("mp-standings").classList.add("hidden");
+      const s = this.state;
+      this.start({
+        players: s.players.map((p) => ({ name: p.name, color: p.color })),
+        win: { mode: s.win.mode, minutes: s.win.minutes },
+        mapScope: s.mapScope,
+      });
+    });
+    document.getElementById("btn-mp-home").addEventListener("click", () => {
+      document.getElementById("mp-standings").classList.add("hidden");
+      this.clear();
+      this.quit();
     });
   },
 
@@ -116,6 +135,7 @@ const GeoMulti = {
       count: 2,
       winMode: "timed",
       minutes: 10,
+      mapScope: "world",
       players: [
         { name: "Player 1", color: 0 },
         { name: "Player 2", color: 1 },
@@ -159,6 +179,12 @@ const GeoMulti = {
         this.syncSetupButtons();
       });
     });
+    document.querySelectorAll("#mp-map [data-scope]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        this._setup.mapScope = btn.dataset.scope;
+        this.syncSetupButtons();
+      });
+    });
     document.getElementById("btn-mp-start").addEventListener("click", () => this.onStart());
   },
 
@@ -176,6 +202,11 @@ const GeoMulti = {
     });
     document.querySelectorAll("#mp-minutes [data-min]").forEach((btn) => {
       const on = Number(btn.dataset.min) === this._setup.minutes;
+      btn.classList.toggle("active", on);
+      btn.setAttribute("aria-pressed", String(on));
+    });
+    document.querySelectorAll("#mp-map [data-scope]").forEach((btn) => {
+      const on = btn.dataset.scope === this._setup.mapScope;
       btn.classList.toggle("active", on);
       btn.setAttribute("aria-pressed", String(on));
     });
@@ -239,12 +270,14 @@ const GeoMulti = {
     this.start({
       players: this._setup.players.map((p, i) => ({ name: names[i], color: p.color })),
       win: { mode: this._setup.winMode, minutes: this._setup.minutes },
+      mapScope: this._setup.mapScope,
     });
   },
 
   /* ================= game flow ================= */
   /** Build the state from the setup, save it and enter the game screen. */
   start(setup) {
+    this.clearToasts(); // messages from a previous game must not replay in a new one
     this.state = {
       v: 1,
       players: setup.players.map((p) => ({
@@ -263,7 +296,7 @@ const GeoMulti = {
         mode: setup.win.mode,
         minutes: setup.win.mode === "timed" ? setup.win.minutes : null,
       },
-      mapScope: "world", // the whole world; a continent-only scope comes later
+      mapScope: setup.mapScope || "world",
       timeLeftMs: setup.win.mode === "timed" ? setup.win.minutes * 60000 : null,
       asked: [],
     };
@@ -289,7 +322,16 @@ const GeoMulti = {
       }
     );
     GeoMap.reset();
+    // A one-continent game zooms straight to its continent.
+    if (this.state.mapScope && this.state.mapScope !== "world") {
+      GeoMap.focusIsos(this.scopeIsos(), false);
+    }
     this.refresh();
+    // Resuming a finished game goes straight to the standings (no hand-off).
+    if (this.state.phase === "over") {
+      this.showStandings();
+      return;
+    }
     // Resuming mid-game: hand the device to the player whose turn it is —
     // or to the defender when a strike-back is still waiting.
     if (this.state.phase === "turn") {
@@ -300,6 +342,8 @@ const GeoMulti = {
         this.showHandoff(this.state.turn, `Pass to ${p.name}`, () => this.refresh());
       }
     }
+    // Timed games count down from here (ticks only run during turns).
+    if (this.state.win.mode === "timed") this.startTimer();
   },
 
   /** Resume a saved multiplayer game (reload / "Continue multiplayer game"). */
@@ -312,10 +356,19 @@ const GeoMulti = {
 
   /** Leave multiplayer back to the start screen. The save is kept. */
   quit() {
+    this.clearToasts();
+    this.stopTimer(); // the countdown pauses while the game is not on screen
     GeoGame.mode = "solo";
     document.body.classList.remove("mp-mode");
     document.getElementById("mp-banner").classList.add("hidden");
     GeoGame.showScreen("screen-start");
+  },
+
+  /** Drop queued toasts (start of a new game, leaving multiplayer). */
+  clearToasts() {
+    GeoGame._toastQueue.length = 0;
+    if (GeoGame._toastShowing) GeoGame._toastShowing.hiddenByCard = false;
+    GeoGame.dismissToast();
   },
 
   /* ================= map interaction ================= */
@@ -361,6 +414,14 @@ const GeoMulti = {
     if (!GeoGame.playableIsos.has(iso3)) return false;
     const scope = (this.state && this.state.mapScope) || "world";
     return scope === "world" || GeoGame.contOf[iso3] === scope;
+  },
+
+  /** Every playable iso3 in this game's map scope. */
+  scopeIsos() {
+    const scope = (this.state && this.state.mapScope) || "world";
+    if (scope === "world") return Array.from(GeoGame.playableIsos);
+    const cont = GeoGame.continents.find((c) => c.id === scope);
+    return cont ? cont.territories.map((t) => t.iso3) : [];
   },
 
   /**
@@ -567,21 +628,163 @@ const GeoMulti = {
     this.showHandoff(s.turn, `Pass to ${p.name}`, () => this.refresh());
   },
 
-  /** Domination: last player with countries wins. (M3 adds the timer.) */
+  /* ================= timer (M3) ================= */
+  /** Start the 1-second countdown for a timed game (idempotent). */
+  startTimer() {
+    this.stopTimer();
+    this._ticks = 0;
+    this._timer = setInterval(() => this.tickTimer(), 1000);
+  },
+
+  /** Stop the countdown (game over, quit, or a fresh game). */
+  stopTimer() {
+    if (this._timer) {
+      clearInterval(this._timer);
+      this._timer = null;
+    }
+  },
+
+  /** "⏱ m:ss" for the banner countdown. */
+  timerText(ms) {
+    const t = Math.max(0, ms || 0);
+    const m = Math.floor(t / 60000);
+    const sec = Math.floor((t % 60000) / 1000);
+    return "⏱ " + m + ":" + String(sec).padStart(2, "0");
+  },
+
+  /**
+   * One countdown tick. The clock only runs down while a turn is in
+   * progress and the page is visible; the save is written every 5
+   * ticks. At 0 the game ends right away when nothing is in flight —
+   * otherwise the next endTurn() sees timeLeftMs <= 0 in isOver().
+   */
+  tickTimer() {
+    const s = this.state;
+    if (!s || s.phase !== "turn" || document.hidden) return;
+    s.timeLeftMs = Math.max(0, (s.timeLeftMs || 0) - 1000);
+    const timer = document.getElementById("mp-timer");
+    if (timer) timer.textContent = this.timerText(s.timeLeftMs);
+    this._ticks++;
+    if (this._ticks % 5 === 0) this.save();
+    if (s.timeLeftMs <= 0 && !s.timeUp) {
+      s.timeUp = true;
+      this.save();
+      // No question open and no strike-back waiting: end now. The
+      // hand-off overlay — hidden or showing — does not hold the game
+      // up; finish() hides it.
+      if (!GeoGame.currentContest && !s.pending) this.finish();
+    }
+  },
+
+  /**
+   * Timed: the clock ran out or only one player is left. Domination:
+   * last player standing — or, on a one-continent map, one player
+   * holding every in-scope country (the last player standing only
+   * wins once no in-scope country is unclaimed).
+   */
   isOver() {
     const s = this.state;
     if (!s || !s.win) return false;
-    if (s.win.mode === "domination") return this.alivePlayers().length <= 1;
-    return false;
+    const alive = this.alivePlayers();
+    if (s.win.mode === "timed") {
+      return s.timeLeftMs <= 0 || alive.length <= 1;
+    }
+    // Domination.
+    const scope = s.mapScope || "world";
+    if (scope === "world") return alive.length <= 1;
+    // One continent: over when no in-scope country is unclaimed and a
+    // single player owns them all (or is the last one standing).
+    const inScope = this.scopeIsos();
+    if (!inScope.length) return alive.length <= 1;
+    let unclaimed = 0;
+    const owners = new Set();
+    for (const iso of inScope) {
+      const o = s.ownership[iso];
+      if (o === undefined || o === null) unclaimed++;
+      else owners.add(o);
+    }
+    return unclaimed === 0 && (owners.size === 1 || alive.length <= 1);
   },
 
-  /** M3 replaces this stub with the standings screen. */
+  /** End the game: freeze the state and show the final standings. */
   finish() {
     const s = this.state;
+    this.stopTimer();
     s.phase = "over";
+    document.getElementById("mp-handoff").classList.add("hidden");
+    document.getElementById("question-modal").classList.add("hidden");
+    document.getElementById("territory-card").classList.add("hidden");
     this.save();
     this.refresh();
-    GeoGame.toast("🏁 Game over!");
+    this.showStandings();
+  },
+
+  /**
+   * Final standings: one row per player (countries = countOf(i),
+   * points), sorted by countries desc then points desc; players equal
+   * on both share a rank.
+   */
+  standings() {
+    const s = this.state;
+    const rows = s.players.map((p, i) => ({
+      i,
+      name: p.name,
+      color: p.color,
+      countries: this.countOf(i),
+      points: p.points,
+      alive: p.alive,
+      rank: 0,
+    }));
+    rows.sort((a, b) => b.countries - a.countries || b.points - a.points);
+    rows.forEach((r, idx) => {
+      const prev = rows[idx - 1];
+      r.rank = prev && prev.countries === r.countries && prev.points === r.points
+        ? prev.rank
+        : idx + 1;
+    });
+    return rows;
+  },
+
+  /** Fill and show the final standings modal (medals, confetti, fanfare). */
+  showStandings() {
+    const rows = this.standings();
+    const MEDALS = ["🥇", "🥈", "🥉"];
+    const title = document.getElementById("mp-standings-title");
+    const winners = rows.filter((r) => r.rank === 1);
+    title.textContent = winners.length > 1
+      ? "🤝 It's a tie: " + winners.map((w) => w.name).join(" & ") + "!"
+      : "🏆 " + winners[0].name + " wins!";
+    const list = document.getElementById("mp-standings-list");
+    list.innerHTML = "";
+    rows.forEach((r) => {
+      const li = document.createElement("li");
+      li.className = "mp-standing" + (r.alive ? "" : " out");
+
+      const medal = document.createElement("span");
+      medal.className = "mp-medal";
+      medal.textContent = r.rank <= 3 ? MEDALS[r.rank - 1] : String(r.rank);
+      li.appendChild(medal);
+
+      const dot = document.createElement("span");
+      dot.className = "mp-dot";
+      dot.style.background = this.COLORS[r.color].hex;
+      li.appendChild(dot);
+
+      const name = document.createElement("span");
+      name.className = "mp-name";
+      name.textContent = r.name;
+      li.appendChild(name);
+
+      const stats = document.createElement("span");
+      stats.className = "mp-stats";
+      stats.textContent = `🗺️ ${r.countries} · ⭐ ${r.points}`;
+      li.appendChild(stats);
+
+      list.appendChild(li);
+    });
+    document.getElementById("mp-standings").classList.remove("hidden");
+    GeoConfetti.burst({ count: 160, power: 520 });
+    GeoSound.victory();
   },
 
   /** Full-screen "pass the device" overlay in the next player's colour. */
@@ -642,7 +845,11 @@ const GeoMulti = {
     }
     banner.style.background = this.COLORS[p.color].hex;
     banner.textContent = text + " ";
-    if (timer) banner.appendChild(timer); // keep the (empty) timer span at the end
+    if (timer) {
+      // Timed games show the countdown; domination leaves it empty.
+      timer.textContent = s.win.mode === "timed" ? this.timerText(s.timeLeftMs) : "";
+      banner.appendChild(timer); // keep the timer span at the end
+    }
     banner.classList.remove("hidden");
   },
 

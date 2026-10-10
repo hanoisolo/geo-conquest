@@ -140,7 +140,75 @@ async function runStrike(vp, tag) {
   if (errs.length) console.log(errs);
   await page.close();
 }
+// M3: timer end (2 players), one-continent 4-player domination with eliminations, standings.
+async function runWin(vp, tag) {
+  const page = await browser.newPage({ viewport: vp });
+  const errs = [];
+  page.on("pageerror", (e) => errs.push(e.message));
+  const wait = (ms = 400) => page.waitForTimeout(ms);
+  const shot = (n) => page.screenshot({ path: join(shots, `mp-${tag}-${n}.png`) });
+  const vis = (sel) => page.locator(sel).isVisible();
+  const ready = async () => { if (await vis("#mp-handoff")) { await page.click("#btn-mp-ready"); await wait(300); } };
+  async function answer(correct) {
+    const info = await page.evaluate(() => { const c = GeoGame.currentContest; return { type: c.question.type || "text", idx: c.answerIdx, target: c.question.target, n: c.options.length }; });
+    if (info.type === "map") {
+      await page.click("#q-options button"); await wait(300);
+      await page.evaluate(([t, ok]) => GeoGame.onFindTap(ok ? t : (t === "AUS" ? "NZL" : "AUS")), [info.target, correct]); await wait(correct ? 100 : 1600);
+    } else await page.locator("#q-options button").nth(correct ? info.idx : (info.idx + 1) % info.n).click();
+    await wait(250); await page.click("#btn-q-continue"); await wait(500);
+  }
+  async function attack(iso, tier, correct) {
+    await ready();
+    await page.evaluate((i) => GeoMap.onTerritoryClick(i), iso); await wait(250);
+    await page.click('[data-subject="geo"]'); await page.click(`.diff-btn[data-tier="${tier}"]`); await wait(450);
+    await answer(correct);
+  }
+  await page.goto(`http://localhost:${PORT}/`); await wait(1200);
+  await page.evaluate(() => { localStorage.clear(); localStorage.setItem("geoConquestSaveV1", JSON.stringify({ marker: "solo-save" })); });
+  await page.reload(); await wait(1200);
+  // --- timed 2-player game ends when the clock runs out ---
+  await page.click("#btn-multi"); await wait(300);
+  await page.click('#mp-win [data-mode="timed"]'); await page.click('#mp-minutes [data-min="10"]');
+  await page.click("#btn-mp-start"); await wait(800);
+  for (const iso of ["CAN", "BRA"]) { await page.evaluate((i) => GeoMap.onTerritoryClick(i), iso); await wait(300); }
+  await ready();
+  await page.waitForTimeout(1300);
+  ok(`${tag}: timer shows in the banner`, /⏱ \d+:\d\d/.test(await page.locator("#mp-timer").textContent()));
+  await page.evaluate(() => { GeoMulti.state.ownership.USA = 0; GeoMulti.state.timeLeftMs = 2000; GeoMulti.refresh(); });
+  await page.waitForTimeout(3200);
+  ok(`${tag}: timer end shows final standings`, await vis("#mp-standings"));
+  ok(`${tag}: most countries wins`, /Player 1 wins/.test(await page.locator("#mp-standings-title").textContent()));
+  await wait(800); await shot("08-standings-timed");
+  await page.click("#btn-mp-home"); await wait(500);
+  ok(`${tag}: back to start clears the multiplayer save`, await page.evaluate(() => !localStorage.getItem("geoConquestMultiV1")));
+  // --- 4-player one-continent domination (Oceania) ---
+  await page.click("#btn-multi"); await wait(300);
+  await page.click('#mp-count [data-count="4"]'); await page.click('#mp-win [data-mode="domination"]');
+  await page.click('#mp-map [data-scope="oceania"]'); await wait(200);
+  await shot("09-setup-continent");
+  await page.click("#btn-mp-start"); await wait(1000);
+  await page.evaluate(() => GeoMap.onTerritoryClick("CAN")); await wait(200);
+  ok(`${tag}: countries outside the chosen continent are not playable`, await page.evaluate(() => GeoMulti.state.ownership.CAN === undefined && !GeoMulti.inScope("CAN")));
+  for (const iso of ["AUS", "NZL", "FJI", "PNG"]) { await page.evaluate((i) => GeoMap.onTerritoryClick(i), iso); await wait(250); }
+  await ready(); await wait(300); await shot("10-continent-map");
+  // P1 takes NZL (P2's home, P2's only country) -> P2 eliminated, next turn skips to P3.
+  await attack("NZL", "hard", true);
+  ok(`${tag}: eliminated player is out`, await page.evaluate(() => !GeoMulti.state.players[1].alive));
+  ok(`${tag}: turn order skips the eliminated player`, await page.evaluate(() => GeoMulti.state.turn === 2));
+  // Seed: P4 out, P1 holds everything except FJI (P3); P1's turn.
+  await page.evaluate(() => { const s = GeoMulti.state; for (const t of GeoMulti.scopeIsos()) s.ownership[t] = 0; s.ownership.FJI = 2; s.players[3].alive = false; s.turn = 0; GeoMulti.save(); GeoMulti.refresh(); });
+  await page.click("#btn-mp-ready").catch(() => {}); await wait(300);
+  await attack("FJI", "hard", true);
+  ok(`${tag}: holding the whole continent wins domination`, await vis("#mp-standings") && /Player 1 wins/.test(await page.locator("#mp-standings-title").textContent()));
+  await wait(800); await shot("11-standings-domination");
+  ok(`${tag}: solo save survives multiplayer games`, await page.evaluate(() => JSON.parse(localStorage.getItem("geoConquestSaveV1")).marker === "solo-save"));
+  ok(`${tag}: no page errors (win run)`, errs.length === 0);
+  if (errs.length) console.log(errs);
+  await page.close();
+}
 await run({ width: 1280, height: 800 }, "desktop");
+await runWin({ width: 1280, height: 800 }, "desktop");
+await runWin({ width: 390, height: 844 }, "phone");
 await runStrike({ width: 1280, height: 800 }, "desktop");
 await runStrike({ width: 390, height: 844 }, "phone");
 await run({ width: 390, height: 844 }, "phone");

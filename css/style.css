@@ -899,3 +899,24 @@ body.mp-mode .legend { display: none; }
   box-shadow: var(--shadow);
   min-width: 12rem;
 }
+
+/* ---------- Final standings (M3) ---------- */
+/* No default numbers — medals (or the rank) lead each row. */
+.mp-standings-list { list-style: none; padding: 0; margin: 0.8rem 0 1rem; }
+.mp-standings-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 0.6rem;
+  border-radius: 8px;
+  font-size: 1.08rem;
+}
+.mp-standings-list li:first-child { font-weight: 700; background: #fef9c3; } /* light gold for the winner */
+.mp-standings-list .mp-medal { flex: 0 0 auto; width: 1.7rem; text-align: center; }
+.mp-standings-list .mp-dot { width: 14px; height: 14px; border-radius: 50%; flex: 0 0 auto; }
+.mp-standings-list .mp-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.mp-standings-list .mp-stats { margin-left: auto; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.mp-standings-list li.out { text-decoration: line-through; opacity: 0.5; }
+
+/* The map group has seven buttons — wrap them into tidy rows on phones. */
+#mp-map .mp-toggle { flex: 1 1 30%; min-width: 7.2rem; }

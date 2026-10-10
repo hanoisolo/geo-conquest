@@ -53,10 +53,19 @@ function wireUI() {
   $("btn-quest").addEventListener("click", () => GeoGame.newCampaign("quest"));
   $("btn-world").addEventListener("click", () => GeoGame.newCampaign("world"));
   $("btn-continue").addEventListener("click", () => GeoGame.continueCampaign());
-  $("btn-how").addEventListener("click", () => $("how-modal").classList.remove("hidden"));
+  $("btn-how").addEventListener("click", () => {
+    $("how-modal").classList.remove("hidden");
+    $("btn-how-close").focus(); // move focus into the opened modal
+  });
   $("btn-how-close").addEventListener("click", () => $("how-modal").classList.add("hidden"));
   $("how-modal").addEventListener("click", (e) => {
     if (e.target === $("how-modal")) $("how-modal").classList.add("hidden");
+  });
+  // Escape closes the How-to-play modal.
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !$("how-modal").classList.contains("hidden")) {
+      $("how-modal").classList.add("hidden");
+    }
   });
 
   // ---- continent picker ----
@@ -83,6 +92,23 @@ function wireUI() {
 
   // ---- toast: tap to dismiss the current message early ----
   $("toast").addEventListener("click", () => GeoGame.dismissToast());
+
+  // ---- sound: mute toggle (persisted) + tiny click ticks ----
+  const muteBtn = $("btn-mute");
+  const syncMuteBtn = () => {
+    const muted = GeoSound.isMuted();
+    muteBtn.textContent = muted ? "🔇" : "🔊";
+    muteBtn.setAttribute("aria-pressed", String(muted));
+    muteBtn.setAttribute("aria-label", muted ? "Unmute sounds" : "Mute sounds");
+  };
+  syncMuteBtn();
+  muteBtn.addEventListener("click", () => {
+    GeoSound.toggle();
+    syncMuteBtn();
+  });
+  document.addEventListener("click", (e) => {
+    if (e.target.closest(".btn, .mode-card, .continent-card")) GeoSound.click();
+  });
 
   // ---- victory modal ----
   $("btn-victory-restart").addEventListener("click", () => {

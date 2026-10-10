@@ -128,6 +128,7 @@ const GeoGame = {
       this.showScreen("screen-pick-continent");
     } else {
       document.getElementById("unlock-modal").classList.remove("hidden");
+      this.focusModal("unlock-modal");
     }
   },
 
@@ -218,6 +219,10 @@ const GeoGame = {
     const card = document.getElementById("territory-card");
     document.getElementById("terr-name").textContent =
       `${this.CONT_EMOJI[this.contOf[iso3]] || "🌍"} ${this.nameOf[iso3]}`;
+    const flag = document.getElementById("terr-flag");
+    flag.src = `assets/flags/${iso3}.svg`;
+    flag.alt = `Flag of ${this.nameOf[iso3]}`;
+    flag.classList.remove("hidden");
     document.getElementById("terr-owner").textContent = owner === "rival"
       ? `😈 Held by ${this.RIVAL_NAME} — take it back!`
       : "⚪ Unclaimed — ripe for conquest!";
@@ -288,6 +293,7 @@ const GeoGame = {
       this.renderTextOptions(box); // text — and math, rendered like text for now
     }
     document.getElementById("question-modal").classList.remove("hidden");
+    this.focusModal("question-modal");
   },
 
   /** Plain text option buttons (text and math questions). */
@@ -407,6 +413,7 @@ const GeoGame = {
     // flag-pick: reveal the country names under the flags.
     document.querySelectorAll("#q-options .flag-name").forEach((s) => s.classList.remove("hidden"));
     const correct = idx === c.answerIdx;
+    if (correct) GeoSound.correct(); else GeoSound.wrong();
     buttons[c.answerIdx].classList.add("correct");
     if (!correct) btnEl.classList.add("wrong");
 
@@ -451,11 +458,17 @@ const GeoGame = {
       let pts = this.TIER_POINTS[c.tier];
       if (this.state.streak >= 3) pts += 5; // streak bonus
       this.state.points += pts;
+      GeoSound.conquer();
+      GeoConfetti.burst({ at: c.iso3, count: 60, power: 420 });
       this.toast(`🎉 +${pts} pts! ${this.nameOf[c.iso3]} is yours!`);
+      // The Baron grudgingly admits it now and then.
+      if (window.GeoBaron && Math.random() < 0.35) GeoBaron.say("playerWin");
     } else {
+      GeoSound.steal();
       this.state.ownership[c.iso3] = "rival";
       this.state.streak = 0;
       this.toast(`😈 Oh no! ${this.RIVAL_NAME} seized ${this.nameOf[c.iso3]}!`);
+      if (window.GeoBaron) GeoBaron.say("playerMiss");
     }
 
     // Rival AI automatic move: every 3rd contest, the Baron grabs a
@@ -474,10 +487,12 @@ const GeoGame = {
     if (!neutrals.length) return;
     const pick = neutrals[Math.floor(Math.random() * neutrals.length)];
     this.state.ownership[pick.iso3] = "rival";
+    GeoSound.steal();
     this.persist();
     GeoMap.flash(pick.iso3);
     this.refreshAll();
     this.toast(`😈 ${this.RIVAL_NAME} swooped in and seized ${pick.name}!`);
+    if (window.GeoBaron) GeoBaron.say("steal");
   },
 
   /* ================= map "find it" questions ================= */
@@ -530,6 +545,7 @@ const GeoGame = {
 
   /** Re-open the modal with the map-question feedback and Continue button. */
   showMapResult(c, correct, tappedName, targetName) {
+    if (correct) GeoSound.correct(); else GeoSound.wrong();
     const box = document.getElementById("q-options");
     box.innerHTML = "";
     if (tappedName && !correct) this.addMapResultButton(box, `🗺️ ${tappedName}`, "wrong");
@@ -553,6 +569,7 @@ const GeoGame = {
     }
     document.getElementById("btn-q-continue").classList.remove("hidden");
     document.getElementById("question-modal").classList.remove("hidden");
+    this.focusModal("question-modal");
   },
 
   addMapResultButton(box, label, cls) {
@@ -581,6 +598,15 @@ const GeoGame = {
     // remember that so a reload can re-open the right screen.
     this.state.pendingChoice = true;
     this.persist();
+    // Fanfare + a big confetti shower for the big moment.
+    GeoSound.victory();
+    GeoConfetti.burst({ count: 180, x: window.innerWidth * 0.25, y: window.innerHeight * 0.15, power: 620 });
+    GeoConfetti.burst({ count: 180, x: window.innerWidth * 0.75, y: window.innerHeight * 0.15, power: 620 });
+    // The Baron sulks when he loses a continent.
+    if (window.GeoBaron) {
+      GeoBaron.say("continentLost");
+      GeoBaron.sulk();
+    }
     const cname = this.contNameOf[this.state.activeContinent];
     const allDone = this.state.conquered.length === this.continents.length;
 
@@ -628,8 +654,8 @@ const GeoGame = {
     document.getElementById("victory-title").textContent = `${cname} Conquered!`;
     document.getElementById("victory-text").innerHTML =
       `You did it, Commander! Every country in <strong>${this.escapeHtml(cname)}</strong> flies your flag.<br /><br />` +
-      `⭐ Score: <strong>${this.state.points}</strong> &nbsp;·&nbsp; 🔥 Best streak: <strong>${this.state.bestStreak}</strong><br /><br />` +
       `Feeling brave? Continue into <strong>World Conquest</strong> and take all six continents!`;
+    this.renderVictoryExtras(this.state.activeContinent);
     btn.textContent = "🌐 Continue to World Conquest →";
     btn.onclick = () => {
       modal.classList.add("hidden");
@@ -638,6 +664,7 @@ const GeoGame = {
       this.showContinentPicker("unlock");
     };
     modal.classList.remove("hidden");
+    this.focusModal("victory-modal");
   },
 
   /** Ultimate victory: every continent conquered. */
@@ -648,28 +675,71 @@ const GeoGame = {
     document.getElementById("victory-title").textContent = "WORLD CONQUERED!";
     document.getElementById("victory-text").innerHTML =
       `LEGENDARY! You have conquered <strong>all six continents</strong> and outsmarted ${this.RIVAL_NAME} once and for all!<br /><br />` +
-      `⭐ Final score: <strong>${this.state.points}</strong> &nbsp;·&nbsp; ✅ Correct: <strong>${this.state.correct}/${this.state.contests}</strong> &nbsp;·&nbsp; 🔥 Best streak: <strong>${this.state.bestStreak}</strong><br /><br />` +
       `You are officially the greatest geography explorer in history! 🎓`;
+    this.renderVictoryExtras(null); // every flag in the world
     btn.textContent = "↺ Start a new campaign";
     btn.onclick = () => this.resetToStart();
     modal.classList.remove("hidden");
+    this.focusModal("victory-modal");
   },
 
   /** World mode: continent conquered, pick the next frontier. */
   showContinentVictory(cname) {
     const modal = document.getElementById("victory-modal");
     const btn = document.getElementById("btn-victory-continue");
-    document.getElementById("victory-emoji").textContent = "🎉";
+    document.getElementById("victory-emoji").textContent =
+      this.CONT_EMOJI[this.state.activeContinent] || "🌍";
     document.getElementById("victory-title").textContent = `${cname} Conquered!`;
     document.getElementById("victory-text").innerHTML =
       `All of <strong>${this.escapeHtml(cname)}</strong> is yours! ${this.RIVAL_NAME} is furious! 😤<br /><br />` +
       `Progress: <strong>${this.state.conquered.length} / ${this.continents.length}</strong> continents.`;
+    this.renderVictoryExtras(this.state.activeContinent);
     btn.textContent = "🗝️ Choose next continent →";
     btn.onclick = () => {
       modal.classList.add("hidden");
       this.showContinentPicker("unlock");
     };
     modal.classList.remove("hidden");
+    this.focusModal("victory-modal");
+  },
+
+  /**
+   * Fill the victory modal's stat chips (score, correct/asked, best
+   * streak, hints used when tracked) and the row of flags — the given
+   * continent's flags, or every flag in the world when contId is null.
+   */
+  renderVictoryExtras(contId) {
+    const s = this.state;
+    const stats = document.getElementById("victory-stats");
+    stats.innerHTML = "";
+    const items = [
+      `⭐ Score: ${s.points}`,
+      `✅ Correct: ${s.correct}/${s.contests}`,
+      `🔥 Best streak: ${s.bestStreak}`,
+    ];
+    if (typeof s.hintsUsed === "number") items.push(`💡 Hints used: ${s.hintsUsed}`);
+    for (const label of items) {
+      const chip = document.createElement("span");
+      chip.className = "victory-stat";
+      chip.textContent = label;
+      stats.appendChild(chip);
+    }
+
+    const flags = document.getElementById("victory-flags");
+    flags.innerHTML = "";
+    const conts = contId
+      ? this.continents.filter((c) => c.id === contId)
+      : this.continents;
+    for (const c of conts) {
+      for (const t of c.territories) {
+        const img = document.createElement("img");
+        img.src = `assets/flags/${t.iso3}.svg`;
+        img.alt = t.name;
+        img.title = t.name;
+        img.loading = "lazy";
+        flags.appendChild(img);
+      }
+    }
   },
 
   resetToStart() {
@@ -686,6 +756,9 @@ const GeoGame = {
     document.getElementById("question-modal").classList.add("hidden");
     document.getElementById("unlock-modal").classList.add("hidden");
     document.getElementById("territory-card").classList.add("hidden");
+    const terrFlag = document.getElementById("terr-flag");
+    if (terrFlag) terrFlag.classList.add("hidden");
+    if (window.GeoBaron) GeoBaron.hide();
     document.getElementById("score-val").textContent = "0";
     document.getElementById("streak-val").textContent = "0";
     const cont = document.getElementById("btn-continue");
@@ -716,6 +789,8 @@ const GeoGame = {
     GeoMap.refresh((f) => this.styleFor(f));
     document.getElementById("score-val").textContent = this.state.points;
     document.getElementById("streak-val").textContent = this.state.streak;
+    // The streak chip pulses once the player is on a roll (3+).
+    document.getElementById("streak-chip").classList.toggle("hot", this.state.streak >= 3);
 
     // Objective line
     const cname = this.contNameOf[this.state.activeContinent];
@@ -743,6 +818,14 @@ const GeoGame = {
 
   /* ================= helpers ================= */
   persist() { GeoStorage.save(this.state); },
+
+  /** Move keyboard focus into a freshly opened modal (the dialog itself). */
+  focusModal(id) {
+    const m = document.getElementById(id);
+    if (!m) return;
+    const dialog = m.querySelector(".modal") || m;
+    if (dialog.focus) dialog.focus({ preventScroll: true });
+  },
 
   /** Fisher-Yates shuffle — returns a shuffled copy of arr. */
   shuffle(arr) {

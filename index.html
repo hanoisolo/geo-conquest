@@ -9,13 +9,45 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>" />
 </head>
 <body>
+  <!-- Baron von Blunder's face, defined once and reused (side card + floating phone avatar) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="baron-face" viewBox="0 0 120 120">
+      <!-- top hat -->
+      <rect x="40" y="8" width="40" height="24" rx="4" fill="#4c1d95" />
+      <rect x="40" y="24" width="40" height="6" fill="#f59e0b" />
+      <rect x="32" y="30" width="56" height="7" rx="3.5" fill="#312e81" />
+      <!-- ears + head -->
+      <circle cx="28" cy="68" r="5" fill="#fcd9b8" />
+      <circle cx="92" cy="68" r="5" fill="#fcd9b8" />
+      <circle cx="60" cy="68" r="32" fill="#fcd9b8" />
+      <!-- angry eyebrows -->
+      <path d="M44 55 Q51 60 58 59" stroke="#312e81" stroke-width="3.5" fill="none" stroke-linecap="round" />
+      <path d="M62 59 Q69 60 76 55" stroke="#312e81" stroke-width="3.5" fill="none" stroke-linecap="round" />
+      <!-- eyes -->
+      <circle cx="51" cy="68" r="4" fill="#1e293b" />
+      <circle cx="71" cy="68" r="4" fill="#1e293b" />
+      <!-- monocle -->
+      <circle cx="71" cy="68" r="10.5" fill="rgba(255,255,255,0.18)" stroke="#f59e0b" stroke-width="2.5" />
+      <line x1="78" y1="75" x2="88" y2="88" stroke="#f59e0b" stroke-width="2.5" stroke-linecap="round" />
+      <!-- nose -->
+      <circle cx="61" cy="77" r="4.5" fill="#f0a878" />
+      <!-- moustache -->
+      <path d="M61 84 C54 78 44 79 40 86 C47 91 56 90 61 86 C66 90 75 91 82 86 C78 79 68 78 61 84 Z" fill="#312e81" />
+      <!-- smirk -->
+      <path d="M54 95 Q61 99 68 95" stroke="#b45309" stroke-width="2.5" fill="none" stroke-linecap="round" />
+      <!-- cape collar -->
+      <path d="M32 120 Q60 102 88 120 Z" fill="#7c3aed" />
+    </symbol>
+  </svg>
+
   <header class="topbar">
     <div class="brand">🌍 <span>Geo Conquest</span></div>
     <div class="hud">
+      <button class="btn btn-small btn-icon" id="btn-mute" type="button" aria-pressed="false" aria-label="Mute sounds">🔊</button>
       <div class="chip" id="score-chip" title="Your conquest points">⭐ <span id="score-val">0</span></div>
       <div class="chip" id="streak-chip" title="Correct answers in a row">🔥 <span id="streak-val">0</span></div>
-      <button class="btn btn-small" id="btn-how" type="button">❓ How to play</button>
-      <button class="btn btn-small btn-danger" id="btn-restart" type="button">↺ New campaign</button>
+      <button class="btn btn-small" id="btn-how" type="button" aria-label="How to play" title="How to play">❓<span class="btn-text"> How to play</span></button>
+      <button class="btn btn-small btn-danger" id="btn-restart" type="button" aria-label="New campaign" title="New campaign">↺<span class="btn-text"> New campaign</span></button>
     </div>
   </header>
 
@@ -84,8 +116,19 @@
             <p id="objective-text">Choose a continent to begin!</p>
           </div>
 
+          <div class="card baron-card" id="baron-card">
+            <div class="baron-bubble hidden" id="baron-bubble" aria-live="polite"><span id="baron-text"></span></div>
+            <div class="baron-stage" id="baron-stage">
+              <svg class="baron-face" viewBox="0 0 120 120" role="img" aria-label="Baron von Blunder, the villain"><use href="#baron-face" /></svg>
+            </div>
+            <p class="baron-caption"><strong>Baron von Blunder</strong> — your rival 😈</p>
+          </div>
+
           <div class="card territory-card hidden" id="territory-card">
-            <h3 id="terr-name">Country</h3>
+            <div class="terr-head">
+              <img id="terr-flag" class="terr-flag hidden" alt="" />
+              <h3 id="terr-name">Country</h3>
+            </div>
             <p class="muted" id="terr-owner"></p>
             <p class="muted small easy-note hidden" id="terr-easy-note">😈 The Baron's fortress needs Medium or Hard!</p>
             <p class="muted small" id="terr-hint">Pick a difficulty, then answer to conquer it!</p>
@@ -107,7 +150,7 @@
 
   <!-- ============ QUESTION MODAL ============ -->
   <div class="modal-backdrop hidden" id="question-modal">
-    <div class="modal card">
+    <div class="modal card" tabindex="-1">
       <div class="q-meta"><span id="q-territory">Country</span><span class="tier-badge" id="q-tier-badge">Easy</span></div>
       <h2 id="q-text">Question?</h2>
       <img id="q-flag-img" class="q-flag-img hidden" alt="" />
@@ -119,10 +162,12 @@
 
   <!-- ============ VICTORY MODAL ============ -->
   <div class="modal-backdrop hidden" id="victory-modal">
-    <div class="modal card victory">
+    <div class="modal card victory" tabindex="-1">
       <div class="hero-emoji" id="victory-emoji">🏆</div>
       <h2 id="victory-title">Continent Conquered!</h2>
       <p id="victory-text"></p>
+      <div class="victory-stats" id="victory-stats"></div>
+      <div class="victory-flags" id="victory-flags"></div>
       <div class="victory-buttons">
         <button class="btn btn-big" id="btn-victory-continue" type="button">Continue →</button>
         <button class="btn btn-small" id="btn-victory-restart" type="button">↺ New campaign</button>
@@ -132,7 +177,7 @@
 
   <!-- ============ UNLOCK MODAL ============ -->
   <div class="modal-backdrop hidden" id="unlock-modal">
-    <div class="modal card">
+    <div class="modal card" tabindex="-1">
       <h2>🗝️ Choose your next conquest</h2>
       <p class="muted">The Baron is regrouping… where will you strike next?</p>
       <div class="continent-grid" id="unlock-cards"></div>
@@ -141,7 +186,7 @@
 
   <!-- ============ HOW TO PLAY MODAL ============ -->
   <div class="modal-backdrop hidden" id="how-modal">
-    <div class="modal card">
+    <div class="modal card" tabindex="-1">
       <h2>❓ How to play</h2>
       <ol class="how-list">
         <li>🖱️ <strong>Tap a country</strong> in your current continent to challenge it.</li>
@@ -156,6 +201,13 @@
     </div>
   </div>
 
+  <!-- Floating Baron avatar (phones only): fixed bottom-left, below modal z-index,
+       hidden while any modal is open (toggled by js/baron.js) -->
+  <div class="baron-float" id="baron-float">
+    <div class="baron-bubble baron-float-bubble hidden" id="baron-float-bubble" aria-live="polite"><span id="baron-float-text"></span></div>
+    <svg class="baron-float-face" viewBox="0 0 120 120" aria-hidden="true"><use href="#baron-face" /></svg>
+  </div>
+
   <div class="toast hidden" id="toast"></div>
 
   <footer>
@@ -164,6 +216,9 @@
 
   <script src="js/storage.js"></script>
   <script src="js/map.js"></script>
+  <script src="js/sound.js"></script>
+  <script src="js/confetti.js"></script>
+  <script src="js/baron.js"></script>
   <script src="js/game.js"></script>
   <script src="js/app.js"></script>
 </body>

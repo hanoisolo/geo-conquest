@@ -57,7 +57,7 @@ One device, 2-4 players taking turns. No Baron. Solo stays exactly as it is.
 ### 8.1 Mode select and setup (segment M1)
 - The start screen keeps the two solo cards (Continent Quest, World Conquest — vs the Baron) under a "Solo" label and adds a third card **👥 Multiplayer — 2-4 players on one device** (`#btn-multi`).
 - Multiplayer setup screen (`#screen-mp-setup`): number of players 2/3/4; per player a name (default "Player 1"..; max 12 chars) and a colour from 4 presets (blue `#2563eb`, red `#dc2626`, green `#16a34a`, orange `#ea580c`; each colour used once); win mode **⏱ Timed** (10 / 20 / 30 min) or **👑 Total domination**; Start button. Validation: names non-empty and unique.
-- Map: the whole world (all 68 countries, all continents unlocked).
+- **Map choice** (Don, Oct 2026), shown next to the win-mode choice on the setup screen: **🌍 Whole world** or **one continent** (North America, South America, Europe, Africa, Asia, Oceania). In a one-continent game only that continent's countries are playable (the rest is grey backdrop, not clickable, homes too), the map zooms to it, strike-back neighbours are limited to that continent (random attacker country when none borders the target), and **total domination means holding every country of that continent**. In a whole-world game, total domination = last player standing. Saved as `mapScope` ("world" or a continent id).
 - Home flags: players plant in turn order ("<name>, tap a country to plant your home flag"); each picks a different, unclaimed country. Homes show a 🏠 marker/badge in the scoreboard.
 - Acceptance: setup works at 390px; the map colours each player's countries in their colour; the Baron panel and phone avatar are hidden in multiplayer.
 

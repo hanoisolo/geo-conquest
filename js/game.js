@@ -29,6 +29,7 @@ const GeoGame = {
   mode: "solo",         // "solo" | "multi" (GeoMulti owns multiplayer state)
   pickingHome: false,   // true while the player plants their first flag
   currentContest: null, // { iso3, tier, subject, nudged, question, options, answerIdx, ... }
+  contestHook: null,    // multiplayer: GeoMulti.onContestDone receives the resolved contest
   selectedSubject: "geo", // "geo" | "math" — chosen on the territory card
   nameVariantsOf: {},   // iso3 -> Set of normalized name spellings (giveaway check)
   _toastQueue: [],      // pending toast messages (shown one after another)
@@ -639,6 +640,16 @@ const GeoGame = {
       document.getElementById("question-modal").classList.add("hidden");
       this.currentContest = null;
       this.toast(c.wasCorrect ? "🧮 Nice practice!" : "🧮 Keep practising — you've got this!");
+      return;
+    }
+    // Multiplayer: GeoMulti owns the result (ownership, points, turns) —
+    // the solo campaign bookkeeping below never runs.
+    if (this.mode === "multi" && this.contestHook) {
+      document.getElementById("question-modal").classList.add("hidden");
+      document.getElementById("territory-card").classList.add("hidden");
+      this.leaveFindMode();
+      this.currentContest = null;
+      this.contestHook(c);
       return;
     }
     document.getElementById("question-modal").classList.add("hidden");

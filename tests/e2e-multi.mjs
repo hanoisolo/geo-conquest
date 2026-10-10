@@ -43,6 +43,45 @@ async function run(vp, tag) {
   ok(`${tag}: banner shows player 1`, /Player 1/.test(await page.locator("#mp-banner").textContent()));
   ok(`${tag}: Baron hidden`, !(await vis("#baron-card")));
   await wait(600); await shot("03-homes");
+  // ---- M2a: turns and attacks ----
+  const ready = async () => { if (await vis("#mp-handoff")) { await page.click("#btn-mp-ready"); await wait(300); } };
+  async function answer(correct) {
+    const info = await page.evaluate(() => { const c = GeoGame.currentContest; return { type: c.question.type || "text", idx: c.answerIdx, target: c.question.target, n: c.options.length }; });
+    if (info.type === "map") {
+      await page.click("#q-options button"); await wait(300);
+      await page.evaluate(([t, ok]) => GeoGame.onFindTap(ok ? t : (t === "AUS" ? "NZL" : "AUS")), [info.target, correct]); await wait(correct ? 100 : 1600);
+    } else {
+      await page.locator("#q-options button").nth(correct ? info.idx : (info.idx + 1) % info.n).click();
+    }
+    await wait(250);
+    await page.click("#btn-q-continue"); await wait(500);
+  }
+  async function attack(iso, tier, correct, subject = "geo") {
+    await ready();
+    await page.evaluate((i) => GeoMap.onTerritoryClick(i), iso); await wait(250);
+    await page.click(`[data-subject="${subject}"]`);
+    await page.click(`.diff-btn[data-tier="${tier}"]`); await wait(450);
+    await answer(correct);
+  }
+  const own = (iso) => page.evaluate((i) => GeoMulti.state.ownership[i], iso);
+  const turn = () => page.evaluate(() => GeoMulti.state.turn);
+  ok(`${tag}: hand-off shown before first turn`, await vis("#mp-handoff"));
+  await shot("04-handoff");
+  await attack("USA", "medium", true);
+  ok(`${tag}: right answer takes an unclaimed country`, (await own("USA")) === 0);
+  ok(`${tag}: turn passes to player 2`, (await turn()) === 1 && await vis("#mp-handoff"));
+  await attack("ARG", "medium", false);
+  ok(`${tag}: miss on unclaimed changes nothing`, (await own("ARG")) === undefined && (await turn()) === 0);
+  await ready();
+  await page.evaluate(() => GeoMap.onTerritoryClick("BRA")); await wait(250);
+  ok(`${tag}: Easy disabled on an enemy home`, await page.locator('.diff-btn[data-tier="easy"]').isDisabled());
+  await shot("05-attack-card");
+  await page.click('[data-subject="math"]'); await page.click('.diff-btn[data-tier="hard"]'); await wait(450);
+  ok(`${tag}: math attack question`, await page.evaluate(() => GeoGame.currentContest.question.type === "math"));
+  await answer(true);
+  ok(`${tag}: enemy home captured`, (await own("BRA")) === 0);
+  ok(`${tag}: player with no countries is out and skipped`, await page.evaluate(() => !GeoMulti.state.players[1].alive && GeoMulti.state.turn === 0));
+  await wait(300); await shot("06-eliminated");
   ok(`${tag}: solo save untouched`, await page.evaluate(() => JSON.parse(localStorage.getItem("geoConquestSaveV1")).marker === "solo-save"));
   ok(`${tag}: no console errors`, errs.length === 0);
   if (errs.length) console.log(errs);

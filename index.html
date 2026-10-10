@@ -260,6 +260,13 @@
     <svg class="baron-float-face" viewBox="0 0 120 120" aria-hidden="true"><use href="#baron-face" /></svg>
   </div>
 
+  <!-- ============ MULTIPLAYER HAND-OFF (pass the device) ============
+       A .modal-backdrop on purpose: toasts wait until it closes. -->
+  <div class="modal-backdrop mp-handoff hidden" id="mp-handoff" role="dialog" aria-modal="true"
+    aria-labelledby="mp-handoff-text"><div class="mp-handoff-box"><div class="hero-emoji">🔄</div>
+    <h2 id="mp-handoff-text"></h2><p>Hand the device over — no peeking at their question!</p>
+    <button class="btn btn-big" id="btn-mp-ready" type="button">Ready!</button></div></div>
+
   <div class="toast hidden" id="toast" role="status" aria-live="polite"></div>
 
   <footer>

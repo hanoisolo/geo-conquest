@@ -19,6 +19,6 @@ Max one fix round per segment. One local commit per clean segment. Nothing pushe
 |---|---------|------|--------|--------|
 | M0 | Blueprint: spec §8, segments, decisions, land adjacency data (tools/build_adjacency.py → data/adjacency.json) | §8 | done | M0 commit |
 | M1 | Mode card, setup screen, multi.js state + separate save, home flags, turn banner, scoreboard | §8.1 | done — Vibe M1 stalled after multi.js + HTML (Forge fixed a comment syntax error, added game.js/app.js hooks); retry M1b (CSS) clean; Forge fix round: hide legend/empty timer, setup counts as mp-mode; check, solo e2e 61/61, e2e-multi 16/16 | M1 commit |
-| M2 | Turns, attacks, home Medium/Hard rule, strike-back hand-off, elimination skip | §8.2 | pending | |
+| M2 | Turns, attacks, home Medium/Hard rule, strike-back hand-off, elimination skip | §8.2 | M2a done (turns, attacks, hand-off screen, home rule, elimination skip; first run stalled, smaller retry clean; Forge: double-emoji fix; e2e-multi 32/32, solo 61/61); M2b strike-back pending | M2a commit |
 | M3 | Timer, domination win, final standings, resume | §8.3 | pending | |
 | M4 | e2e-multi tests (2p timed, 4p domination, strike-back, elimination, timer end, solo save intact) + screenshots | §8.4 | pending | |

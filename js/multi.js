@@ -9,7 +9,8 @@
    and the scoreboard.
 
    Segment M1: mode card, setup screen, home flags, banner,
-   scoreboard. Attacks land in M2, the timer and standings in M3.
+   scoreboard. Segment M2a: turns, attacks, hand-offs (strike-backs
+   land in M2b; the timer and standings in M3).
 
    State shape:
      { v: 1,
@@ -20,7 +21,8 @@
        turn: 0,
        phase: "homes" | "turn" | "over",
        win: { mode: "timed" | "domination", minutes },
-       timeLeftMs, asked: [] }
+       mapScope: "world",   // later: one continent only
+       timeLeftMs, asked: [], pending: null }
    ============================================================ */
 "use strict";
 
@@ -45,9 +47,24 @@ const GeoMulti = {
   /* Setup-screen scratch state (rebuilt by openSetup). */
   _setup: null,
 
+  /* The attack whose contest is in flight: { iso3, attacker, defender }. */
+  _attack: null,
+
+  /* Callback for the hand-off screen's "ready" button (wired once in init). */
+  _onReady: null,
+
   /* ================= boot ================= */
   init({ adjacency }) {
     this.adjacency = adjacency || {};
+    // Multiplayer contests resolve through GeoMulti, not the solo campaign.
+    GeoGame.contestHook = (c) => this.onContestDone(c);
+    // The hand-off button is wired once; the callback is swapped per turn.
+    document.getElementById("btn-mp-ready").addEventListener("click", () => {
+      document.getElementById("mp-handoff").classList.add("hidden");
+      const onReady = this._onReady;
+      this._onReady = null;
+      if (onReady) onReady();
+    });
   },
 
   /* ================= save / load ================= */
@@ -70,6 +87,7 @@ const GeoMulti = {
       if (s.v !== 1 || !Array.isArray(s.players) || !s.players.length) return null;
       if (!s.ownership || typeof s.ownership !== "object") s.ownership = {};
       if (!Array.isArray(s.asked)) s.asked = [];
+      if (!s.mapScope) s.mapScope = "world"; // M1 saves predate the scope choice
       return s;
     } catch (e) {
       return null;
@@ -245,6 +263,7 @@ const GeoMulti = {
         mode: setup.win.mode,
         minutes: setup.win.mode === "timed" ? setup.win.minutes : null,
       },
+      mapScope: "world", // the whole world; a continent-only scope comes later
       timeLeftMs: setup.win.mode === "timed" ? setup.win.minutes * 60000 : null,
       asked: [],
     };
@@ -271,6 +290,11 @@ const GeoMulti = {
     );
     GeoMap.reset();
     this.refresh();
+    // Resuming mid-game: hand the device to the player whose turn it is.
+    if (this.state.phase === "turn") {
+      const p = this.state.players[this.state.turn];
+      this.showHandoff(this.state.turn, `Pass to ${p.name}`, () => this.refresh());
+    }
   },
 
   /** Resume a saved multiplayer game (reload / "Continue multiplayer game"). */
@@ -294,7 +318,7 @@ const GeoMulti = {
   onTerritoryClick(iso3) {
     const s = this.state;
     if (!s || s.phase === "over") return;
-    if (!GeoGame.playableIsos.has(iso3)) return; // backdrop country
+    if (!this.inScope(iso3)) return; // backdrop or out-of-scope country
 
     if (s.phase === "homes") {
       if (s.ownership[iso3] !== undefined) {
@@ -309,9 +333,13 @@ const GeoMulti = {
       if (s.players.every((pl) => pl.home !== null)) {
         s.phase = "turn";
         s.turn = 0;
-      } else {
-        s.turn = (s.turn + 1) % s.players.length;
+        this.save();
+        this.refresh();
+        const first = s.players[0];
+        this.showHandoff(0, `Pass to ${first.name}`, () => this.refresh());
+        return;
       }
+      s.turn = (s.turn + 1) % s.players.length;
       this.save();
       this.refresh();
       return;
@@ -322,9 +350,162 @@ const GeoMulti = {
     }
   },
 
-  /** M2 replaces this stub with the real attack flow. */
+  /* ================= turns & attacks (M2a) ================= */
+  /** True when iso3 is playable in this game (map scope). */
+  inScope(iso3) {
+    if (!GeoGame.playableIsos.has(iso3)) return false;
+    const scope = (this.state && this.state.mapScope) || "world";
+    return scope === "world" || GeoGame.contOf[iso3] === scope;
+  },
+
+  /**
+   * Point GeoGame's question machinery at player i: the shared `asked`
+   * list (questions never repeat across players) and their math-nudge
+   * streak. GeoGame.persist is a no-op in multiplayer.
+   */
+  playerView(i) {
+    const s = this.state;
+    const p = s.players[i];
+    GeoGame.state = {
+      asked: s.asked,
+      geoSinceMath: p.geoSinceMath,
+      hintsUsed: 0,
+      stats: { byCategory: {} },
+    };
+  },
+
+  /** Number of countries player i owns. */
+  countOf(i) {
+    const s = this.state;
+    if (!s) return 0;
+    return Object.keys(s.ownership).filter((k) => s.ownership[k] === i).length;
+  },
+
+  /** Indices of the players still in the game. */
+  alivePlayers() {
+    const out = [];
+    this.state.players.forEach((p, i) => { if (p.alive) out.push(i); });
+    return out;
+  },
+
+  /**
+   * One attack per turn: open the territory card for iso3. The subject
+   * and difficulty buttons start the contest (GeoGame.startContest);
+   * the result comes back through onContestDone.
+   */
   onAttackClick(iso3) {
-    GeoGame.toast("⚔️ Attacks arrive in the next update");
+    const s = this.state;
+    if (!s || s.phase !== "turn" || s.pending) return;
+    const owner = s.ownership[iso3];
+    if (owner === s.turn) {
+      GeoGame.toast("✅ That's already yours!");
+      return;
+    }
+    this.playerView(s.turn);
+    GeoGame.showTerritoryCard(iso3, "neutral");
+    const ownerEl = document.getElementById("terr-owner");
+    const easyBtn = document.querySelector('.diff-btn[data-tier="easy"]');
+    const easyNote = document.getElementById("terr-easy-note");
+    if (owner === undefined || owner === null) {
+      ownerEl.textContent = "⚪ Unclaimed — a right answer takes it!";
+    } else {
+      const defender = s.players[owner];
+      ownerEl.textContent = `⚔️ Held by ${defender.name} — miss and ${defender.name} gets a strike-back!`;
+    }
+    // Enemy home countries need Medium or Hard (same rule as the Baron's fortresses).
+    const isHome = owner !== undefined && owner !== null && s.players[owner].home === iso3;
+    easyBtn.disabled = isHome;
+    easyNote.classList.toggle("hidden", !isHome);
+    if (isHome) easyNote.textContent = `🏠 ${s.players[owner].name}'s home needs Medium or Hard!`;
+    this._attack = { iso3, attacker: s.turn, defender: owner === undefined ? null : owner };
+  },
+
+  /** The contest hook (GeoGame.contestHook) lands here with the result. */
+  onContestDone(c) {
+    const s = this.state;
+    const atk = this._attack;
+    if (!s || !atk) return;
+    const attacker = s.players[atk.attacker];
+    // Math resets the geo streak; geography extends it (per player).
+    if (c.question.type === "math") attacker.geoSinceMath = 0;
+    else attacker.geoSinceMath = (attacker.geoSinceMath || 0) + 1;
+    const country = GeoGame.nameOf[atk.iso3];
+    if (c.wasCorrect) {
+      s.ownership[atk.iso3] = atk.attacker;
+      const pts = GeoGame.contestPoints(c) + (c.nudged ? 5 : 0);
+      attacker.points += pts;
+      GeoSound.conquer();
+      GeoConfetti.burst({ at: atk.iso3, count: 60, power: 420 });
+      GeoGame.toast(`🎉 ${attacker.name} took ${country}! +${pts} pts`);
+      this.checkEliminated();
+      this.endTurn();
+    } else if (atk.defender === null) {
+      GeoGame.toast(`😅 Missed — ${country} stays unclaimed.`);
+      this.endTurn();
+    } else {
+      const defender = s.players[atk.defender];
+      GeoGame.toast(`😅 Missed — ${defender.name} keeps ${country}.`);
+      this.onEnemyMiss(c);
+    }
+  },
+
+  /** M2b replaces this stub with the defender's strike-back. */
+  onEnemyMiss(c) {
+    this.endTurn();
+  },
+
+  /** Players with no countries left are out of the game. */
+  checkEliminated() {
+    const s = this.state;
+    s.players.forEach((p, i) => {
+      if (p.alive && this.countOf(i) === 0) {
+        p.alive = false;
+        GeoGame.toast(`💥 ${p.name} is out of the game!`);
+      }
+    });
+  },
+
+  /** End the turn: save, maybe finish, then hand over to the next alive player. */
+  endTurn() {
+    const s = this.state;
+    this.save();
+    if (this.isOver()) { this.finish(); return; }
+    const alive = this.alivePlayers();
+    s.turn = alive[(alive.indexOf(s.turn) + 1) % alive.length];
+    this.save();
+    this.refresh();
+    const p = s.players[s.turn];
+    this.showHandoff(s.turn, `Pass to ${p.name}`, () => this.refresh());
+  },
+
+  /** Domination: last player with countries wins. (M3 adds the timer.) */
+  isOver() {
+    const s = this.state;
+    if (!s || !s.win) return false;
+    if (s.win.mode === "domination") return this.alivePlayers().length <= 1;
+    return false;
+  },
+
+  /** M3 replaces this stub with the standings screen. */
+  finish() {
+    const s = this.state;
+    s.phase = "over";
+    this.save();
+    this.refresh();
+    GeoGame.toast("🏁 Game over!");
+  },
+
+  /** Full-screen "pass the device" overlay in the next player's colour. */
+  showHandoff(playerIdx, message, onReady) {
+    const p = this.state.players[playerIdx];
+    const el = document.getElementById("mp-handoff");
+    el.style.background = this.COLORS[p.color].hex;
+    document.getElementById("mp-handoff-text").textContent = message;
+    const btn = document.getElementById("btn-mp-ready");
+    btn.textContent = `I'm ${p.name} — ready!`;
+    this._onReady = onReady;
+    el.classList.remove("hidden");
+    btn.focus();
   },
 
   /* ================= rendering ================= */
@@ -332,7 +513,7 @@ const GeoMulti = {
   styleFor(feature) {
     const iso3 = feature.properties.iso3;
     const name = GeoGame.nameOf[iso3] || feature.properties.name || "Unknown";
-    if (!GeoGame.playableIsos.has(iso3)) {
+    if (!this.inScope(iso3)) {
       return { cls: "t-backdrop", clickable: false, title: name };
     }
     const ownerIdx = this.state ? this.state.ownership[iso3] : undefined;
@@ -385,7 +566,7 @@ const GeoMulti = {
     h.textContent = "👥 Players";
     sb.appendChild(h);
     s.players.forEach((p, i) => {
-      const countries = Object.keys(s.ownership).filter((k) => s.ownership[k] === i).length;
+      const countries = this.countOf(i);
       const row = document.createElement("div");
       row.className =
         "mp-row" +

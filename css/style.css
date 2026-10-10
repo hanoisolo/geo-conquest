@@ -882,3 +882,20 @@ body.mp-mode #mp-banner {
 /* M1 fix round: solo-only legend and the empty timer pill stay out of multiplayer; setup counts as multiplayer */
 body.mp-mode .legend { display: none; }
 #mp-timer:empty { display: none; }
+
+/* ---------- Hand-off screen (pass the device) — opaque, next player's colour ---------- */
+.mp-handoff {
+  background: #2563eb; /* replaced inline with the player's colour */
+  color: #fff;
+  text-align: center;
+}
+.mp-handoff-box { max-width: 26rem; width: 100%; padding: 0 1rem; }
+.mp-handoff h2 { color: #fff; margin: 0.3rem 0 0.5rem; }
+.mp-handoff p { color: rgba(255, 255, 255, 0.92); margin: 0 0 1.2rem; }
+.mp-handoff .btn-big {
+  background: #fff;
+  color: #1e293b;
+  border: none;
+  box-shadow: var(--shadow);
+  min-width: 12rem;
+}

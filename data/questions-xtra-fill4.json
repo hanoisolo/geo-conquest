@@ -1,0 +1,240 @@
+[
+ {
+  "id": "XF7-H-001",
+  "continent": "South America",
+  "territory": "PRY",
+  "tier": "hard",
+  "type": "text",
+  "category": "general",
+  "q": "What is the currency of Paraguay?",
+  "options": [
+   "The guaraní",
+   "The peso",
+   "The real",
+   "The sol"
+  ],
+  "answer": 0,
+  "explain": "Paraguay's money is the guaraní, named after the Guaraní people, whose language most Paraguayans speak."
+ },
+ {
+  "id": "XF7-E-001",
+  "continent": "South America",
+  "territory": "URY",
+  "tier": "easy",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "Uruguay's famous beach resorts, like Punta del Este, face which ocean?",
+  "options": [
+   "The Atlantic Ocean",
+   "The Pacific Ocean",
+   "The Indian Ocean",
+   "The Arctic Ocean"
+  ],
+  "answer": 0,
+  "explain": "Uruguay sits on South America's Atlantic coast between Argentina and Brazil; its capital, Montevideo, lies on the wide Río de la Plata estuary where it meets the Atlantic."
+ },
+ {
+  "id": "XF7-E-002",
+  "continent": "South America",
+  "territory": "GUY",
+  "tier": "easy",
+  "type": "text",
+  "category": "climate-nature",
+  "q": "Which giant rodent, the largest in the world, grazes on the riverbanks and wetlands of Guyana?",
+  "options": [
+   "The capybara",
+   "The beaver",
+   "The guinea pig",
+   "The rabbit"
+  ],
+  "answer": 0,
+  "explain": "The capybara, a supersized relative of the guinea pig, roams South America's rivers and wetlands, including Guyana's."
+ },
+ {
+  "id": "XF7-H-002",
+  "continent": "South America",
+  "territory": "GUY",
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "Which is the longest river in Guyana?",
+  "options": [
+   "The Essequibo",
+   "The Demerara",
+   "The Berbice",
+   "The Corentyne"
+  ],
+  "answer": 0,
+  "explain": "The Essequibo runs about 1,000 kilometres from the Guiana Highlands to the Atlantic, far longer than Guyana's other rivers."
+ },
+ {
+  "id": "XF7-H-003",
+  "continent": "South America",
+  "territory": "GUY",
+  "tier": "hard",
+  "type": "text",
+  "category": "culture",
+  "q": "Which river in Guyana gave its name to a famous golden-brown sugar?",
+  "options": [
+   "The Demerara",
+   "The Berbice",
+   "The Rupununi",
+   "The Potaro"
+  ],
+  "answer": 0,
+  "explain": "Demerara sugar takes its name from the Demerara River and the old sugar-growing colony of Demerara in Guyana."
+ },
+ {
+  "id": "XF7-H-004",
+  "continent": "South America",
+  "territory": "SUR",
+  "tier": "hard",
+  "type": "text",
+  "category": "rivers",
+  "q": "Which river forms the border between Suriname and Guyana?",
+  "options": [
+   "The Corentyne",
+   "The Maroni",
+   "The Coppename",
+   "The Saramacca"
+  ],
+  "answer": 0,
+  "explain": "The Corentyne River runs along Suriname's western edge, separating it from Guyana on the way to the Atlantic."
+ },
+ {
+  "id": "XF7-H-005",
+  "continent": "South America",
+  "territory": "SUR",
+  "tier": "hard",
+  "type": "text",
+  "category": "culture",
+  "q": "What is the name of the English-based creole language that Surinamese of all backgrounds use to chat day to day?",
+  "options": [
+   "Sranan Tongo",
+   "Papiamento",
+   "Tok Pisin",
+   "Dutch"
+  ],
+  "answer": 0,
+  "explain": "Sranan Tongo grew out of the plantation era and is the everyday lingua franca shared across Suriname's many communities."
+ },
+ {
+  "id": "XF7-H-006",
+  "continent": "Europe",
+  "territory": "GBR",
+  "tier": "hard",
+  "type": "text",
+  "category": "oceans-seas",
+  "q": "The island of Great Britain is separated from the island of Ireland by which sea?",
+  "options": [
+   "The Irish Sea",
+   "The North Sea",
+   "The English Channel",
+   "The Baltic Sea"
+  ],
+  "answer": 0,
+  "explain": "The Irish Sea lies between the island of Great Britain and the island of Ireland."
+ },
+ {
+  "id": "XF7-E-003",
+  "continent": "Europe",
+  "territory": "PRT",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which football superstar was born in Funchal, on the Portuguese island of Madeira?",
+  "options": [
+   "Cristiano Ronaldo",
+   "Lionel Messi",
+   "Neymar",
+   "Pelé"
+  ],
+  "answer": 0,
+  "explain": "Cristiano Ronaldo was born in Funchal, the main city of Madeira, and went on to captain Portugal."
+ },
+ {
+  "id": "XF7-E-004",
+  "continent": "Europe",
+  "territory": "POL",
+  "tier": "easy",
+  "type": "text",
+  "category": "culture",
+  "q": "Which scientist, born in Warsaw, discovered the elements polonium and radium?",
+  "options": [
+   "Marie Curie",
+   "Ada Lovelace",
+   "Florence Nightingale",
+   "Jane Goodall"
+  ],
+  "answer": 0,
+  "explain": "Marie Curie was born in Warsaw in 1867 and even named polonium after her homeland, Poland."
+ },
+ {
+  "id": "XF7-H-007",
+  "continent": "Asia",
+  "territory": "KOR",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest mountain in South Korea, a dormant volcano on Jeju Island?",
+  "options": [
+   "Hallasan",
+   "Seoraksan",
+   "Jirisan",
+   "Namsan"
+  ],
+  "answer": 0,
+  "explain": "Hallasan rises 1,947 metres on Jeju Island, making it the highest peak in South Korea."
+ },
+ {
+  "id": "XF7-H-008",
+  "continent": "Asia",
+  "territory": "VNM",
+  "tier": "hard",
+  "type": "text",
+  "category": "mountains",
+  "q": "What is the highest mountain in Vietnam, often called 'the Roof of Indochina'?",
+  "options": [
+   "Fansipan",
+   "Ba Vi",
+   "Bach Ma",
+   "Nui Ba Den"
+  ],
+  "answer": 0,
+  "explain": "Fansipan stands about 3,143 metres tall in the Hoang Lien Son range near Sa Pa, the highest peak in Indochina."
+ },
+ {
+  "id": "XF7-H-009",
+  "continent": "Asia",
+  "territory": "TUR",
+  "tier": "hard",
+  "type": "text",
+  "category": "landmarks",
+  "q": "Which region of Turkey is famous for its 'fairy chimney' rock cones, cave hotels and hot-air balloon rides?",
+  "options": [
+   "Cappadocia",
+   "Pamukkale",
+   "Ephesus",
+   "Gallipoli"
+  ],
+  "answer": 0,
+  "explain": "Cappadocia's soft volcanic rock has eroded into fairy chimneys, and people have carved homes and churches into it for centuries."
+ },
+ {
+  "id": "XF7-H-010",
+  "continent": "Asia",
+  "territory": "MNG",
+  "tier": "hard",
+  "type": "text",
+  "category": "culture",
+  "q": "Which traditional Mongolian instrument, topped with a carved horse's head, is the country's national instrument?",
+  "options": [
+   "The morin khuur",
+   "The balalaika",
+   "The sitar",
+   "The erhu"
+  ],
+  "answer": 0,
+  "explain": "The morin khuur, or horse-head fiddle, is Mongolia's national instrument and a symbol of its horse-riding culture."
+ }
+]

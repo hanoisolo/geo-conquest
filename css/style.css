@@ -549,6 +549,34 @@ main .card:hover:not(.map-wrap) { transform: translateY(-3px); box-shadow: var(-
 .q-feedback.bad { background: #fef3c7; border: 2px solid var(--accent); }
 #btn-q-continue { margin-top: 1rem; width: 100%; }
 
+/* ---- question meta: points pill + hint button + hint list ---- */
+.q-meta-right { display: flex; align-items: center; gap: 0.4rem; }
+.q-points {
+  font-size: 0.8rem; font-weight: 800; color: var(--muted);
+  background: #f1f5f9; padding: 0.25rem 0.7rem;
+  border-radius: 999px; white-space: nowrap;
+}
+#btn-hint {
+  margin-top: 0.6rem;
+  background: #fde68a; color: #92400e;
+  box-shadow: 0 3px 0 #d97706;
+}
+#btn-hint:active { box-shadow: 0 1px 0 #d97706; }
+.q-hints {
+  margin: 0.6rem 0;
+  padding: 0.6rem 0.8rem 0.6rem 2.1rem;
+  background: #fefce8;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  text-align: left;
+}
+.q-hints li { margin: 0.35rem 0; }
+.frac-bar { display: block; width: 100%; max-width: 300px; margin: 0.3rem 0; }
+.frac-bar-label { font-weight: 700; color: #334155; }
+.fb-on { fill: var(--violet); stroke: #fff; }
+.fb-off { fill: #e2e8f0; stroke: #fff; }
+.frac-bar text { font-size: 14px; font-weight: 700; fill: #334155; }
+
 .victory { text-align: center; }
 /* big animated trophy/continent emoji */
 .victory .hero-emoji {

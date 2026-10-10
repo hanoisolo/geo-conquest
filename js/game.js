@@ -279,6 +279,7 @@ const GeoGame = {
       options: order.map((i) => q.options[i]),
       answerIdx: order.indexOf(q.answer),
       optionFlags: type === "flag-pick" ? order.map((i) => q.optionFlags[i]) : null,
+      hintsShown: 0,
     };
     document.getElementById("q-territory").textContent = subject === "math"
       ? "🧮 " + this.nameOf[iso3]
@@ -295,6 +296,20 @@ const GeoGame = {
     flagImg.removeAttribute("src");
     document.getElementById("q-feedback").classList.add("hidden");
     document.getElementById("btn-q-continue").classList.add("hidden");
+    // Hints: math questions carry step-by-step hints. Reset the list and
+    // show the hint button only when there is something to reveal.
+    const hintsList = document.getElementById("q-hints");
+    hintsList.innerHTML = "";
+    hintsList.classList.add("hidden");
+    const hintBtn = document.getElementById("btn-hint");
+    if (q.type === "math" && q.hints && q.hints.length) {
+      hintBtn.disabled = false;
+      hintBtn.textContent = "💡 Hint (" + q.hints.length + " steps)";
+      hintBtn.classList.remove("hidden");
+    } else {
+      hintBtn.classList.add("hidden");
+    }
+    this.updatePointsLabel();
 
     if (type === "map") {
       // "Find it on the map" question: one big button enters find mode.
@@ -351,6 +366,100 @@ const GeoGame = {
       b.addEventListener("click", () => this.answerQuestion(i, b));
       box.appendChild(b);
     });
+  },
+
+  /* ================= hints (math questions) ================= */
+  /**
+   * Points a correct answer earns: each hint shown takes 20% of the
+   * tier's base points (rounded) off, but never below 5. Geography
+   * contests have no hintsShown, so they always earn the full base.
+   */
+  contestPoints(c) {
+    const base = this.TIER_POINTS[c.tier];
+    const shown = c.hintsShown || 0;
+    return Math.max(5, base - Math.round(base * 0.2) * shown);
+  },
+
+  /** Refresh the "+N pts" pill in the question modal's meta row. */
+  updatePointsLabel() {
+    const c = this.currentContest;
+    const el = document.getElementById("q-points");
+    if (!c || !el) return;
+    const base = this.TIER_POINTS[c.tier];
+    const points = this.contestPoints(c);
+    const shown = c.hintsShown || 0;
+    el.textContent = "+" + points + " pts" + (shown > 0 ? ` (💡−${base - points})` : "");
+  },
+
+  /** Reveal the next hint for the current math question, if any remain. */
+  showHint() {
+    const c = this.currentContest;
+    if (!c) return;
+    const hints = c.question && c.question.hints;
+    if (!hints || !hints.length || c.hintsShown >= hints.length) return;
+    const hint = hints[c.hintsShown];
+    const list = document.getElementById("q-hints");
+    list.classList.remove("hidden");
+    const li = document.createElement("li");
+    li.textContent = hint.text;
+    list.appendChild(li);
+    if (hint.bars) {
+      for (const bar of hint.bars) li.appendChild(this.fractionBarSvg(bar));
+    }
+    c.hintsShown++;
+    this.state.hintsUsed = (this.state.hintsUsed || 0) + 1;
+    GeoSound.hint();
+    this.updatePointsLabel();
+    const left = hints.length - c.hintsShown;
+    if (left > 0) document.getElementById("btn-hint").textContent = `💡 Next hint (${left} left)`;
+    if (c.hintsShown >= hints.length) {
+      const btn = document.getElementById("btn-hint");
+      btn.disabled = true;
+      btn.textContent = "💡 No more hints";
+    }
+  },
+
+  /**
+   * A fraction bar: |n| of d equal parts filled, stacked over whole bars
+   * when the fraction is improper (10/9 draws two bars). Denominators
+   * wider than 24 get a plain text label instead of a drawing.
+   */
+  fractionBarSvg({ n, d, label }) {
+    if (!d || d > 24) {
+      const span = document.createElement("span");
+      span.className = "frac-bar-label";
+      span.textContent = label;
+      return span;
+    }
+    const SVG = "http://www.w3.org/2000/svg";
+    const num = Math.abs(n);
+    const whole = Math.max(1, Math.ceil(num / d));
+    const barW = 240, barH = 22, gap = 4;
+    const height = whole * (barH + gap) - gap;
+    const svg = document.createElementNS(SVG, "svg");
+    svg.setAttribute("viewBox", `0 0 300 ${height}`);
+    svg.setAttribute("class", "frac-bar");
+    svg.setAttribute("role", "img");
+    svg.setAttribute("aria-label", label);
+    let filled = 0;
+    for (let b = 0; b < whole; b++) {
+      for (let i = 0; i < d; i++) {
+        const rect = document.createElementNS(SVG, "rect");
+        rect.setAttribute("x", (i * barW) / d);
+        rect.setAttribute("y", b * (barH + gap));
+        rect.setAttribute("width", barW / d);
+        rect.setAttribute("height", barH);
+        rect.setAttribute("class", filled < num ? "fb-on" : "fb-off");
+        svg.appendChild(rect);
+        filled++;
+      }
+    }
+    const text = document.createElementNS(SVG, "text");
+    text.setAttribute("x", 250);
+    text.setAttribute("y", Math.round(height / 2) + 5);
+    text.textContent = label;
+    svg.appendChild(text);
+    return svg;
   },
 
   /**
@@ -434,6 +543,8 @@ const GeoGame = {
     if (!c || btnEl.disabled) return;
     const buttons = [...document.getElementById("q-options").children];
     buttons.forEach((b) => (b.disabled = true));
+    // The question is answered — no more hints (shown ones stay visible).
+    document.getElementById("btn-hint").classList.add("hidden");
     // flag-pick: reveal the country names under the flags.
     document.querySelectorAll("#q-options .flag-name").forEach((s) => s.classList.remove("hidden"));
     const correct = idx === c.answerIdx;
@@ -482,7 +593,7 @@ const GeoGame = {
       this.state.correct++;
       this.state.streak++;
       this.state.bestStreak = Math.max(this.state.bestStreak, this.state.streak);
-      let pts = this.TIER_POINTS[c.tier];
+      let pts = this.contestPoints(c);
       if (this.state.streak >= 3) pts += 5; // streak bonus
       if (c.nudged) pts += 5; // math nudge bonus
       this.state.points += pts;

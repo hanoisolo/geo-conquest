@@ -89,6 +89,7 @@ function wireUI() {
 
   // ---- question modal ----
   $("btn-q-continue").addEventListener("click", () => GeoGame.resolveContest());
+  $("btn-hint").addEventListener("click", () => GeoGame.showHint());
 
   // ---- map find mode ("find it on the map" questions) ----
   $("btn-find-giveup").addEventListener("click", () => GeoGame.giveUpFind());

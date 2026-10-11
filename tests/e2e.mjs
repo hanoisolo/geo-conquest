@@ -74,10 +74,25 @@ async function run(vp, tag) {
 
   // geography question
   await force("OC-E-005" ); // may not exist -> falls back
+  await page.evaluate(() => { const h = GeoMap.hop.bind(GeoMap); window.__hops = []; GeoMap.hop = (f, t, a, c, cb) => { window.__hops.push([f, t, a]); return h(f, t, a, c, cb); }; });
   await attack("NZL", "medium", "geo");
   await shot("03-geo-question");
   await answer(true); await shot("04-geo-answered"); await cont();
   ok(`${tag}: NZ conquered`, await page.evaluate(() => GeoGame.state.ownership.NZL === "player"));
+  ok(`${tag}: conquest hops the token from home (AUS) to NZ`, await page.evaluate(() => JSON.stringify(window.__hops[0]) === JSON.stringify(["AUS", "NZL", "robot"])));
+  {
+    const mid = await page.evaluate(async () => { GeoMap.hop("AUS", "NZL", "robot", "#2563eb"); await new Promise((r) => setTimeout(r, 250)); return { hop: !!document.querySelector("#map-svg .av-hop"), hidden: !document.querySelector('#map-svg .badges image.av-badge[data-iso="NZL"]') }; });
+    ok(`${tag}: token in flight, target badge waits`, mid.hop && mid.hidden);
+    await page.evaluate(() => GeoGame.refreshAll()); // a redraw mid-flight must not kill the hop
+    await wait(250);
+    ok(`${tag}: redraw keeps the flying token`, await page.evaluate(() => !!document.querySelector("#map-svg .av-hop")));
+    await wait(500);
+    ok(`${tag}: lands: flag planted, badge back`, await page.evaluate(() => !document.querySelector("#map-svg .av-hop") && !!document.querySelector("#map-svg .av-flag") && !!document.querySelector('#map-svg .badges image.av-badge[data-iso="NZL"]')));
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    ok(`${tag}: reduced motion skips the hop`, await page.evaluate(() => { let landed = false; GeoMap.hop("AUS", "NZL", "robot", "#2563eb", () => { landed = true; }); return landed && !document.querySelector("#map-svg .av-hop"); }));
+    await page.emulateMedia({ reducedMotion: "no-preference" });
+    await wait(1500);
+  }
   ok(`${tag}: start country shows the full token`, await page.evaluate(() => !!document.querySelector('#map-svg .badges image.av-token[data-iso="AUS"]')));
   ok(`${tag}: conquered country gets a face badge`, await page.evaluate(() => !!document.querySelector('#map-svg .badges image.av-badge[data-iso="NZL"]')));
   ok(`${tag}: badges never block clicks`, await page.evaluate(() => { document.getElementById("map-svg").scrollIntoView({ block: "center" }); const b = document.querySelector('#map-svg .badges image[data-iso="AUS"]').getBoundingClientRect(); const el = document.elementFromPoint(b.x + b.width / 2, b.y + b.height / 2); return getComputedStyle(document.querySelector("#map-svg .badges")).pointerEvents === "none" && el && el.tagName !== "image"; }));

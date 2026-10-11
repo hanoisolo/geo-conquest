@@ -41,6 +41,8 @@ const GeoMap = {
   _badgesG: null,       // owner face badge layer: above markers, below labels
   _badges: null,        // setBadges() input: [{ iso3, avatar, full }]
   _badgeImgs: [],       // drawn badges: [{ el, cen, onMarker, full }]
+  _hopping: null,       // iso3 in flight — its badge hides while the token flies
+  _hop: null,           // live flight: { img, raf, onLand, cen, color }
   _labelsG: null,
   _listenersBound: false,
   _pointers: new Map(),   // pointerId -> { x, y } in client coords
@@ -346,6 +348,25 @@ const GeoMap = {
     return pos ? pos.cen : null;
   },
 
+  /**
+   * The iso3 in `isos` (toIso excluded) whose badge centre lies closest
+   * to toIso's — the natural take-off point for a hop to toIso.
+   * null when toIso has no position or no candidate does.
+   */
+  nearestOf(isos, toIso) {
+    const to = this.badgeCenter(toIso);
+    if (!to || !isos) return null;
+    let best = null, bestD = Infinity;
+    for (const iso of isos) {
+      if (!iso || iso === toIso) continue;
+      const c = this.badgeCenter(iso);
+      if (!c) continue;
+      const d = Math.hypot(c[0] - to[0], c[1] - to[1]);
+      if (d < bestD) { bestD = d; best = iso; }
+    }
+    return best;
+  },
+
   /* iso3 -> { cen: [x, y], onMarker } or null when there is no position. */
   _badgePos(iso3) {
     if (!iso3) return null;
@@ -362,13 +383,147 @@ const GeoMap = {
     return null;
   },
 
-  /* (Re)build the badge layer from this._badges, skipping isos with no position. */
+  /**
+   * Fly a full token from fromIso's badge to toIso's — a 700 ms arc
+   * (requestAnimationFrame) — then plant a `color` flag at the target
+   * and call onLand. No flight, and a synchronous onLand, when the user
+   * prefers reduced motion, when either iso has no badge position, or
+   * when fromIso === toIso. A hop called while one is already flying
+   * finishes that one first (land + its onLand). Never throws.
+   */
+  hop(fromIso, toIso, avatar, color, onLand) {
+    let done = false;
+    const land = () => {
+      if (done) return;
+      done = true;
+      if (typeof onLand === "function") {
+        try { onLand(); } catch (e) { /* hop never throws */ }
+      }
+    };
+    try {
+      if (this._hop) this._landHop(); // one flight at a time
+      const reduced = typeof matchMedia === "function" &&
+        matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const from = this.badgeCenter(fromIso);
+      const to = this.badgeCenter(toIso);
+      if (reduced || !from || !to || fromIso === toIso) {
+        land();
+        return;
+      }
+      const NS = "http://www.w3.org/2000/svg";
+      const k = this._cssK();
+      const z = this.ZOOM_MAX_W / this.view.w;
+      const s = Math.min(64, 22 + 6 * (z - 1)) * k; // full-token size, in viewBox units
+      const img = document.createElementNS(NS, "image");
+      img.setAttribute("class", "av-hop");
+      img.setAttribute("href", GeoAvatars.faceUrl(avatar, "cheer"));
+      img.setAttribute("preserveAspectRatio", "xMidYMid meet");
+      img.setAttribute("width", s.toFixed(2));
+      img.setAttribute("height", s.toFixed(2));
+      img.setAttribute("x", (from[0] - s / 2).toFixed(2));
+      img.setAttribute("y", (from[1] - s / 2).toFixed(2));
+      this._hopping = toIso; // its badge hides while the token flies
+      this._drawBadges();
+      this._badgesG.appendChild(img);
+
+      const dist = Math.hypot(to[0] - from[0], to[1] - from[1]);
+      const lift = 0.35 * dist + 40 * k; // arc peak: distance + 40 screen px
+      const hop = { img, raf: 0, onLand: land, cen: to, color };
+      this._hop = hop;
+      const t0 = performance.now();
+      const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+      const step = (now) => {
+        if (this._hop !== hop) return; // superseded — _landHop cleaned up
+        const raw = Math.min(1, (now - t0) / 700);
+        const t = ease(raw);
+        const cx = from[0] + (to[0] - from[0]) * t;
+        const cy = from[1] + (to[1] - from[1]) * t - Math.sin(Math.PI * t) * lift;
+        img.setAttribute("x", (cx - s / 2).toFixed(2));
+        img.setAttribute("y", (cy - s / 2).toFixed(2));
+        if (raw < 1) hop.raf = requestAnimationFrame(step);
+        else this._landHop();
+      };
+      hop.raf = requestAnimationFrame(step);
+    } catch (e) {
+      // Never throw: undo any half-started flight and land at once.
+      const hop = this._hop;
+      this._hop = null;
+      this._hopping = null;
+      try {
+        if (hop) {
+          if (hop.raf) cancelAnimationFrame(hop.raf);
+          if (hop.img && hop.img.parentNode) hop.img.parentNode.removeChild(hop.img);
+        }
+        this._drawBadges();
+        if (hop) this._plantFlag(hop.cen, hop.color);
+      } catch (e2) { /* best effort — still must not throw */ }
+      land();
+    }
+  },
+
+  /* Finish the live flight at its target: drop the token, restore the
+     hidden badge, plant the flag, then call the stored onLand. */
+  _landHop() {
+    const hop = this._hop;
+    if (!hop) return;
+    this._hop = null;
+    this._hopping = null;
+    try {
+      if (hop.raf) cancelAnimationFrame(hop.raf);
+      if (hop.img && hop.img.parentNode) hop.img.parentNode.removeChild(hop.img);
+      this._drawBadges();
+      this._plantFlag(hop.cen, hop.color);
+    } catch (e) { /* never throw */ }
+    if (hop.onLand) hop.onLand();
+  },
+
+  /**
+   * Plant an `av-flag` at cen (map coords): a grey pole with a colour
+   * pennant, ~18 px tall on screen, its base at the badge centre.
+   * Removes itself after 1400 ms.
+   */
+  _plantFlag(cen, color) {
+    if (!this._badgesG || !cen) return;
+    const NS = "http://www.w3.org/2000/svg";
+    const k = this._cssK();
+    const h = 26 * k; // total height, screen px -> viewBox units
+    const x = cen[0] + 9 * k, y = cen[1] + 2 * k; // planted just right of the badge so both show
+    const g = document.createElementNS(NS, "g");
+    g.setAttribute("class", "av-flag");
+    const pole = document.createElementNS(NS, "line");
+    pole.setAttribute("x1", x.toFixed(2));
+    pole.setAttribute("y1", y.toFixed(2));
+    pole.setAttribute("x2", x.toFixed(2));
+    pole.setAttribute("y2", (y - h).toFixed(2));
+    pole.setAttribute("stroke", "#4b5563");
+    pole.setAttribute("stroke-width", (2 * k).toFixed(2));
+    pole.setAttribute("stroke-linecap", "round");
+    const pw = 15 * k, ph = 9 * k; // pennant size, screen px -> viewBox units
+    const top = y - h;
+    const pennant = document.createElementNS(NS, "path");
+    pennant.setAttribute("d",
+      "M" + x.toFixed(2) + "," + top.toFixed(2) +
+      " L" + (x + pw).toFixed(2) + "," + (top + ph / 2).toFixed(2) +
+      " L" + x.toFixed(2) + "," + (top + ph).toFixed(2) + " Z");
+    pennant.setAttribute("fill", color || "#f59e0b");
+    g.appendChild(pole);
+    g.appendChild(pennant);
+    this._badgesG.appendChild(g);
+    setTimeout(() => {
+      if (g.parentNode) g.parentNode.removeChild(g);
+    }, 1400);
+  },
+
+  /* (Re)build the badge layer from this._badges, skipping isos with no
+     position and the one whose token is in flight (this._hopping). */
   _drawBadges() {
     this._badgeImgs = [];
     if (!this._badgesG) return;
     const NS = "http://www.w3.org/2000/svg";
-    this._badgesG.innerHTML = "";
+    // Only owner badges are rebuilt; a token in flight and planted flags stay put.
+    for (const el of [...this._badgesG.querySelectorAll(".av-badge, .av-token")]) el.remove();
     for (const b of this._badges || []) {
+      if (b.iso3 === this._hopping) continue; // in flight — the hop token stands in
       const pos = this._badgePos(b.iso3);
       if (!pos) continue;
       const img = document.createElementNS(NS, "image");
@@ -376,7 +531,7 @@ const GeoMap = {
       img.setAttribute("href", GeoAvatars.faceUrl(b.avatar, "happy"));
       img.setAttribute("preserveAspectRatio", "xMidYMid meet");
       img.dataset.iso = b.iso3;
-      this._badgesG.appendChild(img);
+      this._badgesG.insertBefore(img, this._badgesG.querySelector(".av-hop, .av-flag"));
       this._badgeImgs.push({ el: img, cen: pos.cen, onMarker: pos.onMarker, full: !!b.full });
     }
     this._updateBadges();

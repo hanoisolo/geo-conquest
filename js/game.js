@@ -685,7 +685,11 @@ const GeoGame = {
       if (c.nudged) pts += 5; // math nudge bonus
       this.state.points += pts;
       GeoSound.conquer();
-      GeoConfetti.burst({ at: c.iso3, count: 60, power: 420 });
+      // The explorer's token hops from the nearest country they own (or home), plants a flag, then confetti.
+      const mine = Object.keys(this.state.ownership).filter((k) => this.state.ownership[k] === "player" && k !== c.iso3);
+      const from = GeoMap.nearestOf(mine, c.iso3) || this.state.homeBase;
+      GeoMap.hop(from, c.iso3, GeoAvatars.normalize(this.state.avatar), "#2563eb",
+        () => GeoConfetti.burst({ at: c.iso3, count: 60, power: 420 }));
       this.toast(`🎉 +${pts} pts! ${this.nameOf[c.iso3]} is yours!`);
       // The Baron grudgingly admits it now and then.
       if (window.GeoBaron && Math.random() < 0.35) GeoBaron.say("playerWin");

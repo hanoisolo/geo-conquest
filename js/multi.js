@@ -581,7 +581,7 @@ const GeoMulti = {
       const pts = GeoGame.contestPoints(c) + (c.nudged ? 5 : 0);
       attacker.points += pts;
       GeoSound.conquer();
-      GeoConfetti.burst({ at: atk.iso3, count: 60, power: 420 });
+      this.hopTo(atk.attacker, atk.iso3, () => GeoConfetti.burst({ at: atk.iso3, count: 60, power: 420 }));
       GeoGame.toast(`🎉 ${attacker.name} took ${country}! +${pts} pts`);
       this.checkEliminated();
       this.endTurn();
@@ -665,6 +665,7 @@ const GeoMulti = {
     const prize = c.wasCorrect ? this.strikePrize(p) : null;
     if (prize) {
       s.ownership[prize] = p.defender;
+      this.hopTo(p.defender, prize);
       s.levels[prize] = c.tier; // fortified at the tier the defender answered at
       defender.points += 10;
       if (attacker.home === prize) attacker.home = null;
@@ -898,6 +899,14 @@ const GeoMulti = {
   },
 
   /** Re-colour the map and update the banner + scoreboard. */
+  /** Player i's token hops from their nearest other country (or home) to iso3 and plants a flag. */
+  hopTo(i, iso3, onLand) {
+    const s = this.state, p = s.players[i];
+    const mine = Object.keys(s.ownership).filter((k) => s.ownership[k] === i && k !== iso3);
+    const from = GeoMap.nearestOf(mine, iso3) || p.home;
+    GeoMap.hop(from, iso3, p.avatar, this.COLORS[p.color].hex, onLand);
+  },
+
   /** Map badges: each owner's face on their countries, full token on their home. */
   badgeList() {
     const s = this.state;

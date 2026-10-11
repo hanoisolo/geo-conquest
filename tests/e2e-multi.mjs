@@ -251,6 +251,8 @@ async function runRules(vp, tag) {
   ok(`${tag}: unclaimed country allows all three levels`, (await allowed()) === "easy,medium,hard" && !(await vis("#terr-fort")));
   await page.click('[data-subject="geo"]'); await page.click('.diff-btn[data-tier="easy"]'); await wait(450);
   await answer(true);
+  await wait(700);
+  ok(`${tag}: capture hops the attacker's token`, await page.evaluate(() => { const b = document.querySelector('#map-svg .badges image.av-badge[data-iso="USA"]'); return !!b && b.getAttribute("href") === GeoAvatars.faceUrl(GeoMulti.state.players[0].avatar, "happy"); }));
   ok(`${tag}: capture remembers the level (easy)`, (await lvl("USA")) === "easy");
   await open("USA"); // Leo's turn: USA is Mia's, won on Easy
   ok(`${tag}: Easy is locked on another player's country`, (await allowed()) === "medium,hard" && /Easy only works on unclaimed/.test(await page.locator("#terr-easy-note").textContent()));

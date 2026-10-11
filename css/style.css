@@ -989,3 +989,13 @@ body.mp-mode .legend { display: none; }
 .badges { pointer-events: none; }
 .av-badge { filter: drop-shadow(0 1px 1px rgba(0,0,0,.35)); }
 .av-token { filter: drop-shadow(0 2px 3px rgba(0,0,0,.45)); }
+
+/* ---------- Token hop flight + flag plant (js/map.js hop) ---------- */
+/* The flying token casts a deeper shadow than the static badges. */
+.av-hop { filter: drop-shadow(0 4px 4px rgba(0,0,0,.35)); }
+/* The flag springs up from its base (the pole foot) once, then holds. */
+.av-flag { transform-box: fill-box; transform-origin: 50% 100%; animation: av-flag-plant .45s cubic-bezier(.3,1.6,.5,1) both; }
+@keyframes av-flag-plant { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .av-flag { animation: none; }
+}

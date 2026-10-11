@@ -20,6 +20,7 @@ for (const f of readdirSync(join(root, "js")).filter((f) => f.endsWith(".js")))
 // Full country coverage is required once segment 4 lands; COVERAGE=0 relaxes it for earlier segments.
 const cov = process.env.COVERAGE === "0" ? [] : ["--require-coverage"];
 run("question data (tools/validate.py)", "python3", ["tools/validate.py", ...cov]);
+if (existsSync(join(root, "tests/avatars.test.js"))) run("avatars tests", "node", ["tests/avatars.test.js"]);
 if (existsSync(join(root, "tests/math.test.js"))) run("math generator tests", "node", ["tests/math.test.js"]);
 console.log(failed ? `\nCHECK FAILED (${failed})` : "\nCHECK PASSED");
 process.exit(failed ? 1 : 0);

@@ -55,6 +55,14 @@ function wireUI() {
   const $ = (id) => document.getElementById(id);
 
   // ---- start screen ----
+  // Solo explorer picker: preselect the saved campaign's character (default fox).
+  const soloSave = GeoStorage.load();
+  GeoAvatars.selected = GeoAvatars.normalize(soloSave && soloSave.avatar);
+  const drawSoloPicker = () => GeoAvatars.renderPicker($("solo-avatars"), {
+    selected: GeoAvatars.selected, size: 48,
+    onPick: (id) => { GeoAvatars.selected = id; drawSoloPicker(); },
+  });
+  drawSoloPicker();
   $("btn-quest").addEventListener("click", () => GeoGame.newCampaign("quest"));
   $("btn-world").addEventListener("click", () => GeoGame.newCampaign("world"));
   $("btn-continue").addEventListener("click", () => GeoGame.continueCampaign());

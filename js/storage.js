@@ -65,6 +65,8 @@ const GeoStorage = {
     ) {
       s.stats = { byCategory: {} };
     }
+    // Avatar: the explorer's character — pre-avatar saves get the default.
+    s.avatar = typeof GeoAvatars !== "undefined" ? GeoAvatars.normalize(s.avatar) : "fox";
     s.version = this.SAVE_VERSION;
     return s;
   },

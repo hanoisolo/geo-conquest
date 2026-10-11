@@ -285,7 +285,39 @@ async function runRules(vp, tag) {
   if (errs.length) console.log(errs);
   await page.close();
 }
+// Avatars in multiplayer setup: unique picks, taken ones disabled, saved, legacy saves get unique defaults.
+async function runAvatars(vp, tag) {
+  const page = await browser.newPage({ viewport: vp });
+  const errs = [];
+  page.on("pageerror", (e) => errs.push(e.message));
+  const wait = (ms = 400) => page.waitForTimeout(ms);
+  await page.goto(`http://localhost:${PORT}/`); await wait(1200);
+  await page.evaluate(() => localStorage.clear()); await page.reload(); await wait(1200);
+  await page.click("#btn-multi"); await wait(300);
+  await page.click('#mp-count [data-count="4"]'); await wait(200);
+  const picks = () => page.evaluate(() => [...document.querySelectorAll("#mp-players .mp-avatars")].map((r) => (r.querySelector(".av-pick.selected") || {}).ariaLabel || ""));
+  const p0 = await picks();
+  ok(`${tag}: 4 players get 4 different default characters`, p0.length === 4 && new Set(p0).size === 4 && p0.every(Boolean));
+  const row1 = page.locator("#mp-players .mp-avatars").nth(1);
+  ok(`${tag}: another player's character is disabled`, await row1.locator(`.av-pick[aria-label="${p0[0]}"]`).isDisabled());
+  await row1.locator('.av-pick[aria-label="Ninja Cat"]').click(); await wait(200);
+  ok(`${tag}: picking a free character works`, (await picks())[1] === "Ninja Cat");
+  ok(`${tag}: no horizontal scroll on setup with 4 players`, await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
+  await page.screenshot({ path: join(shots, `av-${tag}-02-mp-setup.png`), fullPage: true });
+  await page.click("#btn-mp-start"); await wait(800);
+  ok(`${tag}: characters saved with the game`, await page.evaluate(() => { const s = JSON.parse(localStorage.getItem("geoConquestMultiV1")); return s.players[1].avatar === "ninjacat" && new Set(s.players.map((p) => p.avatar)).size === 4; }));
+  // Legacy multiplayer save without characters (plus a duplicate) -> unique defaults, no crash.
+  await page.evaluate(() => { const s = JSON.parse(localStorage.getItem("geoConquestMultiV1")); delete s.players[0].avatar; delete s.players[1].avatar; s.players[2].avatar = "robot"; s.players[3].avatar = "robot"; localStorage.setItem("geoConquestMultiV1", JSON.stringify(s)); });
+  await page.reload(); await wait(1200);
+  await page.click("#btn-mp-continue"); await wait(900);
+  ok(`${tag}: legacy save loads with unique characters`, await page.evaluate(() => { const a = GeoMulti.state.players.map((p) => p.avatar); return a.every((x) => GeoAvatars.byId(x)) && new Set(a).size === 4; }));
+  ok(`${tag}: no page errors (avatars run)`, errs.length === 0);
+  if (errs.length) console.log(errs);
+  await page.close();
+}
 await run({ width: 1280, height: 800 }, "desktop");
+await runAvatars({ width: 1280, height: 800 }, "desktop");
+await runAvatars({ width: 390, height: 844 }, "phone");
 await runRules({ width: 1280, height: 800 }, "desktop");
 await runRules({ width: 390, height: 844 }, "phone");
 await runWin({ width: 1280, height: 800 }, "desktop");

@@ -928,3 +928,58 @@ body.mp-mode .legend { display: none; }
 
 /* The map group has seven buttons — wrap them into tidy rows on phones. */
 #mp-map .mp-toggle { flex: 1 1 30%; min-width: 7.2rem; }
+
+/* ============================================================
+   Avatars — character pickers (solo start screen + mp setup)
+   ============================================================ */
+/* Small bold muted label above the solo picker. */
+.av-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-align: center;
+  margin: 0.5rem 0 0.2rem;
+}
+
+/* Picker: round face buttons, centred, wrapping to extra rows on phones. */
+.av-picker {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+}
+.av-pick {
+  padding: 0;
+  border: 3px solid transparent; /* selected swaps in the colour with no layout shift */
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  transition: transform 0.1s ease, border-color 0.15s ease, opacity 0.15s ease;
+}
+.av-pick img { display: block; }
+.av-pick:hover:not(:disabled) { transform: scale(1.08); }
+.av-pick.selected { border-color: #f59e0b; transform: scale(1.08); }
+.av-pick:disabled, .av-pick.used { opacity: 0.3; cursor: not-allowed; }
+/* focus ring like the other buttons — kept round (the global :focus-visible
+   rule would square it off with --radius-sm) */
+.av-pick:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+  border-radius: 50%;
+}
+
+/* Multiplayer setup: each player's avatar row — a full row of its own,
+   wrapping under the name + colour swatches (no horizontal scroll). */
+.mp-avatars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+  flex: 1 1 100%;
+}
+.mp-avatars { margin-bottom: 0.35rem; }
+/* Phones: all 10 characters fit on one line under each player. */
+@media (max-width: 700px) {
+  .mp-avatars { gap: 0.1rem; justify-content: space-between; }
+  .mp-avatars .av-pick { border-width: 2px; }
+  .mp-avatars .av-pick img { width: 26px; height: 26px; }
+}

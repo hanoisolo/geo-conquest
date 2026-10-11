@@ -82,7 +82,7 @@ const GeoMulti = {
       document.getElementById("mp-standings").classList.add("hidden");
       const s = this.state;
       this.start({
-        players: s.players.map((p) => ({ name: p.name, color: p.color })),
+        players: s.players.map((p) => ({ name: p.name, color: p.color, avatar: p.avatar })),
         win: { mode: s.win.mode, minutes: s.win.minutes },
         mapScope: s.mapScope,
       });
@@ -116,6 +116,13 @@ const GeoMulti = {
       if (!s.levels || typeof s.levels !== "object") s.levels = {}; // pre-fortify saves: every country counts as easy-won
       if (!Array.isArray(s.asked)) s.asked = [];
       if (!s.mapScope) s.mapScope = "world"; // M1 saves predate the scope choice
+      // Avatars: pre-avatar saves get unique defaults; saved picks are kept.
+      const takenAvatars = [];
+      s.players.forEach((p) => {
+        if (!p || typeof p !== "object") return;
+        p.avatar = GeoAvatars.normalize(p.avatar, takenAvatars);
+        takenAvatars.push(p.avatar);
+      });
       return s;
     } catch (e) {
       return null;
@@ -140,15 +147,22 @@ const GeoMulti = {
   /* ================= setup screen ================= */
   /** Open the multiplayer setup screen with fresh defaults. */
   openSetup() {
+    // Fresh defaults: two players, each with the first roster avatar no
+    // earlier player took (pirate, astronaut, …).
+    const players = [];
+    for (let i = 0; i < 2; i++) {
+      players.push({
+        name: `Player ${i + 1}`,
+        color: i,
+        avatar: GeoAvatars.pickFree(players.map((p) => p.avatar)),
+      });
+    }
     this._setup = {
       count: 2,
       winMode: "timed",
       minutes: 10,
       mapScope: "world",
-      players: [
-        { name: "Player 1", color: 0 },
-        { name: "Player 2", color: 1 },
-      ],
+      players,
     };
     document.getElementById("mp-setup-error").classList.add("hidden");
     this.syncSetupButtons();
@@ -169,7 +183,11 @@ const GeoMulti = {
           const used = new Set(players.map((p) => p.color));
           let ci = 0;
           while (used.has(ci)) ci++;
-          players.push({ name: `Player ${players.length + 1}`, color: ci });
+          players.push({
+            name: `Player ${players.length + 1}`,
+            color: ci,
+            avatar: GeoAvatars.pickFree(players.map((p) => p.avatar)),
+          });
         }
         players.length = Math.min(players.length, n);
         this.syncSetupButtons();
@@ -256,6 +274,20 @@ const GeoMulti = {
         swatches.appendChild(b);
       });
       row.appendChild(swatches);
+
+      // Avatar picker: the other players' characters count as taken (disabled).
+      const avatars = document.createElement("div");
+      avatars.className = "mp-avatars";
+      GeoAvatars.renderPicker(avatars, {
+        selected: p.avatar,
+        taken: this._setup.players.filter((q, qi) => qi !== i).map((q) => q.avatar),
+        size: 30,
+        onPick: (id) => {
+          p.avatar = id;
+          this.renderSetupRows();
+        },
+      });
+      row.appendChild(avatars);
       box.appendChild(row);
     });
   },
@@ -277,7 +309,7 @@ const GeoMulti = {
     }
     err.classList.add("hidden");
     this.start({
-      players: this._setup.players.map((p, i) => ({ name: names[i], color: p.color })),
+      players: this._setup.players.map((p, i) => ({ name: names[i], color: p.color, avatar: p.avatar })),
       win: { mode: this._setup.winMode, minutes: this._setup.minutes },
       mapScope: this._setup.mapScope,
     });
@@ -292,6 +324,7 @@ const GeoMulti = {
       players: setup.players.map((p) => ({
         name: p.name,
         color: p.color,
+        avatar: p.avatar,
         home: null,
         points: 0,
         geoSinceMath: 0,

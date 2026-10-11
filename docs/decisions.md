@@ -20,3 +20,9 @@
 - Easy rules / fortify (multiplayer, Oct 2026): Easy only on unclaimed; owned countries remember the tier they were won at (`levels`), attacks need max(Medium, level); strike-back prizes take the defender's tier; saves without `levels` load as easy. Built by Vibe on GLM 5.3 (one run, no stall).
 - Solo keeps its rules: the Baron never attacks the player's countries. He only takes the country the player just missed (unclaimed or already his) and grabs unclaimed ones every 3rd contest, so a fortify level on player countries would have no effect. Baron countries already need Medium or Hard.
 - Toasts behind the multiplayer hand-off screen: only the newest message is kept (it replaces anything waiting or hidden), so nothing pops up a turn late.
+
+## Avatars release (Oct 11 2026; Rod's spec, decisions by Don's delegate)
+- 10 original characters, ids: pirate, astronaut, fox, robot, knight, scientist, diver, ninjacat, ranger, polar (polar explorer with a penguin). Solo picks one; multiplayer players pick unique ones next to their colour.
+- Passport: per player per multiplayer game; solo passport lives in the solo save (section B, later run).
+- Old saves load with a default avatar: solo `fox`; multiplayer players get the first unused characters in list order. Unknown ids are replaced the same way — never a crash.
+- Map badges/tokens are vector placeholders built from each character's colours (sharp at every zoom). Raster art (assets/avatars/<id>/<expr>.webp) is used only for portraits/expressions, and only when listed in assets/avatars/manifest.json, so a missing file never causes a 404 or console error. Dropping in art = add files + list them in the manifest (data, no code change).

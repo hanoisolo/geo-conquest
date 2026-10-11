@@ -97,6 +97,7 @@ const GeoGame = {
       contests: 0, correct: 0, asked: [], homeBase: null,
       pendingChoice: false, geoSinceMath: 0, hintsUsed: 0,
       stats: { byCategory: {} },
+      avatar: GeoAvatars.normalize(GeoAvatars.selected),
     };
     this.persist();
     this.showContinentPicker("start");
@@ -107,6 +108,8 @@ const GeoGame = {
     const s = GeoStorage.load();
     if (!s) return;
     this.state = s;
+    this.state.avatar = GeoAvatars.normalize(GeoAvatars.selected || s.avatar); // the start-screen pick applies
+    this.persist();
     this.enterGame(this.state.homeBase == null);
     this.resumePendingChoice();
   },

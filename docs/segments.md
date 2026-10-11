@@ -22,3 +22,12 @@ Max one fix round per segment. One local commit per clean segment. Nothing pushe
 | M2 | Turns, attacks, home Medium/Hard rule, strike-back hand-off, elimination skip | §8.2 | done — M2a (first run stalled, smaller retry clean) + M2b strike-backs (clean, 3 min); e2e-multi 48/48 incl. adjacent prize, failed strike-back, reload mid strike-back; solo 61/61 | 52fb168, M2b commit |
 | M3 | Map choice (world / one continent), timer, domination win, final standings, resume | §8.1, §8.3 | done — Vibe run clean (stopped by Forge after its edits were complete and reviewed); Forge fix: stale toasts cleared on new game/quit | M3 commit |
 | M4 | e2e-multi tests + screenshots | §8.4 | done — tests/e2e-multi.mjs 68/68 (desktop + phone): setup, homes, attacks, home rule, elimination + skip, strike-back (adjacent prize, failure, reload mid strike-back), timer end, one-continent 4-player domination, standings, solo save intact; solo e2e 61/61; screenshots /workspace/geo-conquest-shots/mp-* | M3 commit |
+
+## Avatars + Passport (docs/spec-avatars-passport.md) — branch `avatars`
+| # | Segment | Spec | Status | Commit |
+|---|---------|------|--------|--------|
+| A1 | Characters data (js/avatars.js, placeholder SVG faces), solo + multiplayer pickers, save migration (default avatar) | §A | done — Vibe GLM 5.3: A1a avatars.js (verified by tests/avatars.test.js), A1b pickers + migration (verified by check); Forge: game.js/app.js hooks, e2e (solo 75/75, multi 112/112), fix round: phone picker on one line | A1 commit |
+| A2 | Map tokens and badges: vector face badge per owned country (zoom-sized, pointer-events none, on tiny-island markers), full token on home/start country | §A | planned | |
+| A3 | Hop animation (nearest owned country or home → conquered) + flag plant; confetti/sound reused; reduced motion skips the hop | §A | planned | |
+| A4 | Expressions (happy/cheer/oops) in question feedback; Baron portrait slots (mischievous/smug/grumpy) keeping the taunts; raster art from assets/avatars/ when listed, else placeholder SVG | §A | planned | |
+| B | Passport book | §B | not started (next run) | |

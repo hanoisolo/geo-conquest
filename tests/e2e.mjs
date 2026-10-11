@@ -62,7 +62,11 @@ async function run(vp, tag) {
   await page.evaluate(() => localStorage.clear()); await page.reload(); await wait(1200);
   await shot("01-start");
   ok(`${tag}: no horizontal scroll on start`, await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
+  ok(`${tag}: explorer picker shows 10 characters`, (await page.locator("#solo-avatars .av-pick").count()) === 10);
+  await page.locator('#solo-avatars .av-pick[aria-label="Robot"]').click(); await wait(150);
+  ok(`${tag}: picked character is selected`, (await page.locator('#solo-avatars .av-pick.selected').getAttribute("aria-label")) === "Robot");
   await page.click("#btn-quest"); await wait(300);
+  ok(`${tag}: new campaign saves the picked character`, await page.evaluate(() => GeoGame.state.avatar === "robot" && JSON.parse(localStorage.getItem("geoConquestSaveV1")).avatar === "robot"));
   await page.locator("#continent-cards button", { hasText: "Oceania" }).click(); await wait(900);
   await page.evaluate(() => GeoGame.onTerritoryClick("AUS")); await wait(900);
   await shot("02-map");
@@ -175,6 +179,14 @@ async function run(vp, tag) {
   await page.reload(); await wait(1200); await page.click("#btn-continue"); await wait(1200);
   ok(`${tag}: victory/next-choice re-shown after reload`, (await vis("#victory-modal")) || (await vis("#unlock-modal")));
   await shot("13-after-reload-victory");
+  // Old save without a character (and one with a bogus id) loads with the default, no crash.
+  for (const bad of [undefined, "dragon-9000"]) {
+    await page.evaluate((b) => { const s = JSON.parse(localStorage.getItem("geoConquestSaveV1")); if (b === undefined) delete s.avatar; else s.avatar = b; localStorage.setItem("geoConquestSaveV1", JSON.stringify(s)); }, bad);
+    await page.reload(); await wait(1200);
+    ok(`${tag}: old save (${bad || "no avatar"}) preselects the default explorer`, (await page.locator('#solo-avatars .av-pick.selected').getAttribute("aria-label")) === "Fox Explorer");
+    await page.click("#btn-continue"); await wait(1200);
+    ok(`${tag}: old save (${bad || "no avatar"}) continues with fox`, await page.evaluate(() => GeoGame.state.avatar === "fox"));
+  }
   ok(`${tag}: no horizontal scroll in game`, await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
   ok(`${tag}: no console errors`, errors.length === 0, errors.slice(0, 5).join(" | "));
   await ctx.close();

@@ -999,3 +999,21 @@ body.mp-mode .legend { display: none; }
 @media (prefers-reduced-motion: reduce) {
   .av-flag { animation: none; }
 }
+
+/* ---------- Baron portraits + question-modal avatar (avatars pass) ---------- */
+/* The Baron's face is an <img class="baron-portrait"> whose src js/baron.js
+   setExpr() sets from GeoAvatars.baronUrl(): raster art when the manifest
+   lists it, else the placeholder SVG data URL. The .baron-face /
+   .baron-float-face width/height + animation rules above still size it. */
+.baron-portrait { display: block; object-fit: contain; }
+
+/* The answering player's face beside the question-modal feedback text. */
+.q-avatar { width: 64px; height: 64px; flex: none; }
+.q-feedback.has-avatar { display: flex; align-items: center; gap: .6rem; }
+/* Phones: a smaller feedback avatar. */
+@media (max-width: 700px) {
+  .q-avatar { width: 48px; height: 48px; }
+}
+/* Feedback avatar floats beside the text so a long worked solution still flows full width. */
+.q-feedback { display: flow-root; }
+.q-feedback .q-avatar { float: left; margin: 0 0.6rem 0.2rem 0; }

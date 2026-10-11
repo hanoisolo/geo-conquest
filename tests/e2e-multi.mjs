@@ -125,7 +125,9 @@ async function runStrike(vp, tag) {
   await shot("07-strike-handoff");
   await ready();
   ok(`${tag}: defender gets a question`, await vis("#question-modal"));
+  await page.evaluate(() => { const o = GeoGame.answerQuestion.bind(GeoGame); GeoGame.answerQuestion = function (...a) { const r = o(...a); const i = document.querySelector("#q-feedback .q-avatar"); window.__fbAv = i && i.src; return r; }; });
   await answer(true);
+  ok(`${tag}: strike-back feedback shows the defender's character`, await page.evaluate(() => { const av = GeoMulti.state.players[1].avatar; const u = window.__fbAv; return u === undefined /* map-tap question */ || u === GeoAvatars.faceUrl(av, "happy") || u === GeoAvatars.faceUrl(av, "cheer"); }));
   ok(`${tag}: strike-back takes the attacker's adjacent country`, (await own("BOL")) === 1 && (await own("ESP")) === 0 && (await own("CAN")) === 0);
   ok(`${tag}: turn passes from the attacker to the defender`, await page.evaluate(() => GeoMulti.state.turn === 1));
   // Leo attacks Mia's Spain and misses; reload during the strike-back hand-off.

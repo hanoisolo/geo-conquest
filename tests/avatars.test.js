@@ -21,5 +21,15 @@ ok(A.normalize("nope", ["fox"]) !== "fox", "normalize skips taken");
 ok(A.pickFree(["fox", "astronaut"]) === "pirate", "pickFree first unused");
 ok(typeof A.faceSvg("bogus", "bogus") === "string", "bogus input never throws");
 ok(A.BARON_EXPRESSIONS.join() === "mischievous,smug,grumpy", "baron expressions");
+// Art: placeholders until the manifest lists a raster file.
+for (const e of A.BARON_EXPRESSIONS) ok(/^<svg[^>]*viewBox="0 0 100 100"/.test(A.baronSvg(e)), "baron svg " + e);
+ok(A.artUrl("fox", "happy") === A.faceUrl("fox", "happy"), "artUrl placeholder without manifest");
+ok(A.baronUrl("smug").startsWith("data:image/svg+xml"), "baronUrl placeholder");
+A.setManifest(["fox/happy.webp", "baron/smug.webp"]);
+ok(A.artUrl("fox", "happy") === "assets/avatars/fox/happy.webp", "artUrl raster when listed");
+ok(A.artUrl("fox", "oops") === A.faceUrl("fox", "oops"), "artUrl placeholder for unlisted expr");
+ok(A.baronUrl("smug") === "assets/avatars/baron/smug.webp", "baronUrl raster when listed");
+ok(A.baronUrl("grumpy").startsWith("data:"), "baronUrl placeholder when unlisted");
+A.setManifest(null); ok(A.artUrl("fox", "happy").startsWith("data:"), "bad manifest -> placeholders");
 console.log(fail ? `avatars tests FAILED (${fail})` : "avatars tests passed");
 process.exit(fail ? 1 : 0);

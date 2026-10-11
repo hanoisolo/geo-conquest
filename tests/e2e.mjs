@@ -77,7 +77,9 @@ async function run(vp, tag) {
   await page.evaluate(() => { const h = GeoMap.hop.bind(GeoMap); window.__hops = []; GeoMap.hop = (f, t, a, c, cb) => { window.__hops.push([f, t, a]); return h(f, t, a, c, cb); }; });
   await attack("NZL", "medium", "geo");
   await shot("03-geo-question");
-  await answer(true); await shot("04-geo-answered"); await cont();
+  await answer(true); await shot("04-geo-answered");
+  ok(`${tag}: right answer shows the explorer's happy face`, await page.evaluate(() => { const i = document.querySelector("#q-feedback .q-avatar"); return !!i && i.dataset.expr === "happy" && i.src === GeoAvatars.faceUrl("robot", "happy") && i.complete && i.naturalWidth > 0; }));
+  await cont();
   ok(`${tag}: NZ conquered`, await page.evaluate(() => GeoGame.state.ownership.NZL === "player"));
   ok(`${tag}: conquest hops the token from home (AUS) to NZ`, await page.evaluate(() => JSON.stringify(window.__hops[0]) === JSON.stringify(["AUS", "NZL", "robot"])));
   {
@@ -122,7 +124,10 @@ async function run(vp, tag) {
   // Baron steal on a wrong Medium answer
   const target = await page.evaluate(() => ["PNG", "FJI", "VUT", "SLB"].find((i) => GeoGame.state.ownership[i] !== "player"));
   if (target) {
-    await attack(target, "medium", "geo"); await answer(false); await cont();
+    await attack(target, "medium", "geo"); await answer(false);
+    ok(`${tag}: wrong answer shows the oops face`, await page.evaluate(() => { const i = document.querySelector("#q-feedback .q-avatar"); return !!i && i.dataset.expr === "oops"; }));
+    await cont();
+    ok(`${tag}: Baron looks smug after stealing`, await page.evaluate(() => [...document.querySelectorAll(".baron-portrait")].every((i) => i.src === GeoAvatars.baronUrl("smug"))));
     ok(`${tag}: Baron stole ${target}`, await page.evaluate((t) => GeoGame.state.ownership[t] === "rival", target));
     await page.evaluate((t) => GeoGame.onTerritoryClick(t), target); await wait(200);
     ok(`${tag}: Easy disabled on Baron country`, await page.locator('.diff-btn[data-tier="easy"]').isDisabled());
@@ -205,6 +210,17 @@ async function run(vp, tag) {
     ok(`${tag}: old save (${bad || "no avatar"}) preselects the default explorer`, (await page.locator('#solo-avatars .av-pick.selected').getAttribute("aria-label")) === "Fox Explorer");
     await page.click("#btn-continue"); await wait(1200);
     ok(`${tag}: old save (${bad || "no avatar"}) continues with fox`, await page.evaluate(() => GeoGame.state.avatar === "fox"));
+  }
+  // Raster art drop-in: when the manifest lists files they are used, everything else stays placeholder.
+  {
+    const p2 = await ctx.newPage();
+    const png = Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8DwHwAFBQIAX8jx0gAAAABJRU5ErkJggg==", "base64");
+    await p2.route("**/assets/avatars/manifest.json", (r) => r.fulfill({ contentType: "application/json", body: JSON.stringify({ files: ["fox/happy.webp", "baron/mischievous.webp"] }) }));
+    await p2.route("**/assets/avatars/**/*.webp", (r) => r.fulfill({ contentType: "image/png", body: png }));
+    await p2.goto(URL); await p2.waitForTimeout(1500);
+    ok(`${tag}: listed art replaces the placeholder`, await p2.evaluate(() => GeoAvatars.artUrl("fox", "happy") === "assets/avatars/fox/happy.webp" && GeoAvatars.artUrl("fox", "oops").startsWith("data:")));
+    ok(`${tag}: listed Baron art is shown`, await p2.evaluate(() => [...document.querySelectorAll(".baron-portrait")].every((i) => i.getAttribute("src") === "assets/avatars/baron/mischievous.webp")));
+    await p2.close();
   }
   ok(`${tag}: no horizontal scroll in game`, await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
   ok(`${tag}: no console errors`, errors.length === 0, errors.slice(0, 5).join(" | "));

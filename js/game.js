@@ -583,6 +583,7 @@ const GeoGame = {
         c.question.options[c.question.answer]
       )}</strong>. ${this.escapeHtml(c.question.explain)}`;
     }
+    this.feedbackAvatar(fb, correct);
     // A wrong math answer gets the full worked solution (the hints are
     // the steps) plus an offer to try a similar question for practice.
     // A miss earns nothing — don't keep showing the points that were on offer.
@@ -810,6 +811,7 @@ const GeoGame = {
         `<strong>That's okay — ${this.escapeHtml(targetName)} is here.</strong><br />` +
         `${this.escapeHtml(c.question.explain)}`;
     }
+    this.feedbackAvatar(fb, correct);
     document.getElementById("btn-q-continue").classList.remove("hidden");
     document.getElementById("question-modal").classList.remove("hidden");
     this.focusModal("question-modal");
@@ -1027,6 +1029,19 @@ const GeoGame = {
     const cls = owner === "player" ? "t-player" : owner === "rival" ? "t-rival" : "t-neutral";
     const ownerLabel = owner === "player" ? "— yours! ⭐" : owner === "rival" ? `— ${this.RIVAL_NAME}'s 😈` : "— unclaimed ⚪";
     return { cls, clickable: true, title: `${name} ${ownerLabel}` };
+  },
+
+  /** The explorer's expression next to the answer feedback: happy, cheer (streak/bonus) or oops. */
+  feedbackAvatar(fb, correct) {
+    const c = this.currentContest || {};
+    const st = this.state || {};
+    const expr = !correct ? "oops" : ((st.streak || 0) >= 2 || c.nudged ? "cheer" : "happy");
+    const img = document.createElement("img");
+    img.className = "q-avatar";
+    img.alt = "";
+    img.dataset.expr = expr;
+    img.src = GeoAvatars.artUrl(GeoAvatars.normalize(st.avatar), expr);
+    fb.prepend(img);
   },
 
   /** Map badges: the explorer's face on every player country, the full token on the start country. */

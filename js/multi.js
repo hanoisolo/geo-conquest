@@ -478,6 +478,7 @@ const GeoMulti = {
     const p = s.players[i];
     GeoGame.state = {
       asked: s.asked,
+      avatar: p.avatar, // answer feedback shows this player's character
       geoSinceMath: p.geoSinceMath,
       hintsUsed: 0,
       stats: { byCategory: {} },

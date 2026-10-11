@@ -10,7 +10,7 @@
 //   GeoAvatars.DEFAULT            fallback avatar id ("fox")
 //   GeoAvatars.selected           the solo picker's current character ("fox" until picked)
 //   GeoAvatars.EXPRESSIONS        face moods faceSvg() can draw: "happy", "cheer", "oops"
-//   GeoAvatars.BARON_EXPRESSIONS  Baron mood names (consumed by js/baron.js; not drawn here)
+//   GeoAvatars.BARON_EXPRESSIONS  Baron mood names (drawn by baronSvg; consumed by js/baron.js)
 //   GeoAvatars.byId(id)           character object, or null for unknown ids
 //   GeoAvatars.normalize(id, taken = [])  a free avatar id: id if valid and not taken,
 //                                        else DEFAULT if not taken, else pickFree(taken)
@@ -20,6 +20,18 @@
 //                                        id -> DEFAULT, unknown expression -> "happy";
 //                                        never throws.
 //   GeoAvatars.faceUrl(id, expr)  "data:image/svg+xml;charset=utf-8," + encodeURIComponent(faceSvg)
+//   GeoAvatars.setManifest(files)  remember the raster art manifest: an array of relative
+//                                  paths ("fox/happy.webp"); a non-array empties it
+//   GeoAvatars.loadManifest()      fetch("assets/avatars/manifest.json") -> setManifest(json.files);
+//                                  the returned promise always resolves (any error -> empty
+//                                  manifest) and never throws
+//   GeoAvatars.hasArt(id, expr)    true when the manifest lists "<id>/<expr>.webp"
+//   GeoAvatars.artUrl(id, expr)    "assets/avatars/<id>/<expr>.webp" when listed, else faceUrl
+//   GeoAvatars.baronSvg(expr)      placeholder Baron face as an SVG string — the same 100x100
+//                                  frame as the roster (lavender bg, white rim); unknown
+//                                  expression -> "mischievous"; never throws
+//   GeoAvatars.baronUrl(expr)      "assets/avatars/baron/<expr>.webp" when listed, else a data
+//                                  URL of baronSvg(expr)
 //   GeoAvatars.renderPicker(box, { selected, taken = [], size = 48, onPick })
 //                                 fill `box` with one round face button per character
 //                                 (the only DOM-facing entry point — called, never at load):
@@ -261,6 +273,106 @@ var GeoAvatars = (function () {
     return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(faceSvg(id, expr));
   }
 
+  // ---------- raster art manifest (assets/avatars/*.webp) ----------
+
+  var manifest = new Set();
+
+  // Remember the raster art manifest: an array of relative paths such as
+  // "fox/happy.webp". Anything that is not an array empties the manifest.
+  function setManifest(files) {
+    manifest = new Set();
+    if (Array.isArray(files)) {
+      for (var i = 0; i < files.length; i++) manifest.add(files[i]);
+    }
+  }
+
+  // True when the manifest lists "<id>/<expr>.webp".
+  function hasArt(id, expr) {
+    if (typeof id !== "string" || typeof expr !== "string") return false;
+    return manifest.has(id + "/" + expr + ".webp");
+  }
+
+  // Fetch "assets/avatars/manifest.json" and hand json.files to setManifest.
+  // The returned promise always resolves — any error (missing file, bad JSON,
+  // no fetch) leaves the manifest empty. Never throws.
+  function loadManifest() {
+    return new Promise(function (resolve) {
+      try {
+        fetch("assets/avatars/manifest.json")
+          .then(function (r) { return r.json(); })
+          .then(function (json) { setManifest(json && json.files); resolve(); })
+          .catch(function () { setManifest(null); resolve(); });
+      } catch (err) {
+        setManifest(null);
+        resolve();
+      }
+    });
+  }
+
+  // Raster art when the manifest lists it, the placeholder face otherwise.
+  function artUrl(id, expr) {
+    if (hasArt(id, expr)) return "assets/avatars/" + id + "/" + expr + ".webp";
+    return faceUrl(id, expr);
+  }
+
+  // ---------- Baron von Blunder (placeholder face, same frame as the roster) ----------
+
+  // Hat, head, monocle and moustache shared by every mood; the moustache
+  // droops for "grumpy". Shapes only, like the character faces.
+  function baronBase(droopy) {
+    return neck("#fcd9b8") + bust("#7c3aed")
+      + '<ellipse cx="50" cy="50" rx="16" ry="16" fill="#fcd9b8"/>'
+      + '<rect x="37" y="4" width="26" height="28" rx="3" fill="#4c1d95"/>'
+      + '<rect x="37" y="25" width="26" height="5" fill="#f59e0b"/>'
+      + '<rect x="29" y="31" width="42" height="6" rx="3" fill="#312e81"/>'
+      + '<circle cx="50" cy="52.5" r="2.8" fill="#f0a878"/>'
+      + (droopy
+        ? '<path d="M50 55.5C46.5 53 41 53.5 39 56.5C37.5 60.5 39.5 63.5 42.5 62C45 60.7 47 58.9 50 59.5C53 58.9 55 60.7 57.5 62C60.5 63.5 62.5 60.5 61 56.5C59 53.5 53.5 53 50 55.5Z" fill="#312e81"/>'
+        : '<path d="M50 55.5C46.5 53 41 53.5 39 56.5C37.5 59 39.5 61.5 42 60.5C44.5 59.3 47 58.6 50 58.2C53 58.6 55.5 59.3 58 60.5C60.5 61.5 62.5 59 61 56.5C59 53.5 53.5 53 50 55.5Z" fill="#312e81"/>')
+      + '<circle cx="57" cy="48" r="7" fill="rgba(255,255,255,.2)" stroke="#f59e0b" stroke-width="2"/>'
+      + '<path d="M63 53.5 L68.5 59.5" fill="none" stroke="#f59e0b" stroke-width="1.8" stroke-linecap="round"/>';
+  }
+
+  // Eyes, brows and mouth for one mood (mischievous / smug / grumpy).
+  function baronBits(e) {
+    var B = "#312e81", E = "#1e293b", M = "#b45309";
+    if (e === "smug") { // closed satisfied eyes, wide smile, monocle glint
+      return '<path d="M38.5 42.5 Q43 40 47.5 42.5" fill="none" stroke="' + B + '" stroke-width="2.2" stroke-linecap="round"/>'
+        + '<path d="M52.5 42.5 Q57 40 61.5 42.5" fill="none" stroke="' + B + '" stroke-width="2.2" stroke-linecap="round"/>'
+        + '<path d="M39.5 48.5 Q43 45.5 46.5 48.5" fill="none" stroke="' + E + '" stroke-width="2.4" stroke-linecap="round"/>'
+        + '<path d="M53.5 48.5 Q57 45.5 60.5 48.5" fill="none" stroke="' + E + '" stroke-width="2.4" stroke-linecap="round"/>'
+        + '<path d="M44.5 60.5 Q50 66 55.5 60.5" fill="none" stroke="' + M + '" stroke-width="2.4" stroke-linecap="round"/>'
+        + '<path d="M60 43.5 L63 46.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>';
+    }
+    if (e === "grumpy") { // lowered brows, small eyes, frown
+      return '<path d="M38.5 42.5 L47.5 46.5" fill="none" stroke="' + B + '" stroke-width="2.5" stroke-linecap="round"/>'
+        + '<path d="M61.5 42.5 L52.5 46.5" fill="none" stroke="' + B + '" stroke-width="2.5" stroke-linecap="round"/>'
+        + dot(43, 49, 2.3, E) + dot(57, 49, 2.3, E)
+        + '<path d="M45 63.5 Q50 60 55 63.5" fill="none" stroke="' + M + '" stroke-width="2.4" stroke-linecap="round"/>';
+    }
+    // mischievous: one raised brow + sly half-smile
+    return '<path d="M38.5 43.5 Q43 39 47.5 43" fill="none" stroke="' + B + '" stroke-width="2.2" stroke-linecap="round"/>'
+      + '<path d="M52.5 44.5 Q57 46 61.5 44.5" fill="none" stroke="' + B + '" stroke-width="2.2" stroke-linecap="round"/>'
+      + dot(43, 48, 2.6, E) + dot(57, 48, 2.6, E)
+      + '<path d="M45 62.5 Q50 63.5 55 60.5" fill="none" stroke="' + M + '" stroke-width="2.4" stroke-linecap="round"/>';
+  }
+
+  function baronSvg(expr) {
+    try {
+      var e = BARON_EXPRESSIONS.indexOf(expr) === -1 ? "mischievous" : expr;
+      return frame({ colors: { bg: "#ddd6fe" } }, baronBase(e === "grumpy") + baronBits(e));
+    } catch (err) {
+      return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">'
+        + '<circle cx="50" cy="50" r="47" fill="#fff"/><circle cx="50" cy="50" r="43" fill="#ddd6fe"/></svg>';
+    }
+  }
+
+  // Raster Baron art when the manifest lists it, the placeholder data URL otherwise.
+  function baronUrl(expr) {
+    if (hasArt("baron", expr)) return "assets/avatars/baron/" + expr + ".webp";
+    return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(baronSvg(expr));
+  }
+
   // ---------- character picker (the only DOM-facing entry point) ----------
 
   // Fill `box` with one round face button per character: the selected id
@@ -303,6 +415,12 @@ var GeoAvatars = (function () {
     pickFree: pickFree,
     faceSvg: faceSvg,
     faceUrl: faceUrl,
+    setManifest: setManifest,
+    loadManifest: loadManifest,
+    hasArt: hasArt,
+    artUrl: artUrl,
+    baronSvg: baronSvg,
+    baronUrl: baronUrl,
     renderPicker: renderPicker
   };
 })();

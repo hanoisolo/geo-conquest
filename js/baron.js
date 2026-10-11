@@ -1,13 +1,14 @@
 /* ============================================================
    baron.js — Baron von Blunder, the animated rival.
 
-   A small character panel in the side panel (desktop): an
-   inline SVG villain (top hat, monocle, moustache — defined
-   once as <symbol id="baron-face"> and reused) with a speech
-   bubble. On phones (<= 920px, single-column layout) the side
-   card is hidden and a small fixed avatar (56px, bottom-left,
-   below modal z-index, hidden while any modal is open) shows
-   the same bubble beside it.
+   A small character panel in the side panel (desktop): a
+   portrait <img class="baron-portrait"> of the villain (top
+   hat, monocle, moustache — placeholder SVG or raster art
+   from assets/avatars/baron/, chosen by GeoAvatars.baronUrl)
+   with a speech bubble. On phones (<= 920px, single-column
+   layout) the side card is hidden and a small fixed avatar
+   (56px, bottom-left, below modal z-index, hidden while any
+   modal is open) shows the same bubble beside it.
 
    The Baron taunts the player when he steals a country, when
    the player misses, occasionally when the player wins one,
@@ -17,6 +18,10 @@
    in the bubble; the Baron bounces in, wiggles while talking,
    and the bubble auto-hides after ~4 s. GeoBaron.sulk() droops
    the Baron when he loses a continent.
+
+   GeoBaron.setExpr(expr) points every .baron-portrait at
+   GeoAvatars.baronUrl(expr): say() picks the mood via EXPR_FOR,
+   sulk() uses "grumpy", and hide() resets to "mischievous".
 
    TAUNTS groups ~25 short, kid-friendly taunts by event:
    steal / playerMiss / playerWin / continentLost.
@@ -77,10 +82,19 @@ var GeoBaron = {
   /** Modal ids — the floating avatar hides while any of these is open. */
   MODAL_IDS: ["question-modal", "victory-modal", "unlock-modal", "how-modal"],
 
+  /** Baron mood per event (say()); anything else falls back to "mischievous". */
+  EXPR_FOR: {
+    steal: "smug",
+    playerMiss: "smug",
+    playerWin: "grumpy",
+    continentLost: "grumpy",
+  },
+
   _lastTaunt: null,
   _hideTimer: null,
   _sulkTimer: null,
   _observer: null,
+  _expr: "mischievous",
 
   /** True when the floating phone avatar is the active Baron (<= 920px). */
   _floatActive() {
@@ -97,6 +111,20 @@ var GeoBaron = {
   },
 
   /**
+   * Point every .baron-portrait (side card + floating avatar) at the art
+   * for `expr` — raster when the manifest lists it, else the placeholder
+   * SVG data URL from GeoAvatars.baronUrl().
+   */
+  setExpr(expr) {
+    this._expr = expr;
+    if (!window.GeoAvatars || typeof GeoAvatars.baronUrl !== "function") return;
+    const url = GeoAvatars.baronUrl(expr);
+    document.querySelectorAll(".baron-portrait").forEach((img) => {
+      img.src = url;
+    });
+  },
+
+  /**
    * Say a random taunt for the event ("steal", "playerMiss",
    * "playerWin", "continentLost"). Bounces the Baron in, wiggles
    * him while talking, and auto-hides the bubble after ~4 s.
@@ -104,6 +132,9 @@ var GeoBaron = {
   say(event) {
     const list = this.TAUNTS[event];
     if (!list || !list.length) return;
+
+    // The face matches the event's mood before the taunt lands.
+    this.setExpr(this.EXPR_FOR[event] || "mischievous");
 
     // Pick a random taunt, avoiding an immediate repeat.
     let pick = list[Math.floor(Math.random() * list.length)];
@@ -175,11 +206,13 @@ var GeoBaron = {
     if (stage) stage.classList.remove("talk");
     const wrap = document.getElementById("baron-float");
     if (wrap) wrap.classList.remove("talk");
+    this.setExpr("mischievous"); // resting mood once the bubble is gone
     clearTimeout(this._hideTimer);
   },
 
   /** The Baron droops when the player conquers a continent. */
   sulk() {
+    this.setExpr("grumpy");
     for (const id of ["baron-card", "baron-float"]) {
       const el = document.getElementById(id);
       if (!el) continue;
@@ -214,6 +247,12 @@ var GeoBaron = {
       if (m) this._observer.observe(m, { attributes: true, attributeFilter: ["class"] });
     }
     sync();
+
+    // First face: the placeholder now, raster art once the manifest lands.
+    this.setExpr("mischievous");
+    if (window.GeoAvatars && typeof GeoAvatars.loadManifest === "function") {
+      GeoAvatars.loadManifest().then(() => this.setExpr(this._expr || "mischievous"));
+    }
   },
 };
 

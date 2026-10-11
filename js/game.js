@@ -1025,9 +1025,17 @@ const GeoGame = {
     return { cls, clickable: true, title: `${name} ${ownerLabel}` };
   },
 
+  /** Map badges: the explorer's face on every player country, the full token on the start country. */
+  badgeList() {
+    const s = this.state, av = GeoAvatars.normalize(s.avatar);
+    return Object.keys(s.ownership).filter((k) => s.ownership[k] === "player")
+      .map((iso3) => ({ iso3, avatar: av, full: iso3 === s.homeBase }));
+  },
+
   refreshAll() {
     if (!this.state) return;
     GeoMap.refresh((f) => this.styleFor(f));
+    GeoMap.setBadges(this.badgeList());
     document.getElementById("score-val").textContent = this.state.points;
     document.getElementById("streak-val").textContent = this.state.streak;
     // The streak chip pulses once the player is on a roll (3+).

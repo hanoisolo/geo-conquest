@@ -38,6 +38,9 @@ const GeoMap = {
   _playable: null,        // Set of playable iso3 codes (markers + labels)
   _nameFor: null,         // feature -> display name (labels)
   _markersG: null,
+  _badgesG: null,       // owner face badge layer: above markers, below labels
+  _badges: null,        // setBadges() input: [{ iso3, avatar, full }]
+  _badgeImgs: [],       // drawn badges: [{ el, cen, onMarker, full }]
   _labelsG: null,
   _listenersBound: false,
   _pointers: new Map(),   // pointerId -> { x, y } in client coords
@@ -185,6 +188,7 @@ const GeoMap = {
     }
     svgEl.appendChild(frag);
     this._buildMarkers(NS);
+    this._buildBadges(NS);
     this._buildLabels(NS);
     this.refresh(styleFor);
     this.bindListeners();
@@ -304,6 +308,103 @@ const GeoMap = {
       if (n) return n;
     }
     return feature.properties.name || feature.properties.iso3 || "";
+  },
+
+  /* ================= owner face badges ================= */
+
+  /**
+   * The badge layer: one avatar face per owned country, appended
+   * after the markers (so above them) and before the labels (so
+   * below them). pointer-events="none" — a badge never blocks a
+   * click on the country underneath.
+   */
+  _buildBadges(NS) {
+    const g = document.createElementNS(NS, "g");
+    g.setAttribute("class", "badges");
+    g.setAttribute("pointer-events", "none");
+    this._badgesG = g;
+    this.svg.appendChild(g);
+    this._drawBadges(); // badges set before a re-render survive it
+  },
+
+  /**
+   * Set the owner face badges. Items are { iso3, avatar, full } —
+   * full draws the bigger "token" variant.
+   */
+  setBadges(list) {
+    this._badges = Array.isArray(list) ? list : [];
+    this._drawBadges();
+  },
+
+  /**
+   * A country's badge anchor in map coordinates: the centre of its
+   * tiny-country marker when it has one, else its main polygon
+   * centroid. null when the iso3 is unknown.
+   */
+  badgeCenter(iso3) {
+    const pos = this._badgePos(iso3);
+    return pos ? pos.cen : null;
+  },
+
+  /* iso3 -> { cen: [x, y], onMarker } or null when there is no position. */
+  _badgePos(iso3) {
+    if (!iso3) return null;
+    for (const m of this.markers) {
+      if (m.el.dataset.iso === iso3) {
+        return { cen: [+m.el.getAttribute("cx"), +m.el.getAttribute("cy")], onMarker: true };
+      }
+    }
+    for (const entry of this.paths) {
+      if (entry.feature.properties.iso3 === iso3) {
+        return entry.cen ? { cen: entry.cen, onMarker: false } : null;
+      }
+    }
+    return null;
+  },
+
+  /* (Re)build the badge layer from this._badges, skipping isos with no position. */
+  _drawBadges() {
+    this._badgeImgs = [];
+    if (!this._badgesG) return;
+    const NS = "http://www.w3.org/2000/svg";
+    this._badgesG.innerHTML = "";
+    for (const b of this._badges || []) {
+      const pos = this._badgePos(b.iso3);
+      if (!pos) continue;
+      const img = document.createElementNS(NS, "image");
+      img.setAttribute("class", b.full ? "av-token" : "av-badge");
+      img.setAttribute("href", GeoAvatars.faceUrl(b.avatar, "happy"));
+      img.setAttribute("preserveAspectRatio", "xMidYMid meet");
+      img.dataset.iso = b.iso3;
+      this._badgesG.appendChild(img);
+      this._badgeImgs.push({ el: img, cen: pos.cen, onMarker: pos.onMarker, full: !!b.full });
+    }
+    this._updateBadges();
+  },
+
+  /**
+   * Badge sizes follow the zoom (z = ZOOM_MAX_W / view.w): 9 px
+   * badges that grow from z 1.5, bigger "full" tokens from z 1, and
+   * never smaller than the marker dot one sits on. Screen px, turned
+   * into viewBox units with _cssK() like the markers.
+   */
+  _updateBadges() {
+    if (!this._badgesG) return;
+    const k = this._cssK();
+    const z = this.ZOOM_MAX_W / this.view.w;
+    for (const b of this._badgeImgs) {
+      let px = b.full
+        ? Math.min(64, 22 + 6 * (z - 1))
+        : (z < 1.5 ? 9 : Math.min(30, 9 + 5 * (z - 1.5)));
+      if (b.onMarker) px = Math.max(px, this.MARKER_PX * 1.7);
+      const s = px * k;
+      b.el.setAttribute("x", (b.cen[0] - s / 2).toFixed(2));
+      // Country badges stand just above the centroid so the name label below stays readable;
+      // tiny-island badges sit right on their marker dot.
+      b.el.setAttribute("y", (b.cen[1] - (b.onMarker ? s / 2 : s * 0.9)).toFixed(2));
+      b.el.setAttribute("width", s.toFixed(2));
+      b.el.setAttribute("height", s.toFixed(2));
+    }
   },
 
   /** Apply one styleFor result to a path or marker entry. */
@@ -560,6 +661,7 @@ const GeoMap = {
       l.el.setAttribute("font-size", fs.toFixed(2));
       l.el.setAttribute("stroke-width", (fs * 0.28).toFixed(2));
     }
+    this._updateBadges();
     this._updateLabels();
   },
 

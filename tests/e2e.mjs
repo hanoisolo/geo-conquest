@@ -78,6 +78,10 @@ async function run(vp, tag) {
   await shot("03-geo-question");
   await answer(true); await shot("04-geo-answered"); await cont();
   ok(`${tag}: NZ conquered`, await page.evaluate(() => GeoGame.state.ownership.NZL === "player"));
+  ok(`${tag}: start country shows the full token`, await page.evaluate(() => !!document.querySelector('#map-svg .badges image.av-token[data-iso="AUS"]')));
+  ok(`${tag}: conquered country gets a face badge`, await page.evaluate(() => !!document.querySelector('#map-svg .badges image.av-badge[data-iso="NZL"]')));
+  ok(`${tag}: badges never block clicks`, await page.evaluate(() => { document.getElementById("map-svg").scrollIntoView({ block: "center" }); const b = document.querySelector('#map-svg .badges image[data-iso="AUS"]').getBoundingClientRect(); const el = document.elementFromPoint(b.x + b.width / 2, b.y + b.height / 2); return getComputedStyle(document.querySelector("#map-svg .badges")).pointerEvents === "none" && el && el.tagName !== "image"; }));
+  ok(`${tag}: badges grow when zoomed in`, await page.evaluate(async () => { const el = document.querySelector('#map-svg .badges image[data-iso="NZL"]'); const w0 = el.getBoundingClientRect().width; GeoMap.zoom(0.4); await new Promise((r) => setTimeout(r, 600)); const w1 = el.getBoundingClientRect().width; GeoMap.zoom(2.5); await new Promise((r) => setTimeout(r, 600)); window.__bw = [w0, w1, GeoMap.view.w]; return w1 > w0 * 1.15; }), await page.evaluate(() => JSON.stringify(window.__bw)));
 
   // flag question
   const hasFlags = await page.evaluate(() => GeoGame.questions.some((q) => q.type === "flag"));

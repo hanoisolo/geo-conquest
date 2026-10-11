@@ -305,11 +305,16 @@ async function runAvatars(vp, tag) {
   ok(`${tag}: no horizontal scroll on setup with 4 players`, await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1));
   await page.screenshot({ path: join(shots, `av-${tag}-02-mp-setup.png`), fullPage: true });
   await page.click("#btn-mp-start"); await wait(800);
+  for (const iso of ["CAN", "BRA", "FRA", "AUS"]) { await page.evaluate((i) => GeoMap.onTerritoryClick(i), iso); await wait(250); }
+  if (await page.locator("#mp-handoff").isVisible()) { await page.click("#btn-mp-ready"); await wait(300); }
+  await page.evaluate(() => GeoMap.onTerritoryClick("FJI")); await wait(250);
+  await page.screenshot({ path: join(shots, `av-${tag}-04-mp-map.png`) });
   ok(`${tag}: characters saved with the game`, await page.evaluate(() => { const s = JSON.parse(localStorage.getItem("geoConquestMultiV1")); return s.players[1].avatar === "ninjacat" && new Set(s.players.map((p) => p.avatar)).size === 4; }));
   // Legacy multiplayer save without characters (plus a duplicate) -> unique defaults, no crash.
   await page.evaluate(() => { const s = JSON.parse(localStorage.getItem("geoConquestMultiV1")); delete s.players[0].avatar; delete s.players[1].avatar; s.players[2].avatar = "robot"; s.players[3].avatar = "robot"; localStorage.setItem("geoConquestMultiV1", JSON.stringify(s)); });
   await page.reload(); await wait(1200);
   await page.click("#btn-mp-continue"); await wait(900);
+  ok(`${tag}: each home shows its owner's token`, await page.evaluate(() => { const s = GeoMulti.state; return s.players.filter((p) => p.home).every((p) => { const el = document.querySelector(`#map-svg .badges image.av-token[data-iso="${p.home}"]`); return el && el.getAttribute("href") === GeoAvatars.faceUrl(p.avatar, "happy"); }); }));
   ok(`${tag}: legacy save loads with unique characters`, await page.evaluate(() => { const a = GeoMulti.state.players.map((p) => p.avatar); return a.every((x) => GeoAvatars.byId(x)) && new Set(a).size === 4; }));
   ok(`${tag}: no page errors (avatars run)`, errs.length === 0);
   if (errs.length) console.log(errs);

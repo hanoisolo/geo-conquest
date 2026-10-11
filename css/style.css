@@ -983,3 +983,9 @@ body.mp-mode .legend { display: none; }
   .mp-avatars .av-pick { border-width: 2px; }
   .mp-avatars .av-pick img { width: 26px; height: 26px; }
 }
+
+/* ---------- Owner face badges on the map (js/map.js) ---------- */
+/* The layer floats above countries and markers but never catches clicks. */
+.badges { pointer-events: none; }
+.av-badge { filter: drop-shadow(0 1px 1px rgba(0,0,0,.35)); }
+.av-token { filter: drop-shadow(0 2px 3px rgba(0,0,0,.45)); }

@@ -898,9 +898,19 @@ const GeoMulti = {
   },
 
   /** Re-colour the map and update the banner + scoreboard. */
+  /** Map badges: each owner's face on their countries, full token on their home. */
+  badgeList() {
+    const s = this.state;
+    return Object.keys(s.ownership).filter((k) => s.players[s.ownership[k]] && this.inScope(k)).map((iso3) => {
+      const p = s.players[s.ownership[iso3]];
+      return { iso3, avatar: p.avatar, full: p.home === iso3 };
+    });
+  },
+
   refresh() {
     if (!this.state) return;
     GeoMap.refresh((f) => this.styleFor(f));
+    GeoMap.setBadges(this.badgeList());
     this.renderBanner();
     this.renderScoreboard();
   },

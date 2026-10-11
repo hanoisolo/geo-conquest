@@ -27,7 +27,7 @@ Max one fix round per segment. One local commit per clean segment. Nothing pushe
 | # | Segment | Spec | Status | Commit |
 |---|---------|------|--------|--------|
 | A1 | Characters data (js/avatars.js, placeholder SVG faces), solo + multiplayer pickers, save migration (default avatar) | §A | done — Vibe GLM 5.3: A1a avatars.js (verified by tests/avatars.test.js), A1b pickers + migration (verified by check); Forge: game.js/app.js hooks, e2e (solo 75/75, multi 112/112), fix round: phone picker on one line | A1 commit |
-| A2 | Map tokens and badges: vector face badge per owned country (zoom-sized, pointer-events none, on tiny-island markers), full token on home/start country | §A | planned | |
+| A2 | Map tokens and badges: vector face badge per owned country (zoom-sized, pointer-events none, on tiny-island markers), full token on home/start country | §A | done — Vibe GLM 5.3 (one run, verified); Forge: badge lists in game.js/multi.js, e2e (badges, token, click-through, zoom growth); fix round: badges stand above the name label, bigger full token when zoomed | A2 commit |
 | A3 | Hop animation (nearest owned country or home → conquered) + flag plant; confetti/sound reused; reduced motion skips the hop | §A | planned | |
 | A4 | Expressions (happy/cheer/oops) in question feedback; Baron portrait slots (mischievous/smug/grumpy) keeping the taunts; raster art from assets/avatars/ when listed, else placeholder SVG | §A | planned | |
 | B | Passport book | §B | not started (next run) | |

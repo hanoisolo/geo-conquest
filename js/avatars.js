@@ -386,7 +386,7 @@ var GeoAvatars = (function () {
       b.className = "av-pick";
       var img = document.createElement("img");
       img.alt = "";
-      img.src = faceUrl(c.id, "happy");
+      img.src = artUrl(c.id, "happy"); // final art when listed, placeholder otherwise
       img.width = size;
       img.height = size;
       b.appendChild(img);

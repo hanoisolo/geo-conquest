@@ -78,7 +78,7 @@ async function run(vp, tag) {
   await attack("NZL", "medium", "geo");
   await shot("03-geo-question");
   await answer(true); await shot("04-geo-answered");
-  ok(`${tag}: right answer shows the explorer's happy face`, await page.evaluate(() => { const i = document.querySelector("#q-feedback .q-avatar"); return !!i && i.dataset.expr === "happy" && i.src === GeoAvatars.faceUrl("robot", "happy") && i.complete && i.naturalWidth > 0; }));
+  ok(`${tag}: right answer shows the explorer's happy face`, await page.evaluate(() => { const i = document.querySelector("#q-feedback .q-avatar"); return !!i && i.dataset.expr === "happy" && i.src === new URL(GeoAvatars.artUrl("robot", "happy"), location.href).href && i.complete && i.naturalWidth > 0; }));
   await cont();
   ok(`${tag}: NZ conquered`, await page.evaluate(() => GeoGame.state.ownership.NZL === "player"));
   ok(`${tag}: conquest hops the token from home (AUS) to NZ`, await page.evaluate(() => JSON.stringify(window.__hops[0]) === JSON.stringify(["AUS", "NZL", "robot"])));
@@ -143,9 +143,11 @@ async function run(vp, tag) {
   const target = await page.evaluate(() => ["PNG", "FJI", "VUT", "SLB"].find((i) => GeoGame.state.ownership[i] !== "player"));
   if (target) {
     await attack(target, "medium", "geo"); await answer(false);
+    await shot("art-oops");
     ok(`${tag}: wrong answer shows the oops face`, await page.evaluate(() => { const i = document.querySelector("#q-feedback .q-avatar"); return !!i && i.dataset.expr === "oops"; }));
     await cont();
-    ok(`${tag}: Baron looks smug after stealing`, await page.evaluate(() => [...document.querySelectorAll(".baron-portrait")].every((i) => i.src === GeoAvatars.baronUrl("smug"))));
+    ok(`${tag}: Baron looks smug after stealing`, await page.evaluate(() => [...document.querySelectorAll(".baron-portrait")].every((i) => i.src === new URL(GeoAvatars.baronUrl("smug"), location.href).href)));
+    await shot("art-baron-smug");
     ok(`${tag}: Baron stole ${target}`, await page.evaluate((t) => GeoGame.state.ownership[t] === "rival", target));
     await page.evaluate((t) => GeoGame.onTerritoryClick(t), target); await wait(200);
     ok(`${tag}: Easy disabled on Baron country`, await page.locator('.diff-btn[data-tier="easy"]').isDisabled());

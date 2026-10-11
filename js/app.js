@@ -64,6 +64,7 @@ function wireUI() {
     onPick: (id) => { GeoAvatars.selected = id; drawSoloPicker(); },
   });
   drawSoloPicker();
+  GeoAvatars.loadManifest().then(drawSoloPicker); // swap in the final art once the manifest is in
   $("btn-quest").addEventListener("click", () => GeoGame.newCampaign("quest"));
   $("btn-world").addEventListener("click", () => GeoGame.newCampaign("world"));
   $("btn-continue").addEventListener("click", () => GeoGame.continueCampaign());

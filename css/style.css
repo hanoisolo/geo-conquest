@@ -1173,3 +1173,8 @@ body.mp-mode .legend { display: none; }
 .pp-grid-empty .pp-empty .pp-name { font-size: 0.85rem; }
 .pp-grid-empty .pp-empty .pp-line { font-size: 0.72rem; }
 .pp-grid:empty { display: none; }
+
+/* Final art (transparent cut-outs): a soft disc behind each picker portrait so they read
+   as tokens like the map badges, and taken characters go grey as well as faded. */
+.av-pick { background: radial-gradient(circle at 50% 40%, #ffffff 45%, #e0e7ff 100%); }
+.av-pick:disabled img, .av-pick.used img { filter: grayscale(1); }

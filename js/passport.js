@@ -115,9 +115,9 @@ var GeoPassport = {
 
     // Header: the explorer's happy face on the navy cover.
     let face = "";
-    if (o.avatar && (typeof GeoAvatars !== "undefined") && typeof GeoAvatars.faceUrl === "function") {
+    if (o.avatar && (typeof GeoAvatars !== "undefined") && typeof GeoAvatars.artUrl === "function") {
       try {
-        face = GeoAvatars.faceUrl(o.avatar, "happy");
+        face = GeoAvatars.artUrl(o.avatar, "happy");
       } catch (e) {
         face = "";
       }

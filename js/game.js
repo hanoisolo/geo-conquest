@@ -98,6 +98,7 @@ const GeoGame = {
       pendingChoice: false, geoSinceMath: 0, hintsUsed: 0,
       stats: { byCategory: {} },
       avatar: GeoAvatars.normalize(GeoAvatars.selected),
+      passport: {},
     };
     this.persist();
     this.showContinentPicker("start");
@@ -202,6 +203,7 @@ const GeoGame = {
       }
       this.state.homeBase = iso3;
       this.state.ownership[iso3] = "player";
+      GeoPassport.stamp(this.passportBook(), iso3);
       this.pickingHome = false;
       document.getElementById("home-banner").classList.add("hidden");
       this.persist();
@@ -678,6 +680,7 @@ const GeoGame = {
 
     if (c.wasCorrect) {
       this.state.ownership[c.iso3] = "player";
+      GeoPassport.stamp(this.passportBook(), c.iso3);
       this.state.correct++;
       this.state.streak++;
       this.state.bestStreak = Math.max(this.state.bestStreak, this.state.streak);
@@ -1031,6 +1034,18 @@ const GeoGame = {
     return { cls, clickable: true, title: `${name} ${ownerLabel}` };
   },
 
+  /** The solo passport (stamps live in the solo save). */
+  passportBook() {
+    if (!this.state.passport) this.state.passport = {};
+    return { name: "Explorer", avatar: GeoAvatars.normalize(this.state.avatar), stamps: this.state.passport };
+  },
+
+  openPassport() {
+    if (!this.state) return;
+    GeoPassport.open(this.passportBook());
+    this.persist(); // "fresh" stamp flags are cleared once seen
+  },
+
   /** The explorer's expression next to the answer feedback: happy, cheer (streak/bonus) or oops. */
   feedbackAvatar(fb, correct) {
     const c = this.currentContest || {};
@@ -1055,6 +1070,7 @@ const GeoGame = {
     if (!this.state) return;
     GeoMap.refresh((f) => this.styleFor(f));
     GeoMap.setBadges(this.badgeList());
+    GeoPassport.updateButton(this.passportBook(), this.playableIsos.size);
     document.getElementById("score-val").textContent = this.state.points;
     document.getElementById("streak-val").textContent = this.state.streak;
     // The streak chip pulses once the player is on a roll (3+).

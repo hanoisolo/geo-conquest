@@ -80,7 +80,7 @@ var GeoBaron = {
   SULK_MS: 3000,
 
   /** Modal ids — the floating avatar hides while any of these is open. */
-  MODAL_IDS: ["question-modal", "victory-modal", "unlock-modal", "how-modal"],
+  MODAL_IDS: ["question-modal", "victory-modal", "unlock-modal", "how-modal", "passport-modal"],
 
   /** Baron mood per event (say()); anything else falls back to "mischievous". */
   EXPR_FOR: {

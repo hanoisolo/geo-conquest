@@ -1017,3 +1017,159 @@ body.mp-mode .legend { display: none; }
 /* Feedback avatar floats beside the text so a long worked solution still flows full width. */
 .q-feedback { display: flow-root; }
 .q-feedback .q-avatar { float: left; margin: 0 0.6rem 0.2rem 0; }
+
+/* ---------- Passport book (js/passport.js) ---------- */
+/* Navy cover, cream pages, red ink stamps. The book must sit above
+   #mp-standings: both are .modal-backdrop (z-index 100) and the
+   passport modal comes first in the DOM, so it needs its own layer. */
+#passport-modal { z-index: 120; }
+
+/* A wide book: several pages per row on desktop, scrolls inside. */
+.passport-modal {
+  max-width: 860px;
+  max-height: 88vh;
+  padding: 0; /* the navy cover runs edge to edge */
+}
+#passport-body { padding: 0.2rem 1.2rem 1.4rem; }
+
+/* The close button floats top-right, over the cover, and stays
+   visible while the book scrolls (sticky in the scrolling modal). */
+#btn-passport-close {
+  position: sticky;
+  top: 0.6rem;
+  float: right;
+  margin: 0.6rem 0.6rem 0 0;
+  z-index: 5;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.45);
+}
+
+/* Navy cover header with the explorer's happy face. Kept a plain
+   block (inline-block children) so the cover runs full width under
+   the floated close button. */
+.pp-header {
+  padding: 1rem 3.4rem 1rem 1.2rem;
+  background: linear-gradient(135deg, #1e3a8a, #172554);
+  border-radius: var(--radius) var(--radius) 0 0;
+  color: #e0e7ff;
+}
+.pp-avatar {
+  display: inline-block;
+  vertical-align: middle;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #fde68a;
+  background: #fff;
+  object-fit: cover;
+}
+.pp-head-text { display: inline-block; vertical-align: middle; margin-left: 0.7rem; }
+.pp-title { font-size: 1.2rem; font-weight: 800; color: #fff; }
+.pp-sub { font-weight: 700; color: #fde68a; }
+
+/* Continent sections. */
+.pp-section { margin-top: 1.1rem; }
+.pp-section h4 { margin: 0 0 0.6rem; font-size: 1.05rem; }
+.pp-count { color: #b45309; font-variant-numeric: tabular-nums; }
+
+/* Cream pages on a grid; one column on phones, and nothing
+   overflows sideways at 390px (pages shrink, text wraps). */
+.pp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.8rem;
+}
+.pp-page {
+  min-width: 0;
+  overflow-wrap: break-word;
+  background: #fdf6e3;
+  border: 1px solid #e7d8b1;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.1);
+  padding: 0.9rem 0.8rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pp-flag {
+  width: 56px;
+  height: auto;
+  border: 1px solid rgba(15, 23, 42, 0.3);
+  border-radius: 3px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.2);
+}
+.pp-name { font-weight: 800; margin-top: 0.45rem; }
+.pp-line { font-size: 0.85rem; color: #7a6a45; margin-top: 0.25rem; }
+.pp-fact { font-size: 0.82rem; font-style: italic; color: #8a7a52; margin-top: 0.45rem; }
+
+/* Red ink stamp mark — a round seal, slightly tilted. */
+.pp-stamp {
+  width: 76px;
+  height: 76px;
+  margin: 0.7rem auto 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #b91c1c;
+  border-radius: 50%;
+  background: rgba(185, 28, 28, 0.07);
+  color: #b91c1c;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-align: center;
+  transform: rotate(-12deg);
+  opacity: 0.75;
+}
+/* Fresh stamps slam in with an ink "thunk". */
+.pp-new .pp-stamp { animation: thunk 0.5s cubic-bezier(0.2, 1.2, 0.4, 1) both; }
+@keyframes thunk {
+  from { transform: rotate(-12deg) scale(2.2); opacity: 0; }
+  to { transform: rotate(-12deg) scale(1); opacity: 0.75; }
+}
+
+/* Not-stamped pages: greyed out behind a dashed border. */
+.pp-empty {
+  background: #f4f1ea;
+  border: 2px dashed rgba(15, 23, 42, 0.25);
+  box-shadow: none;
+  color: #8a8578;
+  justify-content: center;
+}
+.pp-empty .pp-name { color: #6b675c; }
+
+/* Side panel button: full width, with the count in a pill. */
+#btn-passport { width: 100%; }
+#passport-count {
+  display: inline-block;
+  margin-left: 0.35rem;
+  padding: 0.05rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.35);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Quick pulse when a new stamp lands. */
+.pp-bump { animation: pp-bump 0.45s ease-out; }
+@keyframes pp-bump {
+  0%, 100% { transform: scale(1); }
+  40% { transform: scale(1.1); }
+}
+
+/* Phones: one page per row. */
+@media (max-width: 700px) {
+  .pp-grid { grid-template-columns: 1fr; }
+}
+
+/* Reduced motion: stamps and bumps land still. */
+@media (prefers-reduced-motion: reduce) {
+  .pp-new .pp-stamp { animation: none; }
+  .pp-bump { animation: none; }
+}
+
+/* Not-yet tiles: compact, several per row even on phones. */
+.pp-grid-empty { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important; margin-top: 0.5rem; }
+.pp-grid-empty .pp-empty { padding: 0.45rem 0.5rem; min-height: 0; }
+.pp-grid-empty .pp-empty .pp-name { font-size: 0.85rem; }
+.pp-grid-empty .pp-empty .pp-line { font-size: 0.72rem; }
+.pp-grid:empty { display: none; }

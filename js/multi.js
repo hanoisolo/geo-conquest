@@ -123,6 +123,14 @@ const GeoMulti = {
         p.avatar = GeoAvatars.normalize(p.avatar, takenAvatars);
         takenAvatars.push(p.avatar);
       });
+      // Passports: pre-passport saves get a stamp for every country each player holds.
+      s.players.forEach((p, i) => {
+        if (!p || typeof p !== "object") return;
+        if (!p.passport || typeof p.passport !== "object" || Array.isArray(p.passport)) {
+          p.passport = {};
+          for (const iso of Object.keys(s.ownership)) if (s.ownership[iso] === i) p.passport[iso] = { at: 0 };
+        }
+      });
       return s;
     } catch (e) {
       return null;
@@ -330,6 +338,7 @@ const GeoMulti = {
         geoSinceMath: 0,
         hintsUsed: 0,
         alive: true,
+        passport: {}, // this game's stamps for this player
       })),
       ownership: {},
       levels: {},
@@ -428,6 +437,7 @@ const GeoMulti = {
       }
       const p = s.players[s.turn];
       s.ownership[iso3] = s.turn;
+      GeoPassport.stamp(this.passportBook(s.turn), iso3);
       s.levels[iso3] = "easy"; // home flags are planted, not won — they count as easy
       p.home = iso3;
       GeoGame.toast(`🏠 ${p.name} planted their home flag in ${GeoGame.nameOf[iso3]}!`);
@@ -578,6 +588,7 @@ const GeoMulti = {
     const country = GeoGame.nameOf[atk.iso3];
     if (c.wasCorrect) {
       s.ownership[atk.iso3] = atk.attacker;
+      GeoPassport.stamp(this.passportBook(atk.attacker), atk.iso3);
       s.levels[atk.iso3] = c.tier; // the country is now fortified at the tier it was won at
       const pts = GeoGame.contestPoints(c) + (c.nudged ? 5 : 0);
       attacker.points += pts;
@@ -666,6 +677,7 @@ const GeoMulti = {
     const prize = c.wasCorrect ? this.strikePrize(p) : null;
     if (prize) {
       s.ownership[prize] = p.defender;
+      GeoPassport.stamp(this.passportBook(p.defender), prize);
       this.hopTo(p.defender, prize);
       s.levels[prize] = c.tier; // fortified at the tier the defender answered at
       defender.points += 10;
@@ -858,6 +870,14 @@ const GeoMulti = {
       stats.textContent = `🗺️ ${r.countries} · ⭐ ${r.points}`;
       li.appendChild(stats);
 
+      const pp = document.createElement("button");
+      pp.type = "button";
+      pp.className = "btn btn-small mp-pp-btn";
+      pp.textContent = `🛂 ${Object.keys((this.state.players[r.i].passport) || {}).length}`;
+      pp.setAttribute("aria-label", `Open ${r.name}'s passport`);
+      pp.addEventListener("click", () => this.openPassport(r.i));
+      li.appendChild(pp);
+
       list.appendChild(li);
     });
     document.getElementById("mp-standings").classList.remove("hidden");
@@ -908,6 +928,20 @@ const GeoMulti = {
     GeoMap.hop(from, iso3, p.avatar, this.COLORS[p.color].hex, onLand);
   },
 
+  /** Player i's passport for this game. */
+  passportBook(i) {
+    const p = this.state.players[i];
+    if (!p.passport) p.passport = {};
+    return { name: p.name, avatar: p.avatar, stamps: p.passport };
+  },
+
+  /** Open player i's passport (current player from the side panel, anyone from the standings). */
+  openPassport(i) {
+    if (!this.state || !this.state.players[i]) return;
+    GeoPassport.open({ ...this.passportBook(i), isos: this.scopeIsos() });
+    this.save(); // "fresh" stamp flags are cleared once seen
+  },
+
   /** Map badges: each owner's face on their countries, full token on their home. */
   badgeList() {
     const s = this.state;
@@ -921,6 +955,7 @@ const GeoMulti = {
     if (!this.state) return;
     GeoMap.refresh((f) => this.styleFor(f));
     GeoMap.setBadges(this.badgeList());
+    if (this.state.players[this.state.turn]) GeoPassport.updateButton(this.passportBook(this.state.turn), this.scopeIsos().length);
     this.renderBanner();
     this.renderScoreboard();
   },

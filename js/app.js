@@ -30,6 +30,7 @@ window.addEventListener("DOMContentLoaded", () => {
     .then((data) => {
       GeoGame.init(data);
       GeoMulti.init({ adjacency: data.adjacency });
+      GeoPassport.load(); // facts + capitals for the passport pages (never rejects)
       wireUI();
       GeoMulti.wireSetup();
       const mp = GeoMulti.load();
@@ -67,6 +68,11 @@ function wireUI() {
   $("btn-world").addEventListener("click", () => GeoGame.newCampaign("world"));
   $("btn-continue").addEventListener("click", () => GeoGame.continueCampaign());
   $("btn-multi").addEventListener("click", () => GeoMulti.openSetup());
+  // Passport: the solo explorer's, or the current multiplayer player's.
+  $("btn-passport").addEventListener("click", () => {
+    if (GeoGame.mode === "multi") GeoMulti.openPassport(GeoMulti.state.turn);
+    else GeoGame.openPassport();
+  });
   $("btn-mp-back").addEventListener("click", () => { document.body.classList.remove("mp-mode"); GeoGame.showScreen("screen-start"); });
   $("btn-mp-continue").addEventListener("click", () => GeoMulti.resume());
   $("btn-how").addEventListener("click", () => {

@@ -424,7 +424,8 @@ const GeoMap = {
       img.setAttribute("y", (from[1] - s / 2).toFixed(2));
       this._hopping = toIso; // its badge hides while the token flies
       this._drawBadges();
-      this._badgesG.appendChild(img);
+      img.setAttribute("pointer-events", "none");
+      this.svg.appendChild(img); // above the name labels, so nothing hides the flying token
 
       const dist = Math.hypot(to[0] - from[0], to[1] - from[1]);
       const lift = 0.35 * dist + 40 * k; // arc peak: distance + 40 screen px
@@ -508,7 +509,8 @@ const GeoMap = {
     pennant.setAttribute("fill", color || "#f59e0b");
     g.appendChild(pole);
     g.appendChild(pennant);
-    this._badgesG.appendChild(g);
+    g.setAttribute("pointer-events", "none");
+    this.svg.appendChild(g); // above the name labels, so the planted flag is never hidden
     setTimeout(() => {
       if (g.parentNode) g.parentNode.removeChild(g);
     }, 1400);

@@ -161,6 +161,8 @@
         <aside class="side-panel">
           <div class="card mp-only" id="mp-scoreboard"></div>
 
+          <button class="btn passport-btn" id="btn-passport" type="button" aria-label="Open passport">🛂 Passport <span id="passport-count">0/68</span></button>
+
           <div class="card objective-card">
             <h3>🎯 Objective</h3>
             <p id="objective-text">Choose a continent to begin!</p>
@@ -281,6 +283,9 @@
     <h2 id="mp-handoff-text"></h2><p>Hand the device over — no peeking at their question!</p>
     <button class="btn btn-big" id="btn-mp-ready" type="button">Ready!</button></div></div>
 
+  <!-- ============ PASSPORT BOOK ============ -->
+  <div class="modal-backdrop hidden" id="passport-modal"><div class="modal card passport-modal" role="dialog" aria-modal="true" aria-label="Passport"><button class="btn btn-small" id="btn-passport-close" type="button" aria-label="Close passport">✕</button><div id="passport-body"></div></div></div>
+
   <!-- ============ MULTIPLAYER FINAL STANDINGS ============ -->
   <div class="modal-backdrop hidden" id="mp-standings"><div class="modal card"
     tabindex="-1" role="dialog" aria-modal="true" aria-labelledby="mp-standings-title"><div class="hero-emoji">🏁</div>
@@ -296,6 +301,7 @@
 
   <script src="js/storage.js"></script>
   <script src="js/avatars.js"></script>
+  <script src="js/passport.js"></script>
   <script src="js/map.js"></script>
   <script src="js/sound.js"></script>
   <script src="js/confetti.js"></script>

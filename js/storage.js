@@ -67,6 +67,11 @@ const GeoStorage = {
     }
     // Avatar: the explorer's character — pre-avatar saves get the default.
     s.avatar = typeof GeoAvatars !== "undefined" ? GeoAvatars.normalize(s.avatar) : "fox";
+    // Passport (avatars release): old saves get a stamp for every country they already own.
+    if (!s.passport || typeof s.passport !== "object" || Array.isArray(s.passport)) {
+      s.passport = {};
+      for (const iso of Object.keys(s.ownership)) if (s.ownership[iso] === "player") s.passport[iso] = { at: 0 };
+    }
     s.version = this.SAVE_VERSION;
     return s;
   },

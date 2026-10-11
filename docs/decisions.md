@@ -27,3 +27,10 @@
 - Old saves load with a default avatar: solo `fox`; multiplayer players get the first unused characters in list order. Unknown ids are replaced the same way — never a crash.
 - Map badges/tokens are vector placeholders built from each character's colours (sharp at every zoom). Raster art (assets/avatars/<id>/<expr>.webp) is used only for portraits/expressions, and only when listed in assets/avatars/manifest.json, so a missing file never causes a 404 or console error. Dropping in art = add files + list them in the manifest (data, no code change).
 - Expressions: right answer = happy, right on a streak of 3+ or a math nudge = cheer, wrong = oops. Baron moods: taunt/idle = mischievous, steal or player miss = smug, player win or continent lost = grumpy. Placeholder Baron is a new vector face matching the character frames (the old <symbol> is kept in index.html, unused).
+
+## Passport (section B)
+- Facts live in `data/facts.json` (68, Forge-written and fact-checked). Each was chosen so it does not repeat the topic of any question about the same country (checked against the whole bank), because a multiplayer defender's strike-back is asked about their own country.
+- Solo stamps: `state.passport` `{ISO3: {at, fresh?}}`; old saves back-fill a stamp (`at: 0`) for every player-owned country. Multiplayer: `players[i].passport`, back-filled the same way; home flags count as stamps.
+- The passport shows countries in play (one-continent games: just that continent). Continents with stamps come first, collected pages before the compact "not yet" tiles.
+- The "thunk" stamp animation plays once on the next open after a stamp (`fresh` flag), and is off under reduced motion.
+- Hop token and planted flag now draw on top of the SVG (above name labels), with pointer-events off.

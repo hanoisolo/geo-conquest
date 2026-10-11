@@ -95,6 +95,24 @@ async function run(vp, tag) {
     await page.emulateMedia({ reducedMotion: "no-preference" });
     await wait(1500);
   }
+  // Passport: home + NZ stamped, pages show flag/capital/continent/fact, fresh stamp animates once.
+  ok(`${tag}: passport stamps home and conquest`, await page.evaluate(() => !!GeoGame.state.passport.AUS && !!GeoGame.state.passport.NZL && JSON.parse(localStorage.getItem("geoConquestSaveV1")).passport.NZL));
+  ok(`${tag}: passport button counts stamps`, /^2\/68$/.test(await page.locator("#passport-count").textContent()));
+  await page.locator("#btn-passport").scrollIntoViewIfNeeded(); await page.click("#btn-passport"); await wait(700);
+  ok(`${tag}: passport opens with collected vs total`, await vis("#passport-modal") && /2 \/ 68 stamps/.test(await page.locator("#passport-body .pp-sub").textContent()));
+  ok(`${tag}: passport grouped by continent`, (await page.locator("#passport-body .pp-section").count()) === 6);
+  ok(`${tag}: NZ page has flag, capital, continent and fact`, await page.evaluate(() => { const pg = [...document.querySelectorAll(".pp-page.pp-got")].find((x) => /New Zealand/.test(x.textContent)); const f = pg && pg.querySelector(".pp-flag"); return !!pg && f.complete && f.naturalWidth > 0 && /Wellington/.test(pg.textContent) && /Oceania/.test(pg.textContent) && pg.textContent.includes(GeoPassport.facts.NZL); }));
+  ok(`${tag}: new stamps animate`, (await page.locator(".pp-page.pp-new").count()) >= 1);
+  ok(`${tag}: no horizontal scroll with passport open`, await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1 && document.querySelector(".passport-modal").scrollWidth <= document.querySelector(".passport-modal").clientWidth + 1));
+  await page.screenshot({ path: `/workspace/geo-conquest-shots/pp-${tag}-01-passport.png` });
+  await page.keyboard.press("Escape"); await wait(300);
+  ok(`${tag}: Escape closes the passport`, !(await vis("#passport-modal")));
+  await page.click("#btn-passport"); await wait(400);
+  ok(`${tag}: stamp animation plays only once`, (await page.locator(".pp-page.pp-new").count()) === 0);
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  ok(`${tag}: reduced motion: no stamp animation`, await page.evaluate(() => { const el = document.createElement("div"); el.className = "pp-page pp-new"; el.innerHTML = '<div class="pp-stamp">x</div>'; document.getElementById("passport-body").appendChild(el); const a = getComputedStyle(el.firstChild).animationName; el.remove(); return a === "none"; }));
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.click("#btn-passport-close"); await wait(300);
   ok(`${tag}: start country shows the full token`, await page.evaluate(() => !!document.querySelector('#map-svg .badges image.av-token[data-iso="AUS"]')));
   ok(`${tag}: conquered country gets a face badge`, await page.evaluate(() => !!document.querySelector('#map-svg .badges image.av-badge[data-iso="NZL"]')));
   ok(`${tag}: badges never block clicks`, await page.evaluate(() => { document.getElementById("map-svg").scrollIntoView({ block: "center" }); const b = document.querySelector('#map-svg .badges image[data-iso="AUS"]').getBoundingClientRect(); const el = document.elementFromPoint(b.x + b.width / 2, b.y + b.height / 2); return getComputedStyle(document.querySelector("#map-svg .badges")).pointerEvents === "none" && el && el.tagName !== "image"; }));
@@ -205,11 +223,12 @@ async function run(vp, tag) {
   await shot("13-after-reload-victory");
   // Old save without a character (and one with a bogus id) loads with the default, no crash.
   for (const bad of [undefined, "dragon-9000"]) {
-    await page.evaluate((b) => { const s = JSON.parse(localStorage.getItem("geoConquestSaveV1")); if (b === undefined) delete s.avatar; else s.avatar = b; localStorage.setItem("geoConquestSaveV1", JSON.stringify(s)); }, bad);
+    await page.evaluate((b) => { const s = JSON.parse(localStorage.getItem("geoConquestSaveV1")); if (b === undefined) { delete s.avatar; delete s.passport; } else s.avatar = b; localStorage.setItem("geoConquestSaveV1", JSON.stringify(s)); }, bad);
     await page.reload(); await wait(1200);
     ok(`${tag}: old save (${bad || "no avatar"}) preselects the default explorer`, (await page.locator('#solo-avatars .av-pick.selected').getAttribute("aria-label")) === "Fox Explorer");
     await page.click("#btn-continue"); await wait(1200);
     ok(`${tag}: old save (${bad || "no avatar"}) continues with fox`, await page.evaluate(() => GeoGame.state.avatar === "fox"));
+    if (bad === undefined) ok(`${tag}: old save without passport back-fills a stamp for every owned country`, await page.evaluate(() => { const s = GeoGame.state; const own = Object.keys(s.ownership).filter((k) => s.ownership[k] === "player"); return own.length > 0 && own.every((k) => s.passport[k]); }));
   }
   // Raster art drop-in: when the manifest lists files they are used, everything else stays placeholder.
   {

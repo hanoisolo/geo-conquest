@@ -202,6 +202,13 @@ async function runWin(vp, tag) {
   await page.click("#btn-mp-ready").catch(() => {}); await wait(300);
   await attack("FJI", "hard", true);
   ok(`${tag}: holding the whole continent wins domination`, await vis("#mp-standings") && /Player 1 wins/.test(await page.locator("#mp-standings-title").textContent()));
+  ok(`${tag}: capture stamps the attacker's passport`, await page.evaluate(() => !!GeoMulti.state.players[0].passport.FJI));
+  await wait(900);
+  await page.locator("#mp-standings .mp-pp-btn").first().click(); await wait(500);
+  ok(`${tag}: standings open a player's passport on top`, await vis("#passport-modal") && await page.evaluate(() => { const b = document.getElementById("btn-passport-close").getBoundingClientRect(); return document.elementFromPoint(b.x + b.width / 2, b.y + b.height / 2) === document.getElementById("btn-passport-close"); }));
+  ok(`${tag}: one-continent passport counts only that continent`, /\/ 6 stamps/.test(await page.locator("#passport-body .pp-sub").textContent()));
+  await page.screenshot({ path: join(shots, `pp-${tag}-04-standings-passport.png`) });
+  await page.click("#btn-passport-close"); await wait(300);
   await wait(800); await shot("11-standings-domination");
   ok(`${tag}: solo save survives multiplayer games`, await page.evaluate(() => JSON.parse(localStorage.getItem("geoConquestSaveV1")).marker === "solo-save"));
   ok(`${tag}: no page errors (win run)`, errs.length === 0);
@@ -315,10 +322,16 @@ async function runAvatars(vp, tag) {
   await page.screenshot({ path: join(shots, `av-${tag}-04-mp-map.png`) });
   ok(`${tag}: characters saved with the game`, await page.evaluate(() => { const s = JSON.parse(localStorage.getItem("geoConquestMultiV1")); return s.players[1].avatar === "ninjacat" && new Set(s.players.map((p) => p.avatar)).size === 4; }));
   // Legacy multiplayer save without characters (plus a duplicate) -> unique defaults, no crash.
-  await page.evaluate(() => { const s = JSON.parse(localStorage.getItem("geoConquestMultiV1")); delete s.players[0].avatar; delete s.players[1].avatar; s.players[2].avatar = "robot"; s.players[3].avatar = "robot"; localStorage.setItem("geoConquestMultiV1", JSON.stringify(s)); });
+  await page.evaluate(() => { const s = JSON.parse(localStorage.getItem("geoConquestMultiV1")); delete s.players[0].avatar; delete s.players[1].avatar; s.players.forEach((p) => delete p.passport); s.players[2].avatar = "robot"; s.players[3].avatar = "robot"; localStorage.setItem("geoConquestMultiV1", JSON.stringify(s)); });
   await page.reload(); await wait(1200);
   await page.click("#btn-mp-continue"); await wait(900);
   ok(`${tag}: each home shows its owner's token`, await page.evaluate(() => { const s = GeoMulti.state; return s.players.filter((p) => p.home).every((p) => { const el = document.querySelector(`#map-svg .badges image.av-token[data-iso="${p.home}"]`); return el && el.getAttribute("href") === GeoAvatars.faceUrl(p.avatar, "happy"); }); }));
+  ok(`${tag}: legacy save back-fills each player's passport`, await page.evaluate(() => GeoMulti.state.players.every((p) => p.home && p.passport && p.passport[p.home])));
+  await page.click("#btn-mp-ready").catch(() => {}); await page.waitForTimeout(300);
+  await page.locator("#btn-passport").scrollIntoViewIfNeeded(); await page.click("#btn-passport"); await page.waitForTimeout(500);
+  ok(`${tag}: side-panel passport is the current player's`, await page.evaluate(() => document.querySelector("#passport-body .pp-title").textContent.startsWith(GeoMulti.state.players[GeoMulti.state.turn].name)));
+  await page.screenshot({ path: join(shots, `pp-${tag}-03-mp-current-player.png`) });
+  await page.click("#btn-passport-close"); await page.waitForTimeout(300);
   ok(`${tag}: legacy save loads with unique characters`, await page.evaluate(() => { const a = GeoMulti.state.players.map((p) => p.avatar); return a.every((x) => GeoAvatars.byId(x)) && new Set(a).size === 4; }));
   ok(`${tag}: no page errors (avatars run)`, errs.length === 0);
   if (errs.length) console.log(errs);

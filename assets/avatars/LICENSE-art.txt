@@ -1,0 +1,13 @@
+Geo Conquest avatar portraits (assets/avatars/*/*.webp)
+
+Model:    stabilityai/stable-diffusion-xl-base-1.0
+Version:  Hugging Face revision 462165984030d82259a11f4367a4eed129e94a7b
+Licence:  CreativeML Open RAIL++-M
+Link:     https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0
+Generated: 2026-10-11T21:08:10+00:00 on NVIDIA RTX PRO 6000 Blackwell Server Edition (diffusers 0.40.0, 30 steps, guidance 6.0)
+LoRAs / extra checkpoints: none
+
+Outputs may be used commercially and publicly; the licence's use restrictions (Attachment A) apply to how the model and outputs are used.
+
+Post-processing: background removed with rembg (isnet-general-use), trimmed, padded to square (6% margin), resized to 512px, WebP with alpha. Processed 2026-10-11.
+Original designs; prompts avoid real people and copyrighted or trademarked characters.

@@ -1,1 +1,37 @@
-{ "files": [] }
+{
+  "files": [
+    "pirate/happy.webp",
+    "pirate/cheer.webp",
+    "pirate/oops.webp",
+    "astronaut/happy.webp",
+    "astronaut/cheer.webp",
+    "astronaut/oops.webp",
+    "fox/happy.webp",
+    "fox/cheer.webp",
+    "fox/oops.webp",
+    "robot/happy.webp",
+    "robot/cheer.webp",
+    "robot/oops.webp",
+    "knight/happy.webp",
+    "knight/cheer.webp",
+    "knight/oops.webp",
+    "scientist/happy.webp",
+    "scientist/cheer.webp",
+    "scientist/oops.webp",
+    "diver/happy.webp",
+    "diver/cheer.webp",
+    "diver/oops.webp",
+    "ninjacat/happy.webp",
+    "ninjacat/cheer.webp",
+    "ninjacat/oops.webp",
+    "ranger/happy.webp",
+    "ranger/cheer.webp",
+    "ranger/oops.webp",
+    "polar/happy.webp",
+    "polar/cheer.webp",
+    "polar/oops.webp",
+    "baron/mischievous.webp",
+    "baron/smug.webp",
+    "baron/grumpy.webp"
+  ]
+}

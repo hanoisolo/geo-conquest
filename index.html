@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Geo Conquest — conquer the world one geography question at a time! A fun strategy-quiz game for young explorers." />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src 'self' https://api.mistral.ai https://generativelanguage.googleapis.com https://api.openai.com; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; object-src 'none'; base-uri 'self'; form-action 'none'" />
   <title>Geo Conquest — Conquer the World!</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>" />
@@ -77,10 +78,93 @@
             <h2>Multiplayer</h2>
             <p>2-4 players take turns on one device. No Baron — just you and your friends!</p>
           </button>
+          <button class="mode-card mode-ws" id="btn-worksheets" type="button">
+            <div class="mode-emoji">📄</div>
+            <h2>My worksheets</h2>
+            <p>Play with questions made from <strong>your own worksheets</strong>. Great for test prep!</p>
+          </button>
         </div>
         <button class="btn btn-big btn-continue hidden" id="btn-continue" type="button" aria-label="Continue your journey">▶ Continue your journey</button>
         <button id="btn-mp-continue" class="btn btn-big btn-continue hidden" type="button">▶ Continue multiplayer game</button>
         <p class="save-note">Your progress saves automatically in this browser.</p>
+      </div>
+    </section>
+
+    <!-- ============ MY WORKSHEETS ============ -->
+    <section id="screen-worksheets" class="screen hidden">
+      <div class="card narrow ws-card">
+        <h2>📄 My worksheets</h2>
+        <p class="ws-intro">Turn your own worksheets into conquest questions, then play any mode with them.</p>
+
+        <div class="ws-section" id="ws-decks-section">
+          <h3>🗂️ My decks</h3>
+          <ul id="ws-deck-list" class="ws-deck-list"></ul>
+          <p id="ws-no-decks" class="save-note">No decks yet. Make one below!</p>
+          <div class="ws-row">
+            <label class="btn btn-small" for="ws-import-input">📥 Import a deck</label>
+            <input type="file" id="ws-import-input" class="visually-hidden" accept=".json,application/json" />
+          </div>
+          <p id="ws-deck-msg" class="ws-msg hidden" role="status"></p>
+        </div>
+
+        <div class="ws-section ws-play hidden" id="ws-play">
+          <h3>▶ Play: <span id="ws-play-title"></span></h3>
+          <p id="ws-small-note" class="easy-note hidden"></p>
+          <label class="ws-check"><input type="checkbox" id="ws-topup" /> Mix in geography questions when my deck runs out</label>
+          <label class="ws-check"><input type="checkbox" id="ws-math" /> Include math questions too</label>
+          <div class="mode-cards ws-modes">
+            <button class="mode-card" id="ws-play-quest" type="button"><div class="mode-emoji">🏝️</div><h2>Continent Quest</h2><p>Conquer one continent.</p></button>
+            <button class="mode-card mode-hard" id="ws-play-world" type="button"><div class="mode-emoji">🌐</div><h2>World Conquest</h2><p>Conquer all six continents.</p></button>
+            <button class="mode-card mode-multi" id="ws-play-multi" type="button"><div class="mode-emoji">👥</div><h2>Multiplayer</h2><p>2-4 players on one device.</p></button>
+          </div>
+        </div>
+
+        <div class="ws-section" id="ws-new">
+          <h3>✨ Make a new deck</h3>
+          <div id="ws-drop" class="ws-drop" tabindex="0" role="button" aria-label="Add worksheet files: drop them here or press Enter to choose">
+            <span class="ws-drop-emoji">📎</span>
+            <span>Drop worksheets here or <span class="ws-link">choose files</span></span>
+            <small>PDF, PNG, JPG or WEBP · up to 10 files · 5 MB each</small>
+          </div>
+          <input type="file" id="ws-file-input" aria-label="Choose worksheet files" class="visually-hidden" multiple accept=".pdf,.png,.jpg,.jpeg,.webp,application/pdf,image/png,image/jpeg,image/webp" />
+          <ul id="ws-file-list" class="ws-file-list"></ul>
+          <p id="ws-file-msg" class="ws-msg hidden" role="alert"></p>
+          <div class="ws-form">
+            <label for="ws-provider">🤖 AI helper</label>
+            <select id="ws-provider"></select>
+            <label for="ws-key">🔑 API key</label>
+            <div class="ws-row">
+              <input type="password" id="ws-key" autocomplete="off" spellcheck="false" />
+              <button class="btn btn-small" id="ws-forget" type="button">Forget key</button>
+            </div>
+            <a id="ws-key-link" class="ws-key-link" href="#" target="_blank" rel="noopener noreferrer">How do I get a key?</a>
+            <label class="ws-check"><input type="checkbox" id="ws-remember" /> Remember my key on this device</label>
+            <p id="ws-remember-warn" class="easy-note hidden">⚠️ Your key will be saved in this browser until you press Forget key. Only do this on your own device.</p>
+            <p class="save-note">Your key is kept in this browser and sent only to the AI company you picked. It is never saved in decks or exports.</p>
+          </div>
+          <button class="btn btn-big" id="ws-make" type="button" disabled>🪄 Make my deck</button>
+          <div id="ws-progress" class="ws-progress hidden" role="status" aria-live="polite">
+            <p id="ws-progress-text"></p>
+            <div class="ws-bar"><div id="ws-progress-bar"></div></div>
+            <button class="btn btn-small" id="ws-cancel" type="button">Cancel</button>
+          </div>
+          <div id="ws-failed" class="ws-failed hidden" role="alert">
+            <p>😕 These sheets didn't work:</p>
+            <ul id="ws-failed-list"></ul>
+            <div class="ws-row">
+              <button class="btn btn-small" id="ws-retry" type="button">🔁 Try them again</button>
+              <button class="btn btn-small" id="ws-skip" type="button">Continue without them</button>
+            </div>
+          </div>
+          <div id="ws-result" class="ws-result hidden">
+            <p id="ws-result-text"></p>
+            <label for="ws-title">Deck name</label>
+            <input type="text" id="ws-title" maxlength="80" />
+            <button class="btn btn-big" id="ws-save" type="button">💾 Save deck</button>
+          </div>
+        </div>
+
+        <button class="btn btn-small" id="ws-back" type="button">← Back</button>
       </div>
     </section>
 
@@ -311,6 +395,8 @@
   <script src="js/ws-validate.js"></script>
   <script src="js/ws-decks.js"></script>
   <script src="js/ws-engine.js"></script>
+  <script src="js/ws-providers.js"></script>
+  <script src="js/worksheets-ui.js"></script>
   <script src="js/game.js"></script>
   <script src="js/multi.js"></script>
   <script src="js/app.js"></script>

@@ -68,7 +68,9 @@ function wireUI() {
   $("btn-quest").addEventListener("click", () => GeoGame.newCampaign("quest"));
   $("btn-world").addEventListener("click", () => GeoGame.newCampaign("world"));
   $("btn-continue").addEventListener("click", () => GeoGame.continueCampaign());
-  $("btn-multi").addEventListener("click", () => GeoMulti.openSetup());
+  $("btn-multi").addEventListener("click", () => { GeoMulti._setupWs = null; GeoMulti.openSetup(); });
+  $("btn-worksheets").addEventListener("click", () => GeoWSUI.open());
+  GeoWSUI.init();
   // Passport: the solo explorer's, or the current multiplayer player's.
   $("btn-passport").addEventListener("click", () => {
     if (GeoGame.mode === "multi") GeoMulti.openPassport(GeoMulti.state.turn);

@@ -1248,7 +1248,7 @@ const GeoGame = {
   },
 
   showScreen(id) {
-    for (const s of ["screen-start", "screen-pick-continent", "screen-mp-setup", "screen-game"]) {
+    for (const s of ["screen-start", "screen-pick-continent", "screen-mp-setup", "screen-worksheets", "screen-game"]) {
       document.getElementById(s).classList.toggle("hidden", s !== id);
     }
     window.scrollTo(0, 0);

@@ -321,6 +321,7 @@ const GeoMulti = {
       players: this._setup.players.map((p, i) => ({ name: names[i], color: p.color, avatar: p.avatar })),
       win: { mode: this._setup.winMode, minutes: this._setup.minutes },
       mapScope: this._setup.mapScope,
+      ws: this._setupWs || null, // "My worksheets": set by GeoWSUI before openSetup()
     });
   },
 

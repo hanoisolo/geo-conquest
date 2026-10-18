@@ -148,6 +148,9 @@ const GeoWSDecks = {
 
   save(deck) {
     var id = (deck && deck.id) || GeoWSDecks.V().newDeckId();
+    if (typeof id !== "string" || !/^[a-z0-9]{4,24}$/.test(id)) {
+      return { ok: false, error: { kind: "invalid", message: "This deck has an invalid id." } };
+    }
     var clean = GeoWSDecks.sanitizeDeck(Object.assign({}, deck, { id: id }), id);
     if (!clean) {
       return { ok: false, error: { kind: "invalid", message: "This deck has no usable questions." } };

@@ -85,6 +85,7 @@ const GeoMulti = {
         players: s.players.map((p) => ({ name: p.name, color: p.color, avatar: p.avatar })),
         win: { mode: s.win.mode, minutes: s.win.minutes },
         mapScope: s.mapScope,
+        ws: s.ws || null,
       });
     });
     document.getElementById("btn-mp-home").addEventListener("click", () => {
@@ -352,6 +353,8 @@ const GeoMulti = {
       timeLeftMs: setup.win.mode === "timed" ? setup.win.minutes * 60000 : null,
       asked: [],
     };
+    // "My worksheets": record the deck only when one is active (default saves keep their shape).
+    if (GeoGame.setWorksheetDeck(setup.ws || null)) this.state.ws = Object.assign({}, GeoGame.wsSettings);
     this.save();
     this.enterGame();
   },
@@ -403,6 +406,10 @@ const GeoMulti = {
     const s = this.load();
     if (!s) return;
     this.state = s;
+    if (!GeoGame.setWorksheetDeck(s.ws || null) && s.ws) {
+      delete this.state.ws; // the deck was deleted: carry on with the default questions
+      GeoGame.toast("📄 That worksheet deck is gone, so this game uses the normal questions.");
+    }
     this.enterGame();
   },
 

@@ -10,7 +10,8 @@
      { version, mode, activeContinent, unlocked[], conquered[],
        ownership{iso3:'player'|'rival'}, points, streak, bestStreak,
        contests, correct, asked[], homeBase, pendingChoice,
-       geoSinceMath, hintsUsed, stats{byCategory{cat:{asked,correct}}} }
+       geoSinceMath, hintsUsed, stats{byCategory{cat:{asked,correct}}},
+       ws?{deckId,topUp,includeMath} (only in "My worksheets" campaigns) }
    ============================================================ */
 "use strict";
 
@@ -31,6 +32,9 @@ const GeoGame = {
   currentContest: null, // { iso3, tier, subject, nudged, question, options, answerIdx, ... }
   contestHook: null,    // multiplayer: GeoMulti.onContestDone receives the resolved contest
   selectedSubject: "geo", // "geo" | "math" — chosen on the territory card
+  wsDeck: null,         // "My worksheets": the active deck's questions (null = default game)
+  wsSettings: null,     // { deckId, topUp, includeMath } while a worksheet deck is active
+  _wsBase: false,       // true while a worksheet top-up borrows a default question
   nameVariantsOf: {},   // iso3 -> Set of normalized name spellings (giveaway check)
   _toastQueue: [],      // pending toast messages (shown one after another)
   _toastBusy: false,
@@ -88,8 +92,9 @@ const GeoGame = {
   },
 
   /* ================= campaign setup ================= */
-  newCampaign(mode) {
+  newCampaign(mode, ws) {
     this.mode = "solo"; document.body.classList.remove("mp-mode");
+    this.setWorksheetDeck(ws || null);
     this.state = {
       version: GeoStorage.SAVE_VERSION, mode,
       activeContinent: null, unlocked: [], conquered: [],
@@ -100,6 +105,7 @@ const GeoGame = {
       avatar: GeoAvatars.normalize(GeoAvatars.selected),
       passport: {},
     };
+    if (this.wsSettings) this.state.ws = Object.assign({}, this.wsSettings);
     this.persist();
     this.showContinentPicker("start");
   },
@@ -109,6 +115,10 @@ const GeoGame = {
     const s = GeoStorage.load();
     if (!s) return;
     this.state = s;
+    if (!this.setWorksheetDeck(s.ws || null) && s.ws) {
+      delete this.state.ws; // the deck was deleted: carry on with the default questions
+      this.toast("📄 That worksheet deck is gone, so this campaign uses the normal questions.");
+    }
     this.state.avatar = GeoAvatars.normalize(GeoAvatars.selected || s.avatar); // the start-screen pick applies
     this.persist();
     this.enterGame(this.state.homeBase == null);
@@ -225,6 +235,25 @@ const GeoGame = {
     this.showTerritoryCard(iso3, owner);
   },
 
+  /**
+   * "My worksheets": activate the deck named by ws = { deckId, topUp, includeMath },
+   * or clear it with null (the default game). Returns true when a deck is active.
+   * Hides the math subject button unless includeMath is on.
+   */
+  setWorksheetDeck(ws) {
+    const deck = ws && typeof GeoWSDecks !== "undefined" ? GeoWSDecks.get(ws.deckId) : null;
+    this.wsDeck = deck ? deck.questions : null;
+    this.wsSettings = deck ? { deckId: deck.id, topUp: !!ws.topUp, includeMath: !!ws.includeMath } : null;
+    const mathBtn = document.querySelector('.subject-btn[data-subject="math"]');
+    if (mathBtn) mathBtn.classList.toggle("hidden", this.wsNoMath());
+    return !!deck;
+  },
+
+  /** True when a worksheet deck is active and math questions are switched off. */
+  wsNoMath() {
+    return !!(this.wsDeck && this.wsSettings && !this.wsSettings.includeMath);
+  },
+
   /** Set the active subject and reflect it on the subject toggle buttons. */
   setSubject(s) {
     this.selectedSubject = s;
@@ -256,7 +285,7 @@ const GeoGame = {
     document.getElementById("terr-easy-note").classList.toggle("hidden", owner !== "rival");
     // Nudge a math question roughly every 3rd question.
     const nudge = document.getElementById("terr-math-nudge");
-    if ((this.state.geoSinceMath || 0) >= 2) {
+    if (!this.wsNoMath() && (this.state.geoSinceMath || 0) >= 2) {
       this.setSubject("math");
       nudge.classList.remove("hidden");
     } else {
@@ -493,6 +522,7 @@ const GeoGame = {
    * when alternatives exist. Returns null when nothing is left.
    */
   pickQuestion(iso3, tier) {
+    if (this.wsDeck && !this._wsBase) return this.pickWorksheetQuestion(iso3, tier);
     const contName = this.contNameOf[this.contOf[iso3]];
     const asked = new Set(this.state.asked);
     const tiers = [
@@ -517,6 +547,20 @@ const GeoGame = {
   },
 
   /**
+   * "My worksheets": deck questions first (by tier, reshuffled when used up);
+   * with top-up on, one default question is borrowed between deck cycles.
+   */
+  pickWorksheetQuestion(iso3, tier) {
+    return GeoWSEngine.pick(this.wsDeck, this.state.asked, tier, {
+      topUp: !!(this.wsSettings && this.wsSettings.topUp),
+      pickBase: () => {
+        this._wsBase = true;
+        try { return this.pickQuestion(iso3, tier); } finally { this._wsBase = false; }
+      },
+    });
+  },
+
+  /**
    * True when q's correct answer IS the contested country itself, i.e.
    * the question would be a giveaway on iso3. flag-pick questions are
    * exempt (their country names are hidden behind flag images), and map
@@ -524,6 +568,7 @@ const GeoGame = {
    */
   isGiveawayOn(q, iso3) {
     if (!q) return false;
+    if (q.source === "worksheet") return false; // worksheet answers naming a country are coincidence
     const type = q.type || "text";
     if (q.answerIsTerritory && q.territory === iso3) return true;
     if (type === "map" && q.target === iso3) return true;

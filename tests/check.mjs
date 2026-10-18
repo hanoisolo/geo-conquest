@@ -1,5 +1,5 @@
 // tests/check.mjs — the one gate: `node tests/check.mjs`
-// 1) node --check every JS file  2) validate question data  3) math unit tests (if present)
+// 1) node --check every JS file  2) validate question data  3) math unit tests (if present)  4) worksheet-mode tests (tests/ws-*.test.js)
 import { execFileSync } from "node:child_process";
 import { readdirSync, existsSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -22,5 +22,8 @@ const cov = process.env.COVERAGE === "0" ? [] : ["--require-coverage"];
 run("question data (tools/validate.py)", "python3", ["tools/validate.py", ...cov]);
 if (existsSync(join(root, "tests/avatars.test.js"))) run("avatars tests", "node", ["tests/avatars.test.js"]);
 if (existsSync(join(root, "tests/math.test.js"))) run("math generator tests", "node", ["tests/math.test.js"]);
+const ws = readdirSync(join(root, "tests")).filter((f) => /^ws-.*\.test\.js$/.test(f)).sort();
+for (const f of ws) run(`ws tests (${f})`, "node", [`tests/${f}`]);
+if (!ws.length) console.log("- ws tests: none yet");
 console.log(failed ? `\nCHECK FAILED (${failed})` : "\nCHECK PASSED");
 process.exit(failed ? 1 : 0);

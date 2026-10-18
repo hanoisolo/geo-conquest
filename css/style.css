@@ -1227,3 +1227,19 @@ body.mp-mode .legend { display: none; }
 .ws-card .mode-card p, .ws-card .ws-deck-meta { color: #475569; }
 .ws-card .easy-note { color: #b91c1c; }
 /* AA contrast inside the worksheets screen */
+/* ---------- Contrast (WCAG AA) — overrides kept together so the look stays close ---------- */
+:root { --muted: #475569; }                         /* grey text: 4.3 -> 7.5:1 on white */
+.btn, .diff-medium, .diff-easy, .tier-badge.medium, .tier-badge.easy,
+.mp-toggle.active { color: #1e293b; }               /* dark ink on gold/green instead of white */
+.btn-danger { background: #dc2626; color: #fff; box-shadow: 0 3px 0 #991b1b; }
+.btn-danger:active { box-shadow: 0 1px 0 #991b1b; }
+.btn-continue { color: #1e293b; }
+.diff-hard, .tier-badge.hard { background: #7c3aed; color: #fff; }
+.subject-btn.active { background: #2563eb; border-color: #2563eb; }
+.subject-btn[data-subject="math"].active { background: #7c3aed; border-color: #7c3aed; }
+.hard-badge { background: #dc2626; }
+#passport-count { background: #854d0e; color: #fff; }
+#q-territory { color: #1d4ed8; }
+.easy-note { color: #b91c1c; }
+/* The floating Baron (phones) sits over form buttons on the worksheets screen: hide it there. */
+body:has(#screen-worksheets:not(.hidden)) .baron-float { display: none !important; }

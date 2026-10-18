@@ -24,6 +24,25 @@ They also come in different **formats**: plain text, 🚩 flags to recognize (sh
 
 The bank holds **589 questions** (the file list lives in `data/manifest.json`, loaded from `data/questions-*.json`), preferring questions about the exact country you're attacking.
 
+## 📄 My worksheets (play with your own questions)
+
+Pick **📄 My worksheets** on the start screen to turn your own worksheets into a question deck, then play Continent Quest, World Conquest or Multiplayer with it. The normal game is unchanged.
+
+1. **Add sheets**: drop or choose up to 10 files (PDF, PNG, JPG or WEBP, 5 MB each).
+2. **Pick an AI helper and paste your API key**: Mistral (OCR + GLM 5.3, falls back to Mistral Large 4), Google Gemini or OpenAI.
+3. **Make my deck**: each sheet is read separately ("Reading sheet 2 of 5"). If one fails, the others are kept and you can retry just the failed ones. Questions from all sheets are merged and near-duplicates removed.
+4. **Save and play**: decks are saved in this browser under **My decks**, so you can replay them without new AI calls. Rename, delete, or **export/import** a deck as a `.geodeck.json` file to move it to another device.
+
+Options: *Mix in geography questions when my deck runs out* (off by default) and *Include math questions too* (off by default). Small decks repeat their questions, shuffled. Saves and multiplayer games remember which deck they use, so **Continue** picks up with the same deck.
+
+**Your key and privacy:** there is no backend. Files go straight from your browser to the AI company you picked. The key is kept for this browser session only, unless you tick *Remember my key on this device*. **Forget key** removes it. Keys are never stored in decks, saves or exports, and AI or imported text is always shown as plain text. A Content-Security-Policy only allows connections to the three AI providers.
+
+**Files:** `js/ws-config.js` (models and limits), `js/ws-validate.js` (repair, merge and de-duplicate), `js/ws-providers.js` (AI calls), `js/ws-decks.js` (saved decks, export/import), `js/ws-engine.js` (deck-first question picking), `js/worksheets-ui.js` (the screen). Tests: `node tests/check.mjs` (unit tests, including `tests/ws-*.test.js`) and `node tests/e2e-ws.mjs` (browser run with a mocked provider).
+
+## 🙏 Credits
+
+The worksheet AI code (provider calls, Mistral reasoning-chunk handling and fallback, response validation and repair, and test fixtures) is adapted from [Worksheet Arcade](https://github.com/hanoisolo/worksheet-arcade) (`src/services`, commit 3b97026), © Don Ruan, released under the MIT License.
+
 ## 🗂️ Project structure
 
 ```

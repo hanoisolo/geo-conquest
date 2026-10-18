@@ -283,6 +283,49 @@ const GeoWSUI = {
     return out;
   },
 
+  lowTiers(counts) {
+    return ["easy", "medium", "hard"].filter((t) => counts[t] < 5);
+  },
+
+  tierMeta(questions) {
+    const counts = GeoWSEngine.tierCounts(questions);
+    const low = GeoWSUI.lowTiers(counts);
+    return " · " + counts.easy + " easy / " + counts.medium + " medium / " + counts.hard + " hard" + (low.length ? " (few " + low.join("/") + ")" : "");
+  },
+
+  tierNoteText(questions) {
+    const counts = GeoWSEngine.tierCounts(questions);
+    const low = GeoWSUI.lowTiers(counts);
+    if (!low.length) {
+      return "";
+    }
+    let text;
+    if (low.length === 1) {
+      const t = low[0];
+      const borrow = t === "medium" ? "easy or hard" : "medium";
+      text = "Few " + t + " questions: " + t.charAt(0).toUpperCase() + t.slice(1) + " mode will repeat them or borrow " + borrow + " ones.";
+    } else {
+      const names = low.length === 2 ? low.join(" and ") : low.slice(0, -1).join(", ") + " and " + low[low.length - 1];
+      text = "Few " + names + " questions: those modes will repeat them or borrow nearby levels.";
+    }
+    if (GeoWSEngine.isLopsided(questions)) {
+      text += " Most questions got the same level.";
+    }
+    return text;
+  },
+
+  tierNoteEl() {
+    let el = GeoWSUI.$("ws-tier-note");
+    if (!el) {
+      el = document.createElement("p");
+      el.id = "ws-tier-note";
+      el.className = "easy-note";
+      const resultText = GeoWSUI.$("ws-result-text");
+      resultText.parentNode.insertBefore(el, resultText.nextSibling);
+    }
+    return el;
+  },
+
   finish(skipFailed) {
     const failed = GeoWSUI.failedIndexes();
     const okSheets = GeoWSUI.results.filter((r) => r && r.ok).map((r) => r.value);
@@ -316,7 +359,12 @@ const GeoWSUI = {
       grade: (okSheets[0].meta && okSheets[0].meta.grade) || "",
       sources: GeoWSUI.files.filter((f, i) => GeoWSUI.results[i] && GeoWSUI.results[i].ok).map((f) => f.name)
     };
-    GeoWSUI.$("ws-result-text").textContent = "🎉 " + merged.questions.length + " questions from " + okSheets.length + (okSheets.length === 1 ? " sheet" : " sheets") + (merged.duplicates ? " (" + merged.duplicates + " repeats removed)" : "") + ".";
+    const counts = GeoWSEngine.tierCounts(merged.questions);
+    GeoWSUI.$("ws-result-text").textContent = "🎉 " + merged.questions.length + " questions from " + okSheets.length + (okSheets.length === 1 ? " sheet" : " sheets") + (merged.duplicates ? " (" + merged.duplicates + " repeats removed)" : "") + ". · " + counts.easy + " easy · " + counts.medium + " medium · " + counts.hard + " hard";
+    const note = GeoWSUI.tierNoteText(merged.questions);
+    const noteEl = GeoWSUI.tierNoteEl();
+    noteEl.textContent = note;
+    GeoWSUI.show("ws-tier-note", !!note);
     GeoWSUI.$("ws-title").value = GeoWSValidate.deckTitle(okSheets, GeoWSUI.pending.sources);
     GeoWSUI.show("ws-result", true);
   },
@@ -466,7 +514,8 @@ const GeoWSUI = {
       actions.appendChild(del);
       const meta = document.createElement("span");
       meta.className = "ws-deck-meta";
-      meta.textContent = d.count + " questions · " + d.subject + (d.grade ? " · " + d.grade : "") + " · " + new Date(d.createdAt).toLocaleDateString();
+      const full = GeoWSDecks.get(d.id);
+      meta.textContent = d.count + " questions · " + d.subject + (d.grade ? " · " + d.grade : "") + " · " + new Date(d.createdAt).toLocaleDateString() + (full ? GeoWSUI.tierMeta(full.questions) : "");
       li.appendChild(title);
       li.appendChild(actions);
       li.appendChild(meta);

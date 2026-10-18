@@ -148,7 +148,11 @@ Reply with a single JSON object with exactly this shape:
 
 Rules:
 - Audience: default to grade 7 (about 12-13 years old). If the worksheet states a grade, use it.
-- Write 10 to 20 questions that test what is on THIS worksheet, with a mix of easy, medium and hard.
+- Write 10 to 20 questions that test what is on THIS worksheet.
+- Set "tier" relative to THIS worksheet, aiming for roughly one third each (never label almost everything medium):
+  easy = recall of a fact stated directly on the sheet;
+  medium = understanding or applying one idea (cause and effect, matching a term to its description);
+  hard = combining two facts, multi-step reasoning, a reverse question, or close distractors, still within what the sheet covers.
 - Every question has EXACTLY 4 options. "correctAnswer" must equal one of the options EXACTLY.
 - Vary the position of the correct answer.
 - "hints": 1 or 2 kid-friendly hints that guide without giving the answer away.

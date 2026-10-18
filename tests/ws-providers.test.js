@@ -51,6 +51,15 @@ t("buildPrompt states the option count, worksheet rule, and feedback", () => {
   assert.ok(P.buildPrompt("bad JSON").includes("Your previous answer had these problems: bad JSON"));
 });
 
+t("buildPrompt explains the tier mix and the three tier criteria", () => {
+  const base = P.buildPrompt();
+  assert.ok(base.includes("roughly one third"), "prompt aims for roughly one third per tier");
+  assert.ok(base.includes("recall"), "easy criterion mentions recall");
+  assert.ok(base.includes("applying"), "medium criterion mentions applying");
+  assert.ok(base.includes("combining"), "hard criterion mentions combining");
+  assert.ok(!base.includes("with a mix of easy, medium and hard"), "old vague tier line is gone");
+});
+
 t("strictSchema is strict while geminiSchema drops additionalProperties", () => {
   const s = P.strictSchema();
   assert.equal(s.additionalProperties, false);

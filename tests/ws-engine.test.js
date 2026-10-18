@@ -16,7 +16,7 @@ t("1 tier preferred: hard picks never return the easy question", () => {
 
 t("2 no repeats within a cycle: 10 picks give 10 distinct deck ids", () => {
   const deck = [];
-  for (let i = 1; i <= 10; i++) deck.push(mkq(i, i % 2 === 0 ? "hard" : "easy"));
+  for (let i = 1; i <= 10; i++) deck.push(mkq(i, "easy"));
   const deckIds = new Set(deck.map(q => q.id));
   const asked = [];
   const ids = [];
@@ -179,6 +179,83 @@ t("14 asked cap: a 600-entry asked is trimmed to 401 by a pick", () => {
   assert.ok(q, "pick returned a question");
   assert.equal(asked.length, 401, "asked is capped at 400 plus the new id");
   assert.ok(asked.includes(q.id), "the picked id is in asked");
+});
+
+t("15 hard request with no hard questions serves medium before easy", () => {
+  const deck = [mkq(1, "medium"), mkq(2, "medium"), mkq(3, "easy"), mkq(4, "easy")];
+  const asked = [];
+  const q1 = E.pick(deck, asked, "hard", {});
+  assert.equal(q1.tier, "medium", "first hard request gets a medium question");
+  const q2 = E.pick(deck, asked, "hard", {});
+  assert.equal(q2.tier, "medium", "second hard request still gets a medium question");
+  const q3 = E.pick(deck, asked, "hard", {});
+  assert.equal(q3.tier, "easy", "easy is served once the mediums are asked");
+});
+
+t("16 easy request with no easy questions serves medium before hard", () => {
+  const deck = [mkq(1, "medium"), mkq(2, "hard"), mkq(3, "hard")];
+  const asked = [];
+  const q1 = E.pick(deck, asked, "easy", {});
+  assert.equal(q1.tier, "medium", "first easy request gets the medium question");
+  const q2 = E.pick(deck, asked, "easy", {});
+  assert.equal(q2.tier, "hard", "then hard questions are served");
+});
+
+t("17 per-tier reshuffle: 10 hard picks on a 2-hard deck are all hard", () => {
+  const deck = [mkq(1, "hard"), mkq(2, "hard")];
+  for (let i = 3; i <= 10; i++) deck.push(mkq(i, i % 2 === 0 ? "easy" : "medium"));
+  const asked = [];
+  for (let i = 0; i < 10; i++) {
+    const q = E.pick(deck, asked, "hard", {});
+    assert.ok(q, "pick " + (i + 1) + " returned a question");
+    assert.equal(q.tier, "hard", "pick " + (i + 1) + " is hard, got " + (q && q.tier));
+  }
+  assert.ok(asked.length <= 2, "asked only holds the current hard cycle, got " + asked.length);
+  assert.ok(asked.every(id => deck.find(q => q.id === id).tier === "hard"), "asked holds only hard ids after the reshuffle");
+});
+
+t("18 medium falls back to easy or hard", () => {
+  const easyDeck = [mkq(1, "easy"), mkq(2, "easy")];
+  const q1 = E.pick(easyDeck, [], "medium", {});
+  assert.equal(q1.tier, "easy", "medium request on an easy-only deck gets easy");
+  const hardDeck = [mkq(1, "hard"), mkq(2, "hard")];
+  const q2 = E.pick(hardDeck, [], "medium", {});
+  assert.equal(q2.tier, "hard", "medium request on a hard-only deck gets hard");
+});
+
+t("19 unknown tier is treated as medium", () => {
+  const deck = [mkq(1, "medium"), mkq(2, "easy")];
+  const q = E.pick(deck, [], "banana", {});
+  assert.equal(q.tier, "medium", "unknown tier request gets the medium question first");
+});
+
+t("20 medium fallback order is randomised with rnd()", () => {
+  const deck = [mkq(1, "easy"), mkq(2, "hard")];
+  const low = E.pick(deck, [], "medium", { random: () => 0 });
+  assert.equal(low.tier, "easy", "rnd() -> 0 tries easy before hard");
+  const high = E.pick(deck, [], "medium", { random: () => 0.99 });
+  assert.equal(high.tier, "hard", "rnd() -> 0.99 tries hard before easy");
+});
+
+t("21 tierCounts counts tiers and folds unknown into medium", () => {
+  const deck = [mkq(1, "easy"), mkq(2, "easy"), mkq(3, "medium"), mkq(4, "hard"), mkq(5, "banana")];
+  assert.deepEqual(E.tierCounts(deck), { easy: 2, medium: 2, hard: 1 });
+  assert.deepEqual(E.tierCounts([]), { easy: 0, medium: 0, hard: 0 });
+  assert.deepEqual(E.tierCounts(null), { easy: 0, medium: 0, hard: 0 });
+});
+
+t("22 isLopsided flags decks of 6+ where one tier exceeds 60%", () => {
+  const six = (tiers) => tiers.map((tier, i) => mkq(i + 1, tier));
+  assert.equal(E.isLopsided(six(["easy", "easy", "easy", "easy", "medium", "hard"])), true, "4/6 easy is lopsided");
+  assert.equal(E.isLopsided(six(["easy", "easy", "easy", "medium", "medium", "hard"])), false, "3/6 is exactly half");
+  assert.equal(E.isLopsided(six(["easy", "easy", "easy", "easy", "easy", "easy"])), true, "all one tier");
+  assert.equal(E.isLopsided([mkq(1, "easy"), mkq(2, "easy"), mkq(3, "easy"), mkq(4, "easy"), mkq(5, "easy")]), false, "5 questions is below the size threshold");
+  const ten = [];
+  for (let i = 1; i <= 6; i++) ten.push(mkq(i, "easy"));
+  for (let i = 7; i <= 10; i++) ten.push(mkq(i, "medium"));
+  assert.equal(E.isLopsided(ten), false, "exactly 60% is not lopsided");
+  const unknown = [mkq(1, "x"), mkq(2, "x"), mkq(3, "x"), mkq(4, "x"), mkq(5, "easy"), mkq(6, "hard")];
+  assert.equal(E.isLopsided(unknown), true, "unknown tiers count as medium");
 });
 
 console.log(fail ? `${fail} ws-engine checks FAILED` : `${pass} ws-engine checks passed`); process.exit(fail ? 1 : 0);

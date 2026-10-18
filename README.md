@@ -43,6 +43,10 @@ Options: *Mix in geography questions when my deck runs out* (off by default) and
 
 The worksheet AI code (provider calls, Mistral reasoning-chunk handling and fallback, response validation and repair, and test fixtures) is adapted from [Worksheet Arcade](https://github.com/hanoisolo/worksheet-arcade) (`src/services`, commit 3b97026), © Don Ruan, released under the MIT License.
 
+## 📜 License
+
+Geo Conquest is released under the [MIT License](LICENSE), © 2026 Don Ruan.
+
 ## 🗂️ Project structure
 
 ```

@@ -360,7 +360,7 @@ const GeoWSUI = {
       sources: GeoWSUI.files.filter((f, i) => GeoWSUI.results[i] && GeoWSUI.results[i].ok).map((f) => f.name)
     };
     const counts = GeoWSEngine.tierCounts(merged.questions);
-    GeoWSUI.$("ws-result-text").textContent = "🎉 " + merged.questions.length + " questions from " + okSheets.length + (okSheets.length === 1 ? " sheet" : " sheets") + (merged.duplicates ? " (" + merged.duplicates + " repeats removed)" : "") + ". · " + counts.easy + " easy · " + counts.medium + " medium · " + counts.hard + " hard";
+    GeoWSUI.$("ws-result-text").textContent = "🎉 " + merged.questions.length + " questions from " + okSheets.length + (okSheets.length === 1 ? " sheet" : " sheets") + (merged.duplicates ? " (" + merged.duplicates + " repeats removed)" : "") + " · " + counts.easy + " easy · " + counts.medium + " medium · " + counts.hard + " hard";
     const note = GeoWSUI.tierNoteText(merged.questions);
     const noteEl = GeoWSUI.tierNoteEl();
     noteEl.textContent = note;
